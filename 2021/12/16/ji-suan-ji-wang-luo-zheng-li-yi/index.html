@@ -397,6 +397,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                计算机网络
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -413,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    5 分
                 </div>
                 
 
@@ -443,118 +452,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id=""><a href="#" class="headerlink" title=""></a></h1><span id="more"></span>
-<h1 id="一、思维导图"><a href="#一、思维导图" class="headerlink" title="一、思维导图"></a>一、思维导图</h1><blockquote class="pullquote mindmap mindmap-md"><ul>
-<li>第一章 概述<ul>
-<li>1.1 计算机网络在信息时代的作用<ul>
-<li>信息服务基础设施</li>
-<li>我国互联网发展现状</li>
-</ul>
-</li>
-<li>1.2 因特网概述<ul>
-<li>xxxxxxxxxx # coding&#x3D;utf-8  ##Python2不支持中文​# 导入模块import arcpyfrom arcpy.sa import <em>​# 设置工作环境arcpy.env.workspace &#x3D; “C:&#x2F;Users&#x2F;Geng&#x2F;Desktop&#x2F;test&#x2F;“​# 创建变量rasters &#x3D; arcpy.ListRasters(“</em>“, “tif”)  # 将工作空间中所有.tif栅格文件存入raster变量sum_pre &#x3D; 0  # 初始化年降雨量r_month &#x3D; []  # 创建空列表存储12各月的降雨量侵蚀因子rr_year &#x3D; 0  # 初始化年降雨量侵蚀因子​​# 计算年总降水量for raster in rasters:    print raster    sum_pre +&#x3D; Raster(raster)​# 编辑公式通过降雨量计算降雨侵蚀因子rdef calculation_r(pre_mon, pre_year):    # 该公式计算出的降雨侵蚀因子有异常值(Nodata)    r_month_with_nodata &#x3D; 17.02 * (1.735 * Power(10, (1.5 * Log10(Power(pre_mon, 2)&#x2F;pre_year) - 0.8188)))    return Con(pre_mon &#x3D;&#x3D; 0, 0, r_month_with_nodata)  # 处理异常值(将Nodata 赋值为0)​​# 根据12个月的r，计算该年的rfor raster in rasters:    r_month.append(calculation_r(Raster(raster), sum_pre))    r_year +&#x3D; r_month[-1]    # 输出每月r    r_month[-1].save(arcpy.env.workspace + “&#x2F;r_%s.tif” %raster)​​# 输出结果r_year.save(arcpy.env.workspace + “&#x2F;r_year.tif”)  # 输出年尺度rsum_pre.save(arcpy.env.workspace + “&#x2F;pre_year.tif”)  # 输出年尺度pre​python</li>
-<li>因特网发展的三个阶段</li>
-<li>因特网的标准化工作</li>
-</ul>
-</li>
-<li>1.3 三种交换方式<ul>
-<li>电路交换</li>
-<li>分组交换（重要）</li>
-<li>报文交换</li>
-</ul>
-</li>
-<li>1.4 计算机网络的定义和分类<ul>
-<li>定义<ul>
-<li>没有精确统一的定义</li>
-<li>最简单的定义为：互连、自治、计算机集合</li>
-<li>不同阶段的定义不同，反映当时的网络技术发展水平</li>
-</ul>
-</li>
-<li>分类（重要）<ul>
-<li>按交换技术</li>
-<li>按使用者</li>
-<li>按传输介质</li>
-<li>按覆盖范围</li>
-<li>按拓扑结构</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>1.5 计算机网络的性能指标<ul>
-<li>速率<ul>
-<li>比特</li>
-<li>速率</li>
-</ul>
-</li>
-<li>带宽（重要）</li>
-<li>吞吐量</li>
-<li>时延（重要）<ul>
-<li>发送时延</li>
-<li>传播时延</li>
-<li>处理时延</li>
-</ul>
-</li>
-<li>往返时间RTT</li>
-<li>时延带宽积</li>
-<li>利用率（重要）</li>
-<li>丢包率</li>
-</ul>
-</li>
-<li>1.6 计算机网络的体系结构（重要）<ul>
-<li>分层的必要性<ul>
-<li>计算机网络是一个非常复杂的系统</li>
-<li>“分层”可以将庞大而复杂的问题，转化为若干弱小的局部问题</li>
-<li>以五层原理体系结构为例，说明分层的必要性</li>
-</ul>
-</li>
-<li>常见的计算机网络体系结构<ul>
-<li>osi七层体系结构</li>
-<li>TCP&#x2F;IP四层体系结构</li>
-<li>五层协议的原理体系结构</li>
-</ul>
-</li>
-<li>分层思想举例<ul>
-<li>通过浏览器进程与Web服务器进程的交互实例，演示分组逐层封装和解封的过程</li>
-<li>湖科大教书匠计算机网络微课堂（p9）</li>
-</ul>
-</li>
-<li>专业术语<ul>
-<li>实体</li>
-<li>协议</li>
-<li>服务</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-
-<h1 id="二、重点"><a href="#二、重点" class="headerlink" title="二、重点"></a>二、重点</h1><h2 id="（一）网络、互联网、因特网的概念"><a href="#（一）网络、互联网、因特网的概念" class="headerlink" title="（一）网络、互联网、因特网的概念"></a>（一）网络、互联网、因特网的概念</h2><p>1、网络（Network）<br>&amp;emsp;&amp;emsp;由若干<font color="#dd0000">结点（Node）</font>和连接这些结点的<font color="#dd0000">链路（Link）</font>组成。<br>2、互联网（internet）<br>&amp;emsp;&amp;emsp;多个网络可以通过路由器互连起来，形成一个覆盖范围更大的网络，及互联网，因此互联网是<font color="#dd0000">网络的网络</font>。<br>3、因特网（Internet）<br>&amp;emsp;&amp;emsp;是世界上<font color="#dd0000">最大的互连网络</font>（用户数以亿计，互连的网络数以百万计）。</p>
-<h2 id="（二）分组交换"><a href="#（二）分组交换" class="headerlink" title="（二）分组交换"></a>（二）分组交换</h2><p>&amp;emsp;&amp;emsp;将报文分成若干个<font color="#dd0000">等长的报文段</font>，然后将各数据添加首部（包含重要的控件信息），构成分组。<font color="#dd0000">节点交换机（路由器）</font>对分组进行存储转发，分组从源主机到目的主机可走不同的路径。</p>
+                <h1 id="一、重点"><a href="#一、重点" class="headerlink" title="一、重点"></a>一、重点</h1><h2 id="（一）网络、互联网、因特网的概念"><a href="#（一）网络、互联网、因特网的概念" class="headerlink" title="（一）网络、互联网、因特网的概念"></a>（一）网络、互联网、因特网的概念</h2><p>1、网络（Network）<br>        由若干<font color="#dd0000">结点（Node）</font>和连接这些结点的<font color="#dd0000">链路（Link）</font>组成。<br>2、互联网（internet）<br>        多个网络可以通过路由器互连起来，形成一个覆盖范围更大的网络，及互联网，因此互联网是<font color="#dd0000">网络的网络</font>。<br>3、因特网（Internet）<br>        是世界上<font color="#dd0000">最大的互连网络</font>（用户数以亿计，互连的网络数以百万计）。</p>
+<h2 id="（二）分组交换"><a href="#（二）分组交换" class="headerlink" title="（二）分组交换"></a>（二）分组交换</h2><p>​		将报文分成若干个<font color="#dd0000">等长的报文段</font>，然后将各数据添加首部（包含重要的控件信息），构成分组。<font color="#dd0000">节点交换机（路由器）</font>对分组进行存储转发，分组从源主机到目的主机可走不同的路径。</p>
 <h2 id="（三）计算机网络的分类"><a href="#（三）计算机网络的分类" class="headerlink" title="（三）计算机网络的分类"></a>（三）计算机网络的分类</h2><h3 id="1、按交换技术"><a href="#1、按交换技术" class="headerlink" title="1、按交换技术"></a>1、按交换技术</h3><p>电路交换网、报文交换网、分组交换网</p>
 <h3 id="2、按使用者"><a href="#2、按使用者" class="headerlink" title="2、按使用者"></a>2、按使用者</h3><p>公用网、专用网</p>
 <h3 id="3、安传输介质"><a href="#3、安传输介质" class="headerlink" title="3、安传输介质"></a>3、安传输介质</h3><p>有线网、无线网</p>
 <h3 id="4、按覆盖范围"><a href="#4、按覆盖范围" class="headerlink" title="4、按覆盖范围"></a>4、按覆盖范围</h3><p>广域网（WAN）、城域网(MAN)、局域网(LAN)、个域网(PAN)</p>
 <h3 id="5、按拓扑结构"><a href="#5、按拓扑结构" class="headerlink" title="5、按拓扑结构"></a>5、按拓扑结构</h3><p>总线型网络、星型网络、环形网络、网状网络</p>
-<h2 id="（四）带宽"><a href="#（四）带宽" class="headerlink" title="（四）带宽"></a>（四）带宽</h2><p>&amp;emsp;&amp;emsp;用来表示网络通信线路所能传送数据的能力，也就是<font color="#dd0000">最高数据率</font>。</p>
-<h2 id="（五）时延"><a href="#（五）时延" class="headerlink" title="（五）时延"></a>（五）时延</h2><h3 id="1、发送时延"><a href="#1、发送时延" class="headerlink" title="1、发送时延"></a>1、发送时延</h3><p>&amp;emsp;&amp;emsp;分组长度（b）&#x2F;发送速率（b&#x2F;s）</p>
-<h3 id="2、传播时延"><a href="#2、传播时延" class="headerlink" title="2、传播时延"></a>2、传播时延</h3><p>&amp;emsp;&amp;emsp;信道长度（m）&#x2F;电磁波传播速率（m&#x2F;s）<br>&amp;emsp;&amp;emsp;电磁波传播速率：<br>自由空间：3*$10^8$m&#x2F;s<br>铜线：2.3*$10^8$m&#x2F;s<br>光纤：2*$10^8$m&#x2F;s</p>
-<h3 id="3、处理时延"><a href="#3、处理时延" class="headerlink" title="3、处理时延"></a>3、处理时延</h3><p>&amp;emsp;&amp;emsp;不方便计算，忽略。</p>
+<h2 id="（四）带宽"><a href="#（四）带宽" class="headerlink" title="（四）带宽"></a>（四）带宽</h2><pre><code>    用来表示网络通信线路所能传送数据的能力，也就是&lt;font color=&quot;#dd0000&quot;&gt;最高数据率&lt;/font&gt;。
+</code></pre>
+<h2 id="（五）时延"><a href="#（五）时延" class="headerlink" title="（五）时延"></a>（五）时延</h2><h3 id="1、发送时延"><a href="#1、发送时延" class="headerlink" title="1、发送时延"></a>1、发送时延</h3><pre><code>    分组长度（b）/发送速率（b/s）
+</code></pre>
+<h3 id="2、传播时延"><a href="#2、传播时延" class="headerlink" title="2、传播时延"></a>2、传播时延</h3><pre><code>    信道长度（m）/电磁波传播速率（m/s）
+    电磁波传播速率：
+</code></pre>
+<p>自由空间：3*$10^8$m&#x2F;s<br>铜线：2.3*$10^8$m&#x2F;s<br>光纤：2*$10^8$m&#x2F;s</p>
+<h3 id="3、处理时延"><a href="#3、处理时延" class="headerlink" title="3、处理时延"></a>3、处理时延</h3><pre><code>    不方便计算，忽略。
+</code></pre>
 <h2 id="（六）利用率"><a href="#（六）利用率" class="headerlink" title="（六）利用率"></a>（六）利用率</h2><p><img src="https://img-blog.csdnimg.cn/fd679280fe1f465e9b524c5a373891a8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6IC_5aSp6Zy4,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
-<h2 id="（七）分层的必要性"><a href="#（七）分层的必要性" class="headerlink" title="（七）分层的必要性"></a>（七）分层的必要性</h2><h3 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h3><p>&amp;emsp;&amp;emsp;计算机网络是非常复杂的系统,“分层”可以将<font color="#dd0000">庞大而复杂</font>的问题，转化成若干<font color="#dd0000">弱小的局部问题</font>。</p>
+<h2 id="（七）分层的必要性"><a href="#（七）分层的必要性" class="headerlink" title="（七）分层的必要性"></a>（七）分层的必要性</h2><h3 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h3><pre><code>    计算机网络是非常复杂的系统,“分层”可以将&lt;font color=&quot;#dd0000&quot;&gt;庞大而复杂&lt;/font&gt;的问题，转化成若干&lt;font color=&quot;#dd0000&quot;&gt;弱小的局部问题&lt;/font&gt;。
+</code></pre>
 <h3 id="2、以五层原理体系结构为例，说明分层的必要性"><a href="#2、以五层原理体系结构为例，说明分层的必要性" class="headerlink" title="2、以五层原理体系结构为例，说明分层的必要性"></a>2、以五层原理体系结构为例，说明分层的必要性</h3><p>物理层：解决使用<font color="#dd0000">何种信号传输比特</font>的问题。<br>数据链路层：解决<font color="#dd0000">分组在一个网络（或一段链路）</font>上的传输问题。<br>网络层：解决<font color="#dd0000">分组在多个网络</font>间传输（路由）的问题。<br>运输层：解决<font color="#dd0000">进程之间基于网络的通信</font>问题。<br>应用层：解决<font color="#dd0000">应用进程间的交互来实现特定网络应用</font>的问题。</p>
-<h2 id="（八）常见的计算机网络体系结构"><a href="#（八）常见的计算机网络体系结构" class="headerlink" title="（八）常见的计算机网络体系结构"></a>（八）常见的计算机网络体系结构</h2><h3 id="1、osi七层体系结构"><a href="#1、osi七层体系结构" class="headerlink" title="1、osi七层体系结构"></a>1、osi七层体系结构</h3><p>法律上的国际标准：物理层、数据链路层、网络层、传输层、对话层、表示层、应用层。</p>
-<h3 id="2、TCP-x2F-IP的四层体系结构"><a href="#2、TCP-x2F-IP的四层体系结构" class="headerlink" title="2、TCP&#x2F;IP的四层体系结构"></a>2、TCP&#x2F;IP的四层体系结构</h3><p>实际上的国际标准：网络接口层、网际层、传输层、应用层。</p>
-<h3 id="3、五层协议的原理体系结构"><a href="#3、五层协议的原理体系结构" class="headerlink" title="3、五层协议的原理体系结构"></a>3、五层协议的原理体系结构</h3><p>便于教学：物理层、数据链路层、网络层、传输层、应用层。</p>
-<h2 id="（九）分层思想举例"><a href="#（九）分层思想举例" class="headerlink" title="（九）分层思想举例"></a>（九）分层思想举例</h2><p>&amp;emsp;&amp;emsp;通过浏览器进程与Web服务器进程的交互实例，演示分组逐层封装和解封的过程视频（P9）。</p>
-<h2 id="（十）专用术语"><a href="#（十）专用术语" class="headerlink" title="（十）专用术语"></a>（十）专用术语</h2><h3 id="1、实体"><a href="#1、实体" class="headerlink" title="1、实体"></a>1、实体</h3><p>&amp;emsp;&amp;emsp;实体是指任何可<font color="#dd0000">发送或接受信息的硬件或软件</font>进程。<br>&amp;emsp;&amp;emsp;<font color="#dd0000">对等实体</font>是指通信双方相同层次中的实体。</p>
-<h3 id="2、协议"><a href="#2、协议" class="headerlink" title="2、协议"></a>2、协议</h3><p>（1）概念<br>&amp;emsp;&amp;emsp;<font color="#dd0000">协议</font>是指控制两个对等实体进行逻辑通信的规则的集合。<br>（2）<font color="#dd0000">协议的三要</font>素是语法、语义、同步。<br>&amp;emsp;&amp;emsp;<font color="#dd0000">语法</font>定义所交换信息的格式。例如：ip数据报的格式<br>&amp;emsp;&amp;emsp;<font color="#dd0000">语义</font>定义通信双方所要完成的操作。例如：主机发送HTTP的GET请求给Web服务器，Web服务器收到后执行相应的操作，然后给主机发回HTTP响应。<br>&amp;emsp;&amp;emsp;<font color="#dd0000">同步</font>定义通信双方的时序关系。例如：TCP的“三报文握手”建立连接的过程。<br>（3）<font color="#dd0000">协议数据单元</font><br>&amp;emsp;&amp;emsp;对等层次之间传输的数据包成为该层的协议数据单元PDU。<br>&amp;emsp;&amp;emsp;应用层：报文（message）<br>&amp;emsp;&amp;emsp;运输层：TCP报文段（segment）或UDP用户数据报（datagram）<br>&amp;emsp;&amp;emsp;网络层：分组（packet）或IP数据报<br>&amp;emsp;&amp;emsp;数据链路层：帧（frame）<br>&amp;emsp;&amp;emsp;物理层：比特流（bit stram）</p>
-<h3 id="3、服务"><a href="#3、服务" class="headerlink" title="3、服务"></a>3、服务</h3><p>（1）概念<br>&amp;emsp;&amp;emsp;在协议的控制下，两个对等实体之间的逻辑通信使得本层能够向上一层提供服务。	要实现本层协议，还需要使用下一层所提供的服务。	<font color="#dd0000">协议是水平的，服务是垂直</font>的。	实体看得见相邻下层提供的服务，但并不知道实现该服务的具体协议。也就是说下面的协议对上面的实体是<font color="#dd0000">“透明”</font>的。<br>（2）<font color="#dd0000">服务访问点</font>是指在同一系统中，<font color="#dd0000">相邻两个实体交换信息的逻辑接口</font>，用于区分不同的服务类型。<br>&amp;emsp;&amp;emsp;数据链路层的服务访问点为帧的“类型”字段。<br>&amp;emsp;&amp;emsp;网络层的服务访问点为IP数据报首部中的“协议字段”。<br>&amp;emsp;&amp;emsp;运输层的服务访问点为“窗口号”。<br>(3)<font color="#dd0000">服务原语</font>是指上层使用下层所提供的服务必须通过与下层交换的一些命令。<br>(4)<font color="#dd0000">服务数据单元</font>SDU是指统一系统内，层与层之间交换的数据包。	多个SDU可以合成为一个PDU；一个SUP也可以划分为多个PDU。</p>
-<h1 id="三、参考文献"><a href="#三、参考文献" class="headerlink" title="三、参考文献"></a>三、参考文献</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1c4411d7jb?share_source=copy_web">b站湖科大教书匠计算机网络视频</a></li>
-</ol>
+<h2 id="（八）常见的计算机网络体系结构"><a href="#（八）常见的计算机网络体系结构" class="headerlink" title="（八）常见的计算机网络体系结构"></a>（八）常见的计算机网络体系结构</h2><h3 id="1、osi七层体系结构"><a href="#1、osi七层体系结构" class="headerlink" title="1、osi七层体系结构"></a>1、osi七层体系结构</h3><pre><code>    法律上的国际标准：物理层、数据链路层、网络层、传输层、对话层、表示层、应用层。
+</code></pre>
+<h3 id="2、TCP-x2F-IP的四层体系结构"><a href="#2、TCP-x2F-IP的四层体系结构" class="headerlink" title="2、TCP&#x2F;IP的四层体系结构"></a>2、TCP&#x2F;IP的四层体系结构</h3><pre><code>    实际上的国际标准：网络接口层、网际层、传输层、应用层。
+</code></pre>
+<h3 id="3、五层协议的原理体系结构"><a href="#3、五层协议的原理体系结构" class="headerlink" title="3、五层协议的原理体系结构"></a>3、五层协议的原理体系结构</h3><pre><code>    便于教学：物理层、数据链路层、网络层、传输层、应用层。
+</code></pre>
+<h2 id="（九）分层思想举例"><a href="#（九）分层思想举例" class="headerlink" title="（九）分层思想举例"></a>（九）分层思想举例</h2><pre><code>    通过浏览器进程与Web服务器进程的交互实例，演示分组逐层封装和解封的过程视频（P9）。
+</code></pre>
+<h2 id="（十）专用术语"><a href="#（十）专用术语" class="headerlink" title="（十）专用术语"></a>（十）专用术语</h2><h3 id="1、实体"><a href="#1、实体" class="headerlink" title="1、实体"></a>1、实体</h3><pre><code>    实体是指任何可&lt;font color=&quot;#dd0000&quot;&gt;发送或接受信息的硬件或软件&lt;/font&gt;进程。
+    &lt;font color=&quot;#dd0000&quot;&gt;对等实体&lt;/font&gt;是指通信双方相同层次中的实体。
+</code></pre>
+<h3 id="2、协议"><a href="#2、协议" class="headerlink" title="2、协议"></a>2、协议</h3><p>（1）概念<br>        <font color="#dd0000">协议</font>是指控制两个对等实体进行逻辑通信的规则的集合。<br>（2）<font color="#dd0000">协议的三要</font>素是语法、语义、同步。<br>        <font color="#dd0000">语法</font>定义所交换信息的格式。例如：ip数据报的格式<br>        <font color="#dd0000">语义</font>定义通信双方所要完成的操作。例如：主机发送HTTP的GET请求给Web服务器，Web服务器收到后执行相应的操作，然后给主机发回HTTP响应。<br>        <font color="#dd0000">同步</font>定义通信双方的时序关系。例如：TCP的“三报文握手”建立连接的过程。<br>（3）<font color="#dd0000">协议数据单元</font><br>        对等层次之间传输的数据包成为该层的协议数据单元PDU。<br>        应用层：报文（message）<br>        运输层：TCP报文段（segment）或UDP用户数据报（datagram）<br>        网络层：分组（packet）或IP数据报<br>        数据链路层：帧（frame）<br>        物理层：比特流（bit stram）</p>
+<h3 id="3、服务"><a href="#3、服务" class="headerlink" title="3、服务"></a>3、服务</h3><p>（1）概念<br>        在协议的控制下，两个对等实体之间的逻辑通信使得本层能够向上一层提供服务。	要实现本层协议，还需要使用下一层所提供的服务。	<font color="#dd0000">协议是水平的，服务是垂直</font>的。	实体看得见相邻下层提供的服务，但并不知道实现该服务的具体协议。也就是说下面的协议对上面的实体是<font color="#dd0000">“透明”</font>的。<br>（2）<font color="#dd0000">服务访问点</font>是指在同一系统中，<font color="#dd0000">相邻两个实体交换信息的逻辑接口</font>，用于区分不同的服务类型。<br>        数据链路层的服务访问点为帧的“类型”字段。<br>        网络层的服务访问点为IP数据报首部中的“协议字段”。<br>        运输层的服务访问点为“窗口号”。<br>(3)<font color="#dd0000">服务原语</font>是指上层使用下层所提供的服务必须通过与下层交换的一些命令。<br>(4)<font color="#dd0000">服务数据单元</font>SDU是指统一系统内，层与层之间交换的数据包。	多个SDU可以合成为一个PDU；一个SUP也可以划分为多个PDU。</p>
+<h1 id="二、参考文献"><a href="#二、参考文献" class="headerlink" title="二、参考文献"></a>二、参考文献</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1c4411d7jb?share_source=copy_web">b站湖科大教书匠计算机网络视频</a></p>
 
                 
             </div>
@@ -1057,13 +989,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/16/ge-ren-bo-ke-da-jian/">
+                <a href="/2021/12/16/ji-suan-ji-wang-luo-zheng-li-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="个人博客搭建">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="计算机网络整理（二）">
                         
-                        <span class="card-title">个人博客搭建</span>
+                        <span class="card-title">计算机网络整理（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1078,11 +1010,23 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Gengtianba
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1091,16 +1035,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/21/pycharm-she-zhi/">
+                <a href="/2021/12/16/ji-suan-ji-wang-luo-zheng-li-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="pycharm设置">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="计算机网络整理（一）">
                         
-                        <span class="card-title">pycharm设置</span>
+                        <span class="card-title">计算机网络整理（一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1111,15 +1055,28 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Gengtianba
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
                 </div>
                 
             </div>
