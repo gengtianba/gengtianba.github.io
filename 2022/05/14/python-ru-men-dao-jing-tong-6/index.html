@@ -1,0 +1,2139 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="day6-用Python解决各种工作问题, Gengtianba&#39;s Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>day6-用Python解决各种工作问题 | Gengtianba&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Gengtianba's Blog" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Gengtianba&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Gengtianba&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">day6-用Python解决各种工作问题</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%88%B0%E7%B2%BE%E9%80%9A7%E5%A4%A9%E9%80%9F%E6%88%90/" class="post-category">
+                                Python零基础到精通7天速成
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-05-14
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    35 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记"><a href="#本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记" class="headerlink" title="本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记"></a>本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记</h3><h3 id="视频链接-Python零基础到精通7天速成"><a href="#视频链接-Python零基础到精通7天速成" class="headerlink" title="视频链接:Python零基础到精通7天速成"></a>视频链接:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Gf4y1q7SG?share_source=copy_web">Python零基础到精通7天速成</a></h3><span id="more"></span>
+<h1 id="一、模块和包"><a href="#一、模块和包" class="headerlink" title="一、模块和包"></a>一、模块和包</h1><h2 id="（一）什么是模块"><a href="#（一）什么是模块" class="headerlink" title="（一）什么是模块"></a>（一）什么是模块</h2><p>&amp;emsp;&amp;emsp;在计算机程序的开发过程中，随着程序代码越写越多，在⼀个⽂件⾥代码就会越来越⻓，越来越不容易维护。<br>&amp;emsp;&amp;emsp;<font color="#dd0000">为了编写可维护的代码</font>，我们把很多代码按功能分组，分别放到不同的⽂件⾥，这样，每个⽂件包含的代码就相对较少，很多编程语⾔都采⽤这种组织代码的⽅式。<font color="#dd0000">在Python中，⼀个.py⽂件就可以称之为⼀个模块（Module）</font></p>
+<h4 id="使用模块有什么好处"><a href="#使用模块有什么好处" class="headerlink" title="使用模块有什么好处"></a>使用模块有什么好处</h4><p>&amp;emsp;&amp;emsp;最⼤的好处是<font color="#dd0000">⼤⼤提⾼了代码的可维护性</font>。其次，编写代码不必从零开始。<font color="#dd0000">当⼀个模块编写完毕，就可以被其他地⽅引⽤。</font>我们在编写程序的时候，也经常引⽤其他模块，包括Python内置的模块和来⾃第三⽅的模块。</p>
+<p>&amp;emsp;&amp;emsp;<font color="#dd0000">使⽤模块还可以避免函数名和变量名冲突。</font> 每个模块有独⽴的命名空间，因此相同名字的函数和变量完全可以分别存在不同的模块中，所以，我们⾃⼰在编写模块时，不必考虑名字会与其他模块冲突</p>
+<h4 id="模块的分类"><a href="#模块的分类" class="headerlink" title="模块的分类"></a>模块的分类</h4><p>1、内置标准模块（⼜称标准库）执⾏<font color="#dd0000">help(‘modules’)</font>查看所有python⾃带模块列表<br>2、第三⽅开源模块，可通过pip install 模块名联⽹安装<br>3、⾃定义模块</p>
+<h4 id="模块调用"><a href="#模块调用" class="headerlink" title="模块调用"></a>模块调用</h4><pre class="language-python" data-language="python"><code class="language-python">import module_a #导⼊
+from module import xx # 导⼊某个模块下的某个⽅法 or ⼦模块
+from module.xx.xx import xx as rename #导⼊后⼀个⽅法后重命名
+from module.xx.xx import * #导⼊⼀个模块下的所有⽅法，不建议使⽤
+module_a.xxx #调⽤</code></pre>
+<p>※ 注意：<font color="#dd0000">模块⼀旦被调⽤，即相当于执⾏了另外⼀个py⽂件⾥的代码</font></p>
+<h2 id="（二）自定义模块"><a href="#（二）自定义模块" class="headerlink" title="（二）自定义模块"></a>（二）自定义模块</h2><p>&amp;emsp;&amp;emsp;这个最简单， 创建⼀个.py⽂件，就可以称之为模块，就可以在另外⼀个程序⾥导⼊</p>
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/68ed3adc3b70448fb63a27a232db1868.png" width = 80%>
+</div>
+
+<h2 id="（六）模块查找路径"><a href="#（六）模块查找路径" class="headerlink" title="（六）模块查找路径"></a>（六）模块查找路径</h2><p>&amp;emsp;&amp;emsp;Python导入模块时会自动在系统环境变量中寻找需要导入的模块或包，如果找不到就会报错。</p>
+<pre class="language-python" data-language="python"><code class="language-python">import sys
+
+# def sayhi():
+#     print(&#39;我是被调用的&#39;)
+# 
+# print(&#39;哈哈哈哈&#39;)
+
+print(sys.path)
+# output:
+# [&#39;C:\\Users\\Geng\\Desktop\\我在b站学编程\\python\\day6&#39;, 
+#  &#39;C:\\Users\\Geng\\Desktop\\我在b站学编程\\python&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\python39.zip&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\DLLs&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages&#39;, 
+#  &#39;C:\\Program Files (x86)\\ArcGIS\\Desktop10.6\\bin&#39;, 
+#  &#39;C:\\Program Files (x86)\\ArcGIS\\Desktop10.6\\ArcPy&#39;, 
+#  &#39;C:\\Program Files (x86)\\ArcGIS\\Desktop10.6\\ArcToolBox\\Scripts&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages\\locket-0.2.1-py3.9.egg&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages\\win32&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages\\win32\\lib&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages\\Pythonwin&#39;]</code></pre>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><div align=center>
+<img src="https://img-blog.csdnimg.cn/cd5052f2b00348f9a75a43e62528a000.png" width = 50%>
+</div>
+&emsp;&emsp;使用绝对导入的方法在day6课件下的import_test模块中导入my_first_mode模块。
+
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>1、先获取到import_test模块的所有系统环境变量（sys.path()），发现不包括day6<br>2、将其绝对路径向上移动一层到day6后并添加到系统环境变量中</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class="language-python" data-language="python"><code class="language-python">import sys
+import os
+
+print(sys.path)  # 打印文件的调用路径列表，发现my_first_mode所在的day6文件夹并不在调用列表中
+print(__file__)  # 打印当前模块绝对位置
+print(os.path.dirname(__file__))  # 打印当前位置的上一层（课件）
+print(os.path.dirname(os.path.dirname(__file__)))  # 打印当前位置的上二层（day6）
+
+base_path &#x3D; os.path.dirname(os.path.dirname(__file__))  # 因为my_first_mode在day6文件夹
+sys.path.append(base_path)
+import my_first_mode</code></pre>
+<h2 id="（七）第三方开源模块"><a href="#（七）第三方开源模块" class="headerlink" title="（七）第三方开源模块"></a>（七）第三方开源模块</h2><p>&amp;emsp;&amp;emsp;<a target="_blank" rel="noopener" href="https://pypi.org/">https://pypi.org/</a> 是python的开源模块库，截⽌2022年5.15⽇，已经收录了375,660个来⾃全世界python开发者贡献的模块,⼏乎涵盖了你想⽤python做的任何事情。 事实上每个python开发者，只要注册⼀个账号就可以往这个平台上传你⾃⼰的模块，这样全世界的开发者都可以容易的下载并使⽤你的模块。</p>
+<h4 id="下载方法"><a href="#下载方法" class="headerlink" title="下载方法"></a>下载方法</h4><p>1、 直接在上⾯这个⻚⾯上点download,下载后，解压并进⼊⽬录，执⾏以下命令完成安装</p>
+<pre class="language-python" data-language="python"><code class="language-python">编译源码
+python setup.py build 
+安装源码
+python setup.py install</code></pre>
+<p>2、直接通过pip安装</p>
+<pre class="language-python" data-language="python"><code class="language-python">pip3 install paramiko #paramiko 是模块名</code></pre>
+<p>pip命令会⾃动下载模块包并完成安装。软件⼀般会被⾃动安装你python安装⽬录的这个⼦⽬录⾥</p>
+<pre class="language-none"><code class="language-none">&#x2F;your_python_install_path&#x2F;3.6&#x2F;lib&#x2F;python3.6&#x2F;site-packages</code></pre>
+<p>&amp;emsp;&amp;emsp;pip命令默认会连接在国外的python官⽅服务器下载，速度⽐较慢，你还可以使⽤国内的⾖瓣源，数据会定期同步国外官⽹，速度快好多</p>
+<pre class="language-none"><code class="language-none">pip install -i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F; alex_sayhi --trusted-host
+pypi.douban.com #alex_sayhi是模块名</code></pre>
+<p>-i 后⾯跟的是⾖瓣源地址</p>
+<pre class="language-—trusted-host" data-language="—trusted-host"><div class="caption"><span>```得加上，是通过⽹站https安全验证⽤的</span></div><code class="language-—trusted-host">
+
+## （三）什么是包
+&amp;emsp;&amp;emsp;若你写的项⽬较复杂，有很多代码⽂件的话，为了⽅便管理，可以⽤包来管理。 &lt;font color&#x3D;&quot;#dd0000&quot;&gt;**⼀个包其实就是⼀个⽂件⽬录，**&lt;&#x2F;font&gt;你可以把属于同⼀个业务线的代码⽂件都放在同⼀个包⾥。
+#### 如何创建包
+&amp;emsp;&amp;emsp;只需要&lt;font color&#x3D;&quot;#dd0000&quot;&gt;**在⽬录下创建⼀个空的 __init__.py ⽂件 ，**&lt;&#x2F;font&gt; 这个⽬录就变成了包。这个⽂件叫包的初始化⽂件，⼀般为空，当然也可以写东⻄，&lt;font color&#x3D;&quot;#dd0000&quot;&gt;**当你调⽤这个包下及其任意⼦包的的任意模块时， 这个 __init__.py ⽂件都会先执⾏。**&lt;&#x2F;font&gt;
+
+#### 示例
+以下有a、b 2个包，a2是a的⼦包，b2是b的⼦包
+&lt;div align&#x3D;center&gt;
+&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;3c9cda86f9a344789f214b6872685226.png&quot; width &#x3D; 50%&gt;
+&lt;&#x2F;div&gt;
+
+#### 若在a_module.py模块⾥导⼊b2_mod.py的话，怎么办？
+&amp;emsp;&amp;emsp;a_module.py的⽂件路径为：
+&#96;&#96;&#96;python
+print(__file__)
+# output: C:\Users\Geng\Desktop\我在b站学编程\python\day6\课件\a\a2\a_module.py</code></pre>
+<p>&amp;emsp;&amp;emsp;想导⼊成功，直接写以下代码就可以</p>
+<pre class="language-none"><code class="language-none">from day6.课件.b.b2 import b2_mod</code></pre>
+<p>&amp;emsp;&amp;emsp;为何从day6开始？⽽不是从 python 或课件开始呢？<br>&amp;emsp;&amp;emsp;因为你的系统环境变量（sys.path()）列表⾥，已经添加了顶级包（python）的路径.<font color="#dd0000"><strong>pycharm会自动将该模块所在位置和该模块的顶级包加入sys.path</strong></font></p>
+<pre class="language-python" data-language="python"><code class="language-python">print(sys.path)
+# output: 
+# [&#39;C:\\Users\\Geng\\Desktop\\我在b站学编程\\python\\day6\\课件\\a\\a2&#39;,
+#  &#39;C:\\Users\\Geng\\Desktop\\我在b站学编程\\python&#39;,  # 就是这个啦
+#  &#39;C:\\Users\\Geng\\anaconda3\\python39.zip&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\DLLs&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages&#39;,
+#  &#39;C:\\Program Files (x86)\\ArcGIS\\Desktop10.6\\bin&#39;, 
+#  &#39;C:\\Program Files (x86)\\ArcGIS\\Desktop10.6\\ArcPy&#39;, 
+#  &#39;C:\\Program Files (x86)\\ArcGIS\\Desktop10.6\\ArcToolBox\\Scripts&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages\\locket-0.2.1-py3.9.egg&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages\\win32&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages\\win32\\lib&#39;, 
+#  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages\\Pythonwin&#39;]
+</code></pre>
+<h1 id="二、常用模块-os-amp-sys"><a href="#二、常用模块-os-amp-sys" class="headerlink" title="二、常用模块-os&amp;sys"></a>二、常用模块-os&amp;sys</h1><h2 id="（一）系统调⽤OS模块"><a href="#（一）系统调⽤OS模块" class="headerlink" title="（一）系统调⽤OS模块"></a>（一）系统调⽤OS模块</h2><p>&amp;emsp;&amp;emsp;os 模块提供了很多允许你的程序与操作系统直接交互的功能</p>
+<pre class="language-python" data-language="python"><code class="language-python">import os
+得到当前⼯作⽬录，即当前Python脚本⼯作的⽬录路径: os.getcwd()
+返回指定⽬录下的所有⽂件和⽬录名:os.listdir()
+函数⽤来删除⼀个⽂件:os.remove()
+删除多个⽬录：os.removedirs（r“c：\python”）
+检验给出的路径是否是⼀个⽂件：os.path.isfile()
+检验给出的路径是否是⼀个⽬录：os.path.isdir()
+判断是否是绝对路径：os.path.isabs()
+检验给出的路径是否真地存:os.path.exists()
+返回⼀个路径的⽬录名和⽂件名:os.path.split() e.g
+os.path.split(&#39;&#x2F;home&#x2F;swaroop&#x2F;byte&#x2F;code&#x2F;poem.txt&#39;) 结果：
+(&#39;&#x2F;home&#x2F;swaroop&#x2F;byte&#x2F;code&#39;, &#39;poem.txt&#39;)
+分离扩展名：os.path.splitext() e.g os.path.splitext(&#39;&#x2F;usr&#x2F;local&#x2F;test.py&#39;)
+ 结果：(&#39;&#x2F;usr&#x2F;local&#x2F;test&#39;, &#39;.py&#39;)
+获取路径名：os.path.dirname()
+获得绝对路径: os.path.abspath()
+获取⽂件名：os.path.basename()
+运⾏shell命令: os.system()
+读取操作系统环境变量HOME的值:os.getenv(&quot;HOME&quot;)
+返回操作系统所有的环境变量： os.environ
+设置系统环境变量，仅程序运⾏时有效：os.environ.setdefault(&#39;HOME&#39;,&#39;&#x2F;home&#x2F;alex&#39;)
+给出当前平台使⽤的⾏终⽌符:os.linesep Windows使⽤&#39;\r\n&#39;，Linux and MAC使⽤&#39;\n&#39;
+指示你正在使⽤的平台：os.name 对于Windows，它是&#39;nt&#39;，⽽对于Linux&#x2F;Unix⽤户，它
+是&#39;posix&#39;
+重命名：os.rename（old， new）
+创建多级⽬录：os.makedirs（r“c：\python\test”）
+创建单个⽬录：os.mkdir（“test”）
+获取⽂件属性：os.stat（file）
+修改⽂件权限与时间戳：os.chmod（file）
+获取⽂件⼤⼩：os.path.getsize（filename）
+结合⽬录名与⽂件名：os.path.join(dir,filename)
+改变⼯作⽬录到dirname: os.chdir(dirname)
+获取当前终端的⼤⼩: os.get_terminal_size()
+杀死进程: os.kill(10884,signal.SIGKILL)</code></pre>
+<h2 id="（二）sys模块"><a href="#（二）sys模块" class="headerlink" title="（二）sys模块"></a>（二）sys模块</h2><h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><pre class="language-python" data-language="python"><code class="language-python">sys.path()  # 以列表形式返回系统环境变量
+sys.argv()  # 获取脚本参数</code></pre>
+
+<h1 id="三、常用模块-time-amp-datetime"><a href="#三、常用模块-time-amp-datetime" class="headerlink" title="三、常用模块-time&amp;datetime"></a>三、常用模块-time&amp;datetime</h1><h2 id="（一）基本概念"><a href="#（一）基本概念" class="headerlink" title="（一）基本概念"></a>（一）基本概念</h2><p>&amp;emsp;&amp;emsp;在平常的代码中，我们常常需要与时间打交道。在Python中，与时间处理有关的模块就包括：time，datetime,calendar(很少⽤，不讲)，下⾯分别来介绍。</p>
+<h4 id="写程序时对时间的处理可以归为以下3种："><a href="#写程序时对时间的处理可以归为以下3种：" class="headerlink" title="写程序时对时间的处理可以归为以下3种："></a>写程序时对时间的处理可以归为以下3种：</h4><p><strong>时间的显示</strong>，在屏幕显示、记录⽇志等 “2022-03-04”<br><strong>时间的转换</strong>，⽐如把字符串格式的⽇期转成Python中的⽇期类型<br><strong>时间的运算</strong>，计算两个⽇期间的差值等</p>
+<h4 id="在Python中，通常有这⼏种⽅式来表示时间："><a href="#在Python中，通常有这⼏种⽅式来表示时间：" class="headerlink" title="在Python中，通常有这⼏种⽅式来表示时间："></a>在Python中，通常有这⼏种⽅式来表示时间：</h4><p><strong>1. 时间戳（timestamp）</strong>, 表示的是从1970年1⽉1⽇00:00:00开始按秒计算的偏移量，<font color="#dd0000"><strong>用于时间的计算。</strong></font>例⼦：1554864776.161901<br><strong>2. 格式化的时间字符串</strong>，⽐如“2020-10-03 17:54”<font color="#dd0000"><strong>用于时间的显示。</strong></font><br><strong>3. 时间对象：</strong>元组（struct_time）共九个元素，由于Python的time模块实现主要调⽤C库，所以各个平台可能有所不同，mac上：time.struct_time(tm_year&#x3D;2020, tm_mon&#x3D;4, tm_mday&#x3D;10, tm_hour&#x3D;2, tm_min&#x3D;53, tm_sec&#x3D;15, tm_wday&#x3D;2, tm_yday&#x3D;100, tm_isdst&#x3D;0)</p>
+<pre class="language-python" data-language="python"><code class="language-python">索引（Index） 属性（Attribute） 值（Values）
+0 tm_year（年） ⽐如2011
+1 tm_mon（⽉） 1 - 12
+2 tm_mday（⽇） 1 - 31
+3 tm_hour（时） 0 - 23
+4 tm_min（分） 0 - 59
+5 tm_sec（秒） 0 - 61
+6 tm_wday（weekday） 0 - 6（0表示周⼀）
+7 tm_yday（⼀年中的第⼏天） 1 - 366
+8 tm_isdst（是否是夏令时） 默认为-1</code></pre>
+<p><strong>UTC时间</strong><br>&amp;emsp;&amp;emsp;UTC（Coordinated Universal Time，世界协调时）亦即格林威治天⽂时间，世界标准时间。在中国为UTC+8，⼜称东8区。DST（Daylight Saving Time）即夏令时。</p>
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/c4fba89d5c0e44ada45f43c4e18238c2.png" width = 80%>
+</div>
+
+<h2 id="（二）time模块的常⽤⽅法"><a href="#（二）time模块的常⽤⽅法" class="headerlink" title="（二）time模块的常⽤⽅法"></a>（二）time模块的常⽤⽅法</h2><pre class="language-python" data-language="python"><code class="language-python">import time
+
+# 1、计算机中的时间：时间戳
+time_stamp &#x3D; time.time()
+print(time_stamp)  # output：1652668353.8377407
+
+# 2、将时间戳和时间对象的转化
+# 时间戳转为时间对象
+time_struct &#x3D; time.localtime()  # 将时间戳转化为时间对象
+time_struct_zero &#x3D; time.gmtime()  # 将时间戳转化为零时区的时间对象
+print(time_struct)  # output：time.struct_time(tm_year&#x3D;2022, tm_mon&#x3D;5, tm_mday&#x3D;16, tm_hour&#x3D;10, tm_min&#x3D;25, tm_sec&#x3D;57, tm_wday&#x3D;0, tm_yday&#x3D;136, tm_isdst&#x3D;0)
+print(time_struct_zero)  # output：time.struct_time(tm_year&#x3D;2022, tm_mon&#x3D;5, tm_mday&#x3D;16, tm_hour&#x3D;2, tm_min&#x3D;25, tm_sec&#x3D;57, tm_wday&#x3D;0, tm_yday&#x3D;136, tm_isdst&#x3D;0)
+# 时间对象转为时间戳
+time_stamp1 &#x3D; time.mktime(time_struct)
+print(time_stamp1)  # output: 1652668353.0
+
+# 3、时间对象和时间字符串的转化
+# 时间对象转化为时间字符串
+time_str &#x3D; time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)
+print(time_str)  # 2022-05-16 10:34:15
+# 时间字符串转化为时间对象
+time_struct1 &#x3D; time.strptime(time_str, &#39;%Y-%m-%d %H:%M:%S&#39;)
+print(time_struct1)  # output:time.struct_time(tm_year&#x3D;2022, tm_mon&#x3D;5, tm_mday&#x3D;16, tm_hour&#x3D;10, tm_min&#x3D;34, tm_sec&#x3D;15, tm_wday&#x3D;0, tm_yday&#x3D;136, tm_isdst&#x3D;-1)
+
+# 4、sleep
+s_time &#x3D; time.time()
+print(s_time)  # output:1652670953.2851179
+time.sleep(3)
+e_time &#x3D; time.time()
+print(e_time)  # output：1652670956.2869053</code></pre>
+<h4 id="字符串转时间格式对应表"><a href="#字符串转时间格式对应表" class="headerlink" title="字符串转时间格式对应表"></a>字符串转时间格式对应表</h4><div align=center>
+<img src="https://img-blog.csdnimg.cn/ebc2d679d63440f8b9ca4c545323846d.png" width = 80%>
+</div>
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/d6aee8de24f6464eab702e73657bac77.png" width = 80%>
+</div>
+
+<h4 id="最后为了容易记住转换关系，看下图"><a href="#最后为了容易记住转换关系，看下图" class="headerlink" title="最后为了容易记住转换关系，看下图"></a>最后为了容易记住转换关系，看下图</h4><div align=center>
+<img src="https://img-blog.csdnimg.cn/d88a02b06aad491e9dd115a22bfcd822.png" width = 80%>
+</div>
+
+<h2 id="（三）datetime模块"><a href="#（三）datetime模块" class="headerlink" title="（三）datetime模块"></a>（三）datetime模块</h2><p>&amp;emsp;&amp;emsp;相⽐于time模块，datetime模块的接⼝则更直观、更容易调⽤</p>
+<h4 id="datetime模块定义了下⾯这⼏个类："><a href="#datetime模块定义了下⾯这⼏个类：" class="headerlink" title="datetime模块定义了下⾯这⼏个类："></a>datetime模块定义了下⾯这⼏个类：</h4><pre class="language-python" data-language="python"><code class="language-python">datetime.date： # 表示⽇期的类。常⽤的属性有year, month, day
+datetime.time： # 表示时间的类。常⽤的属性有hour, minute, second, microsecond
+datetime.datetime： # 表示⽇期时间
+datetime.timedelta： # 表示时间间隔，即两个时间点之间的⻓度
+datetime.tzinfo： # 与时区有关的相关信息。（这⾥不详细充分讨论该类，感兴趣的童鞋可以参考python⼿册）</code></pre>
+<h4 id="我们需要记住的⽅法仅以下⼏个："><a href="#我们需要记住的⽅法仅以下⼏个：" class="headerlink" title="我们需要记住的⽅法仅以下⼏个："></a>我们需要记住的⽅法仅以下⼏个：</h4><pre class="language-python" data-language="python"><code class="language-python">d&#x3D;datetime.datetime.now()  # 返回当前的datetime⽇期类型, d.timestamp(),d.today(),d.year,d.timetuple()等⽅法可以调⽤
+datetime.date.fromtimestamp(322222)  # 把⼀个时间戳转为datetime⽇期类型</code></pre>
+<h4 id="时间运算"><a href="#时间运算" class="headerlink" title="时间运算"></a><font color="#dd0000">时间运算</font></h4><pre class="language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; datetime.datetime.now()
+datetime.datetime(2017, 10, 1, 12, 53, 11, 821218)
+&gt;&gt;&gt; datetime.datetime.now() + datetime.timedelta(4) #当前时间 +4天
+datetime.datetime(2017, 10, 5, 12, 53, 35, 276589)
+&gt;&gt;&gt; datetime.datetime.now() + datetime.timedelta(hours&#x3D;4) #当前时间+4⼩时
+datetime.datetime(2017, 10, 1, 16, 53, 42, 876275)</code></pre>
+<h4 id="时间替换"><a href="#时间替换" class="headerlink" title="时间替换"></a><font color="#dd0000">时间替换</font></h4><pre class="language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; d.replace(year&#x3D;2999,month&#x3D;11,day&#x3D;30)
+datetime.date(2999, 11, 30)</code></pre>
+<h1 id="四、常用模块-random"><a href="#四、常用模块-random" class="headerlink" title="四、常用模块-random"></a>四、常用模块-random</h1><p>&amp;emsp;&amp;emsp;程序中有很多地⽅需要⽤到随机字符，⽐如登录⽹站的随机验证码，通过random模块可以很容易⽣成随机字符串</p>
+<pre class="language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; random.randrange(1,10) #返回1-10之间的⼀个随机数，不包括10
+&gt;&gt;&gt; random.randint(1,10) #返回1-10之间的⼀个随机数，包括10
+&gt;&gt;&gt; random.randrange(0, 100, 2) #随机选取0到100间的偶数
+&gt;&gt;&gt; random.random() #返回⼀个随机浮点数
+&gt;&gt;&gt; random.choice(&#39;abce3#$@1&#39;) #返回⼀个给定数据集合中的随机字符
+&#39;#&#39;
+&gt;&gt;&gt; random.sample(&#39;abcdefghij&#39;,3) #从多个字符中选取特定数量的字符
+[&#39;a&#39;, &#39;d&#39;, &#39;b&#39;]
+#⽣成随机字符串
+&gt;&gt;&gt; import string
+&gt;&gt;&gt; &#39;&#39;.join(random.sample(string.ascii_lowercase + string.digits, 6))
+&#39;4fvda1&#39;
+#洗牌
+&gt;&gt;&gt; a
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+&gt;&gt;&gt; random.shuffle(a)
+&gt;&gt;&gt; a
+[3, 0, 7, 2, 1, 6, 5, 8, 9, 4]</code></pre>
+<h1 id="五、常用模块-json序列"><a href="#五、常用模块-json序列" class="headerlink" title="五、常用模块-json序列"></a>五、常用模块-json序列</h1><h2 id="（一）概念"><a href="#（一）概念" class="headerlink" title="（一）概念"></a>（一）概念</h2><p>&amp;emsp;&amp;emsp;JSON(JavaScriptObject Notation, JS 对象简谱) 是⼀种轻量级的数据交换格式。它采⽤完全独⽴于编程<br>语⾔的⽂本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语⾔。 易于⼈阅读和编写，同时也易于机器解析和⽣成，并有效地提升⽹络传输效率。</p>
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/ca4b4eb7be0d4b6d98b0b08c4a6f384b.png" width = 80%>
+</div>
+&emsp;&emsp;Json的作⽤是⽤于不同语⾔接⼝间的数据交换，⽐如你把python的list、dict直接扔给javascript, 它是解析不了的。两个语⾔互相谁也不认识。Json就像是计算机界的英语 ，可以帮各个语⾔之间实现数据类型的相互转换。
+
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/ec2fd65decbe488dada8c667ce3e1673.png" width = 80%>
+</div>
+
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/01d31de8b16646778a1ab4ceaa56d76d.png" width = 80%>
+</div>
+
+<h4 id="JSON⽀持的数据类型"><a href="#JSON⽀持的数据类型" class="headerlink" title="JSON⽀持的数据类型"></a>JSON⽀持的数据类型</h4><p>&amp;emsp;&amp;emsp;Python中的字符串、数字、列表、字典、集合、布尔类型，都可以被序列化成JSON字符串，被其它任何编程语⾔解析</p>
+<h4 id="什么是序列化？"><a href="#什么是序列化？" class="headerlink" title="什么是序列化？"></a>什么是序列化？</h4><p>&amp;emsp;&amp;emsp;序列化是指把内存⾥的数据类型转变成字符串，以使其能存储到硬盘或通过⽹络传输到远程，因为硬盘或⽹络传输时只能接受bytes</p>
+<h4 id="为什么要序列化？"><a href="#为什么要序列化？" class="headerlink" title="为什么要序列化？"></a>为什么要序列化？</h4><p>&amp;emsp;&amp;emsp;你打游戏过程中，打累了，停下来，关掉游戏、想过2天再玩，2天之后，游戏⼜从你上次停⽌的地⽅继续运⾏，你上次游戏的进度肯定保存在硬盘上了，是以何种形式呢？游戏过程中产⽣的很多临时数据是不规律的，可能在你关掉游戏时正好有10个列表，3个嵌套字典的数据集合在内存⾥，需要存下来？你如何存？把列表变成⽂件⾥的多⾏多列形式？那嵌套字典呢？根本没法存。所以，若是有种办法可以直接把内存数据存到硬盘上，下次程序再启动，再从硬盘上读回来，还是原来的格式的话，那是极好的。</p>
+<h4 id="⽤于序列化的两个模块"><a href="#⽤于序列化的两个模块" class="headerlink" title="⽤于序列化的两个模块"></a>⽤于序列化的两个模块</h4><p>1、json，⽤于字符串和python数据类型间进⾏转换<br>2、pickle，⽤于python特有的类型和 python的数据类型间进⾏转换</p>
+<h4 id="pickle"><a href="#pickle" class="headerlink" title="pickle"></a>pickle</h4><p>模块提供了四个功能：dumps、dump、loads、load</p>
+<pre class="language-python" data-language="python"><code class="language-python">import pickle
+data &#x3D; &#123;&#39;k1&#39;:123,&#39;k2&#39;:&#39;Hello&#39;&#125;
+# pickle.dumps 将数据通过特殊的形式转换位只有python语⾔认识的字符串
+p_str &#x3D; pickle.dumps(data) # 注意dumps会把数据变成bytes格式
+print(p_str)
+# pickle.dump 将数据通过特殊的形式转换位只有python语⾔认识的字符串，并写⼊⽂件
+with open(&#39;result.pk&#39;,&quot;wb&quot;) as fp:
+ pickle.dump(data,fp)
+# pickle.load 从⽂件⾥加载
+f &#x3D; open(&quot;result.pk&quot;,&quot;rb&quot;)
+d &#x3D; pickle.load(f)
+print(d)</code></pre>
+<h4 id="json"><a href="#json" class="headerlink" title="json"></a>json</h4><p>Json模块也提供了四个功能：dumps、dump、loads、load，⽤法跟pickle⼀致</p>
+<pre class="language-python" data-language="python"><code class="language-python">import json
+# json.dumps 将数据通过特殊的形式转换位所有程序语⾔都认识的字符串
+j_str &#x3D; json.dumps(data) # 注意json dumps⽣成的是字符串，不是bytes
+print(j_str)
+#dump⼊⽂件
+with open(&#39;result.json&#39;,&#39;w&#39;) as fp:
+ json.dump(data,fp)
+#从⽂件⾥load
+with open(&quot;result.json&quot;) as f:
+ d &#x3D; json.load(f)
+ print(d)</code></pre>
+<h4 id="json-vs-pickle"><a href="#json-vs-pickle" class="headerlink" title="json vs pickle:"></a>json vs pickle:</h4><p><strong>json</strong><br>优点：跨语⾔(不同语⾔间的数据传递可⽤json交接)、体积⼩<br>缺点：只能⽀持int\str\list\tuple\dict<br><strong>Pickle</strong><br>优点：专为python设计，⽀持python所有的数据类型<br>缺点：只能在python中使⽤，存储数据占空间⼤</p>
+<h1 id="六、常用模块-excel处理"><a href="#六、常用模块-excel处理" class="headerlink" title="六、常用模块-excel处理"></a>六、常用模块-excel处理</h1><p>&amp;emsp;&amp;emsp;第3⽅开源模块,安装</p>
+<pre class="language-python" data-language="python"><code class="language-python">pip install openpyxl</code></pre>
+<h2 id="（一）打开⽂件"><a href="#（一）打开⽂件" class="headerlink" title="（一）打开⽂件"></a>（一）打开⽂件</h2><h4 id="1、创建"><a href="#1、创建" class="headerlink" title="1、创建"></a>1、创建</h4><pre class="language-python" data-language="python"><code class="language-python">from openpyxl import Workbook
+# 实例化
+wb &#x3D; Workbook()
+# 获取当前active的sheet
+ws &#x3D; wb.active
+print(sheet.title) # 打印sheet表名
+sheet.title &#x3D; &quot;salary luffy&quot; # 改sheet 名</code></pre>
+
+<h4 id="2、打开已有⽂件"><a href="#2、打开已有⽂件" class="headerlink" title="2、打开已有⽂件"></a>2、打开已有⽂件</h4><pre class="language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; from openpyxl import load_workbook
+&gt;&gt;&gt; wb2 &#x3D; load_workbook(&#39;⽂件名称.xlsx&#39;)</code></pre>
+<h2 id="（二）增删改查"><a href="#（二）增删改查" class="headerlink" title="（二）增删改查"></a>（二）增删改查</h2><h4 id="1、写数据"><a href="#1、写数据" class="headerlink" title="1、写数据"></a>1、写数据</h4><pre class="language-python" data-language="python"><code class="language-python"># ⽅式⼀：数据可以直接分配到单元格中(可以输⼊公式)
+sheet[&quot;C5&quot;] &#x3D; &quot;Hello ⾦⻆⼤王&quot;
+sheet[&quot;C7&quot;] &#x3D; &quot;Hello ⾦⻆⼤王2&quot;
+# ⽅式⼆：可以附加⾏，从第⼀列开始附加(从最下⽅空⽩处，最左开始)(可以输⼊多⾏)
+sheet.append([1, 2, 3])
+# ⽅式三：Python 类型会被⾃动转换
+sheet[&#39;A3&#39;] &#x3D; datetime.datetime.now().strftime(&quot;%Y-%m-%d&quot;)</code></pre>
+
+<h4 id="2、选择表"><a href="#2、选择表" class="headerlink" title="2、选择表"></a>2、选择表</h4><pre class="language-python" data-language="python"><code class="language-python"># sheet 名称可以作为 key 进⾏索引
+ws3 &#x3D; wb[&quot;New Title&quot;]
+ws4 &#x3D; wb.get_sheet_by_name(&quot;New Title&quot;)
+print(wb.get_sheet_names()) # 打印所有的sheet
+sheet &#x3D; wb.worksheets[0] # 获得第1个sheet</code></pre>
+
+<h4 id="3、保存表"><a href="#3、保存表" class="headerlink" title="3、保存表"></a>3、保存表</h4><pre class="language-python" data-language="python"><code class="language-python">wb.save(&#39;⽂件名称.xlsx&#39;)</code></pre>
+<h4 id="4、删除工作表"><a href="#4、删除工作表" class="headerlink" title="4、删除工作表"></a>4、删除工作表</h4><pre class="language-python" data-language="python"><code class="language-python"># ⽅式⼀
+wb.remove(sheet)
+# ⽅式⼆
+del wb[sheet]</code></pre>
+
+<h2 id="（三）花式遍历表数据"><a href="#（三）花式遍历表数据" class="headerlink" title="（三）花式遍历表数据"></a>（三）花式遍历表数据</h2><h4 id="1、按行遍历"><a href="#1、按行遍历" class="headerlink" title="1、按行遍历"></a>1、按行遍历</h4><pre class="language-python" data-language="python"><code class="language-python">for row in sheet: # 循环获取表数据
+    for cell in row: # 循环获取每个单元格数据
+        print(cell.value, end&#x3D;&quot;,&quot;)
+    print()</code></pre>
+
+<h4 id="2、按列遍历"><a href="#2、按列遍历" class="headerlink" title="2、按列遍历"></a>2、按列遍历</h4><pre class="language-python" data-language="python"><code class="language-python"># A1, A2, A3这样的顺序
+for column in sheet.columns:
+    for cell in column:
+        print(cell.value,end&#x3D;&quot;,&quot;)
+    print()</code></pre>
+
+<h4 id="3、遍历指定⾏-amp-列"><a href="#3、遍历指定⾏-amp-列" class="headerlink" title="3、遍历指定⾏&amp;列"></a>3、遍历指定⾏&amp;列</h4><pre class="language-python" data-language="python"><code class="language-python"># 从第2⾏开始⾄第5⾏，每⾏打印5列
+for row in sheet.iter_rows(min_row&#x3D;2,max_row&#x3D;5,max_col&#x3D;5):
+    for cell in row:
+        print(cell.value,end&#x3D;&quot;,&quot;)
+    print()</code></pre>
+
+<h4 id="4、遍历指定⼏列的数据-取得第2到第5列的数据"><a href="#4、遍历指定⼏列的数据-取得第2到第5列的数据" class="headerlink" title="4、遍历指定⼏列的数据-取得第2到第5列的数据"></a>4、遍历指定⼏列的数据-取得第2到第5列的数据</h4><pre class="language-python" data-language="python"><code class="language-python">for col in sheet.iter_cols(min_col&#x3D;2,max_col&#x3D;5,):
+    for i in col:
+        print(i.value,end&#x3D;&quot;,&quot;)
+    print()</code></pre>
+
+<h2 id="（四）设置单元格样式"><a href="#（四）设置单元格样式" class="headerlink" title="（四）设置单元格样式"></a>（四）设置单元格样式</h2><h4 id="1、需导⼊的类"><a href="#1、需导⼊的类" class="headerlink" title="1、需导⼊的类"></a>1、需导⼊的类</h4><pre class="language-python" data-language="python"><code class="language-python">from openpyxl.styles import Font, colors, Alignment</code></pre>
+
+<h4 id="2、字体"><a href="#2、字体" class="headerlink" title="2、字体"></a>2、字体</h4><p>&amp;emsp;&amp;emsp;下⾯的代码指定了等线24号，加粗斜体，字体颜⾊红⾊。直接使⽤cell的font属性，将Font对象赋值给它。</p>
+<pre class="language-python" data-language="python"><code class="language-python">bold_itatic_24_font &#x3D; Font(name&#x3D;&#39;等线&#39;, size&#x3D;24, italic&#x3D;True, color&#x3D;colors.RED,
+bold&#x3D;True) # 声明样式
+sheet[&#39;A1&#39;].font &#x3D; bold_itatic_24_font # 给单元格设置样式</code></pre>
+<h4 id="3、对齐方式"><a href="#3、对齐方式" class="headerlink" title="3、对齐方式"></a>3、对齐方式</h4><p>&amp;emsp;&amp;emsp;也是直接使⽤cell的属性aligment，这⾥指定垂直居中和⽔平居中。除了center，还可以使⽤right、left<br>等等参数。</p>
+<pre class="language-python" data-language="python"><code class="language-python"># 设置B1中的数据垂直居中和⽔平居中
+sheet[&#39;B1&#39;].alignment &#x3D; Alignment(horizontal&#x3D;&#39;center&#39;, vertical&#x3D;&#39;center&#39;)</code></pre>
+
+<h4 id="4、设置⾏⾼-amp-列宽"><a href="#4、设置⾏⾼-amp-列宽" class="headerlink" title="4、设置⾏⾼&amp;列宽"></a>4、设置⾏⾼&amp;列宽</h4><pre class="language-python" data-language="python"><code class="language-python"># 第2⾏⾏⾼
+sheet.row_dimensions[2].height &#x3D; 40
+# C列列宽
+sheet.column_dimensions[&#39;C&#39;].width &#x3D; 30</code></pre>
+<h2 id="（五）小练习"><a href="#（五）小练习" class="headerlink" title="（五）小练习"></a>（五）小练习</h2><h4 id="练习数据-iris"><a href="#练习数据-iris" class="headerlink" title="练习数据-iris"></a>练习数据-iris</h4><pre class="language-none"><code class="language-none">序号,sepal_length(cm),sepal_width(cm),petal_length(cm),petal_width(cm),outcome
+0,5.1,3.5,1.4,0.2,o
+1,4.9,3,1.4,0.2,0
+2,4.7,3.2,1.3,0.2,0
+3,4.6,31,1.5,0.2,0
+4,5,3.6,1.4,0.2,0
+5,5.4,3.9,1.7,0.4,0
+6,4.6,3.4,1.4,0.3,0
+7,5,3.4,1.5,0.2,0
+8,4.4,2.9,1.4,0.2,0
+9,4.9,3.1,1.5,0.1,0
+10,5.4,3.7,1.5,0.2,0
+11,4.8,3.4,1.6,0.2,0
+12,4.8,3,1.4,0.1,0
+13,4.3,3,1.1,0.1,0
+14,5.8,4,1.2,0.2,0
+15,5.7,4.4,1.5,0.4,0
+16,5.4,3.9,1.3,0.4,0
+17,5.1,3.5,1.4,0.3,0
+18,5.7,3.8,1.7,0.3,0
+19,5.1,3.8,1.5,0.3,0
+20,5.4,3.4,1.7,0.2,0
+21,5.1,3.7,1.5,0.4,0
+22,4.6,3.6,1,0.2,0
+23,5.1,3.3,1.7,0.5,0
+24,4.8,3.4,1.9,0.2,0
+25,5,3,1.6,0.2,0
+26,5,3.4,1.6,0.4,0
+27,5.2,3.5,1.5,0.2,0
+28,5.2,3.4,1.4,0.2,0
+29,4.7,3.2,1.6,0.2,0
+30,4.8,3.1,1.6,0.2,0
+31,5.4,3.4,1.5,0.4,0
+32,5.2,4.1,1.5,0.1,0
+33,5.5,4.2,1.4,0.2,0
+34,4.9,3.1,1.5,0.2,0
+35,5,3.2,1.2,0.2,0
+36,5.5,3.5,1.3,0.2,0
+37,4.9,3.6,1.4,0.1,0
+38,4.4,3,1.3,0.2,0
+39,5.1,3.4,1.5,0.2,0
+40,5,3.5,1.3,0.3,0
+41,4.5,2.3,1.3,0.3,0
+42,4.4,3.2,1.3,0.2,0
+43,5,3.5,1.6,0.6,0
+44,5.1,3.8,1.9,0.4,0
+45,4.8,3,1.4,0.3,0
+46,5.1,3.8,1.6,0.2,0
+47,4.6,3.2,1.4,0.2,0
+48,5.3,3.7,1.5,0.2,0
+49,5,3.3,1.4,0.2,0
+50,7,3.2,4.7,1.4,1</code></pre>
+
+<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>1、创建iris.xlsx文件，导入上述数据<br>2、新增一行数据，51	6.4	3.2	4.5	1.5	1<br>3、将C5改为31,F2改为0<br>4、分别按行、按列遍历数据<br>5、获取第5行到第22行，C到E列的数据<br>6、将D9单元格字体设为新罗马24号，加粗斜体，字体颜⾊红⾊<br>7、将D9单元格指定垂直居中和⽔平居中</p>
+<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><pre class="language-python" data-language="python"><code class="language-python">from openpyxl import Workbook
+from openpyxl.styles import Font, colors, Alignment
+# 1、创建iris.xlsx文件，导入数据
+# file_iris &#x3D; open(&#39;iris&#39;, encoding&#x3D;&#39;utf-8&#39;)
+# for line in file_iris:
+
+wb &#x3D; Workbook()  # 实例化Workbook
+sheet &#x3D; wb.active  # 激活该sheet
+sheet.title &#x3D; &#39;iris&#39;  # 更改sheet名称
+
+# 写入数据
+file_iris &#x3D; open(&#39;iris&#39;, encoding&#x3D;&#39;utf-8&#39;)
+for line in file_iris:
+    sheet.append(line.strip().split(&#39;,&#39;))
+
+
+
+# 2、新增一行数据，51	6.4	3.2	4.5	1.5	1
+sheet.append([&#39;51&#39;, &#39;6.4&#39;, &#39;3.2&#39;, &#39;4.5&#39;, &#39;1.5&#39;, &#39;1&#39;])
+
+# 3、将C5改为3.1,F2改为0
+sheet[&#39;C5&#39;] &#x3D; &#39;3.1&#39;
+sheet[&#39;F2&#39;] &#x3D; &#39;0&#39;
+
+# 4、分别按行、按列遍历数据
+# 按行
+for row in sheet:
+    for cell in row:
+        print(cell.value, end&#x3D;&#39;,&#39;)
+    print()
+# 按列
+for col in sheet.columns:
+    for cell in col:
+        print(cell.value, end&#x3D;&#39;,&#39;)
+    print()
+
+# 5、获取第5行到第22行，C到E列的数据
+for row in sheet.iter_cols(min_row&#x3D;5, max_row&#x3D;22, min_col&#x3D;3, max_col&#x3D;5):
+    for cell in row:
+        print(cell.value, end&#x3D;&#39;,&#39;)
+    print()
+
+# 6、将D9单元格字体设为新罗马24号，加粗斜体，字体颜⾊红⾊
+
+my_style &#x3D; Font(name&#x3D;&#39;Times New Roman&#39;, size&#x3D;24, italic&#x3D;True, color&#x3D;colors.COLOR_INDEX[2],bold&#x3D;True)  # 声明样式
+sheet[&#39;D9&#39;].font &#x3D; my_style
+
+# 将D9单元格指定垂直居中和⽔平居中
+sheet[&#39;D9&#39;].alignment &#x3D; Alignment(horizontal&#x3D;&#39;center&#39;, vertical&#x3D;&#39;center&#39;)
+
+# 保存文件
+wb.save(&#39;iris.xlsx&#39;)</code></pre>
+<h1 id="七、常用模块-邮件发送"><a href="#七、常用模块-邮件发送" class="headerlink" title="七、常用模块-邮件发送"></a>七、常用模块-邮件发送</h1><p>&amp;emsp;&amp;emsp;SMTP（Simple Mail Transfer Protocol）即简单邮件传输协议,它是⼀组⽤于由源地址到⽬的地址传送<br>邮件的规则，由它来控制信件的中转⽅式。</p>
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/7376ab924d6c4cde93a5a37608acc310.png" width = 80%>
+</div>
+
+<h4 id="想实现发送邮件需经过以下⼏步："><a href="#想实现发送邮件需经过以下⼏步：" class="headerlink" title="想实现发送邮件需经过以下⼏步："></a>想实现发送邮件需经过以下⼏步：</h4><p>1、登录 邮件服务器<br>2、构造符合邮件协议规则要求的邮件内容 （email模块）<br>3、发送<br>&amp;emsp;&amp;emsp;Python对SMTP⽀持有smtplib 和 email 两个模块， email 负责构造邮件， smtplib 负责发送邮件,它对smtp协议进⾏了简单的封装。</p>
+<h4 id="发送⼀封最简单的信语法如下："><a href="#发送⼀封最简单的信语法如下：" class="headerlink" title="发送⼀封最简单的信语法如下："></a>发送⼀封最简单的信语法如下：</h4><pre class="language-python" data-language="python"><code class="language-python">import smtplib
+from email.mime.text import MIMEText  # 构造邮件正文
+from email.header import Header  # 邮件头
+
+# 登录邮件服务器
+smtp_obj &#x3D; smtplib.SMTP_SSL(&quot;smtp.qq.com&quot;, 465)  # 发件⼈邮箱中的SMTP服务器，端⼝是25
+smtp_obj.login(&quot;xxxxxxxxxx@qq.com&quot;, &quot;bvidphbzxnsjjdch&quot;)  # 括号中对应的是发件⼈邮箱账号、邮箱密码
+# smtp_obj.set_debuglevel(1) # 显示调试信息
+
+# 设置邮件头信息
+msg &#x3D; MIMEText(&quot;xxxxxxxxxxx&quot;, &quot;plain&quot;, &quot;utf-8&quot;)  # plain表示文件内容为纯文本
+msg[&quot;From&quot;] &#x3D; Header(&quot;xxxxxxxx&quot;, &quot;utf-8&quot;)  # 发送者
+msg[&quot;To&quot;] &#x3D; Header(&quot;xxxxxx&quot;, &quot;utf-8&quot;)  # 接收者
+msg[&quot;Subject&quot;] &#x3D; Header(&quot;xxxxx&quot;, &quot;utf-8&quot;)  # 主题
+
+# 发送
+smtp_obj.sendmail(&quot;xxxxxxxxx@qq.com&quot;, [&quot;xxxxxxxxxx@qq.com&quot;], msg.as_string())  # 接受方可使用列表同时传入多个值</code></pre>
+<p>※ 如何查看发送邮件服务器-以QQ邮箱为例：<br>1、点击设置-账户</p>
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/a752685766854b2f8e18af011e4831a2.png" width = 80%>
+</div>
+2、IMAP/SMTP服务-点击什么是 IMAP，它又是如何设置？
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/a403ea4074b8419ba563ee0992f064dd.png" width = 80%>
+</div>
+3、进入页面
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/7ca6edb3f0b9412e81fea294e32d0eb9.png" width = 80%>
+</div>
+
+<p>※ 如何查看发送邮件服务器-以QQ邮箱为例：msg的[“From”]、[“To”]和[“Subject”]为邮件显示的发送者，接受者和主题，可以自定义smtp_obj.sendmail()中才传入发送方、接收方和内容。</p>
+<div align=center>
+<img src="https://img-blog.csdnimg.cn/3481f353c4a445a290d2eecfb41f8531.png" width = 80%>
+</div>
+
+<h4 id="发送HTML格式的邮件"><a href="#发送HTML格式的邮件" class="headerlink" title="发送HTML格式的邮件"></a>发送HTML格式的邮件</h4><p>&amp;emsp;&amp;emsp;只需要改⼀下 MIMEText() 第2个参数为 html 就可以</p>
+<pre class="language-python" data-language="python"><code class="language-python"># 设置邮件头信息
+mail_body &#x3D; &#39;&#39;&#39;
+ &lt;h5&gt;hello,⼩哥哥&lt;&#x2F;h5&gt;
+ &lt;p&gt;
+ 你好同学 &lt;a
+href&#x3D;&quot;http:&#x2F;&#x2F;wx1.sinaimg.cn&#x2F;mw1024&#x2F;5ff6135fgy1gdnghz2vbsg205k09ob2d.gif&quot;&gt;这是我
+的照⽚&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+ &lt;&#x2F;p&gt;
+&#39;&#39;&#39;
+msg &#x3D; MIMEText(mail_body, &quot;html&quot;, &quot;utf-8&quot;)</code></pre>
+
+<h4 id="在HTML⽂本中插⼊图⽚"><a href="#在HTML⽂本中插⼊图⽚" class="headerlink" title="在HTML⽂本中插⼊图⽚"></a>在HTML⽂本中插⼊图⽚</h4><pre class="language-python" data-language="python"><code class="language-python"># -*- coding:utf-8 -*-
+# created by Alex Li - 路⻜学城
+import smtplib
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.header import Header
+# 登录邮件服务器
+smtp_obj &#x3D; smtplib.SMTP_SSL(&quot;smtp.exmail.qq.com&quot;, 465) # 发件⼈邮箱中的SMTP服务
+器，端⼝是25
+smtp_obj.login(&quot;nami@luffycity.com&quot;, &quot;333dsfsf#$#&quot;) # 括号中对应的是发件⼈邮箱账
+号、邮箱密码
+smtp_obj.set_debuglevel(1) # 显示调试信息
+# 设置邮件头信息
+mail_body &#x3D; &#39;&#39;&#39;
+    &lt;h5&gt;hello,⼩哥哥&lt;&#x2F;h5&gt;
+    &lt;p&gt;
+    你好同学
+    &lt;p&gt;&lt;img src&#x3D;&quot;cid:image1&quot;&gt;&lt;&#x2F;p&gt;
+    &lt;&#x2F;p&gt;
+&#39;&#39;&#39;
+msg_root &#x3D; MIMEMultipart(&#39;related&#39;) # 允许添加附件、图⽚等
+msg_root[&quot;From&quot;] &#x3D; Header(&quot;来⾃娜美的问候&quot;,&quot;utf-8&quot;) # 发送者
+msg_root[&quot;To&quot;] &#x3D; Header(&quot;有缘⼈&quot;,&quot;utf-8&quot;) # 接收者
+msg_root[&quot;Subject&quot;] &#x3D; Header(&quot;娜美的信&quot;,&quot;utf-8&quot;) # 主题
+# 允许添加图⽚
+msgAlternative &#x3D; MIMEMultipart(&#39;alternative&#39;)
+msgAlternative.attach(MIMEText(mail_body, &#39;html&#39;, &#39;utf-8&#39;))
+msg_root.attach(msgAlternative) # 把邮件正⽂内容添加到msg_root⾥
+# 加载图⽚，
+fp &#x3D; open(&#39;girl.jpg&#39;, &#39;rb&#39;)
+msgImage &#x3D; MIMEImage(fp.read())
+fp.close()
+# 定义图⽚ ID，在 HTML ⽂本中引⽤
+msgImage.add_header(&#39;Content-ID&#39;, &#39;&lt;image1&gt;&#39;)
+msg_root.attach(msgImage) # 添加图⽚到msg_root对象⾥
+# 发送
+smtp_obj.sendmail(&quot;nami@luffycity.com&quot;, [&quot;alex@luffycity.com&quot;,
+&quot;317828332@qq.com&quot;], msg_root.as_string())</code></pre>
+<h1 id="实战：给员工自动批量发工资条"><a href="#实战：给员工自动批量发工资条" class="headerlink" title="实战：给员工自动批量发工资条"></a>实战：给员工自动批量发工资条</h1><pre class="language-python" data-language="python"><code class="language-python">from openpyxl import load_workbook
+
+import smtplib
+from email.mime.text import MIMEText  # 构造邮件正文
+from email.header import Header  # 邮件头
+
+
+# 1、登录邮件服务器
+smtp_obj &#x3D; smtplib.SMTP_SSL(&quot;smtp.qq.com&quot;, 465)  # 发件⼈邮箱中的SMTP服务器，端⼝是25
+smtp_obj.login(&quot;xxxxxxxx@qq.com&quot;, &quot;xxxxxxxxxxx&quot;)  # 括号中对应的是发件⼈邮箱账号、授权码
+# smtp_obj.set_debuglevel(1) # 显示调试信息
+
+# 2、构造邮件表格
+wb &#x3D; load_workbook(&#39;工资信息.xlsx&#39;, data_only&#x3D;True)  # 打开已有excel,data_only表示不转入公式
+sheet &#x3D; wb.active  # 激活当前sheet
+
+count_col &#x3D; 0
+for row in sheet.iter_rows(max_row&#x3D;3):
+    print(count_col)
+    # 构造表头
+    if count_col &#x3D;&#x3D; 0:
+        table_head &#x3D; &#39;&lt;thead&gt;&#39;  # 表头用td
+        for cell in row:
+            table_head +&#x3D; f&#39;&lt;th&gt; &#123;cell.value&#125; &lt;&#x2F;th&gt;&#39;
+        table_head +&#x3D; &#39;&lt;&#x2F;thead&gt;&#39;
+        count_col +&#x3D; 1
+        # print(table_head)  # 显示拼接结果
+        continue  # 表头不发送
+
+
+    # 构造表格中其它行
+    else:
+        # print(row[2].value)
+        name &#x3D; row[2].value  # 将变量name储存用于文件头的收件人
+        email &#x3D; row[1].value  # 将变量email储存用于填写发送地址
+        table_row &#x3D; &#39;&lt;tbody&gt;&#39;
+        for cell in row:
+            table_row +&#x3D; f&#39;&lt;td&gt; &#123;cell.value&#125; &lt;&#x2F;td&gt;&#39;
+        table_row +&#x3D; &#39;&lt;&#x2F;tbody&gt;&#39;
+        # print(table_row)  # 显示拼接结果
+
+    # 3、构造邮件正文
+    msg &#x3D; f&#39;&#39;&#39;
+    &lt;h5&gt;这是你的工资：&lt;&#x2F;h5&gt;
+    &lt;table border&#x3D;&quot;1&quot;&gt;
+        &#123;table_head&#125;
+        &#123;table_row&#125;
+    &lt;&#x2F;table&gt;
+
+    &#39;&#39;&#39;
+
+    # 4、设置邮件头信息
+    msg &#x3D; MIMEText(msg, &quot;html&quot;, &quot;utf-8&quot;)  # plain表示文件内容为纯文本
+    msg[&quot;From&quot;] &#x3D; Header(&quot;耿天霸&quot;, &quot;utf-8&quot;)  # 发送者
+    msg[&quot;To&quot;] &#x3D; Header(f&quot;&#123;name&#125;&quot;, &quot;utf-8&quot;)  # 接收者
+    msg[&quot;Subject&quot;] &#x3D; Header(&quot;工资单&quot;, &quot;utf-8&quot;)  # 主题
+    # print(name)
+    # print(email)
+
+    # 5、发送
+    smtp_obj.sendmail(&quot;xxxxxxxx@qq.com&quot;, email, msg.as_string())
+    print(f&#39;&#123;name&#125;邮件已发送成功&#39;)
+
+    count_col +&#x3D; 1</code></pre>
+<h1 id="实战：批量从1000号员工word简历中调取技能关键词"><a href="#实战：批量从1000号员工word简历中调取技能关键词" class="headerlink" title="实战：批量从1000号员工word简历中调取技能关键词"></a>实战：批量从1000号员工word简历中调取技能关键词</h1><pre class="language-python" data-language="python"><code class="language-python">import os
+import docx
+
+
+def get_ket_words(key_list, file_path):
+    &#39;&#39;&#39;
+
+    :param key_list: 需要调取的技能列表[&#39;Python&#39;, &#39;数据分析&#39;, &#39;英语六级&#39;]
+    :param file_path:  包含简历文件夹的绝对路径
+    :return: 返回包含所选关键词的word文档列表[&#39;xxx简历.docx&#39;, &#39;xx简历.docx&#39;]
+    &#39;&#39;&#39;
+
+    words_list &#x3D; []  # 获取路径下所有word文档
+    file_list &#x3D; os.listdir(file_path)
+    for file in file_list:
+        if file[-4:] &#x3D;&#x3D; &#39;docx&#39;:
+            words_list.append(file)
+    # print(words_list)
+
+    text_dic &#x3D; &#123;
+        # &#123;word文件路径: &#39;word文字内容&#39;&#125;
+    &#125;
+    for word in words_list:
+        word_name &#x3D; file_path+ &#39;\\&#39; + word
+        document &#x3D; docx.Document(word_name)
+        all_paragraphs &#x3D; document.paragraphs
+        word_text &#x3D; &#39;&#39;
+        for paragraph in all_paragraphs:
+            word_text +&#x3D; paragraph.text
+        text_dic[word_name] &#x3D; word_text
+    # print(text_dic)
+
+    out_list &#x3D; []
+    for text in text_dic:
+        for key in key_list:
+            if key in text_dic[text]:
+                out_list.append(text)
+
+    return out_list
+
+
+file_path &#x3D; r&#39;C:\Users\Geng\Desktop\我在b站学编程\python\day6\简历&#39;
+out_list &#x3D; get_ket_words([&#39;Python&#39;, &#39;数据分析&#39;, &#39;英语六级&#39;], file_path)
+print(out_list)</code></pre>
+<p>※ 目前只能实现纯文本word的读取</p>
+<h1 id="作业：生成1000张名字不同的学员海报"><a href="#作业：生成1000张名字不同的学员海报" class="headerlink" title="作业：生成1000张名字不同的学员海报"></a>作业：生成1000张名字不同的学员海报</h1>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Gengtianba</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gengtianba.github.io/2022/05/14/python-ru-men-dao-jing-tong-6/">https://gengtianba.github.io/2022/05/14/python-ru-men-dao-jing-tong-6/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Gengtianba</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat,weibo,douban,qzone,linkedin,twitter,facebook,google" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '9YyPLPh0zyJlFMB2ciHdondz-gzGzoHsz',
+        appKey: 'naTQJa37tbxowE4Gm70MF9b6',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/05/19/python-ru-men-dao-jing-tong-7/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="day7-Web开发初探">
+                        
+                        <span class="card-title">day7-Web开发初探</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记视频链接:Python零基础到精通7天速成
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%88%B0%E7%B2%BE%E9%80%9A7%E5%A4%A9%E9%80%9F%E6%88%90/" class="post-category">
+                                    Python零基础到精通7天速成
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/11/python-ru-men-dao-jing-tong-5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="day5-函数编程">
+                        
+                        <span class="card-title">day5-函数编程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记视频链接:Python零基础到精通7天速成
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%88%B0%E7%B2%BE%E9%80%9A7%E5%A4%A9%E9%80%9F%E6%88%90/" class="post-category">
+                                    Python零基础到精通7天速成
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">Gengtianba</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/gengtianba" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1138798275@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1138798275" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1138798275" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
