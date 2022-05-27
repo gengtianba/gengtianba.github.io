@@ -6,7 +6,7 @@
   <link href="https://gengtianba.github.io/atom.xml" rel="self"/>
   
   <link href="https://gengtianba.github.io/"/>
-  <updated>2022-05-26T09:38:22.191Z</updated>
+  <updated>2022-05-27T12:55:15.599Z</updated>
   <id>https://gengtianba.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python模块二day3</title>
+    <link href="https://gengtianba.github.io/2022/05/27/python-mo-kuai-er-day3/"/>
+    <id>https://gengtianba.github.io/2022/05/27/python-mo-kuai-er-day3/</id>
+    <published>2022-05-27T01:22:32.000Z</published>
+    <updated>2022-05-27T12:55:15.599Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;第二模块-函数-amp-模块&quot;&gt;&lt;a href=&quot;#第二模块-函数-amp-模块&quot; class=&quot;headerlink&quot; title=&quot;第二模块 函数&amp;amp;模块&quot;&gt;&lt;/a&gt;第二模块</summary>
+        
+      
+    
+    
+    
+    <category term="路飞学院" scheme="https://gengtianba.github.io/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/"/>
+    
+    
+    <category term="笔记" scheme="https://gengtianba.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="python" scheme="https://gengtianba.github.io/tags/python/"/>
+    
+    <category term="第一阶段" scheme="https://gengtianba.github.io/tags/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>博客搭建</title>
@@ -46,7 +75,7 @@
     <link href="https://gengtianba.github.io/2022/05/26/di-yi-jie-duan-kao-shi/"/>
     <id>https://gengtianba.github.io/2022/05/26/di-yi-jie-duan-kao-shi/</id>
     <published>2022-05-26T09:02:49.000Z</published>
-    <updated>2022-05-26T11:21:46.610Z</updated>
+    <updated>2022-05-26T13:35:58.749Z</updated>
     
     
       

@@ -430,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    18 分
                 </div>
                 
 
@@ -518,7 +518,7 @@
 </li>
 <li><p>变量名的命名规范有哪些？</p>
 <pre class="language-python" data-language="python"><code class="language-python">三条规范：
-1. 是能使用字母，下划线和数字的组合
+1. 只能使用字母，下划线和数字的组合
 2. 不能以数字开头
 3. 不能使用系统保留关键字
 两条建议：
@@ -590,7 +590,7 @@ v2 数据类型：tuple 内部元素 1</code></pre>
 <li><p>dict</p>
 <pre class="language-python" data-language="python"><code class="language-python">增：setdefault()
 删：popitem(), del 
-改：updat()
+改：update()
 查：get(), keys(), values(), items() </code></pre></li>
 </ul>
 </li>
@@ -681,7 +681,7 @@ v1.append(666)
 print(v1)  # [11,22,33,66]
 print(v2)  # [11,22,33,66]</code></pre>
 </li>
-<li><p>看代码写结果</p>
+<li><p><font color="#dd0000">看代码写结果</font></p>
 <pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; [1,2,3,4,5]
 v2 &#x3D; [v1,v1,v1]  # [[1,2,3,4,5], [1,2,3,4,5], [1,2,3,4,5]]
 v2[1][0] &#x3D; 111
@@ -689,6 +689,14 @@ v2[2][0] &#x3D; 222
 
 print(v1)  #  v1 &#x3D; [1,2,3,4,5]
 print(v2)  # [[1,2,3,4,5], [111,2,3,4,5], [222,2,3,4,5]]</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 答案
+# v1, v2指向同一块内存[1,2,3,4,5]，v2[1][0]将[1,2,3,4,5]改为[111,2,3,4,5]，v2[2][0]将[111,222,3,4,5]
+
+print(v1)  # [111,222,3,4,5]
+print(v2)  # [[111,222,3,4,5], [111,222,3,4,5], [111,222,3,4,5]]</code></pre>
+
+
 </li>
 <li><p>写代码实现，循环提示用户输入内容（Q或q终止），并将内容用 “_” 连接起来。</p>
 <pre class="language-python" data-language="python"><code class="language-python">&#39;&#39;&#39;
@@ -772,6 +780,33 @@ info &#x3D; &#123;&#125;
 for location in info_list:
     info[location] &#x3D; len(info_list[location])  # &#123;&#39;鲁&#39;: 1, &#39;沪&#39;: 2, &#39;京&#39;: 2, &#39;黑&#39;: 1, &#39;晋&#39;: 1&#125;
 print(info)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 答案 1
+
+car_list &#x3D; [&#39;鲁A32444&#39;, &#39;沪B12333&#39;, &#39;京B8989M&#39;, &#39;京C49678&#39;, &#39;黑C46555&#39;, &#39;晋B25041&#39;, &#39;沪C34567&#39;]
+result &#x3D; &#123;&#125;
+
+for item in car_list:
+    location &#x3D; item[0]
+    if location not in result:
+        result[location] &#x3D; 1  # 车牌号不在里面，value&#x3D;1（初始化）
+    else:
+        result[location] +&#x3D; 1  # 车牌号在里面，value +&#x3D; 1
+
+print(result)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 答案 2
+
+car_list &#x3D; [&#39;鲁A32444&#39;, &#39;沪B12333&#39;, &#39;京B8989M&#39;, &#39;京C49678&#39;, &#39;黑C46555&#39;, &#39;晋B25041&#39;, &#39;沪C34567&#39;]
+result &#x3D; &#123;&#125;
+
+for item in car_list:
+    location &#x3D; item[0]
+    num &#x3D; result.get(location, 0)  # 如果没有num &#x3D; 0
+    result[location] &#x3D; num + 1  # value &#x3D; 0 + 1
+
+print(result)
+</code></pre>
 
 
 </li>
@@ -986,7 +1021,7 @@ for player in user_list:
             break
 
         # 询问是否继续
-        user_input &#x3D; input(&#39;do you want to continue: &#39;)
+        user_input &#x3D; input(&#39;do you want to continue(输入要或不要): &#39;)
 
         # 非法输入退出
         if user_input !&#x3D; &#39;不要&#39; and user_input !&#x3D; &#39;要&#39;:
