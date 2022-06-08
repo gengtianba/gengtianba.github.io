@@ -1,0 +1,3446 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python模块二day4, Gengtianba&#39;s Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Python模块二day4 | Gengtianba&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Gengtianba's Blog" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Gengtianba&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Gengtianba&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python模块二day4</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/">
+                                <span class="chip bg-color">第二阶段</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/" class="post-category">
+                                路飞学院
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-06-02
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    44 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="十三、函数高级"><a href="#十三、函数高级" class="headerlink" title="十三、函数高级"></a>十三、函数高级</h1><p><img src="/asserts/image-20201228153850400.png" alt="image-20201228153850400"></p>
+<p>课程目标：掌握函数嵌套、闭包、装饰器等高级知识点。</p>
+<p>今日概要：</p>
+<ul>
+<li>函数的嵌套</li>
+<li>闭包</li>
+<li>装饰器</li>
+</ul>
+<p>上述内容均属于函数部分必备知识，以后开发时直接和间接都会使用，请务必理解<font color="#dd0000">（重在理解，不要去死记硬背）。</font></p>
+<h2 id="1-函数嵌套"><a href="#1-函数嵌套" class="headerlink" title="1. 函数嵌套"></a>1. 函数嵌套</h2><p>​		Python中以函数为作用域，在作用域中定义的相关数据只能被当前作用域或子作用域使用。</p>
+<pre class="language-python" data-language="python"><code class="language-python">NAME &#x3D; &quot;武沛齐&quot;
+print(NAME)
+
+def func():
+    print(NAME)
+
+func()</code></pre>
+
+
+
+<h3 id="1-1-函数在作用域中"><a href="#1-1-函数在作用域中" class="headerlink" title="1.1 函数在作用域中"></a>1.1 函数在作用域中</h3><p>​		其实，函数也是定义在作用域中的数据，在执行函数时候，也同样遵循：优先在自己作用域中寻找，没有则向上一接作用域寻找，例如：</p>
+<pre class="language-python" data-language="python"><code class="language-python"># 1. 在全局作用域定义了函数func
+def func():
+    print(&quot;你好&quot;)
+    
+# 2. 在全局作用域找到func函数并执行。
+func()
+
+
+# 3.在全局作用域定义了execute函数
+def execute():
+    print(&quot;开始&quot;)
+    # 优先在当前函数作用域找func函数，没有则向上级作用域中寻找。
+    func()
+    print(&quot;结束&quot;)
+
+# 4.在全局作用域执行execute函数
+execute()</code></pre>
+
+<p>​		此处，有一个易错点：作用域中的值在被调用时到底是啥？</p>
+<ul>
+<li><p>情景1</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(&quot;你好&quot;)
+    
+func()
+
+def execute():
+    print(&quot;开始&quot;)
+    func()
+    print(&quot;结束&quot;)
+    
+execute()
+
+def func():
+    print(666)
+    
+func()</code></pre>
+</li>
+<li><p>情景2</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(&quot;你好&quot;)
+    
+func()
+
+def execute():
+    print(&quot;开始&quot;)
+    func()
+    print(&quot;结束&quot;)
+
+def func():
+    print(666)
+
+func()
+execute()</code></pre></li>
+</ul>
+<h3 id="1-2-函数定义的位置"><a href="#1-2-函数定义的位置" class="headerlink" title="1.2 函数定义的位置"></a>1.2 函数定义的位置</h3><p>​		上述示例中的函数均定义在全局作用域，其实<strong>函数也可以定义在局部作用域</strong>，这样函数被局部作用域和其子作用于中调用<font color="#dd0000">（函数的嵌套）</font>。</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(&quot;沙河高晓松&quot;)
+    
+def handler():
+    print(&quot;昌平吴彦祖&quot;)
+    def inner():
+        print(&quot;朝阳大妈&quot;)
+	inner()
+    func()
+    print(&quot;海淀网友&quot;)
+
+handler()</code></pre>
+
+<p>​		到现在你会发现，只要理解数据定义时所存在的作用域，并根据从上到下代码执行过程进行分析，再怎么嵌套都可以搞定。</p>
+<p>​		现在的你可能有疑问：为什么要这么嵌套定义？把函数都定义在全局不好吗？</p>
+<p>​		其实，大多数情况下老师都会将函数定义在全局，不会嵌套着定义函数。不过，当我们定义一个函数去实现某功能，想要将内部功能拆分成N个函数，又担心这个N个函数放在全局会与其他<strong>函数名冲突</strong>时（尤其多人协同开发）可以<strong>选择使用函数的嵌套</strong>。</p>
+<pre class="language-python" data-language="python"><code class="language-python">def f1():
+    pass
+
+def f2():
+    pass
+
+def func():
+	f1()
+    f2()</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    def f1():
+        pass
+
+    def f2():
+        pass
+	f1()
+    f2()</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">&quot;&quot;&quot;
+生成图片验证码的示例代码，需要提前安装pillow模块（Python中操作图片中一个第三方模块）
+	pip3 install pillow
+&quot;&quot;&quot;
+import random
+from PIL import Image, ImageDraw, ImageFont
+
+
+def create_image_code(img_file_path, text&#x3D;None, size&#x3D;(120, 30), mode&#x3D;&quot;RGB&quot;, bg_color&#x3D;(255, 255, 255)):
+    &quot;&quot;&quot; 生成一个图片验证码 &quot;&quot;&quot;
+    _letter_cases &#x3D; &quot;abcdefghjkmnpqrstuvwxy&quot;  # 小写字母，去除可能干扰的i，l，o，z
+    _upper_cases &#x3D; _letter_cases.upper()  # 大写字母
+    _numbers &#x3D; &#39;&#39;.join(map(str, range(3, 10)))  # 数字
+    chars &#x3D; &#39;&#39;.join((_letter_cases, _upper_cases, _numbers))
+
+    width, height &#x3D; size  # 宽高
+    # 创建图形
+    img &#x3D; Image.new(mode, size, bg_color)
+    draw &#x3D; ImageDraw.Draw(img)  # 创建画笔
+
+    def get_chars():
+        &quot;&quot;&quot;生成给定长度的字符串，返回列表格式&quot;&quot;&quot;
+        return random.sample(chars, 4)
+
+    def create_lines():
+        &quot;&quot;&quot;绘制干扰线&quot;&quot;&quot;
+        line_num &#x3D; random.randint(*(1, 2))  # 干扰线条数
+
+        for i in range(line_num):
+            # 起始点
+            begin &#x3D; (random.randint(0, size[0]), random.randint(0, size[1]))
+            # 结束点
+            end &#x3D; (random.randint(0, size[0]), random.randint(0, size[1]))
+            draw.line([begin, end], fill&#x3D;(0, 0, 0))
+
+    def create_points():
+        &quot;&quot;&quot;绘制干扰点&quot;&quot;&quot;
+        chance &#x3D; min(100, max(0, int(2)))  # 大小限制在[0, 100]
+
+        for w in range(width):
+            for h in range(height):
+                tmp &#x3D; random.randint(0, 100)
+                if tmp &gt; 100 - chance:
+                    draw.point((w, h), fill&#x3D;(0, 0, 0))
+
+    def create_code():
+        &quot;&quot;&quot;绘制验证码字符&quot;&quot;&quot;
+        if text:
+            code_string &#x3D; text
+        else:
+            char_list &#x3D; get_chars()
+            code_string &#x3D; &#39;&#39;.join(char_list)  # 每个字符前后以空格隔开
+
+        # Win系统字体
+        # font &#x3D; ImageFont.truetype(r&quot;C:\Windows\Fonts\SEGOEPR.TTF&quot;, size&#x3D;24)
+        # Mac系统字体
+        # font &#x3D; ImageFont.truetype(&quot;&#x2F;System&#x2F;Library&#x2F;Fonts&#x2F;SFNSRounded.ttf&quot;, size&#x3D;24)
+        # 项目字体文件
+        font &#x3D; ImageFont.truetype(&quot;STKAITI.TTF&quot;, size&#x3D;15)
+        draw.text([0, 0], code_string, &quot;red&quot;, font&#x3D;font)
+        return code_string
+
+    create_lines()
+    create_points()
+    code &#x3D; create_code()
+
+    # 将图片写入到文件
+    with open(img_file_path, mode&#x3D;&#39;wb&#39;) as img_object:
+        img.save(img_object)
+    return code
+
+
+code &#x3D; create_image_code(&quot;a2.png&quot;, &#39;耿天霸&#39;)
+print(code)
+</code></pre>
+
+
+
+<h3 id="1-3-嵌套引发的作用域问题"><a href="#1-3-嵌套引发的作用域问题" class="headerlink" title="1.3 嵌套引发的作用域问题"></a>1.3 嵌套引发的作用域问题</h3><p>基于内存和执行过程分析作用域。</p>
+<pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;
+
+def run():
+    name &#x3D; &quot;alex&quot;
+    def inner():
+        print(name)
+	inner()
+    
+run()</code></pre>
+
+<p><img src="/asserts/image-20201229131739455.png" alt="image-20201229131739455"></p>
+<pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;
+
+def run():
+    name &#x3D; &quot;alex&quot;
+    def inner():
+        print(name)
+	return inner
+    
+v1 &#x3D; run()
+v1()
+
+v2 &#x3D; run()
+v2()</code></pre>
+
+<p><img src="/asserts/image-20201229132237241.png" alt="image-20201229132237241"></p>
+<pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;
+
+def run():
+    name &#x3D; &quot;alex&quot;
+    def inner():
+        print(name)
+	return [inner,inner,inner]
+    
+func_list &#x3D; run()
+func_list[2]()
+func_list[1]()
+
+funcs &#x3D; run()
+funcs[2]()
+funcs[1]()</code></pre>
+
+<p><img src="/asserts/image-20201229132648896.png" alt="image-20201229132648896"></p>
+<p><font color="#dd0000"><strong>三句话搞定作用域：</strong></font></p>
+<ul>
+<li><strong>优先在自己的作用域找，自己没有就去上级作用域。</strong></li>
+<li><strong>在作用域中寻找值时，要确保此次此刻值是什么。</strong></li>
+<li><strong>分析函数的执行，并确定函数<code>作用域链</code>。（函数嵌套）</strong></li>
+</ul>
+<h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><ol>
+<li><p>分析代码，写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &#39;武沛齐&#39;
+
+def func():
+    def inner():
+        print(name)
+    res &#x3D; inner()
+    return res
+
+v &#x3D; func()
+print(v)
+
+# 武沛齐
+# None</code></pre>
+
+<img src="asserts/image-20220605203420301.png" alt="image-20220605203420301" style="zoom:25%;" />
+</li>
+<li><p>分析代码，写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &#39;武沛齐&#39;
+
+def func():
+    def inner():
+        print(name)
+        return &quot;alex&quot;
+    res &#x3D; inner()
+	return res
+
+v &#x3D; func()
+print(v)</code></pre>
+
+<img src="asserts/image-20220605204008387.png" alt="image-20220605204008387" style="zoom:25%;" />
+</li>
+<li><p>分析代码，写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &#39;root&#39;
+
+def func():
+    def inner():
+        print(name)
+        return &#39;admin&#39;
+    return inner
+
+v &#x3D; func()
+result &#x3D; v()
+print(result)</code></pre>
+
+<img src="asserts/image-20220605204559954.png" alt="image-20220605204559954" style="zoom:25%;" />
+</li>
+<li><p>分析代码，写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    name &#x3D; &#39;武沛齐&#39;
+    def inner():
+        print(name) 
+        return &#39;路飞&#39;
+    return inner
+
+v11 &#x3D; func()
+data &#x3D; v11()
+print(data)
+
+
+v2 &#x3D; func()()
+print(v2)
+
+# 输出
+武沛齐
+路飞
+武沛齐
+路飞</code></pre>
+</li>
+<li><p>分析代码，写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func(name):
+    # name&#x3D;&quot;alex&quot;
+    def inner():
+        print(name)
+        return &#39;luffy&#39;
+    return inner
+
+v1 &#x3D; func(&#39;武沛齐&#39;)()
+print(v1)
+
+v2 &#x3D; func(&#39;alex&#39;)()
+print(v2)</code></pre>
+
+<p><img src="/asserts/image-20201229140559322.png" alt="image-20201229140559322"></p>
+<pre class="language-python" data-language="python"><code class="language-python">def func(name):
+    def inner():
+        print(name)
+        return &#39;luffy&#39;
+    return inner
+
+v1 &#x3D; func(&#39;武沛齐&#39;)
+v2 &#x3D; func(&#39;alex&#39;)
+v1()
+v2()</code></pre>
+
+<p><img src="/asserts/image-20201229165929911.png" alt="image-20201229165929911"></p>
+</li>
+<li><p>分析代码，写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func(name&#x3D;None):
+    if not name:
+        name&#x3D; &#39;武沛齐&#39;
+    def inner():
+        print(name)
+        return &#39;root&#39;
+    return inner
+
+v1 &#x3D; func()()
+v2 &#x3D; func(&#39;alex&#39;)()
+print(v1,v2)
+
+# 武沛齐
+# alex
+# root root</code></pre>
+
+<p><img src="/asserts/image-20201229171258454.png" alt="image-20201229171258454"></p>
+</li>
+</ol>
+<h2 id="2-闭包"><a href="#2-闭包" class="headerlink" title="2.闭包"></a>2.闭包</h2><p>​		闭包，简而言之就是将数据封装在一个包（区域）中，使用时再去里面取。（本质上 闭包是基于函数嵌套搞出来一个中特殊嵌套）</p>
+<ul>
+<li><p>闭包应用场景1：封装数据防止污染全局（<strong>使用较少，了解即可</strong>）。</p>
+<pre class="language-python" data-language="python"><code class="language-python"># 函数f4不会用到name变量，因此可以定义函数func，在func内定义变量name，并将f1，f2，f3封装到func内
+
+name &#x3D; &quot;武沛齐&quot;
+
+def f1():
+    print(name, age)
+
+def f2():
+	print(name, age)
+
+def f3():
+	print(name, age)
+    
+def f4():
+    pass</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">def func(age):
+    name &#x3D; &quot;武沛齐&quot;
+
+    def f1():
+        print(name, age)
+
+    def f2():
+        print(name, age)
+
+    def f3():
+        print(name, age)
+
+    f1()
+    f2()
+    f3()
+
+def f4()
+	pass
+
+func(123)</code></pre>
+
+
+</li>
+<li><p>闭包应用场景2：<strong>封装数据封到一个包里，使用时在取。</strong><br><img src="/asserts/image-20201229181719550.png" alt="image-20201229181719550"></p>
+<pre class="language-python" data-language="python"><code class="language-python">def task(arg):
+    def inner():
+        print(arg)
+    return inner
+
+v1 &#x3D; task(11)
+v2 &#x3D; task(22)
+v3 &#x3D; task(33)
+v1()
+v2()
+v3()</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">def task(arg):
+    def inner():
+        print(arg)
+    return inner
+
+inner_func_list &#x3D; []
+for val in [11,22,33]:
+    inner_func_list.append( task(val) )
+    
+inner_func_list[0]() # 11
+inner_func_list[1]() # 22
+inner_func_list[2]() # 33</code></pre>
+
+<h4 id="案例：下载多个视频"><a href="#案例：下载多个视频" class="headerlink" title="案例：下载多个视频"></a><font color="#dd0000"><strong>案例</strong></font>：下载多个视频</h4><pre class="language-python" data-language="python"><code class="language-python"># ############### 原来方式：串行 ###############
+import requests
+video_list &#x3D; [
+    (&quot;东北F4模仿秀.mp4&quot;, &quot;https:&#x2F;&#x2F;aweme.snssdk.com&#x2F;aweme&#x2F;v1&#x2F;playwm&#x2F;?video_id&#x3D;v0300f570000bvbmace0gvch7lo53oog&quot;),
+    (&quot;卡特扣篮.mp4&quot;, &quot;https:&#x2F;&#x2F;aweme.snssdk.com&#x2F;aweme&#x2F;v1&#x2F;playwm&#x2F;?video_id&#x3D;v0200f3e0000bv52fpn5t6p007e34q1g&quot;),
+    (&quot;罗斯mvp.mp4&quot;, &quot;https:&#x2F;&#x2F;aweme.snssdk.com&#x2F;aweme&#x2F;v1&#x2F;playwm&#x2F;?video_id&#x3D;v0200f240000buuer5aa4tij4gv6ajqg&quot;)
+]
+for item in video_list:
+    res &#x3D; requests.get(
+        url&#x3D;item[1],
+        headers&#x3D;&#123;
+            &quot;user-agent&quot;: &quot;Mozilla&#x2F;5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;87.0.4280.88 Safari&#x2F;537.36 FS&quot;
+        &#125;
+    )
+    with open(item[0], mode&#x3D;&#39;wb&#39;) as file_object:
+        file_object.write(res.content)
+</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">&quot;&quot;&quot; 基于多线程去下载视频 &quot;&quot;&quot;
+from concurrent.futures.thread import ThreadPoolExecutor
+
+import requests
+
+
+def download_video(url):
+    res &#x3D; requests.get(
+        url&#x3D;url,
+        headers&#x3D;&#123;
+            &quot;user-agent&quot;: &quot;Mozilla&#x2F;5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;87.0.4280.88 Safari&#x2F;537.36 FS&quot;
+        &#125;
+    )
+    return res.content
+
+
+def outer(file_name):
+    def write_file(response):
+        content &#x3D; response.result()
+        with open(file_name, mode&#x3D;&#39;wb&#39;) as file_object:
+            file_object.write(content)
+
+    return write_file
+
+
+POOL &#x3D; ThreadPoolExecutor(10)
+
+video_dict &#x3D; [
+    (&quot;东北F4模仿秀.mp4&quot;, &quot;https:&#x2F;&#x2F;aweme.snssdk.com&#x2F;aweme&#x2F;v1&#x2F;playwm&#x2F;?video_id&#x3D;v0300f570000bvbmace0gvch7lo53oog&quot;),
+    (&quot;卡特扣篮.mp4&quot;, &quot;https:&#x2F;&#x2F;aweme.snssdk.com&#x2F;aweme&#x2F;v1&#x2F;playwm&#x2F;?video_id&#x3D;v0200f3e0000bv52fpn5t6p007e34q1g&quot;),
+    (&quot;罗斯mvp.mp4&quot;, &quot;https:&#x2F;&#x2F;aweme.snssdk.com&#x2F;aweme&#x2F;v1&#x2F;playwm&#x2F;?video_id&#x3D;v0200f240000buuer5aa4tij4gv6ajqg&quot;)
+]
+for item in video_dict:
+    future &#x3D; POOL.submit(download_video, url&#x3D;item[1])
+    future.add_done_callback(outer(item[0]))
+
+POOL.shutdown()</code></pre>
+
+<p><img src="/asserts/image-20201229185549102.png" alt="image-20201229185549102"></p>
+</li>
+</ul>
+<h2 id="3-装饰器"><a href="#3-装饰器" class="headerlink" title="3.装饰器"></a>3.装饰器</h2><p>​		现在给你一个函数，在不修改函数源码的前提下，实现在函数执行前和执行后分别输入 “before” 和 “after”。</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(&quot;我是func函数&quot;)
+    value &#x3D; (11,22,33,44) 
+    return value
+    
+result &#x3D; func()
+print(result)</code></pre>
+
+
+
+<h3 id="3-1-第一回合"><a href="#3-1-第一回合" class="headerlink" title="3.1 第一回合"></a>3.1 第一回合</h3><p>你的实现思路：</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(&quot;before&quot;)
+    
+    print(&quot;我是func函数&quot;)
+    value &#x3D; (11,22,33,44) 
+    
+    print(&quot;after&quot;)
+    
+    return value
+    
+result &#x3D; func()</code></pre>
+
+
+
+<p>老师的实现思路：</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(&quot;我是func函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+def outer(origin):
+    def inner():
+        print(&#39;inner&#39;)
+        origin()
+        print(&quot;after&quot;)
+
+    return inner
+
+func &#x3D; outer(func)
+result &#x3D; func()</code></pre>
+
+<p>处理返回值：</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(&quot;我是func函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+def outer(origin):
+    def inner():
+        print(&#39;inner&#39;)
+        res &#x3D; origin()
+        print(&quot;after&quot;)
+        return res
+    return inner
+
+func &#x3D; outer(func)
+result &#x3D; func()</code></pre>
+
+
+
+<h3 id="3-2-第二回合"><a href="#3-2-第二回合" class="headerlink" title="3.2 第二回合"></a>3.2 第二回合</h3><p>在Python中有个一个特殊的语法糖：</p>
+<pre class="language-python" data-language="python"><code class="language-python">&#39;&#39;&#39;
+在Python中有个一个特殊的语法糖：
+@函数名
+def xxx():
+    pass
+
+python内部会自动执行 函数名(xxx)， 并将结果赋值为xxx
+等价于：
+xxx &#x3D; 函数名(xxx)
+&#39;&#39;&#39;
+
+# 老师的思路
+
+
+def outer(origin):
+    def inner():
+        print(&#39;before&#39;)
+        res &#x3D; origin()
+        print(&#39;after&#39;)
+        return res
+    return inner
+
+
+@outer  # func &#x3D; outer(func)
+def func():
+    print(&quot;我是func函数&quot;)
+    value &#x3D; (11,22,33,44)
+    return value
+
+
+func()
+</code></pre>
+
+
+
+<h3 id="3-3-第三回合"><a href="#3-3-第三回合" class="headerlink" title="3.3 第三回合"></a>3.3 第三回合</h3><p>请在这3个函数执行前和执行后分别输入 “before” 和 “after”</p>
+<pre class="language-python" data-language="python"><code class="language-python">&#39;&#39;&#39;
+3个函数执行前和执行后分别输入 &quot;before&quot; 和 &quot;after&quot;
+&#39;&#39;&#39;
+
+
+def outer(origin):
+    def inner():
+        print(&quot;before 110&quot;)
+        res &#x3D; origin()  # 调用原来的func函数
+        print(&quot;after&quot;)
+        return res
+
+    return inner
+
+
+@outer  # func1 &#x3D; outer(func1)
+def func1():
+    print(&quot;我是func1函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+@outer  # func2 &#x3D; outer(func2)
+def func2():
+    print(&quot;我是func2函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+@outer  # func3 &#x3D; outer(func3)
+def func3():
+    print(&quot;我是func3函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+func1()
+func2()
+func3()</code></pre>
+
+
+
+<p>你的实现思路：</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func1():
+    print(&#39;before&#39;)
+    print(&quot;我是func1函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    print(&quot;after&quot;)
+    return value
+    
+    
+def func2():
+    print(&#39;before&#39;)
+    print(&quot;我是func2函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    print(&quot;after&quot;)
+    return value
+    
+def func3():
+    print(&#39;before&#39;)
+    print(&quot;我是func3函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    print(&quot;after&quot;)
+    return value
+    
+func1()
+func2()
+func3()</code></pre>
+
+
+
+<p>老师的实现思路：</p>
+<pre class="language-python" data-language="python"><code class="language-python">&#39;&#39;&#39;
+3个函数执行前和执行后分别输入 &quot;before&quot; 和 &quot;after&quot;
+&#39;&#39;&#39;
+
+
+def outer(origin):
+    def inner():
+        print(&quot;before 110&quot;)
+        res &#x3D; origin()  # 调用原来的func函数
+        print(&quot;after&quot;)
+        return res
+
+    return inner
+
+
+@outer  # func1 &#x3D; outer(func1)
+def func1():
+    print(&quot;我是func1函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+@outer  # func2 &#x3D; outer(func2)
+def func2():
+    print(&quot;我是func2函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+@outer  # func3 &#x3D; outer(func3)
+def func3():
+    print(&quot;我是func3函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+func1()
+func2()
+func3()</code></pre>
+
+<p>​		<strong>装饰器</strong>，在不修改原函数内容的前提下，通过@函数可以实现在函数前后自定义执行一些功能<font color="#dd0000"><strong>（批量操作会更有意义）。</strong></font></p>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>优化以支持多个参数的情况。</p>
+<pre class="language-python" data-language="python"><code class="language-python">&#39;&#39;&#39;
+3个函数执行前和执行后分别输入 &quot;before&quot; 和 &quot;after&quot;,并且每个函数都有参数
+&#39;&#39;&#39;
+
+
+def outer(origin):
+    def inner(*args, **kwargs):
+        print(&quot;before 110&quot;)
+        origin(*args, **kwargs)  # 调用原来的func函数
+        print(&quot;after&quot;)
+
+    return inner
+
+
+@outer  # func1 &#x3D; outer(func1)
+def func1(a1):
+    print(&quot;我是func1函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+@outer  # func2 &#x3D; outer(func2)
+def func2(a1):
+    print(&quot;我是func2函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+@outer  # func3 &#x3D; outer(func3)
+def func3(a1, a2):
+    print(&quot;我是func3函数&quot;)
+    value &#x3D; (11, 22, 33, 44)
+    return value
+
+
+# func1、2、3 函数本质上是在执行outer返回的inner函数，
+# 要想在func1、2、3中传入各种参数
+# 就要在inner函数内部能接受各种参数  *args**kwargs
+# 同时在inner内部调用origin的时候也要传入对应参数
+func1(1)
+func2(a1&#x3D;2)
+func3(1, a2&#x3D;3)
+</code></pre>
+
+
+
+<p>其中，老师的那种写法就称为装饰器。</p>
+<ul>
+<li>实现原理：基于@语法和函数闭包，将原函数封装在闭包中，然后将函数赋值为一个新的函数（内层函数），执行函数时再在内层函数中执行闭包中的原函数。</li>
+<li>实现效果：可以在不改变原函数内部代码 和 调用方式的前提下，实现在函数执行和执行扩展功能。</li>
+<li>适用场景：多个函数系统统一在 执行前后自定义一些功能。</li>
+</ul>
+<h3 id="伪应用场景"><a href="#伪应用场景" class="headerlink" title="伪应用场景"></a>伪应用场景</h3><p>​		在以后编写一个网站时，如果项目共有100个页面，其中99个是需要登录成功之后才有权限访问，就可以基于装饰器来实现。</p>
+<pre class="language-none"><code class="language-none">pip3 install flask</code></pre>
+
+<p>基于第三方模块Flask（框架）快速写一个网站：</p>
+<pre class="language-python" data-language="python"><code class="language-python">from flask import Flask
+
+app &#x3D; Flask(__name__)
+
+
+def index():
+    return &quot;首页&quot;
+
+
+def info():
+    return &quot;用户中心&quot;
+
+
+def order():
+    return &quot;订单中心&quot;
+
+
+def login():
+    return &quot;登录页面&quot;
+
+
+app.add_url_rule(&quot;&#x2F;index&#x2F;&quot;, view_func&#x3D;index)
+app.add_url_rule(&quot;&#x2F;info&#x2F;&quot;, view_func&#x3D;info)
+app.add_url_rule(&quot;&#x2F;login&#x2F;&quot;, view_func&#x3D;login)
+
+app.run()</code></pre>
+
+<p>​		<strong>注意事项：在网址后面加上&#x2F;index&#x2F;…才能显示。</strong></p>
+<p>基于装饰器实现的伪代码：</p>
+<pre class="language-python" data-language="python"><code class="language-python">from flask import Flask
+
+app &#x3D; Flask(__name__)
+
+
+def auth(func):
+    def inner(*args, **kwargs):
+        # 在此处，判断如果用户是否已经登录，已登录则显示首页，未登录则自动跳转到登录页面。
+        return func(*args, **kwargs)
+
+    return inner
+
+
+@auth
+def index():
+    return &quot;首页&quot;
+
+
+@auth
+def info():
+    return &quot;用户中心&quot;
+
+
+@auth
+def order():
+    return &quot;订单中心&quot;
+
+
+def login():
+    return &quot;登录页面&quot;
+
+
+app.add_url_rule(&quot;&#x2F;index&#x2F;&quot;, view_func&#x3D;index, endpoint&#x3D;&#39;index&#39;)
+app.add_url_rule(&quot;&#x2F;info&#x2F;&quot;, view_func&#x3D;info, endpoint&#x3D;&#39;info&#39;)
+app.add_url_rule(&quot;&#x2F;order&#x2F;&quot;, view_func&#x3D;order, endpoint&#x3D;&#39;order&#39;)
+app.add_url_rule(&quot;&#x2F;login&#x2F;&quot;, view_func&#x3D;login, endpoint&#x3D;&#39;login&#39;)
+
+app.run()
+</code></pre>
+
+
+
+<h3 id="重要补充：functools"><a href="#重要补充：functools" class="headerlink" title="重要补充：functools"></a>重要补充：functools</h3><p>​		你会发现装饰器实际上就是将原函数更改为其他的函数，然后再此函数中再去调用原函数。</p>
+<pre class="language-python" data-language="python"><code class="language-python">def handler():
+    pass
+
+handler()
+print(handler.__name__) # handler</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">def auth(func):
+    def inner(*args, **kwargs):
+        return func(*args, **kwargs)
+    return inner
+
+@auth
+def handler():
+    pass
+
+handler()
+print(handler.__name__) # inner</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">import functools
+
+def auth(func):
+    @functools.wraps(func)
+    def inner(*args, **kwargs):
+        return func(*args, **kwargs)
+    return inner
+
+@auth
+def handler():
+    pass
+
+handler()
+print(handler.__name__)  # handler</code></pre>
+
+<p>​		其实，一般情况下大家不用functools也可以实现装饰器的基本功能，但后期<strong>在项目开发时，不加functools会出错（内部会读取<code>__name__</code>，且<code>__name__</code>重名的话就报错）</strong>，所以在此大家就要规范起来自己的写法。</p>
+<h3 id="面试题：手写装饰器示例"><a href="#面试题：手写装饰器示例" class="headerlink" title="面试题：手写装饰器示例"></a>面试题：<font color="#dd0000"><strong>手写装饰器示例</strong></font></h3><pre class="language-python" data-language="python"><code class="language-python">import functools
+
+
+def auth(func):
+    @functools.wraps(func)
+    def inner(*args, **kwargs):
+        &quot;&quot;&quot;巴巴里吧&quot;&quot;&quot;
+        # 加入功能
+        res &#x3D; func(*args, **kwargs)  # 执行原函数
+        # 加入功能
+        return res
+
+    return inner</code></pre>
+
+
+
+
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li><p>函数可以定义在全局、也可以定义另外一个函数中（函数的嵌套）</p>
+</li>
+<li><p>学会<strong>分析函数执行的步骤（内存中作用域的管理）</strong></p>
+</li>
+<li><p><strong>闭包</strong>，基于函数的嵌套，可以将数据封装到一个包中，以后再去调用。</p>
+</li>
+<li><p><font color="#dd0000"><strong>装饰器</strong></font><strong>装饰器</strong></p>
+<ul>
+<li><p>实现原理：基于@语法和函数闭包，将原函数封装在闭包中，然后将函数赋值为一个新的函数（内层函数），执行函数时再在内层函数中执行闭包中的原函数。</p>
+</li>
+<li><p>实现效果：可以在不改变原函数内部代码 和 调用方式的前提下，实现在函数执行和执行扩展功能。</p>
+</li>
+<li><p>适用场景：多个函数系统统一在 执行前后自定义一些功能。</p>
+</li>
+<li><p><font color="#dd0000"><strong>装饰器示例</strong></font></p>
+<pre class="language-python" data-language="python"><code class="language-python">import functools
+
+
+def auth(func):
+    @functools.wraps(func)
+    def inner(*args, **kwargs):
+        &quot;&quot;&quot;巴巴里吧&quot;&quot;&quot;
+        res &#x3D; func(*args, **kwargs)  # 执行原函数
+        return res
+
+    return inner</code></pre></li>
+</ul>
+</li>
+</ol>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><ol>
+<li><p>请为以下所有函数编写一个装饰器，添加上装饰器后可以实现：执行func时，先执行func函数内部代码，再输出 “after”</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func(a1):
+    return a1 + &quot;傻叉&quot;
+
+def base(a1,a2):
+    return a1 + a2 + &#39;傻缺&#39;
+
+
+def foo(a1,a2,a3,a4):
+    return a1 + a2 + a3 + a4 + &#39;傻蛋&#39;</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">import functools
+
+
+def outer(origin):
+    @functools.wraps(origin)
+    def inner(*args, **kwargs):
+        &quot;&quot;&quot;inner函数&quot;&quot;&quot;
+
+        # 加入功能
+        res &#x3D; origin(*args, **kwargs)
+        # 加入功能
+        print(&#39;after&#39;)
+        return res
+
+    return inner
+
+
+@outer
+def func(a1):
+    return a1 + &quot;傻叉&quot;
+
+
+@outer
+def base(a1, a2):
+    return a1 + a2 + &#39;傻缺&#39;
+
+
+@outer
+def foo(a1, a2, a3, a4):
+    return a1 + a2 + a3 + a4 + &#39;傻蛋&#39;
+
+
+func(&#39;1&#39;)
+base(&#39;1&#39;, a2&#x3D;&#39;aaa&#39;)
+foo(&#39;aaa&#39;, &#39;bbb&#39;, &#39;ccc&#39;, a4&#x3D;&#39;ddd&#39;)
+</code></pre>
+
+
+</li>
+<li><p>请为以下所有函数编写一个装饰器，添加上装饰器后可以实现：将被装饰的函数执行5次，将每次执行函数的结果按照顺序放到列表中，最终返回列表。</p>
+<pre class="language-python" data-language="python"><code class="language-python">import random 
+
+
+def func():
+    return random.randint(1,4)
+
+result &#x3D; func() # 内部自动执行5次，并将每次执行的结果追加到列表最终返回给result
+print(result) </code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">import functools
+import random
+
+
+def outer(origin):
+    @functools.wraps(origin)
+    def inner(*args, **kwargs):
+        &quot;&quot;&quot;inner 函数&quot;&quot;&quot;
+        # 加入功能
+        count &#x3D; 0
+        out_list &#x3D; []
+        while count &lt; 5:
+            res &#x3D; origin()
+            # 加入功能
+            count +&#x3D; 1
+            out_list.append(res)
+        return out_list
+    return inner
+
+
+@outer
+def func():
+    return random.randint(1,4)
+
+
+result &#x3D; func()
+print(result)
+</code></pre>
+
+
+</li>
+<li><p>请为以下函数编写一个装饰器，添加上装饰器后可以实现： 检查文件所在路径（文件件）是否存在，如果不存在自动创建文件夹（保证写入文件不报错）。</p>
+<pre class="language-python" data-language="python"><code class="language-python">def write_user_info(path):
+    file_obj &#x3D; open(path, mode&#x3D;&#39;w&#39;, encoding&#x3D;&#39;utf-8&#39;)
+    file_obj.write(&quot;武沛齐&quot;)
+    file_obj.close()
+
+write_user_info(&#39;&#x2F;usr&#x2F;bin&#x2F;xxx&#x2F;xxx.png&#39;)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">import functools
+import os
+
+
+def path_exist(origin):
+    functools.wraps(origin)
+
+    @functools.wraps(origin)
+    def inner(path):
+        &quot;&quot;&quot;inner函数&quot;&quot;&quot;
+        # 加入功能
+        print(path)
+        dir &#x3D; path.rsplit(&#39;\\&#39;, 1)[0]  # [&#39;&#x2F;usr&#x2F;bin&#x2F;xxx&#39;]
+        if not os.path.exists(dir):
+            os.makedirs(dir)
+        
+        origin(path)
+            # 加入功能
+
+    return inner
+
+
+@path_exist
+def write_user_info(path):
+    file_obj &#x3D; open(path, mode&#x3D;&#39;w&#39;, encoding&#x3D;&#39;utf-8&#39;)
+    file_obj.write(&quot;武沛齐&quot;)
+    file_obj.close()
+    
+
+write_user_info(r&#39;C:\Users\Geng\Desktop\我在b站学编程\python\模块二\day13\xxx.txt&#39;)</code></pre>
+
+
+</li>
+<li><p>分析代码写结果：</p>
+<pre class="language-python" data-language="python"><code class="language-python">def get_data():
+    scores &#x3D; []
+
+    def inner(val):
+        scores.append(val)
+        print(scores)
+
+    return inner
+
+
+func &#x3D; get_data()
+
+func(10)
+func(20)
+func(30)</code></pre>
+
+<img src="asserts/image-20220606161005247.png" alt="image-20220606161005247" style="zoom:25%;" />
+
+<pre class="language-python" data-language="python"><code class="language-python"># [10]
+# [10, 20]
+# [10, 20, 30]</code></pre>
+
+
+</li>
+<li><p>看代码写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;
+
+
+def foo():
+    print(name)
+
+
+def func():
+    name &#x3D; &quot;root&quot;
+    foo()
+
+
+func()</code></pre>
+
+<pre class="language-pyhon" data-language="pyhon"><code class="language-pyhon"># root</code></pre>
+
+
+</li>
+<li><p>看代码写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;
+
+
+def func():
+    name &#x3D; &quot;root&quot;
+
+    def foo():
+        print(name)
+
+    foo()
+
+
+func()</code></pre>
+
+
+
+<pre class="language-python" data-language="python"><code class="language-python"># root</code></pre>
+
+<p>答案：</p>
+<pre class="language-python" data-language="python"><code class="language-python"># 武沛齐</code></pre>
+
+
+</li>
+<li><p>看代码写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func(val):
+    def inner(a1, a2):
+        return a1 + a2 + val
+
+    return inner
+
+
+data_list &#x3D; []
+
+for i in range(10):
+    data_list.append(  func(i)   )
+
+print(data_list)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># [inner, inner, inner, inner, inner,  inner, inner, inner, inner, inner]</code></pre>
+
+<p>答案</p>
+<pre class="language-python" data-language="python"><code class="language-python"># [&lt;function func.&lt;locals&gt;.inner at 0x000001D42674B670&gt;, &lt;function func.&lt;locals&gt;.inner at 0x000001D4269BD0D0&gt;, &lt;function func.&lt;locals&gt;.inner at 0x000001D4269BD8B0&gt;, &lt;function func.&lt;locals&gt;.inner at 0x000001D4295AD310&gt;, &lt;function func.&lt;locals&gt;.inner at 0x000001D4295AD280&gt;, &lt;function func.&lt;locals&gt;.inner at 0x000001D4295AD1F0&gt;, &lt;function func.&lt;locals&gt;.inner at 0x000001D4295AD160&gt;, &lt;function func.&lt;locals&gt;.inner at 0x000001D4295AD0D0&gt;, &lt;function func.&lt;locals&gt;.inner at 0x000001D4295AD040&gt;, &lt;function func.&lt;locals&gt;.inner at 0x000001D4295A5CA0&gt;]</code></pre>
+
+
+</li>
+<li><p>看代码写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func(val):
+    def inner(a1, a2):
+        return a1 + a2 + val
+
+    return inner
+
+
+data_list &#x3D; []
+
+for i in range(10):
+    data_list.append(func(i))
+
+v1 &#x3D; data_list[0](11,22)
+v2 &#x3D; data_list[2](33,11)
+
+print(v1)
+print(v2)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 33
+# 46</code></pre></li>
+</ol>
+<h1 id="十四、内置函数和推导式"><a href="#十四、内置函数和推导式" class="headerlink" title="十四、内置函数和推导式"></a>十四、内置函数和推导式</h1><p><img src="/asserts/image-20201230125816095.png" alt="image-20201230125816095"> </p>
+<p>今日概要：</p>
+<ul>
+<li>匿名函数</li>
+<li>生成器</li>
+<li>内置函数</li>
+<li><span style='color:red;'><strong>附加</strong></span>：推导式，属于数据类型的知识，内部的高级的用法会涉及到【生成器】和【函数】的知识。</li>
+</ul>
+<h2 id="1-匿名函数"><a href="#1-匿名函数" class="headerlink" title="1. 匿名函数"></a>1. 匿名函数</h2><p>传统的函数的定义包括了：函数名 + 函数体。</p>
+<pre class="language-python" data-language="python"><code class="language-python">def send_email():
+    pass
+
+# 1. 执行
+send_email()
+# 2. 当做列表元素
+data_list &#x3D; [send_email, send_email, send_email ]
+# 3. 当做参数传递
+other_function(send_email)</code></pre>
+
+
+
+<p>匿名函数，则是基于lambda表达式实现定义一个可以没有名字的函数，例如：</p>
+<pre class="language-python" data-language="python"><code class="language-python">data_list &#x3D; [ lambda x:x+100,  lambda x:x+110, lambda x:x+120 ]
+
+print( data_list[0] )</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">f1 &#x3D; lambda x:x+100
+
+res &#x3D; f1(100)
+print(res)</code></pre>
+
+
+
+<p><strong>基于Lambda定义的函数格式为：<code>lambda 参数:函数体</code></strong></p>
+<ul>
+<li><p>参数，支持任意参数。</p>
+<pre class="language-python" data-language="python"><code class="language-python">lambda x: 函数体
+lambda x1,x2: 函数体
+lambda *args, **kwargs: 函数体</code></pre>
+</li>
+<li><p>函数体，<span style='color:red;'><strong>只能支持单行的代码。</strong></span></p>
+<pre class="language-python" data-language="python"><code class="language-python">lambda x: x + 100
+
+# 等价于
+def xxx(x):
+    return x + 100</code></pre>
+</li>
+<li><p>返回值，默认将函数体单行代码执行的结果返回给函数的执行这。</p>
+<pre class="language-python" data-language="python"><code class="language-python">func &#x3D; lambda x: x + 100
+
+v1 &#x3D; func(10)
+print(v1) # 110</code></pre></li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python">def func(a1,a2):
+    return a1 + a2 + 100
+
+foo &#x3D; lambda a1,a2: a1 + a2 + 100</code></pre>
+
+<p><strong>匿名函数适用于简单的业务处理，可以快速并简单的创建函数。</strong></p>
+<h3 id="练习题-1"><a href="#练习题-1" class="headerlink" title="练习题"></a>练习题</h3><p>根据函数写写出其匿名函数的表达方式</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func(a1,a2):
+    return a1 + a2
+
+func &#x3D; lambda a1,a2: a1+a2</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">def func(data):
+    return data.replace(&quot;苍老师&quot;,&quot;***&quot;)
+
+func&#x3D; lambda data: data.replace(&quot;苍老师&quot;,&quot;***&quot;)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">def func(data):
+    name_list &#x3D; data.replace(&quot;.&quot;)
+    return name_list[-1]
+
+func &#x3D; lambda data: data.replace(&quot;.&quot;)[-1]</code></pre>
+
+<p>在编写匿名函数时，由于受限 函数体只能写一行，所以匿名函数只能处理非常简单的功能。</p>
+<h3 id="扩展：三元运算"><a href="#扩展：三元运算" class="headerlink" title="扩展：三元运算"></a>扩展：三元运算</h3><pre class="language-python" data-language="python"><code class="language-python">num &#x3D; input(&quot;请写入内容&quot;)
+
+if &quot;苍老师&quot; in num:
+    data &#x3D; &quot;臭不要脸&quot;
+else:
+    data &#x3D; &quot;正经人&quot;
+    
+print(data)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">num &#x3D; input(&quot;请写入内容&quot;)
+data &#x3D; &quot;臭不要脸&quot; if &quot;苍老师&quot; in num else &quot;正经人&quot;
+print(data)
+
+# 结果 &#x3D;  条件成立时    if   条件   else   不成立</code></pre>
+
+<p><strong>怎么看三元表达式：</strong></p>
+<blockquote>
+<p>1.看if和else中间的语句</p>
+<p>2.成立，把if前面的值赋值给data</p>
+<p>3.不成立，把else后的值赋值给data</p>
+</blockquote>
+<p>​		lambda表达式和三元运算没有任何关系，属于两个独立的知识点。</p>
+<p>掌握三元运算之后，以后再编写匿名函数时，就可以处理再稍微复杂点的情况了，例如：</p>
+<pre class="language-python" data-language="python"><code class="language-python">func &#x3D; lambda x: &quot;大了&quot; if x &gt; 66 else &quot;小了&quot;
+
+# 等价于
+def func(x):
+    return &quot;大了&quot; if x &gt; 66 else &quot;小了&quot;
+
+
+def func(x):
+    if x &gt; 66:
+        return &#39;大了&#39;
+    return &#39;小了&#39;</code></pre>
+
+<p><strong>写在最后：</strong></p>
+<ul>
+<li><p><strong>简单的函数，可以基于lambda表达式实现。</strong></p>
+</li>
+<li><p><strong>简单的条件语句，可以基于三元运算实现，例如：</strong></p>
+</li>
+</ul>
+<h2 id="2-生成器"><a href="#2-生成器" class="headerlink" title="2. 生成器"></a>2. 生成器</h2><p>​		生成器是由函数+yield关键字创造出来的写法，在特定情况下，用他可以帮助我们节省内存。</p>
+<ul>
+<li><p>生成器函数，但函数中有yield存在时，这个函数就是生产生成器函数。</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(111)
+    yield 1</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(111)
+    yield 1
+
+    print(222)
+    yield 2
+
+    print(333)
+    yield 3
+
+    print(444)</code></pre>
+</li>
+<li><p>生成器对象，执行生成器函数时，会返回一个生成器对象。</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(111)
+    yield 1
+
+    print(222)
+    yield 2
+
+    print(333)
+    yield 3
+
+    print(444)
+    
+data &#x3D; func()
+
+# 执行生成器函数func，返回的生成器对象。
+# 注意：执行生成器函数时，函数内部代码不会执行。</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(111)
+    yield 1
+
+    print(222)
+    yield 2
+
+    print(333)
+    yield 3
+
+    print(444)
+    
+data &#x3D; func()
+
+v1 &#x3D; next(data)
+print(v1)
+
+v2 &#x3D; next(data)
+print(v2)
+
+v3 &#x3D; next(data)
+print(v3)
+
+v4 &#x3D; next(data)
+print(v4)  # 结束或中途遇到return，程序爆：StopIteration 错误</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">data &#x3D; func()
+
+for item in data:
+    print(item)</code></pre></li>
+</ul>
+<p>​		生成器的特点是，记录在函数中的执行位置，下次执行next时，会从上一次的位置基础上再继续向下执行。</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li><p>假设要让你生成 300w个随机的4位数，并打印出来。</p>
+<ul>
+<li>在内存中一次性创建300w个</li>
+<li>动态创建，用一个创建一个。</li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python">import random
+
+val &#x3D; random.randint(1000, 9999)
+print(val)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">import random
+
+data_list &#x3D; []
+for i in range(300000000):
+    val &#x3D; random.randint(1000, 9999)
+	data_list.append(val)
+    
+# 再使用时，去 data_list 中获取即可。
+# ...</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">import random
+
+
+def gen_random_num(max_count):
+    counter &#x3D; 0
+    while counter &lt; max_count:
+        yield random.randint(1000, 9999)
+        counter +&#x3D; 1
+
+
+data_list &#x3D; gen_random_num(3000000)
+# 再使用时，去 data_list 中获取即可。</code></pre>
+</li>
+<li><p>假设让你从某个数据源中获取300w条数据（后期学习操作MySQL 或 Redis等数据源再操作，了解思想即可）。</p>
+</li>
+</ul>
+<img src="asserts/image-20201230174253215.png" alt="image-20201230174253215" style="zoom: 33%;" />
+
+<p>所以，当以后需要我们在内存中创建很多数据时，可以想着用基于生成器来实现一点一点生成（用一点生产一点），以节省内存的开销。</p>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(111)
+    v1 &#x3D; yield 1
+    print(v1)
+
+    print(222)
+    v2 &#x3D; yield 2
+    print(v2)
+
+    print(333)
+    v3 &#x3D; yield 3
+    print(v3)
+
+    print(444)
+
+
+data &#x3D; func()
+
+n1 &#x3D; data.send(None)
+print(n1)
+
+n2 &#x3D; data.send(666)
+print(n2)
+
+n3 &#x3D; data.send(777)
+print(n3)
+
+n4 &#x3D; data.send(888)
+print(n4)</code></pre>
+
+
+
+<h2 id="3-内置函数"><a href="#3-内置函数" class="headerlink" title="3.内置函数"></a>3.内置函数</h2><img src="asserts/image-20201230201618164.png" alt="image-20201230201618164" style="zoom:50%;" />
+
+<p>Python内部为我们提供了很多方便的内置函数，在此整理出来<strong>36</strong>个给大家来讲解。</p>
+<ul>
+<li><p>第1组（5个）</p>
+<ul>
+<li><p>abs，绝对值</p>
+<pre class="language-python" data-language="python"><code class="language-python">v &#x3D; abs(-10)</code></pre>
+</li>
+<li><p>pow，指数</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; pow(2,5) # 2的5次方  2**5
+print(v1)</code></pre>
+</li>
+<li><p>sum，求和</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; sum([-11, 22, 33, 44, 55]) # 可以被迭代（可for循环）
+print(v1)</code></pre>
+</li>
+<li><p>divmod，求商和余数</p>
+<pre class="language-none"><code class="language-none">v1, v2 &#x3D; divmod(9, 2)
+print(v1, v2)</code></pre>
+</li>
+<li><p>round，小数点后n位（四舍五入）</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; round(4.11786, 2)
+print(v1) # 4.12</code></pre></li>
+</ul>
+</li>
+<li><p>第2组：（4个）</p>
+<ul>
+<li><p>min，最小值</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; min(11, 2, 3, 4, 5, 56)
+print(v1) # 2</code></pre>
+
+<pre class="language-none"><code class="language-none">v2 &#x3D; min([11, 22, 33, 44, 55]) # 迭代的类型（可for循环）
+print(v2)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 支持lambda表达式
+v3 &#x3D; min([-11, 2, 33, 44, 55], key&#x3D;lambda x: abs(x))  # key：含一个参数的函数
+print(v3) # 2（取原来的值）</code></pre>
+</li>
+<li><p>max，最大值</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; max(11, 2, 3, 4, 5, 56)
+print(v1)
+
+v2 &#x3D; max([11, 22, 33, 44, 55])
+print(v2)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">v3 &#x3D; max([-11, 22, 33, 44, 55], key&#x3D;lambda x: x * 10)
+print(v3) # 55</code></pre>
+</li>
+<li><p>all，是否全部为True</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; all(   [11,22,44,&quot;&quot;]   ) # False</code></pre>
+</li>
+<li><p>any，是否存在True</p>
+<pre class="language-python" data-language="python"><code class="language-python">v2 &#x3D; any([11,22,44,&quot;&quot;]) # True</code></pre></li>
+</ul>
+</li>
+<li><p>第3组（3个）</p>
+<ul>
+<li>bin，十进制转二进制</li>
+<li>oct，十进制转八进制</li>
+<li>hex，十进制转十六进制</li>
+</ul>
+</li>
+<li><p>第4组（2个）</p>
+<ul>
+<li><p>ord，获取字符对应的unicode码点（十进制）</p>
+<pre class="language-none"><code class="language-none">v1 &#x3D; ord(&quot;武&quot;)
+print(v1, hex(v1))</code></pre>
+</li>
+<li><p>chr，根据码点（十进制）获取对应字符</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; chr(27494)
+print(v1)</code></pre></li>
+</ul>
+</li>
+<li><p>第5组（9个）</p>
+<ul>
+<li><p>int</p>
+</li>
+<li><p>foat</p>
+</li>
+<li><p>str，unicode编码</p>
+</li>
+<li><p>bytes，utf-8、gbk编码</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; &quot;武沛齐&quot;  # str类型
+
+v2 &#x3D; v1.encode(&#39;utf-8&#39;)  # bytes类型
+
+v3 &#x3D; bytes(v1,encoding&#x3D;&quot;utf-8&quot;) # bytes类型</code></pre>
+</li>
+<li><p>bool</p>
+</li>
+<li><p>list</p>
+</li>
+<li><p>dict</p>
+</li>
+<li><p>tuple</p>
+</li>
+<li><p>set</p>
+</li>
+</ul>
+</li>
+<li><p>第6组（13个）</p>
+<ul>
+<li><p>len</p>
+</li>
+<li><p>print</p>
+</li>
+<li><p>input</p>
+</li>
+<li><p>open</p>
+</li>
+<li><p>type，获取数据类型</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; &quot;123&quot;
+
+if type(v1) &#x3D;&#x3D; str:
+    pass
+else:
+    pass</code></pre>
+</li>
+<li><p>range </p>
+<pre class="language-python" data-language="python"><code class="language-python">range(10)</code></pre>
+</li>
+<li><p>enumerate</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; [&quot;武沛齐&quot;, &quot;alex&quot;, &#39;root&#39;]
+
+for num, value in enumerate(v1, 1):
+    print(num, value)</code></pre>
+</li>
+<li><p>id</p>
+</li>
+<li><p>hash</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; hash(&quot;武沛齐&quot;)</code></pre>
+</li>
+<li><p>help，帮助信息</p>
+<ul>
+<li>pycharm，不用（ctrl+鼠标左键即可查看源码）</li>
+<li>终端，使用（Q退出）</li>
+</ul>
+</li>
+<li><p>zip</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; [11, 22, 33, 44, 55, 66]
+v2 &#x3D; [55, 66, 77, 88]
+v3 &#x3D; [10, 20, 30, 40, 50]
+    
+result &#x3D; zip(v1, v2, v3)
+for item in result:
+    print(item)</code></pre>
+</li>
+<li><p>callable，是否可执行（后面是否可以加括号）。</p>
+<pre class="language-none"><code class="language-none">v1 &#x3D; &quot;武沛齐&quot;
+v2 &#x3D; lambda x: x
+def v3():
+    pass
+
+
+print( callable(v1) ) # False
+print(callable(v2))
+print(callable(v3))</code></pre>
+</li>
+<li><p>sorted，排序</p>
+<p>相较于list.sort()，sorted还支持元组，字典的排序</p>
+<pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; sorted([11,22,33,44,55], reverse&#x3D;True)</code></pre>
+
+
+
+<pre class="language-python" data-language="python"><code class="language-python">info &#x3D; &#123;
+    &quot;wupeiqi&quot;: &#123;
+        &#39;id&#39;: 10,
+        &#39;age&#39;: 119
+    &#125;,
+    &quot;root&quot;: &#123;
+        &#39;id&#39;: 20,
+        &#39;age&#39;: 29
+    &#125;,
+    &quot;seven&quot;: &#123;
+        &#39;id&#39;: 9,
+        &#39;age&#39;: 9
+    &#125;,
+    &quot;admin&quot;: &#123;
+        &#39;id&#39;: 11,
+        &#39;age&#39;: 139
+    &#125;,
+&#125;
+
+result &#x3D; sorted(info.items(), key&#x3D;lambda x: x[1][&#39;id&#39;])
+print(result)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">data_list &#x3D; [
+    &#39;1-5 编译器和解释器.mp4&#39;,
+    &#39;1-17 今日作业.mp4&#39;,
+    &#39;1-9 Python解释器种类.mp4&#39;,
+    &#39;1-16 今日总结.mp4&#39;,
+    &#39;1-2 课堂笔记的创建.mp4&#39;,
+    &#39;1-15 Pycharm使用和破解（win系统）.mp4&#39;,
+    &#39;1-12 python解释器的安装（mac系统）.mp4&#39;,
+    &#39;1-13 python解释器的安装（win系统）.mp4&#39;,
+    &#39;1-8 Python介绍.mp4&#39;, &#39;1-7 编程语言的分类.mp4&#39;,
+    &#39;1-3 常见计算机基本概念.mp4&#39;,
+    &#39;1-14 Pycharm使用和破解（mac系统）.mp4&#39;,
+    &#39;1-10 CPython解释器版本.mp4&#39;,
+    &#39;1-1 今日概要.mp4&#39;,
+    &#39;1-6 学习编程本质上的三件事.mp4&#39;,
+    &#39;1-18 作业答案和讲解.mp4&#39;,
+    &#39;1-4 编程语言.mp4&#39;,
+    &#39;1-11 环境搭建说明.mp4&#39;
+]
+result &#x3D; sorted(data_list, key&#x3D;lambda x: int(x.split(&#39; &#39;)[0].split(&quot;-&quot;)[-1]) )
+print(result)</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="4-推导式"><a href="#4-推导式" class="headerlink" title="4.推导式"></a>4.推导式</h2><p>推导式是Python中提供了一个非常方便的功能，可以让我们通过一行代码实现创建list、dict、tuple、set 的同时初始化一些值。</p>
+<p>请创建一个列表，并在列表中初始化：0、1、2、3、4、5、6、7、8、9…299 整数元素。</p>
+<pre class="language-python" data-language="python"><code class="language-python">data &#x3D; []
+for i in range(300):
+    data.append(i)</code></pre>
+
+<ul>
+<li><p>列表</p>
+<pre class="language-python" data-language="python"><code class="language-python">num_list &#x3D; [ i for i in range(10)]
+
+num_list &#x3D; [ [i,i] for i in range(10)]
+
+num_list &#x3D; [ [i,i] for i in range(10) if i &gt; 6 ]</code></pre>
+</li>
+<li><p>集合</p>
+<pre class="language-python" data-language="python"><code class="language-python">num_set &#x3D; &#123; i for i in range(10)&#125;
+
+num_set &#x3D; &#123; (i,i,i) for i in range(10)&#125;
+
+num_set &#x3D; &#123; (i,i,i) for i in range(10) if i&gt;3&#125;</code></pre>
+</li>
+<li><p>字典</p>
+<pre class="language-python" data-language="python"><code class="language-python">num_dict &#x3D; &#123; i:i for i in range(10)&#125;
+
+num_dict &#x3D; &#123; i:(i,11) for i in range(10)&#125;
+
+num_dict &#x3D; &#123; i:(i,11) for i in range(10) if i&gt;7&#125;</code></pre>
+</li>
+<li><p>元组，<span style="color:red">不同于其他类型。</span></p>
+<pre class="language-python" data-language="python"><code class="language-python"># 不会立即执行内部循环去生成数据，而是得到一个生成器。
+data &#x3D; (i for i in range(10))
+print(data)
+for item in data:
+    print(item)</code></pre></li>
+</ul>
+<h3 id="练习题-2"><a href="#练习题-2" class="headerlink" title="练习题"></a>练习题</h3><ol>
+<li><p>去除列表中每个元素的 <code>.mp4</code>后缀。</p>
+<pre class="language-python" data-language="python"><code class="language-python">data_list &#x3D; [
+    &#39;1-5 编译器和解释器.mp4&#39;,
+    &#39;1-17 今日作业.mp4&#39;,
+    &#39;1-9 Python解释器种类.mp4&#39;,
+    &#39;1-16 今日总结.mp4&#39;,
+    &#39;1-2 课堂笔记的创建.mp4&#39;,
+    &#39;1-15 Pycharm使用和破解（win系统）.mp4&#39;,
+    &#39;1-12 python解释器的安装（mac系统）.mp4&#39;,
+    &#39;1-13 python解释器的安装（win系统）.mp4&#39;,
+    &#39;1-8 Python介绍.mp4&#39;, &#39;1-7 编程语言的分类.mp4&#39;,
+    &#39;1-3 常见计算机基本概念.mp4&#39;,
+    &#39;1-14 Pycharm使用和破解（mac系统）.mp4&#39;,
+    &#39;1-10 CPython解释器版本.mp4&#39;,
+    &#39;1-1 今日概要.mp4&#39;,
+    &#39;1-6 学习编程本质上的三件事.mp4&#39;,
+    &#39;1-18 作业答案和讲解.mp4&#39;,
+    &#39;1-4 编程语言.mp4&#39;,
+    &#39;1-11 环境搭建说明.mp4&#39;
+]
+
+result &#x3D; []
+for item in data_list:
+    result.append(item.rsplit(&#39;.&#39;,1)[0])
+    
+result &#x3D; [ item.rsplit(&#39;.&#39;,1)[0] for item in data_list]</code></pre>
+</li>
+<li><p>将字典中的元素按照 <code>键-值</code>格式化，并最终使用 <code>;</code>连接起来。</p>
+<pre class="language-python" data-language="python"><code class="language-python">info &#x3D; &#123;
+    &quot;name&quot;:&quot;武沛齐&quot;,
+    &quot;email&quot;:&quot;xxx@live.com&quot;,
+    &quot;gender&quot;:&quot;男&quot;,
+&#125;
+
+data_list [] 
+for k,v in info.items():
+    temp &#x3D; &quot;&#123;&#125;-&#123;&#125;&quot;.format(k,v)
+    temp.append(data_list)
+resutl &#x3D; &quot;;&quot;.join(data)
+
+result &#x3D; &quot;;&quot;.join( [ &quot;&#123;&#125;-&#123;&#125;&quot;.format(k,v) for k,v in info.items()] )</code></pre>
+</li>
+<li><p>将字典按照键从小到大排序，然后在按照如下格式拼接起来。（微信支付API内部处理需求）</p>
+<pre class="language-python" data-language="python"><code class="language-python">info &#x3D; &#123;
+    &#39;sign_type&#39;: &quot;MD5&quot;,
+    &#39;out_refund_no&#39;: &quot;12323&quot;,
+    &#39;appid&#39;: &#39;wx55cca0b94f723dc7&#39;,
+    &#39;mch_id&#39;: &#39;1526049051&#39;,
+    &#39;out_trade_no&#39;: &quot;ffff&quot;,
+    &#39;nonce_str&#39;: &quot;sdfdffd&quot;,
+    &#39;total_fee&#39;: 9901,
+    &#39;refund_fee&#39;: 10000
+&#125;
+
+data &#x3D; &quot;&amp;&quot;.join([&quot;&#123;&#125;&#x3D;&#123;&#125;&quot;.format(key, value) for key, value in sorted(info.items(), key&#x3D;lambda x: x[0])])
+print(data)</code></pre>
+</li>
+<li><p>看代码写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func():
+    print(123)
+
+
+data_list &#x3D; [func for i in range(10)]
+
+print(data_list)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># [十个func函数]</code></pre>
+
+
+</li>
+<li><p>看代码写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func(num):
+    return num + 100
+
+
+data_list &#x3D; [func(i) for i in range(10)]
+
+print(data_list)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># [100, 101, 102, 103, 104, 105, 106, 107, 108, 109]</code></pre>
+
+
+</li>
+<li><p>看代码写结果（执行出错，通过他可以让你更好的理解执行过程）</p>
+<pre class="language-python" data-language="python"><code class="language-python">def func(x):
+    return x + i
+
+data_list &#x3D; [func for i in range(10)]
+
+val &#x3D; data_list[0](100)
+print(val)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 没有定义变量i</code></pre>
+
+
+</li>
+<li><p>看代码写结果（新浪微博面试题）</p>
+<pre class="language-python" data-language="python"><code class="language-python">data_list &#x3D; [lambda x: x + i for i in range(10)]  # [函数,函数,函数]   i&#x3D;9
+
+v1 &#x3D; data_list[0](100)
+v2 &#x3D; data_list[3](100)
+print(v1, v2)  </code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 100
+# 103</code></pre>
+
+<p><span style="color:red"><strong>写在最后：推导式本质还是一个函数，因此在推导式中也会形成自己的作用域。</strong></span></p>
+<h3 id="小高级"><a href="#小高级" class="headerlink" title="小高级"></a>小高级</h3></li>
+<li><p>推导式支持嵌套</p>
+<pre class="language-python" data-language="python"><code class="language-python">data &#x3D; [ (i,j) for j in range(5) for i in range(10)]
+
+# 等价于
+data &#x3D; []
+for i in range(10):
+    for j in range(5):
+        data.append( (i,j) )
+
+data &#x3D; [ [i, j] for j in range(5) for i in range(10)]</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 一副扑克牌
+
+poker_list &#x3D; [ (color,num) for num in range(1,14) for color in [&quot;红桃&quot;, &quot;黑桃&quot;, &quot;方片&quot;, &quot;梅花&quot;]]
+
+poker_list &#x3D; [ [color, num] for num in range(1, 14) for color in [&quot;红桃&quot;, &quot;黑桃&quot;, &quot;方片&quot;, &quot;梅花&quot;]]
+
+print(poker_list)	</code></pre>
+</li>
+<li><p>烧脑面试题</p>
+<pre class="language-python" data-language="python"><code class="language-python">def num():
+    return [lambda x: i * x for i in range(4)]
+
+
+# 1. num()并获取返回值  [lambda0, lambda1, lambda2, lambda3] i&#x3D;3
+# 2. for循环返回值 lambda0(2) ...
+# 3. 返回值的每个元素(2)  6 
+result &#x3D; [m(2) for m in num()]  # [6,6,6,6]
+print(result)
+</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">def num():
+    return (lambda x: i * x for i in range(4))
+
+
+# 1. num()并获取返回值  生成器对象(lambda x: i * x for i in range(4))中的循环没有执行
+# 2. for循环返回值  开始遍历生成器对象时(lambda x: i * x for i in range(4))中的循环开始执行
+# 3. 返回值的每个元素(2)
+result &#x3D; [m(2) for m in num()]  # [0,2,4,6 ]
+print(result)</code></pre></li>
+</ol>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>匿名函数，基于lambda表达式实现一行创建一个函数。一般用于编写简单的函数。</li>
+<li>三元运算，用一行代码实现处理简单的条件判断和赋值。</li>
+<li>生成器，函数中如果yield关键字<ul>
+<li>生成器函数</li>
+<li>生成器对象</li>
+<li>执行生成器函数中的代码<ul>
+<li>next</li>
+<li>for（常用）</li>
+<li>send</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内置函数（36个）</li>
+<li>推导式<ul>
+<li>常规操作</li>
+<li>小高级操作</li>
+</ul>
+</li>
+</ol>
+<h2 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h2><ol>
+<li><p>看代码写结果</p>
+<pre class="language-none"><code class="language-none">v &#x3D; [ lambda :x  for x in range(10)] 
+print(v)
+print(v[0])
+print(v[0]())</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># [lambda0, lambda1, lambda2, ... lambda9] i &#x3D; 9
+# lambda0 i&#x3D;9
+# 9</code></pre>
+
+
+</li>
+<li><p>看代码写结果</p>
+<pre class="language-none"><code class="language-none">v &#x3D; [i for i in range(10,0,-1) if i &gt; 5]
+print(v)</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># [10, 9, 8, 7, 6]</code></pre>
+
+
+</li>
+<li><p>看代码写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">data &#x3D; [lambda x:x*i for i in range(10)]
+print(data)
+print(data[0](2))
+print(data[0](2) &#x3D;&#x3D; data[8](2))</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># [lambda0, lambda1, lambda2, ... lambda9] i &#x3D; 9
+# 18
+# True</code></pre>
+
+
+</li>
+<li><p>请用列表推导式实现，踢出列表中的字符串，最终生成一个新的列表保存。</p>
+<pre class="language-python" data-language="python"><code class="language-python">data_list &#x3D; [11,22,33,&quot;alex&quot;,455,&#39;eirc&#39;]
+
+new_data_list &#x3D; [ ... ] # 请在[]中补充代码实现。
+
+# 提示：可以用type判断类型</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">new_data_list &#x3D; [i for i in data_list if type(i) &#x3D;&#x3D; int]</code></pre>
+
+
+</li>
+<li><p>请用列表推导式实现，对data_list中的每个元素判断，如果是字符串类型，则计算长度作为元素放在新列表的元素中；如果是整型，则让其值+100 作为元素放在新的列表的元素中。</p>
+<pre class="language-python" data-language="python"><code class="language-python">data_list &#x3D; [11,22,33,&quot;alex&quot;,455,&#39;eirc&#39;]
+
+new_data_list &#x3D; [ ... ] # 请在[]中补充代码实现。
+
+# 提示：可以基于三元运算实现</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">new_data_list &#x3D; [len(i) for i in data_list if type(i)&#x3D;&#x3D;str else i+100]</code></pre>
+
+
+</li>
+<li><p>请使用字典推导式实现，将如果列表构造成指定格式字典.</p>
+<pre class="language-python" data-language="python"><code class="language-python">data_list &#x3D; [
+    (1,&#39;alex&#39;,19),
+    (2,&#39;老男&#39;,84),
+    (3,&#39;老女&#39;,73)
+]
+
+# 请使用推导式将data_list构造生如下格式：
+&quot;&quot;&quot;
+info_dict &#x3D; &#123;
+    1:(1,&#39;alex&#39;,19),
+    2:(2,&#39;老男&#39;,84),
+    3:(3,&#39;老女&#39;,73)
+&#125;
+&quot;&quot;&quot;</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">info_dic &#x3D; &#123;index: item for index, item in enumerate(data_list, 1)&#125;</code></pre>
+
+
+</li>
+<li><p>有4个人玩扑克牌比大小，请对比字典中每个人的牌的大小，并输入优胜者的姓名（值大的胜利，不必考虑A）。</p>
+<pre class="language-python" data-language="python"><code class="language-python">player &#x3D; &#123;
+    &quot;武沛齐&quot;:[&quot;红桃&quot;,10],
+    &quot;alex&quot;:[&quot;红桃&quot;,8],
+    &#39;eric&#39;:[&quot;黑桃&quot;,3],
+    &#39;killy&#39;:[&quot;梅花&quot;,12],
+&#125;</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">player_sorted &#x3D; sorted(player, key&#x3D;lambda x: player[x][1], reverse&#x3D;True)
+print(player_sorted[0])</code></pre>
+
+
+</li>
+<li><p>尽量多的列举你记得的内置函数？【能记住多少就写多少，不强制去背，在此尽全力写即可，这种公共后续用的多了就自然而然就记住了】</p>
+<pre class="language-python" data-language="python"><code class="language-python">abs(), pow(), max(), min(), len(), type(), sorted(), sum(), bin(), oct(), hex(), ord(), chr(), print(), input(), tuple(), list(), dict(), set(), str(), int(), float()</code></pre>
+
+
+</li>
+<li><p>请编写一个生成器函数实现生成n个斐波那契数列的值。</p>
+<ul>
+<li><p>什么是斐波那契数列？</p>
+<pre class="language-none"><code class="language-none">前两个数相加的结果，就是下一个数。
+1 1 2 3 5 8 13 21 34 55 ...</code></pre>
+</li>
+<li><p>代码结构示例，请在此基础上补充代码实现。</p>
+<pre class="language-python" data-language="python"><code class="language-python">def fib(max_count):
+    pass
+
+
+count &#x3D; input(&quot;请输入要生成斐波那契数列的个数：&quot;)
+count &#x3D; int(count)
+fib_generator &#x3D; fib(count)
+for num in fib_generator:
+    print(num) </code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">def fib(max_count):
+    count &#x3D; 0
+    while count &lt; max_count - 2:
+        list.append(list[-1] + list[-2])
+        for i in list:
+            yield i
+        count +&#x3D; 1
+
+
+count &#x3D; input(&quot;请输入要生成斐波那契数列的个数：&quot;)
+count &#x3D; int(count)
+fib_generator &#x3D; fib(count)
+for num in fib_generator:
+    print(num)</code></pre></li>
+</ul>
+</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Gengtianba</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gengtianba.github.io/2022/06/02/python-mo-kuai-er-day4/">https://gengtianba.github.io/2022/06/02/python-mo-kuai-er-day4/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Gengtianba</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/">
+                                    <span class="chip bg-color">第二阶段</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat,weibo,douban,qzone,linkedin,twitter,facebook,google" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '9YyPLPh0zyJlFMB2ciHdondz-gzGzoHsz',
+        appKey: 'naTQJa37tbxowE4Gm70MF9b6',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/06/05/jie-jue-arcgis-an-zhuang-hou-arcmap-wu-fa-qi-dong-de-wen-ti/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="解决ArcGIS安装后Arcmap无法启动的问题">
+                        
+                        <span class="card-title">解决ArcGIS安装后Arcmap无法启动的问题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98/" class="post-category">
+                                    技术问题
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/27/python-mo-kuai-er-day3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Python模块二day3">
+                        
+                        <span class="card-title">Python模块二day3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            路飞学院PYTHON课程模块二笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/" class="post-category">
+                                    路飞学院
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/">
+                        <span class="chip bg-color">第二阶段</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">Gengtianba</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/gengtianba" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1138798275@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1138798275" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1138798275" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

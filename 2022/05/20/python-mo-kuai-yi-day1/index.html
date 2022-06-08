@@ -1727,37 +1727,19 @@ print(&quot;结束&quot;)
 
 <p>​		写在最后，对于break和continue都是放在循环语句中用于控制循环过程的，一旦遇到break就停止所有循环，一旦遇到continue就停止本次循环，开始下次循环。</p>
 <p>​		当然，通过如果没有了break和continue，我们用while条件的判断以及其他协助也能完成很多功能，有了break和continue可以在一定程度上简化我们的代码逻辑。</p>
-<h3 id="1-5-while-else-while结束后打印提示语"><a href="#1-5-while-else-while结束后打印提示语" class="headerlink" title="1.5 while else(while结束后打印提示语)"></a>1.5 while else(while结束后打印提示语)</h3><p>​		当while后的条件不成立时，else中的代码就会执行。</p>
+<h3 id="1-5-while-x2F-for-else-while-x2F-for正常结束后打印提示语"><a href="#1-5-while-x2F-for-else-while-x2F-for正常结束后打印提示语" class="headerlink" title="1.5 while&#x2F;for else(while&#x2F;for正常结束后打印提示语)"></a>1.5 while&#x2F;for else(while&#x2F;for正常结束后打印提示语)</h3><p>​		当while后的条件不成立时，else中的代码就会执行。</p>
 <pre class="language-python" data-language="python"><code class="language-python">while False:
   pass
 else:
   print(123)</code></pre>
 
-<pre class="language-python" data-language="python"><code class="language-python">num &#x3D; 1
-while num &lt; 5:
-  print(num)
-  num &#x3D; num + 1
+<pre class="language-python" data-language="python"><code class="language-python">num_list &#x3D; [1, 2, 3, 4]
+for item in num_list:
+    print(item)
 else:
-  print(&#39;循环结束&#39;)
+    print(&#39;all print down&#39;)</code></pre>
 
-# 输出 
-1
-2
-3
-4
-循环结束</code></pre>
-
-<pre class="language-python" data-language="python"><code class="language-python">while True:
-  print(123)
-	break
-else:
-  print(&#39;循环结束&#39;)  # break会终止循环，不会走到else
-
-# 输出
-123</code></pre>
-
-
-
+<p>​		<font color="#dd0000"><strong>注意事项：当while, 被break打断后，不会执行else后的结果。</strong></font></p>
 <h2 id="2-字符串格式化"><a href="#2-字符串格式化" class="headerlink" title="2.字符串格式化"></a>2.字符串格式化</h2><p>​		字符串格式化，使用<font color="#dd0000">更便捷的形式实现字符串的拼接。</font></p>
 <h3 id="2-1"><a href="#2-1" class="headerlink" title="2.1 %"></a>2.1 %</h3><h4 id="2-1-1-基本格式化操作"><a href="#2-1-1-基本格式化操作" class="headerlink" title="2.1.1 基本格式化操作"></a>2.1.1 基本格式化操作</h4><pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;
 # %s占位符
