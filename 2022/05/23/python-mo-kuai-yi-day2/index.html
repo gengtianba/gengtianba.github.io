@@ -474,7 +474,7 @@
 <li>float，浮点类型（浮点型）</li>
 </ul>
 <p>每种数据类型都有自己的特点及应用场景，以后的开发中需要根据实际的开发情况选择合适的数据类型。</p>
-
+<img src="/2022/05/23/python-mo-kuai-yi-day2/image-20201102172217820.png" class="" title="image-20201102172217820">
 
 <p>每种数据类型的讲解，会按照以下4个维度来进行：</p>
 <ol>
@@ -533,7 +533,7 @@ v1 &#x3D; int(8.7) # 8</code></pre>
 <li>Python2：整型、长整形</li>
 </ul>
 <p>在python2中跟整数相关的数据类型有两种：int(整型)、long（长整型），他们都是整数只不过能表示的值范围不同。</p>
-<img src="asserts/image-20201102190227431.png" alt="image-20201102190227431" style="zoom:50%;" />
+<img src="Python模块一day2/image-20201102190227431.png" alt="image-20201102190227431" style="zoom:50%;" />
 
 <ul>
 <li>int，可表示的范围：-9223372036854775808～9223372036854775807</li>
@@ -2495,10 +2495,10 @@ v2 &#x3D; tuple(data) # (11,22,33,3,99)</code></pre>
 
 
 
-<h3 id="1-5-其他-2"><a href="#1-5-其他-2" class="headerlink" title="1.5 其他"></a>1.5 其他</h3><h4 id="1-5-1-集合的存储原理"><a href="#1-5-1-集合的存储原理" class="headerlink" title="1.5.1 集合的存储原理"></a>1.5.1 集合的存储原理</h4><img src="asserts/image-20201120193837492.png" alt="image-20201120193837492" style="zoom:50%;" />
+<h3 id="1-5-其他-2"><a href="#1-5-其他-2" class="headerlink" title="1.5 其他"></a>1.5 其他</h3><h4 id="1-5-1-集合的存储原理"><a href="#1-5-1-集合的存储原理" class="headerlink" title="1.5.1 集合的存储原理"></a>1.5.1 集合的存储原理</h4><img src="Python模块一day2/image-20201120193837492.png" alt="image-20201120193837492" style="zoom:50%;" />
 
 <h4 id="1-5-2-元素必须可哈希"><a href="#1-5-2-元素必须可哈希" class="headerlink" title="1.5.2 元素必须可哈希"></a>1.5.2 元素必须可哈希</h4><p>因存储原理，集合的元素必须是可哈希的值，即：内部通过哈希函数把值转换成一个数字。</p>
-<img src="asserts/image-20201120190454120.png" alt="image-20201120190454120" style="zoom: 25%;" />
+<img src="Python模块一day2/image-20201120190454120.png" alt="image-20201120190454120" style="zoom: 25%;" />
 
 <p>​		<font color="#dd0000"><strong>目前可哈希的数据类型：int、bool、str、tuple，而list、set是不可哈希的，因此集合的元素只能是 int、bool、str、tuple 。</strong></font></p>
 <ul>
@@ -3062,7 +3062,7 @@ v4 &#x3D; list(info.items()) # [ (&quot;age&quot;,12), (&quot;status&quot;,True)
 
 
 
-<h3 id="1-5-其他-3"><a href="#1-5-其他-3" class="headerlink" title="1.5 其他"></a>1.5 其他</h3><h4 id="1-5-1-存储原理"><a href="#1-5-1-存储原理" class="headerlink" title="1.5.1 存储原理"></a>1.5.1 存储原理</h4>
+<h3 id="1-5-其他-3"><a href="#1-5-其他-3" class="headerlink" title="1.5 其他"></a>1.5 其他</h3><h4 id="1-5-1-存储原理"><a href="#1-5-1-存储原理" class="headerlink" title="1.5.1 存储原理"></a>1.5.1 存储原理</h4><img src="/2022/05/23/python-mo-kuai-yi-day2/image-20201121131221807.png" class="" title="image-20201121131221807">
 
 
 
@@ -3157,7 +3157,7 @@ result &#x3D; round(v1,3)
 print(result) # 3.142</code></pre>
 </li>
 <li><p>浮点型的坑（所有语言中）</p>
-<img src="asserts/image-20201121190846593.png" alt="image-20201121190846593" style="zoom: 33%;" />
+<img src="Python模块一day2/image-20201121190846593.png" alt="image-20201121190846593" style="zoom: 33%;" />
 
 <p>底层原理视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1354y1B7o1/">https://www.bilibili.com/video/BV1354y1B7o1/</a></p>
 <p>在项目中如果遇到精确的小数计算应该怎么办？</p>
@@ -3476,7 +3476,7 @@ while True:
 <h3 id="1-2-注释"><a href="#1-2-注释" class="headerlink" title="1.2 注释"></a>1.2 注释</h3><p>作为程序员，写代码注释是非常基础且有用的技能，方便以后对代码进行维护和理解。</p>
 <ul>
 <li><p>文件夹</p>
-
+<img src="/2022/05/23/python-mo-kuai-yi-day2/image-20201122135126441.png" class="" title="image-20201122135126441">
 </li>
 <li><p>文件注释</p>
 <pre class="language-python" data-language="python"><code class="language-python">除此&quot;&quot;&quot;
@@ -3507,12 +3507,12 @@ data &#x3D; name + &quot;dsb&quot;
 print(data)</code></pre></li>
 </ul>
 <h3 id="1-3-todo"><a href="#1-3-todo" class="headerlink" title="1.3 todo"></a>1.3 todo</h3><p>基于注释可以实现todo注释的效果，例如：</p>
-<img src="asserts/image-20201122112314543.png" alt="image-20201122112314543" style="zoom: 33%;float:left;" />
+<img src="Python模块一day2/image-20201122112314543.png" alt="image-20201122112314543" style="zoom: 33%;float:left;" />
 
 
 
 <h3 id="1-4-条件嵌套"><a href="#1-4-条件嵌套" class="headerlink" title="1.4 条件嵌套"></a>1.4 条件嵌套</h3><p>以后写条件语句一定要想办法减少嵌套的层级（最好不要超过3层）。</p>
-<img src="asserts/image-20201122112505721.png" alt="image-20201122112505721" style="zoom: 33%;float:left;" />
+<img src="Python模块一day2/image-20201122112505721.png" alt="image-20201122112505721" style="zoom: 33%;float:left;" />
 
 
 
@@ -3720,7 +3720,7 @@ else:
     print(&quot;已完毕&quot;)</code></pre></li>
 </ul>
 <h2 id="3-阶段总结"><a href="#3-阶段总结" class="headerlink" title="3.阶段总结"></a>3.阶段总结</h2><p>可使用思维导图（ xmind 软件），对阶段知识点的内容进行梳理，将知识梗概和重点写出来，也便于以后的回顾和复习。</p>
-
+<img src="/2022/05/23/python-mo-kuai-yi-day2/image-20201122122813525.png" class="" title="image-20201122122813525">
 
 <h2 id="4-考试题"><a href="#4-考试题" class="headerlink" title="4.考试题"></a>4.考试题</h2><p>考试题的目的是让大家对自己近期知识点学习练习 以及 自测，请大家务必【独立】完成（切勿翻看笔记 &amp; 切勿网上搜索 ）。</p>
 <ul>

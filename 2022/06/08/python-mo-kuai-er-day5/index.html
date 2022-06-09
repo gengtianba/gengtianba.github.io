@@ -460,7 +460,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="十五、模块"><a href="#十五、模块" class="headerlink" title="十五、模块"></a>十五、模块</h1>
+                <h1 id="十五、模块"><a href="#十五、模块" class="headerlink" title="十五、模块"></a>十五、模块</h1><img src="/2022/06/08/python-mo-kuai-er-day5/image-20210102105502236.png" class="" title="image-20210102105502236">
 
 <p>课程目标：掌握Python中常用模块的使用方法。</p>
 <p>今日概要：</p>
@@ -496,7 +496,7 @@ print(message)
 └── run.py
 </code></pre>
 
-
+<img src="/2022/06/08/python-mo-kuai-er-day5/image-20210103144059473.png" class="" title="image-20210103144059473">
 
 
 
@@ -542,7 +542,7 @@ import xxxxx  # 导入路径A下的一个xxxxx.py文件</code></pre>
 
 <ol>
 <li><font color="#dd0000"><strong>你以后写模块名称时，千万不能和内置和第三方的同名（新手容易犯错误）。</strong></font></li>
-<li><font color="#dd0000"><strong>项目执行文件一般都在项目根目录，如果执行文件嵌套的内存目录，就需要自己手动在sys.path中添加路径。</strong></font></li>
+<li><font color="#dd0000"><strong>项目执行文件一般都在项目根目录，如果执行文件嵌套的内存目录，就需要自己手动在sys.path中添加路径。</strong></font><img src="/2022/06/08/python-mo-kuai-er-day5/image-20210103163446464.png" class="" title="image-20210103163446464"></li>
 <li><font color="#dd0000"><strong>pycharm中默认会将项目目录加入到sys.path中</strong></font></li>
 </ol>
 <p>关于导入的方式：</p>
@@ -563,7 +563,7 @@ import xxxxx  # 导入路径A下的一个xxxxx.py文件</code></pre>
 ├── many.py
 └── run.py</code></pre>
 
-<img src="asserts/image-20210102175534535.png" alt="image-20210102175534535" style="zoom: 40%; float: left;" />
+<img src="Python模块二day5/image-20210102175534535.png" alt="image-20210102175534535" style="zoom: 40%; float: left;" />
 </li>
 <li><p>包级别</p>
 <pre class="language-none"><code class="language-none">├── commons
@@ -582,7 +582,7 @@ import xxxxx  # 导入路径A下的一个xxxxx.py文件</code></pre>
 │       └── wechat.py
 └── run.py</code></pre>
 
-<img src="asserts/image-20210102180002867.png" alt="image-20210102180002867" style="zoom:50%;float:left;" /></li>
+<img src="Python模块二day5/image-20210102180002867.png" alt="image-20210102180002867" style="zoom:50%;float:left;" /></li>
 </ul>
 </li>
 <li><p>第二类：<font color="#dd0000"><strong>from xxx import xxx 【常用】，一般适用于多层嵌套和导入模块、包和其中某个成员的情况。</strong></font></p>
@@ -596,7 +596,7 @@ import xxxxx  # 导入路径A下的一个xxxxx.py文件</code></pre>
 ├── many.py
 └── run.py</code></pre>
 
-<img src="asserts/image-20210102173907386.png" alt="image-20210102173907386" style="zoom:40%;float:left;" />
+<img src="Python模块二day5/image-20210102173907386.png" alt="image-20210102173907386" style="zoom:40%;float:left;" />
 
 <p>提示：基于from模式也可以支持 <code>from many import *</code>，即：导入一个模块中所有的成员（可能会重名，所以用的少）。</p>
 </li>
@@ -609,7 +609,7 @@ import xxxxx  # 导入路径A下的一个xxxxx.py文件</code></pre>
 ├── many.py
 └── run.py</code></pre>
 
-<img src="asserts/image-20210102174119314.png" alt="image-20210102174119314" style="zoom:40%;float:left" />
+<img src="Python模块二day5/image-20210102174119314.png" alt="image-20210102174119314" style="zoom:40%;float:left" />
 </li>
 <li><p>包级别</p>
 <pre class="language-python" data-language="python"><code class="language-python">├── commons
@@ -624,17 +624,17 @@ import xxxxx  # 导入路径A下的一个xxxxx.py文件</code></pre>
 ├── many.py
 └── run.py</code></pre>
 
-<img src="asserts/image-20210102182326500.png" alt="image-20210102182326500" style="zoom:40%;float:left;" /></li>
+<img src="Python模块二day5/image-20210102182326500.png" alt="image-20210102182326500" style="zoom:40%;float:left;" /></li>
 </ul>
 </li>
 </ul>
 <h3 id="1-3-相对导入（不建议使用）"><a href="#1-3-相对导入（不建议使用）" class="headerlink" title="1.3 相对导入（不建议使用）"></a>1.3 相对导入（不建议使用）</h3><p>​		在导入模块时，对于 <code>from xx import xx</code>这种模式，还支持相对到导入。例如：</p>
-<img src="asserts/image-20210102182539642.png" alt="image-20210102182539642" style="zoom:50%;" />
+<img src="Python模块二day5/image-20210102182539642.png" alt="image-20210102182539642" style="zoom:50%;" />
 
 
 
 <p>​		<font color="#dd0000"><strong>切记</strong></font>，相对导入只能用在包中的py文件中（即：嵌套在文件中的py文件才可以使用，项目根目录下无法使用）。</p>
-<img src="asserts/image-20210102182921911.png" alt="image-20210102182921911" style="zoom: 43%;" />
+<img src="Python模块二day5/image-20210102182921911.png" alt="image-20210102182921911" style="zoom: 43%;" />
 
 
 
@@ -726,24 +726,18 @@ Windows系统，即：Python安装路径的scripts目录下
 
 
 
-
-
-
-
-
-
 <p>如果你的电脑上某个写情况没有找到pip，也可以自己手动安装：</p>
 <ul>
 <li><p>下载 <code>get-pip.py</code> 文件，到任意目录</p>
 <pre class="language-none"><code class="language-none">地址：https:&#x2F;&#x2F;bootstrap.pypa.io&#x2F;get-pip.py</code></pre>
 </li>
 <li><p>打开终端进入目录，用Python解释器去运行已下载的 <code>get-pip.py</code>文件即刻安装成功。</p>
-</li>
+<img src="/2022/06/08/python-mo-kuai-er-day5/image-20210102191829546.png" class="" title="image-20210102191829546"></li>
 </ul>
 <p>使用pip去安装第三方模块也非常简单，只需要在自己终端执行：<code>pip install 模块名称</code> 即可。</p>
+<img src="/2022/06/08/python-mo-kuai-er-day5/image-20210102192637805.png" class="" title="image-20210102192637805">
 
-
-
+<img src="/2022/06/08/python-mo-kuai-er-day5/image-20210102192757171.png" class="" title="image-20210102192757171">
 
 
 
@@ -796,7 +790,7 @@ Writing to &#x2F;Users&#x2F;wupeiqi&#x2F;.config&#x2F;pip&#x2F;pip.conf</code></
 <pre class="language-none"><code class="language-none">python3 setup.py build
 python3 setup.py install</code></pre>
 
-
+<img src="/2022/06/08/python-mo-kuai-er-day5/image-20210102215833498.png" class="" title="image-20210102215833498">
 </li>
 </ul>
 <h3 id="2-3-wheel"><a href="#2-3-wheel" class="headerlink" title="2.3 wheel"></a>2.3 wheel</h3><p>​		wheel是Python的第三方模块包的文件格式的一种，我们也可以基于wheel去安装一些第三方模块。</p>
@@ -805,10 +799,10 @@ python3 setup.py install</code></pre>
 <pre class="language-python" data-language="python"><code class="language-python">pip3.9 install wheel</code></pre>
 </li>
 <li><p>下载第三方的包（wheel格式），例如：<a target="_blank" rel="noopener" href="https://pypi.org/project/requests/#files">https://pypi.org/project/requests/#files</a></p>
-<img src="asserts/image-20210102221033465.png" alt="image-20210102221033465" style="zoom:50%;" />
+<img src="Python模块二day5/image-20210102221033465.png" alt="image-20210102221033465" style="zoom:50%;" />
 </li>
 <li><p>进入下载目录，在终端基于pip直接安装</p>
-<img src="asserts/image-20210102221254461.png" alt="image-20210102221254461" style="zoom:50%;" /></li>
+<img src="Python模块二day5/image-20210102221254461.png" alt="image-20210102221254461" style="zoom:50%;" /></li>
 </ul>
 <p>无论通过什么形式去安装第三方模块，默认模块的安装路径在：</p>
 <pre class="language-none"><code class="language-none">Max系统：
@@ -1113,7 +1107,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         clip.close()
     print(&#39;文件夹:&#123;&#125;，电影总时长为&#123;&#125;&#39;.format(path, sum_time))</code></pre></li>
 </ol>
-<h1 id="十六、内置模块和开发规范"><a href="#十六、内置模块和开发规范" class="headerlink" title="十六、内置模块和开发规范"></a>十六、内置模块和开发规范</h1>
+<h1 id="十六、内置模块和开发规范"><a href="#十六、内置模块和开发规范" class="headerlink" title="十六、内置模块和开发规范"></a>十六、内置模块和开发规范</h1><img src="/2022/06/08/python-mo-kuai-er-day5/image-20210104122555935.png" class="" title="image-20210104122555935">
 
 <p>目标：掌握常见的内置模块的使用及了解软件开发的规范。</p>
 <p>今日概要：</p>
@@ -1159,7 +1153,7 @@ value &#x3D; &#39;[&#123;&quot;id&quot;: 1, &quot;name&quot;: &quot;武沛齐&qu
 
 
 
-
+<img src="/2022/06/08/python-mo-kuai-er-day5/image-20210104123415566.png" class="" title="image-20210104123415566">
 
 <p>Python数据类型与json格式的相互转换：</p>
 <ul>
@@ -1407,7 +1401,7 @@ v1 &#x3D; datetime.now()
 val &#x3D; v1.timestamp()
 print(val)</code></pre></li>
 </ul>
-
+<img src="/2022/06/08/python-mo-kuai-er-day5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220608200220.jpg" class="" title="微信图片编辑_20220608200220">
 
 <h4 id="练习题-1"><a href="#练习题-1" class="headerlink" title="练习题"></a>练习题</h4><ol>
 <li><p>日志记录，将用户输入的信息写入到文件，文件名格式为<code>年-月-日-时-分.txt</code>。</p>
@@ -1920,7 +1914,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 
 
 
-<img src="asserts/image-20210105160728297.png" alt="image-20210105160728297" style="zoom:50%;" />
+<img src="Python模块二day5/image-20210105160728297.png" alt="image-20210105160728297" style="zoom:50%;" />
 
 
 
@@ -1936,7 +1930,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 └── utils         包，公共功能</code></pre>
 
 <p>示例程序见附件：crm.zip</p>
-
+<img src="/2022/06/08/python-mo-kuai-er-day5/image-20210105163335127.png" class="" title="image-20210105163335127">
 
 
 
@@ -1958,7 +1952,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 
 
 <p>示例程序见附件：killer.zip</p>
-
+<img src="/2022/06/08/python-mo-kuai-er-day5/image-20210105164740583.png" class="" title="image-20210105164740583">
 
 
 
@@ -1973,7 +1967,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 </ol>
 <h2 id="作业：开发短视频资讯平台"><a href="#作业：开发短视频资讯平台" class="headerlink" title="作业：开发短视频资讯平台"></a>作业：开发短视频资讯平台</h2><ul>
 <li><p>有video.csv视频库文件，其中有999条短视频数据，格式如下：【 video.csv 文件已为大家提供好，在day15课件目录下。 】</p>
-
+<img src="/2022/06/08/python-mo-kuai-er-day5/image-20210105223331765.png" class="" title="image-20210105223331765">
 </li>
 <li><p>项目的核心功能有：</p>
 <ul>

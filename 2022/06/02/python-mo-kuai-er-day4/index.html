@@ -734,7 +734,7 @@ print(v)
 # 武沛齐
 # None</code></pre>
 
-<img src="asserts/image-20220605203420301.png" alt="image-20220605203420301" style="zoom:25%;" />
+<img src="Python模块二day4/image-20220605203420301.png" alt="image-20220605203420301" style="zoom:25%;" />
 </li>
 <li><p>分析代码，写结果</p>
 <pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &#39;武沛齐&#39;
@@ -749,7 +749,7 @@ def func():
 v &#x3D; func()
 print(v)</code></pre>
 
-<img src="asserts/image-20220605204008387.png" alt="image-20220605204008387" style="zoom:25%;" />
+<img src="Python模块二day4/image-20220605204008387.png" alt="image-20220605204008387" style="zoom:25%;" />
 </li>
 <li><p>分析代码，写结果</p>
 <pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &#39;root&#39;
@@ -764,7 +764,7 @@ v &#x3D; func()
 result &#x3D; v()
 print(result)</code></pre>
 
-<img src="asserts/image-20220605204559954.png" alt="image-20220605204559954" style="zoom:25%;" />
+<img src="Python模块二day4/image-20220605204559954.png" alt="image-20220605204559954" style="zoom:25%;" />
 </li>
 <li><p>分析代码，写结果</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func():
@@ -802,7 +802,7 @@ print(v1)
 v2 &#x3D; func(&#39;alex&#39;)()
 print(v2)</code></pre>
 
-
+<img src="/2022/06/02/python-mo-kuai-er-day4/image-20201229140559322.png" class="" title="image-20201229140559322">
 
 
 
@@ -819,7 +819,7 @@ v2 &#x3D; func(&#39;alex&#39;)
 v1()
 v2()</code></pre>
 
-
+<img src="/2022/06/02/python-mo-kuai-er-day4/image-20201229165929911.png" class="" title="image-20201229165929911">
 
 
 </li>
@@ -840,7 +840,7 @@ print(v1,v2)
 # alex
 # root root</code></pre>
 
-</li>
+<img src="/2022/06/02/python-mo-kuai-er-day4/image-20201229171258454.png" class="" title="image-20201229171258454"></li>
 </ol>
 <h2 id="2-闭包"><a href="#2-闭包" class="headerlink" title="2.闭包"></a>2.闭包</h2><p>​		闭包，简而言之就是将数据封装在一个包（区域）中，使用时再去里面取。（本质上 闭包是基于函数嵌套搞出来一个中特殊嵌套）</p>
 <ul>
@@ -885,7 +885,7 @@ func(123)</code></pre>
 
 </li>
 <li><p>闭包应用场景2：<strong>封装数据封到一个包里，使用时在取。</strong></p>
-
+<img src="/2022/06/02/python-mo-kuai-er-day4/image-20201229181719550.png" class="" title="image-20201229181719550">
 
 <pre class="language-python" data-language="python"><code class="language-python">def task(arg):
     def inner():
@@ -968,7 +968,7 @@ for item in video_dict:
 
 POOL.shutdown()</code></pre>
 
-</li>
+<img src="/2022/06/02/python-mo-kuai-er-day4/image-20201229185549102.png" class="" title="image-20201229185549102"></li>
 </ul>
 <h2 id="3-装饰器"><a href="#3-装饰器" class="headerlink" title="3.装饰器"></a>3.装饰器</h2><p>​		现在给你一个函数，在不修改函数源码的前提下，实现在函数执行前和执行后分别输入 “before” 和 “after”。</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func():
@@ -1545,7 +1545,7 @@ func(10)
 func(20)
 func(30)</code></pre>
 
-<img src="asserts/image-20220606161005247.png" alt="image-20220606161005247" style="zoom:25%;" />
+<img src="Python模块二day4/image-20220606161005247.png" alt="image-20220606161005247" style="zoom:25%;" />
 
 <pre class="language-python" data-language="python"><code class="language-python"># [10]
 # [10, 20]
@@ -1640,7 +1640,7 @@ print(v2)</code></pre>
 <pre class="language-python" data-language="python"><code class="language-python"># 33
 # 46</code></pre></li>
 </ol>
-<h1 id="十四、内置函数和推导式"><a href="#十四、内置函数和推导式" class="headerlink" title="十四、内置函数和推导式"></a>十四、内置函数和推导式</h1> 
+<h1 id="十四、内置函数和推导式"><a href="#十四、内置函数和推导式" class="headerlink" title="十四、内置函数和推导式"></a>十四、内置函数和推导式</h1><img src="/2022/06/02/python-mo-kuai-er-day4/image-20201230125816095.png" class="" title="image-20201230125816095"> 
 
 <p>今日概要：</p>
 <ul>
@@ -1866,7 +1866,7 @@ data_list &#x3D; gen_random_num(3000000)
 <li><p>假设让你从某个数据源中获取300w条数据（后期学习操作MySQL 或 Redis等数据源再操作，了解思想即可）。</p>
 </li>
 </ul>
-<img src="asserts/image-20201230174253215.png" alt="image-20201230174253215" style="zoom: 33%;" />
+<img src="Python模块二day4/image-20201230174253215.png" alt="image-20201230174253215" style="zoom: 33%;" />
 
 <p>所以，当以后需要我们在内存中创建很多数据时，可以想着用基于生成器来实现一点一点生成（用一点生产一点），以节省内存的开销。</p>
 <h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><pre class="language-python" data-language="python"><code class="language-python">def func():
@@ -1901,7 +1901,7 @@ print(n4)</code></pre>
 
 
 
-<h2 id="3-内置函数"><a href="#3-内置函数" class="headerlink" title="3.内置函数"></a>3.内置函数</h2><img src="asserts/image-20201230201618164.png" alt="image-20201230201618164" style="zoom:50%;" />
+<h2 id="3-内置函数"><a href="#3-内置函数" class="headerlink" title="3.内置函数"></a>3.内置函数</h2><img src="Python模块二day4/image-20201230201618164.png" alt="image-20201230201618164" style="zoom:50%;" />
 
 <p>Python内部为我们提供了很多方便的内置函数，在此整理出来<strong>36</strong>个给大家来讲解。</p>
 <ul>
