@@ -460,7 +460,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="十三、函数高级"><a href="#十三、函数高级" class="headerlink" title="十三、函数高级"></a>十三、函数高级</h1><p><img src="/asserts/image-20201228153850400.png" alt="image-20201228153850400"></p>
+                <h1 id="十三、函数高级"><a href="#十三、函数高级" class="headerlink" title="十三、函数高级"></a>十三、函数高级</h1><img src="/2022/06/02/python-mo-kuai-er-day4/image-20201228153850400.png" class="" title="image-20201228153850400">
+
 <p>课程目标：掌握函数嵌套、闭包、装饰器等高级知识点。</p>
 <p>今日概要：</p>
 <ul>
@@ -661,7 +662,14 @@ def run():
     
 run()</code></pre>
 
-<p><img src="/asserts/image-20201229131739455.png" alt="image-20201229131739455"></p>
+
+
+
+
+
+
+
+
 <pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;
 
 def run():
@@ -676,7 +684,12 @@ v1()
 v2 &#x3D; run()
 v2()</code></pre>
 
-<p><img src="/asserts/image-20201229132237241.png" alt="image-20201229132237241"></p>
+
+
+
+
+
+
 <pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;
 
 def run():
@@ -693,7 +706,12 @@ funcs &#x3D; run()
 funcs[2]()
 funcs[1]()</code></pre>
 
-<p><img src="/asserts/image-20201229132648896.png" alt="image-20201229132648896"></p>
+
+
+
+
+
+
 <p><font color="#dd0000"><strong>三句话搞定作用域：</strong></font></p>
 <ul>
 <li><strong>优先在自己的作用域找，自己没有就去上级作用域。</strong></li>
@@ -784,7 +802,12 @@ print(v1)
 v2 &#x3D; func(&#39;alex&#39;)()
 print(v2)</code></pre>
 
-<p><img src="/asserts/image-20201229140559322.png" alt="image-20201229140559322"></p>
+
+
+
+
+
+
 <pre class="language-python" data-language="python"><code class="language-python">def func(name):
     def inner():
         print(name)
@@ -796,7 +819,9 @@ v2 &#x3D; func(&#39;alex&#39;)
 v1()
 v2()</code></pre>
 
-<p><img src="/asserts/image-20201229165929911.png" alt="image-20201229165929911"></p>
+
+
+
 </li>
 <li><p>分析代码，写结果</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func(name&#x3D;None):
@@ -815,7 +840,6 @@ print(v1,v2)
 # alex
 # root root</code></pre>
 
-<p><img src="/asserts/image-20201229171258454.png" alt="image-20201229171258454"></p>
 </li>
 </ol>
 <h2 id="2-闭包"><a href="#2-闭包" class="headerlink" title="2.闭包"></a>2.闭包</h2><p>​		闭包，简而言之就是将数据封装在一个包（区域）中，使用时再去里面取。（本质上 闭包是基于函数嵌套搞出来一个中特殊嵌套）</p>
@@ -860,7 +884,9 @@ func(123)</code></pre>
 
 
 </li>
-<li><p>闭包应用场景2：<strong>封装数据封到一个包里，使用时在取。</strong><br><img src="/asserts/image-20201229181719550.png" alt="image-20201229181719550"></p>
+<li><p>闭包应用场景2：<strong>封装数据封到一个包里，使用时在取。</strong></p>
+
+
 <pre class="language-python" data-language="python"><code class="language-python">def task(arg):
     def inner():
         print(arg)
@@ -942,7 +968,6 @@ for item in video_dict:
 
 POOL.shutdown()</code></pre>
 
-<p><img src="/asserts/image-20201229185549102.png" alt="image-20201229185549102"></p>
 </li>
 </ul>
 <h2 id="3-装饰器"><a href="#3-装饰器" class="headerlink" title="3.装饰器"></a>3.装饰器</h2><p>​		现在给你一个函数，在不修改函数源码的前提下，实现在函数执行前和执行后分别输入 “before” 和 “after”。</p>
@@ -1615,7 +1640,8 @@ print(v2)</code></pre>
 <pre class="language-python" data-language="python"><code class="language-python"># 33
 # 46</code></pre></li>
 </ol>
-<h1 id="十四、内置函数和推导式"><a href="#十四、内置函数和推导式" class="headerlink" title="十四、内置函数和推导式"></a>十四、内置函数和推导式</h1><p><img src="/asserts/image-20201230125816095.png" alt="image-20201230125816095"> </p>
+<h1 id="十四、内置函数和推导式"><a href="#十四、内置函数和推导式" class="headerlink" title="十四、内置函数和推导式"></a>十四、内置函数和推导式</h1> 
+
 <p>今日概要：</p>
 <ul>
 <li>匿名函数</li>

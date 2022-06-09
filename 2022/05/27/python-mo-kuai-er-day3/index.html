@@ -461,7 +461,8 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="第二模块-函数-amp-模块"><a href="#第二模块-函数-amp-模块" class="headerlink" title="第二模块 函数&amp;模块"></a>第二模块 函数&amp;模块</h1><p>​		从今天开始，我们将进入系列课程第二模块的的学习。第一模块主要是学习python基础知识，从第二模块开始就可以通过程序去解决工作中实际的问题。</p>
-<p><img src="/asserts/image-20201216140222926.png" alt="image-20201216140222926"></p>
+<img src="/2022/05/27/python-mo-kuai-er-day3/image-20201216140222926.png" class="" title="image-20201216140222926">
+
 <p>从今天开始，我们将进入第二模块的学习，此模块主要包含两大部分：</p>
 <ul>
 <li><p><font color="#dd0000">函数，一个用于专门实现某个功能的代码块（可重用）。</font></p>
@@ -500,7 +501,8 @@ print(v3) # 0.3</code></pre>
 </ul>
 </li>
 </ul>
-<h1 id="十、-文件操作相关"><a href="#十、-文件操作相关" class="headerlink" title="十、 文件操作相关"></a>十、 文件操作相关</h1><p><img src="/asserts/image-20201216175307239.png" alt="image-20201216175307239"></p>
+<h1 id="十、-文件操作相关"><a href="#十、-文件操作相关" class="headerlink" title="十、 文件操作相关"></a>十、 文件操作相关</h1><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201216175307239.png" class="" title="image-20201216175307239">
+
 <p>课程目标：</p>
 <p>​		掌握基于Python对文件相关操作。</p>
 <p>课程概要：</p>
@@ -582,8 +584,9 @@ print(data) # \x91\xf6\xf2\x83\x8aQFfv\x8b7\xcc\xed\xc3&#125;\x7fT\x9d&#123;.3.\
 <li><p><font color="#dd0000">路径</font></p>
 <ul>
 <li><p><font color="#dd0000">相对路径，你的程序到底在哪里运行的？</font></p>
-<p><img src="/asserts/image-20201217140130973.png" alt="image-20201217140130973"></p>
-<p><img src="/asserts/image-20201217140237160.png" alt="image-20201217140237160"></p>
+<img src="/2022/05/27/python-mo-kuai-er-day3/image-20201217140130973-16547787758621.png" class="">
+
+
 </li>
 </ul>
 </li>
@@ -689,11 +692,11 @@ file_object.close()
 
 <pre class="language-none"><code class="language-none">&#x2F;Library&#x2F;Frameworks&#x2F;Python.framework&#x2F;Versions&#x2F;3.9&#x2F;bin&#x2F;pip3 install requests</code></pre>
 
-<p><img src="/asserts/image-20201217152358142.png" alt="image-20201217152358142"></p>
+<img src="/2022/05/27/python-mo-kuai-er-day3/image-20201217152358142-16547787811552.png" class="" title="image-20201217152358142">
 </li>
 <li><p>使用第三方模块</p>
 <pre class="language-python" data-language="python"><code class="language-python">import requests
-                    
+                        
 res &#x3D; requests.get(url&#x3D;&quot;网址&quot;)
 print(res)</code></pre></li>
 </ul>
@@ -1706,7 +1709,10 @@ print(info)</code></pre>
 <pre class="language-none"><code class="language-none">pip install openpyxl</code></pre>
 
 <p>此模块中集成了Python操作Excel的相关功能，接下来我们就需要去学习该模块提供的相关功能即可。</p>
-<p><img src="/asserts/image-20201218012118097.png" alt="image-20201218012118097"></p>
+<img src="/2022/05/27/python-mo-kuai-er-day3/image-20201218012118097.png" class="">
+
+
+
 <h3 id="5-1-读Excel"><a href="#5-1-读Excel" class="headerlink" title="5.1 读Excel"></a>5.1 读Excel</h3><ul>
 <li><p>读sheet</p>
 <pre class="language-python" data-language="python"><code class="language-python">from openpyxl import load_workbook
@@ -1796,7 +1802,8 @@ for col in sheet.columns:
 &quot;&quot;&quot;</code></pre>
 </li>
 <li><p>读合并的单元格</p>
-<p><img src="/asserts/image-20201218011732755.png" alt="image-20201218011732755"></p>
+<img src="/2022/05/27/python-mo-kuai-er-day3/image-20201218011732755.png" class="" title="image-20201218011732755">
+
 <pre class="language-python" data-language="python"><code class="language-python">from openpyxl import load_workbook
 
 wb &#x3D; load_workbook(&quot;files&#x2F;p1.xlsx&quot;)
@@ -2745,7 +2752,8 @@ with open(file_name, mode&#x3D;&#39;wb&#39;) as file_object:
 unpack_file_name &#x3D; os.path.join(base_dir, &#39;files&#39;, &#39;html&#39;) 
 shutil.unpack_archive(file_name, extract_dir&#x3D;unpack_file_name, format&#x3D;&#39;zip&#39;)  # unpack文件时文件路径不存在会自动创建不用if...</code></pre></li>
 </ol>
-<h1 id="十一、-函数入门"><a href="#十一、-函数入门" class="headerlink" title="十一、 函数入门"></a>十一、 函数入门</h1><p><img src="/asserts/image-20201220155910093.png" alt="image-20201220155910093"></p>
+<h1 id="十一、-函数入门"><a href="#十一、-函数入门" class="headerlink" title="十一、 函数入门"></a>十一、 函数入门</h1><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201220155910093.png" class="" title="image-20201220155910093">
+
 <p>目标：掌握函数的编写方式以及函数的基本使用。</p>
 <p>今日概要：</p>
 <ul>
@@ -2847,8 +2855,12 @@ calculate_straight_rule()
 </li>
 <li>代码发送邮件</li>
 </ul>
-<p>![image-20201220180545406](E:&#x2F;python路飞学城&#x2F;模块2&#x2F;day10 函数基础&#x2F;笔记&#x2F;assets&#x2F;image-20201220180545406.png)</p>
-<p>![image-20201220180613478](E:&#x2F;python路飞学城&#x2F;模块2&#x2F;day10 函数基础&#x2F;笔记&#x2F;assets&#x2F;image-20201220180613478.png)</p>
+<img src="/2022/05/27/python-mo-kuai-er-day3/image-20201220180545406.png" class="" title="image-20201220180545406">
+
+<img src="/2022/05/27/python-mo-kuai-er-day3/image-20201220180613478.png" class="" title="image-20201220180613478">
+
+
+
 <p>以下是我为大家提供的发邮件的一个函数。</p>
 <pre class="language-python" data-language="python"><code class="language-python">import smtplib
 from email.mime.text import MIMEText
@@ -3539,7 +3551,8 @@ else:
     print(&#39;登录失败&#39;)
 </code></pre>
 
-<h1 id="十二、-函数进阶"><a href="#十二、-函数进阶" class="headerlink" title="十二、 函数进阶"></a>十二、 函数进阶</h1><p><img src="/asserts/image-20201222145103056.png" alt="image-20201222145103056"></p>
+<h1 id="十二、-函数进阶"><a href="#十二、-函数进阶" class="headerlink" title="十二、 函数进阶"></a>十二、 函数进阶</h1><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201222145103056.png" class="" title="image-20201222145103056">
+
 <p>目标：掌握函数相关易错点 &amp; 项目开发必备技能。</p>
 <p>今日概要：</p>
 <ul>
@@ -3568,7 +3581,7 @@ v2 &#x3D; v1
 print( id(v1) )
 print( id(v2) )</code></pre>
 
-<p><font color="#dd0000"><strong>记住一句话：函数执行传参时，传递的是内存地址。</strong></font><img src="/asserts/image-20201223234934053.png" alt="image-20201223234934053"></p>
+<p><font color="#dd0000"><strong>记住一句话：函数执行传参时，传递的是内存地址。</strong></font></p>
 <pre class="language-python" data-language="python"><code class="language-python">def func(data):
     print(data, id(data))  # 武沛齐  140247057684592
 
@@ -4316,7 +4329,10 @@ func()</code></pre>
 
 
 <h3 id="4-2-全局和局部"><a href="#4-2-全局和局部" class="headerlink" title="4.2 全局和局部"></a>4.2 全局和局部</h3><p>Python中以函数为作用域，函数的作用域其实是一个局部作用域。</p>
-<p><img src="/asserts/image-20201223022803940.png" alt="image-20201223022803940"></p>
+<img src="/2022/05/27/python-mo-kuai-er-day3/image-20201223022803940.png" class="" title="image-20201223022803940">
+
+
+
 <pre class="language-python" data-language="python"><code class="language-python">goods &#x3D; [
     &#123;&quot;name&quot;: &quot;电脑&quot;, &quot;price&quot;: 1999&#125;,
     &#123;&quot;name&quot;: &quot;鼠标&quot;, &quot;price&quot;: 10&#125;,
@@ -4450,7 +4466,8 @@ http:&#x2F;&#x2F;www.xxx.com
 
 
 
-<h3 id="4-3-global关键字"><a href="#4-3-global关键字" class="headerlink" title="4.3 global关键字"></a>4.3 global关键字</h3><p><img src="/asserts/image-20201223022803940.png" alt="image-20201223022803940"></p>
+<h3 id="4-3-global关键字"><a href="#4-3-global关键字" class="headerlink" title="4.3 global关键字"></a>4.3 global关键字</h3><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201223022803940-16547788868353.png" class="" title="image-20201223022803940">
+
 <p>​		<strong>默认情况下，在局部作用域对全局变量只能进行：读取和修改内部元素（可变类型），无法对全局变量进行重新赋值。</strong></p>
 <ul>
 <li><p>读取</p>

@@ -460,7 +460,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="十五、模块"><a href="#十五、模块" class="headerlink" title="十五、模块"></a>十五、模块</h1><p><img src="/asserts/image-20210102105502236.png" alt="image-20210102105502236"></p>
+                <h1 id="十五、模块"><a href="#十五、模块" class="headerlink" title="十五、模块"></a>十五、模块</h1>
+
 <p>课程目标：掌握Python中常用模块的使用方法。</p>
 <p>今日概要：</p>
 <ul>
@@ -495,7 +496,10 @@ print(message)
 └── run.py
 </code></pre>
 
-<p><img src="/asserts/image-20210103144059473.png" alt="image-20210103144059473"></p>
+
+
+
+
 <p>在Python中一般对文件和文件夹的称呼（很多开发者的平时开发中也有人都称为模块）</p>
 <ul>
 <li>一个py文件，模块（module）。</li>
@@ -538,7 +542,7 @@ import xxxxx  # 导入路径A下的一个xxxxx.py文件</code></pre>
 
 <ol>
 <li><font color="#dd0000"><strong>你以后写模块名称时，千万不能和内置和第三方的同名（新手容易犯错误）。</strong></font></li>
-<li><font color="#dd0000"><strong>项目执行文件一般都在项目根目录，如果执行文件嵌套的内存目录，就需要自己手动在sys.path中添加路径。</strong></font><br><img src="/asserts/image-20210103163446464.png" alt="image-20210103163446464"></li>
+<li><font color="#dd0000"><strong>项目执行文件一般都在项目根目录，如果执行文件嵌套的内存目录，就需要自己手动在sys.path中添加路径。</strong></font></li>
 <li><font color="#dd0000"><strong>pycharm中默认会将项目目录加入到sys.path中</strong></font></li>
 </ol>
 <p>关于导入的方式：</p>
@@ -733,12 +737,16 @@ Windows系统，即：Python安装路径的scripts目录下
 <li><p>下载 <code>get-pip.py</code> 文件，到任意目录</p>
 <pre class="language-none"><code class="language-none">地址：https:&#x2F;&#x2F;bootstrap.pypa.io&#x2F;get-pip.py</code></pre>
 </li>
-<li><p>打开终端进入目录，用Python解释器去运行已下载的 <code>get-pip.py</code>文件即刻安装成功。<br><img src="/asserts/image-20210102191829546.png" alt="image-20210102191829546"></p>
+<li><p>打开终端进入目录，用Python解释器去运行已下载的 <code>get-pip.py</code>文件即刻安装成功。</p>
 </li>
 </ul>
 <p>使用pip去安装第三方模块也非常简单，只需要在自己终端执行：<code>pip install 模块名称</code> 即可。</p>
-<p><img src="/asserts/image-20210102192637805.png" alt="image-20210102192637805"></p>
-<p><img src="/asserts/image-20210102192757171.png" alt="image-20210102192757171"></p>
+
+
+
+
+
+
 <p>默认安装的是最新的版本，如果想要指定版本：</p>
 <pre class="language-python" data-language="python"><code class="language-python">pip3 install 模块名称&#x3D;&#x3D;版本
 
@@ -788,7 +796,7 @@ Writing to &#x2F;Users&#x2F;wupeiqi&#x2F;.config&#x2F;pip&#x2F;pip.conf</code></
 <pre class="language-none"><code class="language-none">python3 setup.py build
 python3 setup.py install</code></pre>
 
-<p><img src="/asserts/image-20210102215833498.png" alt="image-20210102215833498"><br><img src="/asserts/image-20210102220013804.png" alt="image-20210102220013804"></p>
+
 </li>
 </ul>
 <h3 id="2-3-wheel"><a href="#2-3-wheel" class="headerlink" title="2.3 wheel"></a>2.3 wheel</h3><p>​		wheel是Python的第三方模块包的文件格式的一种，我们也可以基于wheel去安装一些第三方模块。</p>
@@ -1105,7 +1113,8 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         clip.close()
     print(&#39;文件夹:&#123;&#125;，电影总时长为&#123;&#125;&#39;.format(path, sum_time))</code></pre></li>
 </ol>
-<h1 id="十六、内置模块和开发规范"><a href="#十六、内置模块和开发规范" class="headerlink" title="十六、内置模块和开发规范"></a>十六、内置模块和开发规范</h1><p><img src="/asserts/image-20210104122555935.png" alt="image-20210104122555935"></p>
+<h1 id="十六、内置模块和开发规范"><a href="#十六、内置模块和开发规范" class="headerlink" title="十六、内置模块和开发规范"></a>十六、内置模块和开发规范</h1>
+
 <p>目标：掌握常见的内置模块的使用及了解软件开发的规范。</p>
 <p>今日概要：</p>
 <ul>
@@ -1150,7 +1159,8 @@ value &#x3D; &#39;[&#123;&quot;id&quot;: 1, &quot;name&quot;: &quot;武沛齐&qu
 
 
 
-<p><img src="/asserts/image-20210104123415566.png" alt="image-20210104123415566"></p>
+
+
 <p>Python数据类型与json格式的相互转换：</p>
 <ul>
 <li><p><font color="#dd0000"><strong>数据类型 -&gt; json ，一般称为：序列化</strong></font></p>
@@ -1397,7 +1407,8 @@ v1 &#x3D; datetime.now()
 val &#x3D; v1.timestamp()
 print(val)</code></pre></li>
 </ul>
-<p><img src="/asserts/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220608200220.jpg" alt="微信图片编辑_20220608200220"></p>
+
+
 <h4 id="练习题-1"><a href="#练习题-1" class="headerlink" title="练习题"></a>练习题</h4><ol>
 <li><p>日志记录，将用户输入的信息写入到文件，文件名格式为<code>年-月-日-时-分.txt</code>。</p>
 <pre class="language-python" data-language="python"><code class="language-python">from datetime import datetime
@@ -1925,7 +1936,10 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 └── utils         包，公共功能</code></pre>
 
 <p>示例程序见附件：crm.zip</p>
-<p><img src="/asserts/image-20210105163335127.png" alt="image-20210105163335127"></p>
+
+
+
+
 <h3 id="2-3-多可执行文件"><a href="#2-3-多可执行文件" class="headerlink" title="2.3 多可执行文件"></a>2.3 多可执行文件</h3><p>​		新创建项目，假设名称叫【killer】，可以创建如下文件和文件夹来存放代码和数据。</p>
 <pre class="language-none"><code class="language-none">killer
 ├── bin					文件夹，存放多个主文件（可运行）
@@ -1944,7 +1958,10 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 
 
 <p>示例程序见附件：killer.zip</p>
-<p><img src="/asserts/image-20210105164740583.png" alt="image-20210105164740583"></p>
+
+
+
+
 <h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><ol>
 <li>json格式和json模块</li>
 <li>json模块处理特殊的数据类型</li>
@@ -1956,7 +1973,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 </ol>
 <h2 id="作业：开发短视频资讯平台"><a href="#作业：开发短视频资讯平台" class="headerlink" title="作业：开发短视频资讯平台"></a>作业：开发短视频资讯平台</h2><ul>
 <li><p>有video.csv视频库文件，其中有999条短视频数据，格式如下：【 video.csv 文件已为大家提供好，在day15课件目录下。 】</p>
-<p><img src="/asserts/image-20210105223331765.png" alt="image-20210105223331765"></p>
+
 </li>
 <li><p>项目的核心功能有：</p>
 <ul>
