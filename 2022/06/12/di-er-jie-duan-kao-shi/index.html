@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="博客搭建, Gengtianba&#39;s Blog">
+    <meta name="keywords" content="第二阶段考试, Gengtianba&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>博客搭建 | Gengtianba&#39;s Blog</title>
+    <title>第二阶段考试 | Gengtianba&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">博客搭建</h1>
+                    <h1 class="description center-align post-title">第二阶段考试</h1>
                 </div>
             </div>
         </div>
@@ -388,8 +388,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/">
+                                <span class="chip bg-color">第二阶段</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%80%83%E8%AF%95/">
+                                <span class="chip bg-color">考试</span>
                             </a>
                         
                     </div>
@@ -400,8 +408,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/hexo/" class="post-category">
-                                hexo
+                            <a href="/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/" class="post-category">
+                                路飞学院
                             </a>
                         
                     </div>
@@ -413,7 +421,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-26
+                    2022-06-12
                 </div>
                 
 
@@ -422,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    151
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    9 分
                 </div>
                 
 
@@ -452,27 +460,340 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、hexo本地部署和github部署"><a href="#一、hexo本地部署和github部署" class="headerlink" title="一、hexo本地部署和github部署"></a>一、hexo本地部署和github部署</h1><ul>
-<li>过程：<br>参考<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?share_source=copy_web">b站程序羊</a></li>
-<li>主要问题：windos系统 hexo d 报错<br>参考弹幕<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?share_source=copy_web">b站程序羊</a></li>
-</ul>
-<blockquote>
-<p>win10记得hexo 之前敲<br>git config –global user.email “xxx”<br>git config –global user.name “xxx”</p>
-</blockquote>
-<h1 id="二、matery主题使用"><a href="#二、matery主题使用" class="headerlink" title="二、matery主题使用"></a>二、matery主题使用</h1><p>​		参考<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">blinkfox</a></p>
-<h1 id="三、markdown编辑器（Typora）"><a href="#三、markdown编辑器（Typora）" class="headerlink" title="三、markdown编辑器（Typora）"></a>三、markdown编辑器（Typora）</h1><img src="/2022/05/26/bo-ke-da-jian/image-20201011095314682.png" class="" title="image-20201011095314682">
+                <ol>
+<li><p>一个大小为100G的文件 etl_log.txt，要读取文件中的内容，写出具体过程代码。</p>
+<p>答：</p>
+<pre class="language-python" data-language="python"><code class="language-python">&quot;&quot;&quot;一次读1&#x2F;10&quot;&quot;&quot;
+def read_file(file_path, read_times):
+    with open(file_path, mode&#x3D;&#39;rt&#39;, encoding&#x3D;&#39;utf-8&#39;) as file_object:
+        total_line &#x3D; len(file_object.readlines())
+        file_object.seek(0)
+        lines_each_time, reminder &#x3D; divmod(total_line, read_times)
+        if reminder:
+            read_times +&#x3D; 1
 
-<h1 id="四、图片的插入"><a href="#四、图片的插入" class="headerlink" title="四、图片的插入"></a>四、图片的插入</h1><ol>
-<li><p>修改<code>_config.yml</code>中的<code>post_asset_folder: true</code></p>
+        i &#x3D; 0
+        while i &lt; read_times:
+            data_list &#x3D; []
+            for j in range(lines_each_time):
+                data_list.append(file_object.readline())
+            yield data_list
+            i +&#x3D; 1
+
+
+gen_obj &#x3D; read_file(&#39;etl_log.txt&#39;, 10)
+
+print(next(gen_obj))
+</code></pre>
+
+<p><font color="#dd0000"><strong>答案</strong></font></p>
+<pre class="language-python" data-language="python"><code class="language-python"># 存在多行：一行一行读
+with open(file_path, mode&#x3D;&#39;rt&#39;, encoding&#x3D;&#39;utf-8&#39;) as file_object:
+    for line in file_object:
+        pass</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 只有一行：按字节读
+import os
+
+file_size &#x3D; os.path.getsize(&quot;etl_log.txt.txt&quot;)
+with open(file_path, mode&#x3D;&#39;rb&#39;) as file_object:
+    read_byte &#x3D; 0
+    while read_byte &lt;&#x3D; file_size:
+        file_object.read(1)
+        read_byte +&#x3D; 1
+    </code></pre>
+
+
 </li>
-<li><p>安装 <code>cnpm</code> 来下载插件 <code>hexo-image-link</code> (用国内下载源来下载，速度快)</p>
-<blockquote>
-<p>npm install -g cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></p>
-<p>cnpm install hexo-image-link –save</p>
-</blockquote>
+<li><p>编写一个函数，这个函数接受一个文件夹名称作为参数，寻找文件夹中所有文件的路径并输入（包含嵌套）。</p>
+<p>答：</p>
+<pre class="language-python" data-language="python"><code class="language-python"># 编写一个函数，这个函数接受一个文件夹名称作为参数，寻找文件夹中所有文件的路径并输入（包含嵌套）。
+import os
+
+
+def findall_path(dir_path):
+    for item in os.walk(dir_path):
+        path, dir_list, file_list &#x3D; item
+        
+        for file_name in file_list:
+            print(os.path.join(path, file_name))
+
+
+
+result &#x3D; findall_path(r&#39;C:\Users\Geng\Desktop\我在b站学编程\python\模块二&#39;)
+print(result)</code></pre>
+
+<p><font color="#dd0000"><strong>存在问题</strong></font>：item变量是否有必要创建</p>
+<pre class="language-python" data-language="python"><code class="language-python">for path, dir_list, file_list in os.walk(dir_path):</code></pre>
+
+
 </li>
-<li><p>设置Typora的图片存放路径，这样就会在当前<code>md</code>下，生成同名的<code>文件夹</code></p>
-<img src="/2022/05/26/bo-ke-da-jian/9d26623134394c8f964a6f0328a1aaed.png" class="" title="在这里插入图片描述"></li>
+<li><p>以下的代码数据的结果是什么？</p>
+<pre class="language-python" data-language="python"><code class="language-python">def extend_list(val,data&#x3D;[]):
+    data.append(val)
+    return data
+
+list1 &#x3D; extend_list(10)
+list2 &#x3D; extend_list(123,[])
+list3 &#x3D; extend_list(&quot;a&quot;)
+
+print(list1,list2,list3)</code></pre>
+
+<p>答：</p>
+<pre class="language-python" data-language="python"><code class="language-python"># [10]  # 【10, a】
+# [123]
+# [&#39;a&#39;]  # 【10, a】</code></pre>
+
+<p><font color="#dd0000"><strong>存在问题：list1， list3没有传入参数data使用的是extend_list函数内部维护的data，因此list1，list3输出错误</strong></font></p>
+</li>
+<li><p>python代码获取命令行参数。</p>
+<p><font color="#dd0000"><strong>答案</strong></font></p>
+<pre class="language-python" data-language="python"><code class="language-python">import sys
+
+sys.argv</code></pre>
+
+
+</li>
+<li><p>简述深浅拷贝？</p>
+<p>​	答：</p>
+<ul>
+<li>深浅拷贝只对可变类型有意义，不可变类型本质都不会对数据进行拷贝。</li>
+<li>不可变数据类型的浅拷贝：只对数据不可变类型的第一层进行拷贝，而不会对不可变数据类型和更深层级的可变类型进行拷贝。</li>
+<li>不可变数据类型的深拷贝：对所有层级的可变数据类型进行拷贝，不会对不可变数据类型进行拷贝。</li>
+<li>特例：对元组进行拷贝时，会对内部可变元素进行拷贝。</li>
+</ul>
+</li>
+<li><p>基于推导式一行代码生成1-100以内的偶数列表。</p>
+<p>答：</p>
+<pre class="language-python" data-language="python"><code class="language-python">data_list &#x3D; [i for i in range(1, 101) if i%2 &#x3D;&#x3D; 0]
+print(data_list)</code></pre>
+
+
+</li>
+<li><p>请把以下函数转化为python lambda匿名函数</p>
+<pre class="language-python" data-language="python"><code class="language-python">def add(x,y):  
+    return x+y</code></pre>
+
+<p>答：</p>
+<pre class="language-python" data-language="python"><code class="language-python">add &#x3D; lambda x, y: x+y
+print(add(2, 3))</code></pre>
+
+
+</li>
+<li><p>看代码写结果</p>
+<pre class="language-python" data-language="python"><code class="language-python">def num():
+    return [lambda x: i * x for i in range(4)]
+
+result &#x3D; [m(2) for m in num()]
+print(result)</code></pre>
+
+<p>答：[6, 6, 6, 6]</p>
+</li>
+<li><p>列表推导式和生成器表达式 [i % 2 for i in range(10)] 和 (i % 2 for i in range(10)) 输出结果分别是什么？</p>
+<p>答：推导式结果为列表：[0, 1, 0, 1, 0, 1, 0, 1, 0, 1]</p>
+<p>​		生成器结果为生成器对象：gen_obj。通过for循环，next()方法可获取内部值</p>
+</li>
+<li><p>写装饰器</p>
+</li>
+</ol>
+   <pre class="language-python" data-language="python"><code class="language-python"># 写timer装饰器实现：计算fun函数执行时间，并将结果给 result，最终打印（不必使用datetime,使用time.time即可）。
+
+@timer
+def func():
+    pass
+
+result &#x3D; func()
+print(result) </code></pre>
+
+<p>   答：忘记@functools.wraps()内的参数</p>
+   <pre class="language-python" data-language="python"><code class="language-python">import time
+import functools
+
+
+def timer(origin):
+
+    @functools.wraps(origin)
+    def inner(*args, **kwargs):
+        start_time &#x3D; time.time()
+        origin(*args, **kwargs)
+        end_time &#x3D; time.time()
+        res &#x3D; end_time - start_time
+        return res
+    return inner
+
+@timer
+def func():
+    time.sleep(10)</code></pre>
+
+<p>   <font color="#dd0000"><strong>存在问题:</strong></font></p>
+<ul>
+<li><p><font color="#dd0000"><strong>@functools.wraps()内的参数，为原函数</strong></font></p>
+</li>
+<li><p><font color="#dd0000"><strong>装饰器不要改变原函数的返回值</strong></font></p>
+<pre class="language-python" data-language="python"><code class="language-python">def timer(origin):
+
+    @functools.wraps(origin)
+    def inner(*args, **kwargs):
+        start_time &#x3D; time.time()
+        res &#x3D; origin(*args, **kwargs)
+        end_time &#x3D; time.time()
+        message &#x3D; &#39;共用时&#123;&#125;秒&#39;.format(end_time - start_time)
+        return res
+    return inner</code></pre></li>
+</ul>
+<ol start="11">
+<li><p>re的match和search区别？</p>
+<p>答：</p>
+<ul>
+<li>match返回第一个匹配结果</li>
+<li>search</li>
+</ul>
+<p><font color="#dd0000"><strong>存在问题：知识点未掌握</strong></font></p>
+<ul>
+<li>match 返回从头开始匹配</li>
+<li>search 在整个字符串进行匹配</li>
+<li>他们均获取一个匹配成果的字符串</li>
+</ul>
+</li>
+<li><p>什么是正则的贪婪匹配？或 正则匹配中的贪婪模式与非贪婪模式的区别？</p>
+<p>答：</p>
+<ul>
+<li>贪婪匹配：匹配到正则表达式后，继续往后匹配，以求得满足结果的最长字符串</li>
+<li>非贪婪匹配：匹配到正则表达式后停止匹配返回结果</li>
+</ul>
+</li>
+<li><p>sys.path.append(“&#x2F;root&#x2F;mods”)的作用？</p>
+<p>答：将”&#x2F;root&#x2F;mods”加入系统环境变量</p>
+<p><font color="#dd0000"><strong>存在问题：未回答完整</strong></font></p>
+<p>答：将”&#x2F;root&#x2F;mods”加入系统环境变量，可以直接对该路径下的模块和包进行导入</p>
+</li>
+<li><p>写函数</p>
+</li>
+</ol>
+<pre class="language-python" data-language="python"><code class="language-python">有一个数据结构如下所示，请编写一个函数从该结构数据中返回由指定的 字段和对应的值组成的字典。如果指定字段不存在，则跳过该字段。
+DATA &#x3D; &#123;
+    &quot;time&quot;: &quot;2016-08-05T13:13:05&quot;,
+    &quot;some_id&quot;: &quot;ID1234&quot;,
+    &quot;grp1&quot;: &#123;&quot;fld1&quot;: 1, &quot;fld2&quot;: 2, &#125;,
+    &quot;xxx2&quot;: &#123;&quot;fld3&quot;: 0, &quot;fld4&quot;: 0.4, &#125;,
+    &quot;fld6&quot;: 11,
+    &quot;fld7&quot;: 7,
+    &quot;fld46&quot;: 8
+&#125;
+
+fields:由&quot;|&quot;连接的以fld开头的字符串, 如fld2|fld7|fld29  
+
+def select(fields):
+    print(DATA)
+    return result</code></pre>
+
+<p>答：</p>
+<pre class="language-python" data-language="python"><code class="language-python">DATA &#x3D; &#123;
+    &quot;time&quot;: &quot;2016-08-05T13:13:05&quot;,
+    &quot;some_id&quot;: &quot;ID1234&quot;,
+    &quot;grp1&quot;: &#123;&quot;fld1&quot;: 1, &quot;fld2&quot;: 2, &#125;,
+    &quot;xxx2&quot;: &#123;&quot;fld3&quot;: 0, &quot;fld4&quot;: 0.4, &#125;,
+    &quot;fld6&quot;: 11,
+    &quot;fld7&quot;: 7,
+    &quot;fld46&quot;: 8
+&#125;
+
+
+def select(fields):
+    data_list &#x3D; fields.split(&#39;|&#39;)
+    res &#x3D; &#123;&#125;
+    for data in data_list:
+        value &#x3D; DATA.get(data)
+        if not value:
+            continue
+
+        res[data] &#x3D; value
+    return res
+
+print(select(&#39;fld2|fld7|fld29&#39;))</code></pre>
+
+
+
+<ol start="15">
+<li>编写函数，实现base62encode加密（62进制），例如：</li>
+</ol>
+<pre class="language-none"><code class="language-none">内部维护的数据有：0123456789AB..Zab..z(10个数字+26个大写字母+26个小写字母)。
+当执行函数：
+	base62encode(1)，获取的返回值为1
+	base62encode(61)，获取的返回值为z
+	base62encode(62)，获取的返回值为10</code></pre>
+
+<p>答：</p>
+<pre class="language-python" data-language="python"><code class="language-python">import string
+
+
+def base62encode(value):
+    data &#x3D; string.digits + string.ascii_letters
+    res &#x3D; &#39;&#39;
+    if value &lt; 62:
+        res &#x3D; data[value]
+
+    count &#x3D; 1
+    while value &gt; 61:
+        div, reminder &#x3D; divmod(value, 62)
+        if div:
+            res &#x3D; str(div) + data[reminder]
+        value -&#x3D; div*pow(62, count)
+
+    return res</code></pre>
+
+<p><font color="#dd0000"><strong>存在问题：</strong></font></p>
+<ul>
+<li>可适当简化</li>
+<li>不要把62写死，通过len获取进制</li>
+</ul>
+<pre class="language-none"><code class="language-none">思路：一直让输入的数值除以62取余数，以此取到的余数分别是每一位的索引位置。
+5&#x2F;62
+	得到 0 , 余数 5         05
+62&#x2F;62
+	得到 1 , 余数 0         10
+	
+178&#x2F;62
+	得到 2 ，余数 54         2P
+	
+98723&#x2F;62 
+	得到1592，余数19          [C,B,K]
+	1592&#x2F;62
+		得到25，余数42</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">import string
+
+
+def base62encode(value):
+    data &#x3D; string.digits + string.ascii_letters
+    length &#x3D; len(data)
+    res &#x3D; &#39;&#39;
+
+    while value &gt; 61:
+        value, reminder &#x3D; divmod(value, 62)
+        res &#x3D; data[reminder] + res
+
+    res &#x3D; data[value] + res
+    return res</code></pre>
+
+<ol start="16">
+<li><p>基于列表推导式一行实现输出9*9乘法表。</p>
+<pre class="language-python" data-language="python"><code class="language-python"># 基于列表推导式一行实现输出9*9乘法表。
+a &#x3D; [&#39;&#123;&#125;*&#123;&#125;&#x3D;&#123;&#125;\n&#39;.format(j, i, i*j) if j &#x3D;&#x3D; i else &#39;&#123;&#125;*&#123;&#125;&#x3D;&#123;&#125;&#39;.format(j, i, i*j) for i in range(1, 10) for j in range(1, i+1)]
+
+for i in a:
+    if i &#x3D;&#x3D; &#39;1*1&#x3D;1\n&#39;:
+        print(&#39; &#123;&#125;&#39;.format(i), end&#x3D;&#39; &#39;)
+        continue
+    print(i, end&#x3D;&#39; &#39;)</code></pre>
+
+<p><font color="#dd0000"><strong>另一种思路</strong></font></p>
+<pre class="language-python" data-language="python"><code class="language-python"># 1.输出9个空列表
+print([[] for i in range(10)])
+# 2.将九个空列表按9*9乘法表列进行填充
+print([[&#39;&#123;&#125;*&#123;&#125;&#x3D;&#123;&#125;&#39;.format(j, i, i*j) for j in range(1, i+1)] for i in range(1, 10)])
+# 3.每个列表中各元素用空格连接，各列表之间用换行符连接
+print(&#39;\n&#39;.join([&#39; &#39;.join([&#39;&#123;&#125;*&#123;&#125;&#x3D;&#123;&#125;&#39;.format(j, i, i*j) for j in range(1, i+1)]) for i in range(1, 10)]))</code></pre></li>
 </ol>
 
                 
@@ -500,7 +821,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gengtianba.github.io/2022/05/26/bo-ke-da-jian/">https://gengtianba.github.io/2022/05/26/bo-ke-da-jian/</a>
+                    <a href="https://gengtianba.github.io/2022/06/12/di-er-jie-duan-kao-shi/">https://gengtianba.github.io/2022/06/12/di-er-jie-duan-kao-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,8 +859,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/">
+                                    <span class="chip bg-color">第二阶段</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%80%83%E8%AF%95/">
+                                    <span class="chip bg-color">考试</span>
                                 </a>
                             
                         </div>
@@ -972,85 +1301,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/05/27/python-mo-kuai-er-day3/">
+                <a href="/2022/06/12/di-er-jie-duan-kao-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Python模块二day3">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="第二阶段考试">
                         
-                        <span class="card-title">Python模块二day3</span>
+                        <span class="card-title">第二阶段考试</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            路飞学院PYTHON课程模块二笔记
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-27
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/" class="post-category">
-                                    路飞学院
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/">
-                        <span class="chip bg-color">第二阶段</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/05/26/di-yi-jie-duan-kao-shi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="第一阶段考试">
-                        
-                        <span class="card-title">第一阶段考试</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            路飞学院Python数据分析课程第一阶段考试
+                            路飞学院Python数据分析课程第二阶段考试
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-12
                             </span>
                         <span class="publish-author">
                             
@@ -1064,6 +1337,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1071,14 +1345,55 @@
                         <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/">
-                        <span class="chip bg-color">第一阶段</span>
+                    <a href="/tags/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/">
+                        <span class="chip bg-color">第二阶段</span>
                     </a>
                     
                     <a href="/tags/%E8%80%83%E8%AF%95/">
                         <span class="chip bg-color">考试</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/10/zu-fang-bi-keng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="租房闭坑">
+                        
+                        <span class="card-title">租房闭坑</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            马上毕业了在b站总结了租房的注意事项
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    个人生活
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>

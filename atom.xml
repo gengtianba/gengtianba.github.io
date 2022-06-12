@@ -6,7 +6,7 @@
   <link href="https://gengtianba.github.io/atom.xml" rel="self"/>
   
   <link href="https://gengtianba.github.io/"/>
-  <updated>2022-06-09T13:03:01.538Z</updated>
+  <updated>2022-06-12T14:53:58.442Z</updated>
   <id>https://gengtianba.github.io/</id>
   
   <author>
@@ -17,11 +17,66 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第二阶段考试</title>
+    <link href="https://gengtianba.github.io/2022/06/12/di-er-jie-duan-kao-shi/"/>
+    <id>https://gengtianba.github.io/2022/06/12/di-er-jie-duan-kao-shi/</id>
+    <published>2022-06-12T08:30:08.000Z</published>
+    <updated>2022-06-12T14:53:58.442Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;一个大小为100G的文件 etl_log.txt，要读取文件中的内容，写出具体过程代码。&lt;/p&gt;
+&lt;p&gt;答：&lt;/p&gt;
+&lt;pre class=&quot;language-python&quot; data-language=&quot;python&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="路飞学院" scheme="https://gengtianba.github.io/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/"/>
+    
+    
+    <category term="python" scheme="https://gengtianba.github.io/tags/python/"/>
+    
+    <category term="第二阶段" scheme="https://gengtianba.github.io/tags/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/"/>
+    
+    <category term="考试" scheme="https://gengtianba.github.io/tags/%E8%80%83%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>租房闭坑</title>
+    <link href="https://gengtianba.github.io/2022/06/10/zu-fang-bi-keng/"/>
+    <id>https://gengtianba.github.io/2022/06/10/zu-fang-bi-keng/</id>
+    <published>2022-06-10T02:37:25.000Z</published>
+    <updated>2022-06-12T14:55:18.426Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、西安对外出租房屋分类&quot;&gt;&lt;a href=&quot;#一、西安对外出租房屋分类&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="个人生活" scheme="https://gengtianba.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Python模块二day5</title>
     <link href="https://gengtianba.github.io/2022/06/08/python-mo-kuai-er-day5/"/>
     <id>https://gengtianba.github.io/2022/06/08/python-mo-kuai-er-day5/</id>
     <published>2022-06-08T02:14:14.000Z</published>
-    <updated>2022-06-09T13:03:01.538Z</updated>
+    <updated>2022-06-12T03:34:37.458Z</updated>
     
     
       
@@ -75,7 +130,7 @@
     <link href="https://gengtianba.github.io/2022/06/05/jie-jue-arcgis-an-zhuang-hou-arcmap-wu-fa-qi-dong-de-wen-ti/"/>
     <id>https://gengtianba.github.io/2022/06/05/jie-jue-arcgis-an-zhuang-hou-arcmap-wu-fa-qi-dong-de-wen-ti/</id>
     <published>2022-06-05T09:29:52.000Z</published>
-    <updated>2022-06-09T12:50:30.883Z</updated>
+    <updated>2022-06-10T02:57:09.783Z</updated>
     
     
       
@@ -100,7 +155,7 @@
     <link href="https://gengtianba.github.io/2022/06/02/python-mo-kuai-er-day4/"/>
     <id>https://gengtianba.github.io/2022/06/02/python-mo-kuai-er-day4/</id>
     <published>2022-06-02T09:45:00.000Z</published>
-    <updated>2022-06-09T13:01:10.191Z</updated>
+    <updated>2022-06-10T12:45:11.195Z</updated>
     
     
       
@@ -129,7 +184,7 @@
     <link href="https://gengtianba.github.io/2022/05/27/python-mo-kuai-er-day3/"/>
     <id>https://gengtianba.github.io/2022/05/27/python-mo-kuai-er-day3/</id>
     <published>2022-05-27T01:22:32.000Z</published>
-    <updated>2022-06-09T12:50:49.279Z</updated>
+    <updated>2022-06-10T09:04:29.862Z</updated>
     
     
       
@@ -158,7 +213,7 @@
     <link href="https://gengtianba.github.io/2022/05/26/bo-ke-da-jian/"/>
     <id>https://gengtianba.github.io/2022/05/26/bo-ke-da-jian/</id>
     <published>2022-05-26T09:09:06.000Z</published>
-    <updated>2022-05-26T09:38:22.191Z</updated>
+    <updated>2022-06-09T13:20:02.450Z</updated>
     
     
       
@@ -214,7 +269,7 @@
     <link href="https://gengtianba.github.io/2022/05/23/python-mo-kuai-yi-day2/"/>
     <id>https://gengtianba.github.io/2022/05/23/python-mo-kuai-yi-day2/</id>
     <published>2022-05-22T16:00:00.000Z</published>
-    <updated>2022-06-09T13:06:53.171Z</updated>
+    <updated>2022-06-11T02:13:05.440Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;此文章为路飞学院PYTHON课程模块一笔记&quot;&gt;&lt;a href=&quot;#此文章为路飞学院PYTHON课程模块一笔记&quot; class=&quot;headerlink&quot; title=&quot;此文章为路飞学院PYTHON课程模块一笔记&quot;&gt;&lt;/a&gt;此文章为路飞学院PYTHON课程&lt;font color=&quot;#dd0000&quot;&gt;模块一笔记&lt;/font&gt;&lt;/h4&gt;</summary>
@@ -287,7 +342,7 @@
     <link href="https://gengtianba.github.io/2022/05/14/python-ru-men-dao-jing-tong-6/"/>
     <id>https://gengtianba.github.io/2022/05/14/python-ru-men-dao-jing-tong-6/</id>
     <published>2022-05-13T16:00:00.000Z</published>
-    <updated>2022-05-26T11:24:01.330Z</updated>
+    <updated>2022-06-09T13:20:20.140Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&quot;&gt;&lt;a href=&quot;#本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&quot; class=&quot;headerlink&quot; title=&quot;本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&quot;&gt;&lt;/a&gt;本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&lt;/h3&gt;&lt;h3 id=&quot;视频链接-Python零基础到精通7天速成&quot;&gt;&lt;a href=&quot;#视频链接-Python零基础到精通7天速成&quot; class=&quot;headerlink&quot; title=&quot;视频链接:Python零基础到精通7天速成&quot;&gt;&lt;/a&gt;视频链接:&lt;a href=&quot;https://www.bilibili.com/video/BV1Gf4y1q7SG?share_source=copy_web&quot;&gt;Python零基础到精通7天速成&lt;/a&gt;&lt;/h3&gt;</summary>
@@ -459,60 +514,6 @@
     <category term="笔记" scheme="https://gengtianba.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="前端" scheme="https://gengtianba.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络整理（三）</title>
-    <link href="https://gengtianba.github.io/2021/12/18/ji-suan-ji-wang-luo-zheng-li-san/"/>
-    <id>https://gengtianba.github.io/2021/12/18/ji-suan-ji-wang-luo-zheng-li-san/</id>
-    <published>2021-12-18T14:08:57.000Z</published>
-    <updated>2022-05-26T10:59:53.075Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、思维导图&quot;&gt;&lt;a href=&quot;#一、思维导图&quot; class=&quot;headerlink&quot; title=&quot;一、思维导图&quot;&gt;&lt;/a&gt;一、思维导图&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;第三章 数据链路层&lt;ul&gt;
-&lt;li&gt;3.1</summary>
-        
-      
-    
-    
-    
-    <category term="计算机网络" scheme="https://gengtianba.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="计算机网络" scheme="https://gengtianba.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络整理（二）</title>
-    <link href="https://gengtianba.github.io/2021/12/16/ji-suan-ji-wang-luo-zheng-li-er/"/>
-    <id>https://gengtianba.github.io/2021/12/16/ji-suan-ji-wang-luo-zheng-li-er/</id>
-    <published>2021-12-16T13:20:43.000Z</published>
-    <updated>2022-06-09T12:49:43.384Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、思维导图&quot;&gt;&lt;a href=&quot;#一、思维导图&quot; class=&quot;headerlink&quot; title=&quot;一、思维导图&quot;&gt;&lt;/a&gt;一、思维导图&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;第二章 物理层&lt;ul&gt;
-&lt;li&gt;2.1</summary>
-        
-      
-    
-    
-    
-    <category term="计算机网络" scheme="https://gengtianba.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="计算机网络" scheme="https://gengtianba.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   

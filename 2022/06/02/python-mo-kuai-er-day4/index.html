@@ -2112,7 +2112,7 @@ print(result)</code></pre></li>
 </ul>
 </li>
 </ul>
-<h2 id="4-推导式"><a href="#4-推导式" class="headerlink" title="4.推导式"></a>4.推导式</h2><p>推导式是Python中提供了一个非常方便的功能，可以让我们通过一行代码实现创建list、dict、tuple、set 的同时初始化一些值。</p>
+<h2 id="4-推导式"><a href="#4-推导式" class="headerlink" title="4.推导式"></a>4.推导式</h2><p>​		推导式是Python中提供了一个非常方便的功能，可以让我们通过一行代码实现创建list、dict、tuple、set 的同时初始化一些值。</p>
 <p>请创建一个列表，并在列表中初始化：0、1、2、3、4、5、6、7、8、9…299 整数元素。</p>
 <pre class="language-python" data-language="python"><code class="language-python">data &#x3D; []
 for i in range(300):
@@ -2369,7 +2369,7 @@ new_data_list &#x3D; [ ... ] # 请在[]中补充代码实现。
 
 # 提示：可以基于三元运算实现</code></pre>
 
-<pre class="language-python" data-language="python"><code class="language-python">new_data_list &#x3D; [len(i) for i in data_list if type(i)&#x3D;&#x3D;str else i+100]</code></pre>
+<pre class="language-python" data-language="python"><code class="language-python">new_list &#x3D; [len(i) if type(i) &#x3D;&#x3D; str else i+100 for i in data_list]</code></pre>
 
 
 </li>
