@@ -426,7 +426,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.2k
                 </div>
                 
 
@@ -488,7 +488,7 @@ for floor in range (1, 6):
         print((10-i)*&quot;*&quot;)</code></pre>
 
 <h1 id="二、break和continue"><a href="#二、break和continue" class="headerlink" title="二、break和continue"></a>二、break和continue</h1><p><font color="#dd0000">用于控制循环流程，只能在循环中使用</font></p>
-<h2 id="（一）break"><a href="#（一）break" class="headerlink" title="（一）break"></a>（一）break</h2><p>&amp;emsp;&amp;emsp;<font color="#dd0000">当程序遇到break，就会结束当前循环</font>（如果是多层嵌套循环，只结束当前循环）</p>
+<h2 id="（一）break"><a href="#（一）break" class="headerlink" title="（一）break"></a>（一）break</h2><p> &amp;emsp;<font color="#dd0000">当程序遇到break，就会结束当前循环</font>（如果是多层嵌套循环，只结束当前循环）</p>
 <pre class="language-python" data-language="python"><code class="language-python"># 一共5层，每层9个房间，当遇到房间404时，不再打印4层房间号
 for floor in range (1, 6):
     for room in range(1, 10):
@@ -496,7 +496,7 @@ for floor in range (1, 6):
             break
         print(f&#39;L&#123;floor&#125;-&#123;floor&#125;0&#123;room&#125;&#39;)</code></pre>
 
-<h2 id="（二）continue"><a href="#（二）continue" class="headerlink" title="（二）continue"></a>（二）continue</h2><p>&amp;emsp;&amp;emsp;<font color="#dd0000">当程序遇到continue，就会结束本次循环，直接进入下一次循环</font></p>
+<h2 id="（二）continue"><a href="#（二）continue" class="headerlink" title="（二）continue"></a>（二）continue</h2><p> &amp;emsp;<font color="#dd0000">当程序遇到continue，就会结束本次循环，直接进入下一次循环</font></p>
 <pre class="language-python" data-language="python"><code class="language-python"># 一共5层，每层9个房间，当遇到第三层时不打印房间号其它层都打印
 for floor in range (1, 6):
     if floor &#x3D;&#x3D; 3:
@@ -574,7 +574,7 @@ while times &lt; 3:
         exit(f&#39;your license_plates is &#123;choice&#125;&#39;)
 </code></pre>
 
-<h1 id="六、综合联系–年会抽奖小程序"><a href="#六、综合联系–年会抽奖小程序" class="headerlink" title="六、综合联系–年会抽奖小程序"></a>六、综合联系–年会抽奖小程序</h1><h2 id="（一）需求"><a href="#（一）需求" class="headerlink" title="（一）需求"></a>（一）需求</h2><p>&amp;emsp;&amp;emsp;张三科技公司有300个员工，开年会抽奖，奖项如下:<br>一等奖 3名：泰国五日游<br>二等奖 6名：iPhone手机<br>三等奖 30名：羽毛球拍一副</p>
+<h1 id="六、综合联系–年会抽奖小程序"><a href="#六、综合联系–年会抽奖小程序" class="headerlink" title="六、综合联系–年会抽奖小程序"></a>六、综合联系–年会抽奖小程序</h1><h2 id="（一）需求"><a href="#（一）需求" class="headerlink" title="（一）需求"></a>（一）需求</h2><p> &amp;emsp;张三科技公司有300个员工，开年会抽奖，奖项如下:<br>一等奖 3名：泰国五日游<br>二等奖 6名：iPhone手机<br>三等奖 30名：羽毛球拍一副</p>
 <h2 id="（二）规则"><a href="#（二）规则" class="headerlink" title="（二）规则"></a>（二）规则</h2><p>1、共抽三次，第一次抽三等奖，第二次抽二等奖，第三次抽一等奖<br>2、每个员工限中奖一次</p>
 <h2 id="（三）代码-1"><a href="#（三）代码-1" class="headerlink" title="（三）代码"></a>（三）代码</h2><pre class="language-python" data-language="python"><code class="language-python">import random
 

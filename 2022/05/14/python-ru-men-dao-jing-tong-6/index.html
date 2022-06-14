@@ -457,9 +457,9 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记"><a href="#本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记" class="headerlink" title="本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记"></a>本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记</h3><h3 id="视频链接-Python零基础到精通7天速成"><a href="#视频链接-Python零基础到精通7天速成" class="headerlink" title="视频链接:Python零基础到精通7天速成"></a>视频链接:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Gf4y1q7SG?share_source=copy_web">Python零基础到精通7天速成</a></h3><span id="more"></span>
-<h1 id="一、模块和包"><a href="#一、模块和包" class="headerlink" title="一、模块和包"></a>一、模块和包</h1><h2 id="（一）什么是模块"><a href="#（一）什么是模块" class="headerlink" title="（一）什么是模块"></a>（一）什么是模块</h2><p>&amp;emsp;&amp;emsp;在计算机程序的开发过程中，随着程序代码越写越多，在⼀个⽂件⾥代码就会越来越⻓，越来越不容易维护。<br>&amp;emsp;&amp;emsp;<font color="#dd0000">为了编写可维护的代码</font>，我们把很多代码按功能分组，分别放到不同的⽂件⾥，这样，每个⽂件包含的代码就相对较少，很多编程语⾔都采⽤这种组织代码的⽅式。<font color="#dd0000">在Python中，⼀个.py⽂件就可以称之为⼀个模块（Module）</font></p>
-<h4 id="使用模块有什么好处"><a href="#使用模块有什么好处" class="headerlink" title="使用模块有什么好处"></a>使用模块有什么好处</h4><p>&amp;emsp;&amp;emsp;最⼤的好处是<font color="#dd0000">⼤⼤提⾼了代码的可维护性</font>。其次，编写代码不必从零开始。<font color="#dd0000">当⼀个模块编写完毕，就可以被其他地⽅引⽤。</font>我们在编写程序的时候，也经常引⽤其他模块，包括Python内置的模块和来⾃第三⽅的模块。</p>
-<p>&amp;emsp;&amp;emsp;<font color="#dd0000">使⽤模块还可以避免函数名和变量名冲突。</font> 每个模块有独⽴的命名空间，因此相同名字的函数和变量完全可以分别存在不同的模块中，所以，我们⾃⼰在编写模块时，不必考虑名字会与其他模块冲突</p>
+<h1 id="一、模块和包"><a href="#一、模块和包" class="headerlink" title="一、模块和包"></a>一、模块和包</h1><h2 id="（一）什么是模块"><a href="#（一）什么是模块" class="headerlink" title="（一）什么是模块"></a>（一）什么是模块</h2><p> &amp;emsp;在计算机程序的开发过程中，随着程序代码越写越多，在⼀个⽂件⾥代码就会越来越⻓，越来越不容易维护。<br> &amp;emsp;<font color="#dd0000">为了编写可维护的代码</font>，我们把很多代码按功能分组，分别放到不同的⽂件⾥，这样，每个⽂件包含的代码就相对较少，很多编程语⾔都采⽤这种组织代码的⽅式。<font color="#dd0000">在Python中，⼀个.py⽂件就可以称之为⼀个模块（Module）</font></p>
+<h4 id="使用模块有什么好处"><a href="#使用模块有什么好处" class="headerlink" title="使用模块有什么好处"></a>使用模块有什么好处</h4><p> &amp;emsp;最⼤的好处是<font color="#dd0000">⼤⼤提⾼了代码的可维护性</font>。其次，编写代码不必从零开始。<font color="#dd0000">当⼀个模块编写完毕，就可以被其他地⽅引⽤。</font>我们在编写程序的时候，也经常引⽤其他模块，包括Python内置的模块和来⾃第三⽅的模块。</p>
+<p> &amp;emsp;<font color="#dd0000">使⽤模块还可以避免函数名和变量名冲突。</font> 每个模块有独⽴的命名空间，因此相同名字的函数和变量完全可以分别存在不同的模块中，所以，我们⾃⼰在编写模块时，不必考虑名字会与其他模块冲突</p>
 <h4 id="模块的分类"><a href="#模块的分类" class="headerlink" title="模块的分类"></a>模块的分类</h4><p>1、内置标准模块（⼜称标准库）执⾏<font color="#dd0000">help(‘modules’)</font>查看所有python⾃带模块列表<br>2、第三⽅开源模块，可通过pip install 模块名联⽹安装<br>3、⾃定义模块</p>
 <h4 id="模块调用"><a href="#模块调用" class="headerlink" title="模块调用"></a>模块调用</h4><pre class="language-python" data-language="python"><code class="language-python">import module_a #导⼊
 from module import xx # 导⼊某个模块下的某个⽅法 or ⼦模块
@@ -467,12 +467,12 @@ from module.xx.xx import xx as rename #导⼊后⼀个⽅法后重命名
 from module.xx.xx import * #导⼊⼀个模块下的所有⽅法，不建议使⽤
 module_a.xxx #调⽤</code></pre>
 <p>※ 注意：<font color="#dd0000">模块⼀旦被调⽤，即相当于执⾏了另外⼀个py⽂件⾥的代码</font></p>
-<h2 id="（二）自定义模块"><a href="#（二）自定义模块" class="headerlink" title="（二）自定义模块"></a>（二）自定义模块</h2><p>&amp;emsp;&amp;emsp;这个最简单， 创建⼀个.py⽂件，就可以称之为模块，就可以在另外⼀个程序⾥导⼊</p>
+<h2 id="（二）自定义模块"><a href="#（二）自定义模块" class="headerlink" title="（二）自定义模块"></a>（二）自定义模块</h2><p> &amp;emsp;这个最简单， 创建⼀个.py⽂件，就可以称之为模块，就可以在另外⼀个程序⾥导⼊</p>
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/68ed3adc3b70448fb63a27a232db1868.png" width = 80%>
 </div>
 
-<h2 id="（六）模块查找路径"><a href="#（六）模块查找路径" class="headerlink" title="（六）模块查找路径"></a>（六）模块查找路径</h2><p>&amp;emsp;&amp;emsp;Python导入模块时会自动在系统环境变量中寻找需要导入的模块或包，如果找不到就会报错。</p>
+<h2 id="（六）模块查找路径"><a href="#（六）模块查找路径" class="headerlink" title="（六）模块查找路径"></a>（六）模块查找路径</h2><p> &amp;emsp;Python导入模块时会自动在系统环境变量中寻找需要导入的模块或包，如果找不到就会报错。</p>
 <pre class="language-python" data-language="python"><code class="language-python">import sys
 
 # def sayhi():
@@ -499,7 +499,7 @@ print(sys.path)
 <h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><div align=center>
 <img src="https://img-blog.csdnimg.cn/cd5052f2b00348f9a75a43e62528a000.png" width = 50%>
 </div>
-&emsp;&emsp;使用绝对导入的方法在day6课件下的import_test模块中导入my_first_mode模块。
+ &emsp;使用绝对导入的方法在day6课件下的import_test模块中导入my_first_mode模块。
 
 <h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>1、先获取到import_test模块的所有系统环境变量（sys.path()），发现不包括day6<br>2、将其绝对路径向上移动一层到day6后并添加到系统环境变量中</p>
 <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class="language-python" data-language="python"><code class="language-python">import sys
@@ -513,7 +513,7 @@ print(os.path.dirname(os.path.dirname(__file__)))  # 打印当前位置的上二
 base_path &#x3D; os.path.dirname(os.path.dirname(__file__))  # 因为my_first_mode在day6文件夹
 sys.path.append(base_path)
 import my_first_mode</code></pre>
-<h2 id="（七）第三方开源模块"><a href="#（七）第三方开源模块" class="headerlink" title="（七）第三方开源模块"></a>（七）第三方开源模块</h2><p>&amp;emsp;&amp;emsp;<a target="_blank" rel="noopener" href="https://pypi.org/">https://pypi.org/</a> 是python的开源模块库，截⽌2022年5.15⽇，已经收录了375,660个来⾃全世界python开发者贡献的模块,⼏乎涵盖了你想⽤python做的任何事情。 事实上每个python开发者，只要注册⼀个账号就可以往这个平台上传你⾃⼰的模块，这样全世界的开发者都可以容易的下载并使⽤你的模块。</p>
+<h2 id="（七）第三方开源模块"><a href="#（七）第三方开源模块" class="headerlink" title="（七）第三方开源模块"></a>（七）第三方开源模块</h2><p> &amp;emsp;<a target="_blank" rel="noopener" href="https://pypi.org/">https://pypi.org/</a> 是python的开源模块库，截⽌2022年5.15⽇，已经收录了375,660个来⾃全世界python开发者贡献的模块,⼏乎涵盖了你想⽤python做的任何事情。 事实上每个python开发者，只要注册⼀个账号就可以往这个平台上传你⾃⼰的模块，这样全世界的开发者都可以容易的下载并使⽤你的模块。</p>
 <h4 id="下载方法"><a href="#下载方法" class="headerlink" title="下载方法"></a>下载方法</h4><p>1、 直接在上⾯这个⻚⾯上点download,下载后，解压并进⼊⽬录，执⾏以下命令完成安装</p>
 <pre class="language-python" data-language="python"><code class="language-python">编译源码
 python setup.py build 
@@ -523,16 +523,16 @@ python setup.py install</code></pre>
 <pre class="language-python" data-language="python"><code class="language-python">pip3 install paramiko #paramiko 是模块名</code></pre>
 <p>pip命令会⾃动下载模块包并完成安装。软件⼀般会被⾃动安装你python安装⽬录的这个⼦⽬录⾥</p>
 <pre class="language-none"><code class="language-none">&#x2F;your_python_install_path&#x2F;3.6&#x2F;lib&#x2F;python3.6&#x2F;site-packages</code></pre>
-<p>&amp;emsp;&amp;emsp;pip命令默认会连接在国外的python官⽅服务器下载，速度⽐较慢，你还可以使⽤国内的⾖瓣源，数据会定期同步国外官⽹，速度快好多</p>
+<p> &amp;emsp;pip命令默认会连接在国外的python官⽅服务器下载，速度⽐较慢，你还可以使⽤国内的⾖瓣源，数据会定期同步国外官⽹，速度快好多</p>
 <pre class="language-none"><code class="language-none">pip install -i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F; alex_sayhi --trusted-host
 pypi.douban.com #alex_sayhi是模块名</code></pre>
 <p>-i 后⾯跟的是⾖瓣源地址</p>
 <pre class="language-—trusted-host" data-language="—trusted-host"><div class="caption"><span>```得加上，是通过⽹站https安全验证⽤的</span></div><code class="language-—trusted-host">
 
 ## （三）什么是包
-&amp;emsp;&amp;emsp;若你写的项⽬较复杂，有很多代码⽂件的话，为了⽅便管理，可以⽤包来管理。 &lt;font color&#x3D;&quot;#dd0000&quot;&gt;**⼀个包其实就是⼀个⽂件⽬录，**&lt;&#x2F;font&gt;你可以把属于同⼀个业务线的代码⽂件都放在同⼀个包⾥。
+ &amp;emsp;若你写的项⽬较复杂，有很多代码⽂件的话，为了⽅便管理，可以⽤包来管理。 &lt;font color&#x3D;&quot;#dd0000&quot;&gt;**⼀个包其实就是⼀个⽂件⽬录，**&lt;&#x2F;font&gt;你可以把属于同⼀个业务线的代码⽂件都放在同⼀个包⾥。
 #### 如何创建包
-&amp;emsp;&amp;emsp;只需要&lt;font color&#x3D;&quot;#dd0000&quot;&gt;**在⽬录下创建⼀个空的 __init__.py ⽂件 ，**&lt;&#x2F;font&gt; 这个⽬录就变成了包。这个⽂件叫包的初始化⽂件，⼀般为空，当然也可以写东⻄，&lt;font color&#x3D;&quot;#dd0000&quot;&gt;**当你调⽤这个包下及其任意⼦包的的任意模块时， 这个 __init__.py ⽂件都会先执⾏。**&lt;&#x2F;font&gt;
+ &amp;emsp;只需要&lt;font color&#x3D;&quot;#dd0000&quot;&gt;**在⽬录下创建⼀个空的 __init__.py ⽂件 ，**&lt;&#x2F;font&gt; 这个⽬录就变成了包。这个⽂件叫包的初始化⽂件，⼀般为空，当然也可以写东⻄，&lt;font color&#x3D;&quot;#dd0000&quot;&gt;**当你调⽤这个包下及其任意⼦包的的任意模块时， 这个 __init__.py ⽂件都会先执⾏。**&lt;&#x2F;font&gt;
 
 #### 示例
 以下有a、b 2个包，a2是a的⼦包，b2是b的⼦包
@@ -541,13 +541,13 @@ pypi.douban.com #alex_sayhi是模块名</code></pre>
 &lt;&#x2F;div&gt;
 
 #### 若在a_module.py模块⾥导⼊b2_mod.py的话，怎么办？
-&amp;emsp;&amp;emsp;a_module.py的⽂件路径为：
+ &amp;emsp;a_module.py的⽂件路径为：
 &#96;&#96;&#96;python
 print(__file__)
 # output: C:\Users\Geng\Desktop\我在b站学编程\python\day6\课件\a\a2\a_module.py</code></pre>
-<p>&amp;emsp;&amp;emsp;想导⼊成功，直接写以下代码就可以</p>
+<p> &amp;emsp;想导⼊成功，直接写以下代码就可以</p>
 <pre class="language-none"><code class="language-none">from day6.课件.b.b2 import b2_mod</code></pre>
-<p>&amp;emsp;&amp;emsp;为何从day6开始？⽽不是从 python 或课件开始呢？<br>&amp;emsp;&amp;emsp;因为你的系统环境变量（sys.path()）列表⾥，已经添加了顶级包（python）的路径.<font color="#dd0000"><strong>pycharm会自动将该模块所在位置和该模块的顶级包加入sys.path</strong></font></p>
+<p> &amp;emsp;为何从day6开始？⽽不是从 python 或课件开始呢？<br> &amp;emsp;因为你的系统环境变量（sys.path()）列表⾥，已经添加了顶级包（python）的路径.<font color="#dd0000"><strong>pycharm会自动将该模块所在位置和该模块的顶级包加入sys.path</strong></font></p>
 <pre class="language-python" data-language="python"><code class="language-python">print(sys.path)
 # output: 
 # [&#39;C:\\Users\\Geng\\Desktop\\我在b站学编程\\python\\day6\\课件\\a\\a2&#39;,
@@ -565,7 +565,7 @@ print(__file__)
 #  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages\\win32\\lib&#39;, 
 #  &#39;C:\\Users\\Geng\\anaconda3\\lib\\site-packages\\Pythonwin&#39;]
 </code></pre>
-<h1 id="二、常用模块-os-amp-sys"><a href="#二、常用模块-os-amp-sys" class="headerlink" title="二、常用模块-os&amp;sys"></a>二、常用模块-os&amp;sys</h1><h2 id="（一）系统调⽤OS模块"><a href="#（一）系统调⽤OS模块" class="headerlink" title="（一）系统调⽤OS模块"></a>（一）系统调⽤OS模块</h2><p>&amp;emsp;&amp;emsp;os 模块提供了很多允许你的程序与操作系统直接交互的功能</p>
+<h1 id="二、常用模块-os-amp-sys"><a href="#二、常用模块-os-amp-sys" class="headerlink" title="二、常用模块-os&amp;sys"></a>二、常用模块-os&amp;sys</h1><h2 id="（一）系统调⽤OS模块"><a href="#（一）系统调⽤OS模块" class="headerlink" title="（一）系统调⽤OS模块"></a>（一）系统调⽤OS模块</h2><p> &amp;emsp;os 模块提供了很多允许你的程序与操作系统直接交互的功能</p>
 <pre class="language-python" data-language="python"><code class="language-python">import os
 得到当前⼯作⽬录，即当前Python脚本⼯作的⽬录路径: os.getcwd()
 返回指定⽬录下的所有⽂件和⽬录名:os.listdir()
@@ -603,7 +603,7 @@ os.path.split(&#39;&#x2F;home&#x2F;swaroop&#x2F;byte&#x2F;code&#x2F;poem.txt&#39
 <h2 id="（二）sys模块"><a href="#（二）sys模块" class="headerlink" title="（二）sys模块"></a>（二）sys模块</h2><h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><pre class="language-python" data-language="python"><code class="language-python">sys.path()  # 以列表形式返回系统环境变量
 sys.argv()  # 获取脚本参数</code></pre>
 
-<h1 id="三、常用模块-time-amp-datetime"><a href="#三、常用模块-time-amp-datetime" class="headerlink" title="三、常用模块-time&amp;datetime"></a>三、常用模块-time&amp;datetime</h1><h2 id="（一）基本概念"><a href="#（一）基本概念" class="headerlink" title="（一）基本概念"></a>（一）基本概念</h2><p>&amp;emsp;&amp;emsp;在平常的代码中，我们常常需要与时间打交道。在Python中，与时间处理有关的模块就包括：time，datetime,calendar(很少⽤，不讲)，下⾯分别来介绍。</p>
+<h1 id="三、常用模块-time-amp-datetime"><a href="#三、常用模块-time-amp-datetime" class="headerlink" title="三、常用模块-time&amp;datetime"></a>三、常用模块-time&amp;datetime</h1><h2 id="（一）基本概念"><a href="#（一）基本概念" class="headerlink" title="（一）基本概念"></a>（一）基本概念</h2><p> &amp;emsp;在平常的代码中，我们常常需要与时间打交道。在Python中，与时间处理有关的模块就包括：time，datetime,calendar(很少⽤，不讲)，下⾯分别来介绍。</p>
 <h4 id="写程序时对时间的处理可以归为以下3种："><a href="#写程序时对时间的处理可以归为以下3种：" class="headerlink" title="写程序时对时间的处理可以归为以下3种："></a>写程序时对时间的处理可以归为以下3种：</h4><p><strong>时间的显示</strong>，在屏幕显示、记录⽇志等 “2022-03-04”<br><strong>时间的转换</strong>，⽐如把字符串格式的⽇期转成Python中的⽇期类型<br><strong>时间的运算</strong>，计算两个⽇期间的差值等</p>
 <h4 id="在Python中，通常有这⼏种⽅式来表示时间："><a href="#在Python中，通常有这⼏种⽅式来表示时间：" class="headerlink" title="在Python中，通常有这⼏种⽅式来表示时间："></a>在Python中，通常有这⼏种⽅式来表示时间：</h4><p><strong>1. 时间戳（timestamp）</strong>, 表示的是从1970年1⽉1⽇00:00:00开始按秒计算的偏移量，<font color="#dd0000"><strong>用于时间的计算。</strong></font>例⼦：1554864776.161901<br><strong>2. 格式化的时间字符串</strong>，⽐如“2020-10-03 17:54”<font color="#dd0000"><strong>用于时间的显示。</strong></font><br><strong>3. 时间对象：</strong>元组（struct_time）共九个元素，由于Python的time模块实现主要调⽤C库，所以各个平台可能有所不同，mac上：time.struct_time(tm_year&#x3D;2020, tm_mon&#x3D;4, tm_mday&#x3D;10, tm_hour&#x3D;2, tm_min&#x3D;53, tm_sec&#x3D;15, tm_wday&#x3D;2, tm_yday&#x3D;100, tm_isdst&#x3D;0)</p>
 <pre class="language-python" data-language="python"><code class="language-python">索引（Index） 属性（Attribute） 值（Values）
@@ -616,7 +616,7 @@ sys.argv()  # 获取脚本参数</code></pre>
 6 tm_wday（weekday） 0 - 6（0表示周⼀）
 7 tm_yday（⼀年中的第⼏天） 1 - 366
 8 tm_isdst（是否是夏令时） 默认为-1</code></pre>
-<p><strong>UTC时间</strong><br>&amp;emsp;&amp;emsp;UTC（Coordinated Universal Time，世界协调时）亦即格林威治天⽂时间，世界标准时间。在中国为UTC+8，⼜称东8区。DST（Daylight Saving Time）即夏令时。</p>
+<p><strong>UTC时间</strong><br> &amp;emsp;UTC（Coordinated Universal Time，世界协调时）亦即格林威治天⽂时间，世界标准时间。在中国为UTC+8，⼜称东8区。DST（Daylight Saving Time）即夏令时。</p>
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/c4fba89d5c0e44ada45f43c4e18238c2.png" width = 80%>
 </div>
@@ -662,7 +662,7 @@ print(e_time)  # output：1652670956.2869053</code></pre>
 <img src="https://img-blog.csdnimg.cn/d88a02b06aad491e9dd115a22bfcd822.png" width = 80%>
 </div>
 
-<h2 id="（三）datetime模块"><a href="#（三）datetime模块" class="headerlink" title="（三）datetime模块"></a>（三）datetime模块</h2><p>&amp;emsp;&amp;emsp;相⽐于time模块，datetime模块的接⼝则更直观、更容易调⽤</p>
+<h2 id="（三）datetime模块"><a href="#（三）datetime模块" class="headerlink" title="（三）datetime模块"></a>（三）datetime模块</h2><p> &amp;emsp;相⽐于time模块，datetime模块的接⼝则更直观、更容易调⽤</p>
 <h4 id="datetime模块定义了下⾯这⼏个类："><a href="#datetime模块定义了下⾯这⼏个类：" class="headerlink" title="datetime模块定义了下⾯这⼏个类："></a>datetime模块定义了下⾯这⼏个类：</h4><pre class="language-python" data-language="python"><code class="language-python">datetime.date： # 表示⽇期的类。常⽤的属性有year, month, day
 datetime.time： # 表示时间的类。常⽤的属性有hour, minute, second, microsecond
 datetime.datetime： # 表示⽇期时间
@@ -678,7 +678,7 @@ datetime.datetime(2017, 10, 5, 12, 53, 35, 276589)
 datetime.datetime(2017, 10, 1, 16, 53, 42, 876275)</code></pre>
 <h4 id="时间替换"><a href="#时间替换" class="headerlink" title="时间替换"></a><font color="#dd0000">时间替换</font></h4><pre class="language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; d.replace(year&#x3D;2999,month&#x3D;11,day&#x3D;30)
 datetime.date(2999, 11, 30)</code></pre>
-<h1 id="四、常用模块-random"><a href="#四、常用模块-random" class="headerlink" title="四、常用模块-random"></a>四、常用模块-random</h1><p>&amp;emsp;&amp;emsp;程序中有很多地⽅需要⽤到随机字符，⽐如登录⽹站的随机验证码，通过random模块可以很容易⽣成随机字符串</p>
+<h1 id="四、常用模块-random"><a href="#四、常用模块-random" class="headerlink" title="四、常用模块-random"></a>四、常用模块-random</h1><p> &amp;emsp;程序中有很多地⽅需要⽤到随机字符，⽐如登录⽹站的随机验证码，通过random模块可以很容易⽣成随机字符串</p>
 <pre class="language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; random.randrange(1,10) #返回1-10之间的⼀个随机数，不包括10
 &gt;&gt;&gt; random.randint(1,10) #返回1-10之间的⼀个随机数，包括10
 &gt;&gt;&gt; random.randrange(0, 100, 2) #随机选取0到100间的偶数
@@ -697,11 +697,11 @@ datetime.date(2999, 11, 30)</code></pre>
 &gt;&gt;&gt; random.shuffle(a)
 &gt;&gt;&gt; a
 [3, 0, 7, 2, 1, 6, 5, 8, 9, 4]</code></pre>
-<h1 id="五、常用模块-json序列"><a href="#五、常用模块-json序列" class="headerlink" title="五、常用模块-json序列"></a>五、常用模块-json序列</h1><h2 id="（一）概念"><a href="#（一）概念" class="headerlink" title="（一）概念"></a>（一）概念</h2><p>&amp;emsp;&amp;emsp;JSON(JavaScriptObject Notation, JS 对象简谱) 是⼀种轻量级的数据交换格式。它采⽤完全独⽴于编程<br>语⾔的⽂本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语⾔。 易于⼈阅读和编写，同时也易于机器解析和⽣成，并有效地提升⽹络传输效率。</p>
+<h1 id="五、常用模块-json序列"><a href="#五、常用模块-json序列" class="headerlink" title="五、常用模块-json序列"></a>五、常用模块-json序列</h1><h2 id="（一）概念"><a href="#（一）概念" class="headerlink" title="（一）概念"></a>（一）概念</h2><p> &amp;emsp;JSON(JavaScriptObject Notation, JS 对象简谱) 是⼀种轻量级的数据交换格式。它采⽤完全独⽴于编程<br>语⾔的⽂本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语⾔。 易于⼈阅读和编写，同时也易于机器解析和⽣成，并有效地提升⽹络传输效率。</p>
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/ca4b4eb7be0d4b6d98b0b08c4a6f384b.png" width = 80%>
 </div>
-&emsp;&emsp;Json的作⽤是⽤于不同语⾔接⼝间的数据交换，⽐如你把python的list、dict直接扔给javascript, 它是解析不了的。两个语⾔互相谁也不认识。Json就像是计算机界的英语 ，可以帮各个语⾔之间实现数据类型的相互转换。
+ &emsp;Json的作⽤是⽤于不同语⾔接⼝间的数据交换，⽐如你把python的list、dict直接扔给javascript, 它是解析不了的。两个语⾔互相谁也不认识。Json就像是计算机界的英语 ，可以帮各个语⾔之间实现数据类型的相互转换。
 
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/ec2fd65decbe488dada8c667ce3e1673.png" width = 80%>
@@ -711,9 +711,9 @@ datetime.date(2999, 11, 30)</code></pre>
 <img src="https://img-blog.csdnimg.cn/01d31de8b16646778a1ab4ceaa56d76d.png" width = 80%>
 </div>
 
-<h4 id="JSON⽀持的数据类型"><a href="#JSON⽀持的数据类型" class="headerlink" title="JSON⽀持的数据类型"></a>JSON⽀持的数据类型</h4><p>&amp;emsp;&amp;emsp;Python中的字符串、数字、列表、字典、集合、布尔类型，都可以被序列化成JSON字符串，被其它任何编程语⾔解析</p>
-<h4 id="什么是序列化？"><a href="#什么是序列化？" class="headerlink" title="什么是序列化？"></a>什么是序列化？</h4><p>&amp;emsp;&amp;emsp;序列化是指把内存⾥的数据类型转变成字符串，以使其能存储到硬盘或通过⽹络传输到远程，因为硬盘或⽹络传输时只能接受bytes</p>
-<h4 id="为什么要序列化？"><a href="#为什么要序列化？" class="headerlink" title="为什么要序列化？"></a>为什么要序列化？</h4><p>&amp;emsp;&amp;emsp;你打游戏过程中，打累了，停下来，关掉游戏、想过2天再玩，2天之后，游戏⼜从你上次停⽌的地⽅继续运⾏，你上次游戏的进度肯定保存在硬盘上了，是以何种形式呢？游戏过程中产⽣的很多临时数据是不规律的，可能在你关掉游戏时正好有10个列表，3个嵌套字典的数据集合在内存⾥，需要存下来？你如何存？把列表变成⽂件⾥的多⾏多列形式？那嵌套字典呢？根本没法存。所以，若是有种办法可以直接把内存数据存到硬盘上，下次程序再启动，再从硬盘上读回来，还是原来的格式的话，那是极好的。</p>
+<h4 id="JSON⽀持的数据类型"><a href="#JSON⽀持的数据类型" class="headerlink" title="JSON⽀持的数据类型"></a>JSON⽀持的数据类型</h4><p> &amp;emsp;Python中的字符串、数字、列表、字典、集合、布尔类型，都可以被序列化成JSON字符串，被其它任何编程语⾔解析</p>
+<h4 id="什么是序列化？"><a href="#什么是序列化？" class="headerlink" title="什么是序列化？"></a>什么是序列化？</h4><p> &amp;emsp;序列化是指把内存⾥的数据类型转变成字符串，以使其能存储到硬盘或通过⽹络传输到远程，因为硬盘或⽹络传输时只能接受bytes</p>
+<h4 id="为什么要序列化？"><a href="#为什么要序列化？" class="headerlink" title="为什么要序列化？"></a>为什么要序列化？</h4><p> &amp;emsp;你打游戏过程中，打累了，停下来，关掉游戏、想过2天再玩，2天之后，游戏⼜从你上次停⽌的地⽅继续运⾏，你上次游戏的进度肯定保存在硬盘上了，是以何种形式呢？游戏过程中产⽣的很多临时数据是不规律的，可能在你关掉游戏时正好有10个列表，3个嵌套字典的数据集合在内存⾥，需要存下来？你如何存？把列表变成⽂件⾥的多⾏多列形式？那嵌套字典呢？根本没法存。所以，若是有种办法可以直接把内存数据存到硬盘上，下次程序再启动，再从硬盘上读回来，还是原来的格式的话，那是极好的。</p>
 <h4 id="⽤于序列化的两个模块"><a href="#⽤于序列化的两个模块" class="headerlink" title="⽤于序列化的两个模块"></a>⽤于序列化的两个模块</h4><p>1、json，⽤于字符串和python数据类型间进⾏转换<br>2、pickle，⽤于python特有的类型和 python的数据类型间进⾏转换</p>
 <h4 id="pickle"><a href="#pickle" class="headerlink" title="pickle"></a>pickle</h4><p>模块提供了四个功能：dumps、dump、loads、load</p>
 <pre class="language-python" data-language="python"><code class="language-python">import pickle
@@ -741,7 +741,7 @@ with open(&quot;result.json&quot;) as f:
  d &#x3D; json.load(f)
  print(d)</code></pre>
 <h4 id="json-vs-pickle"><a href="#json-vs-pickle" class="headerlink" title="json vs pickle:"></a>json vs pickle:</h4><p><strong>json</strong><br>优点：跨语⾔(不同语⾔间的数据传递可⽤json交接)、体积⼩<br>缺点：只能⽀持int\str\list\tuple\dict<br><strong>Pickle</strong><br>优点：专为python设计，⽀持python所有的数据类型<br>缺点：只能在python中使⽤，存储数据占空间⼤</p>
-<h1 id="六、常用模块-excel处理"><a href="#六、常用模块-excel处理" class="headerlink" title="六、常用模块-excel处理"></a>六、常用模块-excel处理</h1><p>&amp;emsp;&amp;emsp;第3⽅开源模块,安装</p>
+<h1 id="六、常用模块-excel处理"><a href="#六、常用模块-excel处理" class="headerlink" title="六、常用模块-excel处理"></a>六、常用模块-excel处理</h1><p> &amp;emsp;第3⽅开源模块,安装</p>
 <pre class="language-python" data-language="python"><code class="language-python">pip install openpyxl</code></pre>
 <h2 id="（一）打开⽂件"><a href="#（一）打开⽂件" class="headerlink" title="（一）打开⽂件"></a>（一）打开⽂件</h2><h4 id="1、创建"><a href="#1、创建" class="headerlink" title="1、创建"></a>1、创建</h4><pre class="language-python" data-language="python"><code class="language-python">from openpyxl import Workbook
 # 实例化
@@ -797,11 +797,11 @@ for row in sheet.iter_rows(min_row&#x3D;2,max_row&#x3D;5,max_col&#x3D;5):
 
 <h2 id="（四）设置单元格样式"><a href="#（四）设置单元格样式" class="headerlink" title="（四）设置单元格样式"></a>（四）设置单元格样式</h2><h4 id="1、需导⼊的类"><a href="#1、需导⼊的类" class="headerlink" title="1、需导⼊的类"></a>1、需导⼊的类</h4><pre class="language-python" data-language="python"><code class="language-python">from openpyxl.styles import Font, colors, Alignment</code></pre>
 
-<h4 id="2、字体"><a href="#2、字体" class="headerlink" title="2、字体"></a>2、字体</h4><p>&amp;emsp;&amp;emsp;下⾯的代码指定了等线24号，加粗斜体，字体颜⾊红⾊。直接使⽤cell的font属性，将Font对象赋值给它。</p>
+<h4 id="2、字体"><a href="#2、字体" class="headerlink" title="2、字体"></a>2、字体</h4><p> &amp;emsp;下⾯的代码指定了等线24号，加粗斜体，字体颜⾊红⾊。直接使⽤cell的font属性，将Font对象赋值给它。</p>
 <pre class="language-python" data-language="python"><code class="language-python">bold_itatic_24_font &#x3D; Font(name&#x3D;&#39;等线&#39;, size&#x3D;24, italic&#x3D;True, color&#x3D;colors.RED,
 bold&#x3D;True) # 声明样式
 sheet[&#39;A1&#39;].font &#x3D; bold_itatic_24_font # 给单元格设置样式</code></pre>
-<h4 id="3、对齐方式"><a href="#3、对齐方式" class="headerlink" title="3、对齐方式"></a>3、对齐方式</h4><p>&amp;emsp;&amp;emsp;也是直接使⽤cell的属性aligment，这⾥指定垂直居中和⽔平居中。除了center，还可以使⽤right、left<br>等等参数。</p>
+<h4 id="3、对齐方式"><a href="#3、对齐方式" class="headerlink" title="3、对齐方式"></a>3、对齐方式</h4><p> &amp;emsp;也是直接使⽤cell的属性aligment，这⾥指定垂直居中和⽔平居中。除了center，还可以使⽤right、left<br>等等参数。</p>
 <pre class="language-python" data-language="python"><code class="language-python"># 设置B1中的数据垂直居中和⽔平居中
 sheet[&#39;B1&#39;].alignment &#x3D; Alignment(horizontal&#x3D;&#39;center&#39;, vertical&#x3D;&#39;center&#39;)</code></pre>
 
@@ -915,12 +915,12 @@ sheet[&#39;D9&#39;].alignment &#x3D; Alignment(horizontal&#x3D;&#39;center&#39;,
 
 # 保存文件
 wb.save(&#39;iris.xlsx&#39;)</code></pre>
-<h1 id="七、常用模块-邮件发送"><a href="#七、常用模块-邮件发送" class="headerlink" title="七、常用模块-邮件发送"></a>七、常用模块-邮件发送</h1><p>&amp;emsp;&amp;emsp;SMTP（Simple Mail Transfer Protocol）即简单邮件传输协议,它是⼀组⽤于由源地址到⽬的地址传送<br>邮件的规则，由它来控制信件的中转⽅式。</p>
+<h1 id="七、常用模块-邮件发送"><a href="#七、常用模块-邮件发送" class="headerlink" title="七、常用模块-邮件发送"></a>七、常用模块-邮件发送</h1><p> &amp;emsp;SMTP（Simple Mail Transfer Protocol）即简单邮件传输协议,它是⼀组⽤于由源地址到⽬的地址传送<br>邮件的规则，由它来控制信件的中转⽅式。</p>
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/7376ab924d6c4cde93a5a37608acc310.png" width = 80%>
 </div>
 
-<h4 id="想实现发送邮件需经过以下⼏步："><a href="#想实现发送邮件需经过以下⼏步：" class="headerlink" title="想实现发送邮件需经过以下⼏步："></a>想实现发送邮件需经过以下⼏步：</h4><p>1、登录 邮件服务器<br>2、构造符合邮件协议规则要求的邮件内容 （email模块）<br>3、发送<br>&amp;emsp;&amp;emsp;Python对SMTP⽀持有smtplib 和 email 两个模块， email 负责构造邮件， smtplib 负责发送邮件,它对smtp协议进⾏了简单的封装。</p>
+<h4 id="想实现发送邮件需经过以下⼏步："><a href="#想实现发送邮件需经过以下⼏步：" class="headerlink" title="想实现发送邮件需经过以下⼏步："></a>想实现发送邮件需经过以下⼏步：</h4><p>1、登录 邮件服务器<br>2、构造符合邮件协议规则要求的邮件内容 （email模块）<br>3、发送<br> &amp;emsp;Python对SMTP⽀持有smtplib 和 email 两个模块， email 负责构造邮件， smtplib 负责发送邮件,它对smtp协议进⾏了简单的封装。</p>
 <h4 id="发送⼀封最简单的信语法如下："><a href="#发送⼀封最简单的信语法如下：" class="headerlink" title="发送⼀封最简单的信语法如下："></a>发送⼀封最简单的信语法如下：</h4><pre class="language-python" data-language="python"><code class="language-python">import smtplib
 from email.mime.text import MIMEText  # 构造邮件正文
 from email.header import Header  # 邮件头
@@ -956,7 +956,7 @@ smtp_obj.sendmail(&quot;xxxxxxxxx@qq.com&quot;, [&quot;xxxxxxxxxx@qq.com&quot;],
 <img src="https://img-blog.csdnimg.cn/3481f353c4a445a290d2eecfb41f8531.png" width = 80%>
 </div>
 
-<h4 id="发送HTML格式的邮件"><a href="#发送HTML格式的邮件" class="headerlink" title="发送HTML格式的邮件"></a>发送HTML格式的邮件</h4><p>&amp;emsp;&amp;emsp;只需要改⼀下 MIMEText() 第2个参数为 html 就可以</p>
+<h4 id="发送HTML格式的邮件"><a href="#发送HTML格式的邮件" class="headerlink" title="发送HTML格式的邮件"></a>发送HTML格式的邮件</h4><p> &amp;emsp;只需要改⼀下 MIMEText() 第2个参数为 html 就可以</p>
 <pre class="language-python" data-language="python"><code class="language-python"># 设置邮件头信息
 mail_body &#x3D; &#39;&#39;&#39;
  &lt;h5&gt;hello,⼩哥哥&lt;&#x2F;h5&gt;

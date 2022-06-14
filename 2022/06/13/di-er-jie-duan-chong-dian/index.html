@@ -630,8 +630,10 @@ shutil.move(原路径, 目标路径)</code></pre>
 <h1 id="二、初识函数"><a href="#二、初识函数" class="headerlink" title="二、初识函数"></a>二、初识函数</h1><h2 id="（一）概念相关"><a href="#（一）概念相关" class="headerlink" title="（一）概念相关"></a>（一）概念相关</h2><p>​		函数，可以当做是<strong>一大堆功能代码的集合。</strong></p>
 <p>​		函数的作用：</p>
 <ul>
-<li>当有重复的代码时，可以考虑封装为函数提高代码的<strong>重用性</strong></li>
-<li>代码太长时，使用函数可以增强代码的<strong>可读性</strong></li>
+<li><p>当有重复的代码时，可以考虑封装为函数提高代码的<strong>重用性</strong></p>
+</li>
+<li><p>代码太长时，使用函数可以增强代码的<strong>可读性</strong></p>
+</li>
 </ul>
 <h2 id="（二）函数的参数"><a href="#（二）函数的参数" class="headerlink" title="（二）函数的参数"></a>（二）函数的参数</h2><blockquote>
 <p>面试题一：<strong>请问Python的参数默认传递的是什么？</strong></p>
@@ -947,6 +949,8 @@ for path, folder_list, file_list in data:
         if ext &#x3D;&#x3D; &quot;mp4&quot;:
             print(file_abs_path)</code></pre>
 
+
+
 <h3 id="2-2-shutil模块"><a href="#2-2-shutil模块" class="headerlink" title="2.2 shutil模块"></a>2.2 shutil模块</h3><pre class="language-python" data-language="python"><code class="language-python">import shutil
 
 # 1. 删除文件夹
@@ -981,6 +985,8 @@ shutil.move(&quot;&#x2F;Users&#x2F;wupeiqi&#x2F;PycharmProjects&#x2F;CodeReposit
 # format，压缩文件格式
 
 # shutil.unpack_archive(filename&#x3D;r&#39;datafile.zip&#39;, extract_dir&#x3D;r&#39;xxxxxx&#x2F;xo&#39;, format&#x3D;&#39;zip&#39;)</code></pre>
+
+
 
 <h3 id="2-3-sys模块"><a href="#2-3-sys模块" class="headerlink" title="2.3 sys模块"></a>2.3 sys模块</h3><pre class="language-python" data-language="python"><code class="language-python">import sys
 
@@ -1247,15 +1253,9 @@ tree.write(&#39;oooo.xml&#39;,encoding&#x3D;&#39;utf-8&#39;)</code></pre>
     	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>age</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>儿11<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>孙子<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>age</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>son</span><span class="token punctuation">></span></span>
 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>son</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>儿2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>son</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>famliy</span><span class="token punctuation">></span></span></code></pre>
-
-
-
-<pre><code> ### 2.8 josn 模块
-</code></pre>
-</li>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>famliy</span><span class="token punctuation">></span></span></code></pre></li>
 </ul>
-<p> json模块，是python内部的一个模块，可以将python的数据格式 转换为json格式的数据，也可以将json格式的数据转换为python的数据格式。</p>
+<h3 id="2-8-josn-模块"><a href="#2-8-josn-模块" class="headerlink" title="2.8 josn 模块"></a>2.8 josn 模块</h3><p> json模块，是python内部的一个模块，可以将python的数据格式 转换为json格式的数据，也可以将json格式的数据转换为python的数据格式。</p>
 <ul>
 <li><p><strong>数据类型 -&gt; json ，一般称为：序列化</strong></p>
 <pre class="language-python" data-language="python"><code class="language-python">import json
@@ -1326,7 +1326,7 @@ print(v3)</code></pre>
 <li><p><strong><code>datetime</code>类型 和 <code>datetime</code>类型之间只支持减运算和比较运算不能相加</strong></p>
 </li>
 </ol>
-<h4 id="2-9-3-三种格式时间的转换"><a href="#2-9-3-三种格式时间的转换" class="headerlink" title="2.9.3 三种格式时间的转换"></a>2.9.3 三种格式时间的转换</h4>
+<h4 id="2-9-3-三种格式时间的转换"><a href="#2-9-3-三种格式时间的转换" class="headerlink" title="2.9.3 三种格式时间的转换"></a>2.9.3 三种格式时间的转换</h4><img src="/2022/06/13/di-er-jie-duan-chong-dian/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220608200220.jpg" class="" title="img">
 
 
 
@@ -1366,11 +1366,13 @@ data &#x3D; re.split(&quot;\dB&quot;, text, 1)
 print(data) # [&#39;逗&#39;, &#39;最逗3B欢乐&#39;]</code></pre>
 </li>
 <li><p>finditer+<code>?p&lt;name&gt;</code>：命名分组</p>
-<pre class="language-python" data-language="python"><code class="language-python">text &#x3D; &quot;dsf130429191912015219k13042919591219521Xkk&quot;
-data_list &#x3D; re.finditer(&quot;\d&#123;6&#125;(?P&lt;year&gt;\d&#123;4&#125;)(?P&lt;month&gt;\d&#123;2&#125;)(?P&lt;day&gt;\d&#123;2&#125;)\d&#123;3&#125;[\d|X]&quot;, text)
-for item in data_list:
+<pre class="language-python" data-language="python"><code class="language-python">import re
+
+text &#x3D; &quot;dsf130429191912015219k13042919591219521Xkk&quot;
+data_list &#x3D; re.finditer(&quot;\d&#123;6&#125;(?P&lt;year&gt;\d&#123;4&#125;)(?P&lt;month&gt;\d&#123;2&#125;)(?P&lt;day&gt;\d&#123;2&#125;)\d&#123;3&#125;[\d|X]&quot;, text)  # 迭代器
+for item in data_list:    
     info_dict &#x3D; item.groupdict()
-    print(info_dict)</code></pre></li>
+    print(info_dict)  # &#123;&#39;year&#39;: &#39;1919&#39;, &#39;month&#39;: &#39;12&#39;, &#39;day&#39;: &#39;01&#39;&#125;...</code></pre></li>
 </ul>
 <h1 id="五、正则表达式相关"><a href="#五、正则表达式相关" class="headerlink" title="五、正则表达式相关"></a><font color="#dd0000">五、正则表达式相关</font></h1><p>当给你一大堆文本信息，让你提取其中的指定数据时，可以使用正则来实现。例如：提取文本中的邮箱和手机号</p>
 <h2 id="（一）字符相关"><a href="#（一）字符相关" class="headerlink" title="（一）字符相关"></a>（一）字符相关</h2><ul>
@@ -1427,7 +1429,7 @@ print(data)</code></pre>
 <li><p>QQ号码：不能以0开头，至少是五位的数字</p>
 <pre class="language-python" data-language="python"><code class="language-python">[1-9]\d&#123;4,&#125;</code></pre>
 </li>
-<li><p>身份证号码：十七位数字，再加一位数字或X</p>
+<li><p>身份证号码：十八位数字，最后一位可是数字也可能是X</p>
 <pre class="language-python" data-language="python"><code class="language-python">import re
 
 text &#x3D; &quot;dsf130429191912015219k13042919591219521Xkk&quot;
@@ -1444,7 +1446,7 @@ print(data_list) # [(&#39;130429191912015219&#39;, &#39;9&#39;), (&#39;130429195
 data_list &#x3D; re.findall(&quot;(\d&#123;6&#125;)(\d&#123;4&#125;)(\d&#123;2&#125;)(\d&#123;2&#125;)(\d&#123;3&#125;)([0-9]|X)&quot;, text)
 print(data_list) # [(&#39;130429&#39;, &#39;1919&#39;, &#39;12&#39;, &#39;01&#39;, &#39;521&#39;, &#39;9&#39;), (&#39;130429&#39;, &#39;1959&#39;, &#39;12&#39;, &#39;19&#39;, &#39;521&#39;, &#39;X&#39;)]</code></pre>
 </li>
-<li><p>匹配手机号：第一位为1， 第二位为数字3~9]， 再跟9位数字</p>
+<li><p>匹配手机号：十一位数，第一位为1， 第二位为数字[3~9]， 再跟9位数字</p>
 <pre class="language-python" data-language="python"><code class="language-python">import re
 
 text &#x3D; &quot;我的手机哈是15133377892，你的手机号是1171123啊？&quot;

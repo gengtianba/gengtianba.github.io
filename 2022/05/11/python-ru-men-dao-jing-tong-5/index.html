@@ -457,7 +457,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记"><a href="#本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记" class="headerlink" title="本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记"></a>本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记</h3><h3 id="视频链接-Python零基础到精通7天速成"><a href="#视频链接-Python零基础到精通7天速成" class="headerlink" title="视频链接:Python零基础到精通7天速成"></a>视频链接:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Gf4y1q7SG?share_source=copy_web">Python零基础到精通7天速成</a></h3><span id="more"></span>
-<h1 id="一、函数编程的作用"><a href="#一、函数编程的作用" class="headerlink" title="一、函数编程的作用"></a>一、函数编程的作用</h1><h2 id="（一）引子"><a href="#（一）引子" class="headerlink" title="（一）引子"></a>（一）引子</h2><p>&amp;emsp;&amp;emsp;你是⼀家公司的IT运维⼈员， 现在⽼板让你写⼀个监控程序<br>1、24⼩时全年⽆休的监控你们公司⽹站服务器的系统状况<br>2、当cpu＼memory＼disk等指标的使⽤量超过阀值时即发邮件报警</p>
+<h1 id="一、函数编程的作用"><a href="#一、函数编程的作用" class="headerlink" title="一、函数编程的作用"></a>一、函数编程的作用</h1><h2 id="（一）引子"><a href="#（一）引子" class="headerlink" title="（一）引子"></a>（一）引子</h2><p> &amp;emsp;你是⼀家公司的IT运维⼈员， 现在⽼板让你写⼀个监控程序<br>1、24⼩时全年⽆休的监控你们公司⽹站服务器的系统状况<br>2、当cpu＼memory＼disk等指标的使⽤量超过阀值时即发邮件报警</p>
 <h4>你掏空了所有的知识量，写出了以下代码</h4>
 <pre class="language-python" data-language="python"><code class="language-python">while True：
     if cpu利⽤率 &gt; 90%:
@@ -477,7 +477,7 @@
     关闭连接</code></pre>
 
 <h4 id="此代码有以下问题"><a href="#此代码有以下问题" class="headerlink" title="此代码有以下问题"></a>此代码有以下问题</h4><p>1、代码重复过多，⼀个劲的copy and paste不符合⾼端程序员的⽓质<br>2、如果⽇后需要修改发邮件的这段代码，⽐如加⼊群发功能，那你就需要在所有⽤到这段代码的地⽅都修改⼀遍</p>
-<h4 id="改进方法"><a href="#改进方法" class="headerlink" title="改进方法"></a>改进方法</h4><p>&amp;emsp;&amp;emsp;只需要把重复的代码提取出来，放在⼀个公共的地⽅，起个名字，以后<br>谁想⽤这段代码，就通过这个名字调⽤就⾏了，如下</p>
+<h4 id="改进方法"><a href="#改进方法" class="headerlink" title="改进方法"></a>改进方法</h4><p> &amp;emsp;只需要把重复的代码提取出来，放在⼀个公共的地⽅，起个名字，以后<br>谁想⽤这段代码，就通过这个名字调⽤就⾏了，如下</p>
 <pre class="language-python" data-language="python"><code class="language-python">def 发送邮件(内容)
  #发送邮件提醒
  连接邮箱服务器
@@ -491,8 +491,8 @@ while True：
     if 内存占⽤ &gt; 80%:
     发送邮件(&#39;内存报警&#39;)</code></pre>
 
-<h1 id="二、语法定义-amp-特性"><a href="#二、语法定义-amp-特性" class="headerlink" title="二、语法定义&amp;特性"></a>二、语法定义&amp;特性</h1><h2 id="（一）函数是什么"><a href="#（一）函数是什么" class="headerlink" title="（一）函数是什么"></a>（一）函数是什么</h2><p>&amp;emsp;&amp;emsp;函数⼀词来源于数学，但编程中的「函数」概念，与数学中的函数是有很⼤不同的，具体区别，我们后⾯会讲，编程中的函数在英⽂中也有很多不同的叫法。在BASIC中叫做subroutine(⼦过程或⼦程序)，在C中只有function，在Java⾥⾯叫做method</p>
-<h4 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h4><p>&amp;emsp;&amp;emsp;<font color="#dd0000"><strong>函数是指将⼀组语句的集合通过⼀个名字(函数名)封装起来，要想执⾏这个函数，只需调⽤其函数名即可</strong></font></p>
+<h1 id="二、语法定义-amp-特性"><a href="#二、语法定义-amp-特性" class="headerlink" title="二、语法定义&amp;特性"></a>二、语法定义&amp;特性</h1><h2 id="（一）函数是什么"><a href="#（一）函数是什么" class="headerlink" title="（一）函数是什么"></a>（一）函数是什么</h2><p> &amp;emsp;函数⼀词来源于数学，但编程中的「函数」概念，与数学中的函数是有很⼤不同的，具体区别，我们后⾯会讲，编程中的函数在英⽂中也有很多不同的叫法。在BASIC中叫做subroutine(⼦过程或⼦程序)，在C中只有function，在Java⾥⾯叫做method</p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h4><p> &amp;emsp;<font color="#dd0000"><strong>函数是指将⼀组语句的集合通过⼀个名字(函数名)封装起来，要想执⾏这个函数，只需调⽤其函数名即可</strong></font></p>
 <h4 id="特性"><a href="#特性" class="headerlink" title="特性:"></a>特性:</h4><p><font color="#dd0000"><strong>1. 减少重复代码<br>2. 使程序变的可扩展<br>3. 使程序变得易维护</strong></font></p>
 <h2 id="（二）语法定义"><a href="#（二）语法定义" class="headerlink" title="（二）语法定义"></a>（二）语法定义</h2><pre class="language-python" data-language="python"><code class="language-python">def sayhi():#函数名
     print(&quot;Hello, I&#39;m nobody!&quot;)
@@ -503,8 +503,8 @@ def calc(x,y):
     res &#x3D; x**y
     print(res) #函数执⾏结果
 calc(5,22)</code></pre>
-<h1 id="三、各种参数"><a href="#三、各种参数" class="headerlink" title="三、各种参数"></a>三、各种参数</h1><h2 id="（一）形参和实参"><a href="#（一）形参和实参" class="headerlink" title="（一）形参和实参"></a>（一）形参和实参</h2><h4 id="形参–用于函数定义"><a href="#形参–用于函数定义" class="headerlink" title="形参–用于函数定义"></a>形参–用于函数定义</h4><p>&amp;emsp;&amp;emsp;只有在被调⽤时才分配内存单元，在调⽤结束时，即刻释放所分配的内存单元。因此，形参只在函数内部有效。函数调⽤结束返回主调⽤程序代码后则不能再使⽤该形参变量</p>
-<h4 id="实参–用于函数调用"><a href="#实参–用于函数调用" class="headerlink" title="实参–用于函数调用"></a>实参–用于函数调用</h4><p>&amp;emsp;&amp;emsp;可以是变量、任意数据类型、表达式、函数等，⽆论实参是何种类型的量，在进⾏函数调⽤时，它们都必须有确定的值，以便把这些值传送给形参。因此应预先给实参赋值</p>
+<h1 id="三、各种参数"><a href="#三、各种参数" class="headerlink" title="三、各种参数"></a>三、各种参数</h1><h2 id="（一）形参和实参"><a href="#（一）形参和实参" class="headerlink" title="（一）形参和实参"></a>（一）形参和实参</h2><h4 id="形参–用于函数定义"><a href="#形参–用于函数定义" class="headerlink" title="形参–用于函数定义"></a>形参–用于函数定义</h4><p> &amp;emsp;只有在被调⽤时才分配内存单元，在调⽤结束时，即刻释放所分配的内存单元。因此，形参只在函数内部有效。函数调⽤结束返回主调⽤程序代码后则不能再使⽤该形参变量</p>
+<h4 id="实参–用于函数调用"><a href="#实参–用于函数调用" class="headerlink" title="实参–用于函数调用"></a>实参–用于函数调用</h4><p> &amp;emsp;可以是变量、任意数据类型、表达式、函数等，⽆论实参是何种类型的量，在进⾏函数调⽤时，它们都必须有确定的值，以便把这些值传送给形参。因此应预先给实参赋值</p>
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/0175ff49fe5841858cdf4722d3fa8e0d.png" width = 50%>
 </div>
@@ -520,11 +520,11 @@ calc(5,22)</code></pre>
 stu_register(&quot;王⼭炮&quot;,22,&quot;CN&quot;,&quot;python_devops&quot;)
 stu_register(&quot;张叫春&quot;,21,&quot;CN&quot;,&quot;linux&quot;)
 stu_register(&quot;刘⽼根&quot;,25,&quot;CN&quot;,&quot;linux&quot;)</code></pre>
-<p>&amp;emsp;&amp;emsp;发现 country 这个参数 基本都 是”CN”, 就像我们在⽹站上注册⽤户，像国籍这种信息，你不填写，默认就会是 中国， 这就是通过默认参数实现的，把country变成默认参数⾮常简单</p>
+<p> &amp;emsp;发现 country 这个参数 基本都 是”CN”, 就像我们在⽹站上注册⽤户，像国籍这种信息，你不填写，默认就会是 中国， 这就是通过默认参数实现的，把country变成默认参数⾮常简单</p>
 <pre class="language-python" data-language="python"><code class="language-python">def stu_register(name,age,course,country&#x3D;&quot;CN&quot;):</code></pre>
 <h4 id="那调⽤时"><a href="#那调⽤时" class="headerlink" title="那调⽤时"></a>那调⽤时</h4><pre class="language-python" data-language="python"><code class="language-python">stu_register(&quot;Mack&quot;,22,&quot;Python&quot;,&quot;US&quot;)</code></pre>
-<p>&amp;emsp;&amp;emsp;你告诉我，第3个参数 python 到底应该给到country还是course呢？ ⽆论给哪个，都会出现歧义，所以<font color="#dd0000"><strong>Python语法⼲脆就让你把默认参数放最后， 解释器在处理函数时参数时，按优先级，位置参数&gt;默认参数</strong></font></p>
-<h2 id="（三）关键字参数–用于函数调用"><a href="#（三）关键字参数–用于函数调用" class="headerlink" title="（三）关键字参数–用于函数调用"></a>（三）关键字参数–用于函数调用</h2><p>&amp;emsp;&amp;emsp;正常情况下，给函数传参数要按顺序，不想按顺序就可以⽤关键参数，只需指定参数名即可(指定了参数名的参数就叫关键参数)，<font color="#dd0000"><strong>但记住⼀个要求就是，关键参数必须放在位置参数(以位置顺序确定对应关系的参数)之后</strong></font></p>
+<p> &amp;emsp;你告诉我，第3个参数 python 到底应该给到country还是course呢？ ⽆论给哪个，都会出现歧义，所以<font color="#dd0000"><strong>Python语法⼲脆就让你把默认参数放最后， 解释器在处理函数时参数时，按优先级，位置参数&gt;默认参数</strong></font></p>
+<h2 id="（三）关键字参数–用于函数调用"><a href="#（三）关键字参数–用于函数调用" class="headerlink" title="（三）关键字参数–用于函数调用"></a>（三）关键字参数–用于函数调用</h2><p> &amp;emsp;正常情况下，给函数传参数要按顺序，不想按顺序就可以⽤关键参数，只需指定参数名即可(指定了参数名的参数就叫关键参数)，<font color="#dd0000"><strong>但记住⼀个要求就是，关键参数必须放在位置参数(以位置顺序确定对应关系的参数)之后</strong></font></p>
 <pre class="language-python" data-language="python"><code class="language-python">def stu_register(name, age, course&#x3D;&#39;PY&#39; ,country&#x3D;&#39;CN&#39;):
     print(&quot;----注册学⽣信息------&quot;)
     print(&quot;姓名:&quot;, name)
@@ -536,7 +536,7 @@ stu_register(&quot;王⼭炮&quot;,course&#x3D;&#39;PY&#39;, age&#x3D;22,country
 <h4 id="但不能这样"><a href="#但不能这样" class="headerlink" title="但不能这样"></a>但不能这样</h4><pre class="language-python" data-language="python"><code class="language-python"># corse关键字参数传在位置参数22之前
 stu_register(&quot;王⼭炮&quot;,course&#x3D;&#39;PY&#39;,22,country&#x3D;&#39;JP&#39; )</code></pre>
 
-<h2 id="（四）非固定参数–用于函数调用"><a href="#（四）非固定参数–用于函数调用" class="headerlink" title="（四）非固定参数–用于函数调用"></a>（四）非固定参数–用于函数调用</h2><p>&amp;emsp;&amp;emsp;若你的函数在定义时不确定⽤户想传⼊多少个参数，就可以使⽤⾮固定参数</p>
+<h2 id="（四）非固定参数–用于函数调用"><a href="#（四）非固定参数–用于函数调用" class="headerlink" title="（四）非固定参数–用于函数调用"></a>（四）非固定参数–用于函数调用</h2><p> &amp;emsp;若你的函数在定义时不确定⽤户想传⼊多少个参数，就可以使⽤⾮固定参数</p>
 <pre class="language-python" data-language="python"><code class="language-python">def stu_register(name,age,*args): # *args 会把多传⼊的参数变成⼀个元组形式
     print(name,age,args)
 
@@ -554,7 +554,7 @@ stu_register(&quot;Alex&quot;,22)
 stu_register(&quot;Jack&quot;,32,&quot;CN&quot;,&quot;Python&quot;,sex&#x3D;&quot;Male&quot;,province&#x3D;&quot;ShanDong&quot;)
 #输出
 # Jack 32 (&#39;CN&#39;, &#39;Python&#39;) &#123;&#39;province&#39;: &#39;ShanDong&#39;, &#39;sex&#39;: &#39;Male&#39;&#125;</code></pre>
-<h2 id="（四）练习题"><a href="#（四）练习题" class="headerlink" title="（四）练习题"></a>（四）练习题</h2><p>&amp;emsp;&amp;emsp;根据下图所示，对print_info⾥的代码进⾏实现</p>
+<h2 id="（四）练习题"><a href="#（四）练习题" class="headerlink" title="（四）练习题"></a>（四）练习题</h2><p> &amp;emsp;根据下图所示，对print_info⾥的代码进⾏实现</p>
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/6e3edba743d9473eb36f6714d78d7cac.png" width = 80%>
 </div>
@@ -569,7 +569,7 @@ stu_register(&quot;Jack&quot;,32,&quot;CN&quot;,&quot;Python&quot;,sex&#x3D;&quo
 
 print_info(name&#x3D;&#39;Alex&#39;, age&#x3D;22, sex&#x3D;&#39;M&#39;)
 print_info(name&#x3D;&#39;Jack&#39;, age&#x3D;22, sex&#x3D;&#39;M&#39;, hobby&#x3D;&#39;运动&#39;)</code></pre>
-<h1 id="四、函数返回值可以干啥"><a href="#四、函数返回值可以干啥" class="headerlink" title="四、函数返回值可以干啥"></a>四、函数返回值可以干啥</h1><p>&amp;emsp;&amp;emsp;函数外部的代码要想获取函数的执⾏结果，就可以在函数⾥⽤return语句把结果返回</p>
+<h1 id="四、函数返回值可以干啥"><a href="#四、函数返回值可以干啥" class="headerlink" title="四、函数返回值可以干啥"></a>四、函数返回值可以干啥</h1><p> &amp;emsp;函数外部的代码要想获取函数的执⾏结果，就可以在函数⾥⽤return语句把结果返回</p>
 <pre class="language-python" data-language="python"><code class="language-python">def stu_register(name, age, course&#x3D;&#39;PY&#39; ,country&#x3D;&#39;CN&#39;):
     print(&quot;----注册学⽣信息------&quot;)
     print(&quot;姓名:&quot;, name)
@@ -596,7 +596,7 @@ change_name()
 print(&quot;在外⾯看看name改了么?&quot;,name)</code></pre>
 <h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><pre class="language-python" data-language="python"><code class="language-python">&gt;&gt;&gt;after change ⾦⻆⼤王,⼀个有Tesla的⾼级屌丝
 &gt;&gt;&gt;在外⾯看看name改了么? Alex Li</code></pre>
-<p>&amp;emsp;&amp;emsp;为什么在函数内部改了name的值后， 在外⾯print()的时候却没有改呢？因为这两个name根本不是⼀回事<br><strong>※</strong>在函数中定义的变量称为局部变量，在程序的⼀开始定义的变量称为全局变量<br><strong>※</strong>全局变量作⽤域(即有效范围)是整个程序，局部变量作⽤域是定义该变量的函数<br><strong>※</strong>变量的查找顺序是<strong>局部变量&gt;全局变量</strong><br><strong>※</strong>当全局变量与局部变量同名时，在定义局部变量的函数内，局部变量起作⽤；在其它地⽅全局变量起作⽤。<br><strong>※</strong>在函数⾥是不能直接修改全局变量的</p>
+<p> &amp;emsp;为什么在函数内部改了name的值后， 在外⾯print()的时候却没有改呢？因为这两个name根本不是⼀回事<br><strong>※</strong>在函数中定义的变量称为局部变量，在程序的⼀开始定义的变量称为全局变量<br><strong>※</strong>全局变量作⽤域(即有效范围)是整个程序，局部变量作⽤域是定义该变量的函数<br><strong>※</strong>变量的查找顺序是<strong>局部变量&gt;全局变量</strong><br><strong>※</strong>当全局变量与局部变量同名时，在定义局部变量的函数内，局部变量起作⽤；在其它地⽅全局变量起作⽤。<br><strong>※</strong>在函数⾥是不能直接修改全局变量的</p>
 <h4 id="就是想在函数⾥修改全局变量怎么办？"><a href="#就是想在函数⾥修改全局变量怎么办？" class="headerlink" title="就是想在函数⾥修改全局变量怎么办？"></a>就是想在函数⾥修改全局变量怎么办？</h4><pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;Alex Li&quot;
 def change_name():
     global name #声明⼀个全局变量
@@ -605,7 +605,7 @@ def change_name():
 
 change_name()
 print(&quot;在外⾯看看name改了么?&quot;, name)</code></pre>
-<p>&amp;emsp;&amp;emsp; <strong>global name的作⽤就是要在函数⾥声明全局变量name ，意味着最上⾯的 name &#x3D; “Alex Li” 即使不写，程序最后⾯的print也可以打印name</strong><br>&amp;emsp;&amp;emsp;<font color="#dd0000">虽然可以改，但不建议⽤这个global语法，随着代码增多 ，会造成代码调试困难</font></p>
+<p> &amp;emsp; <strong>global name的作⽤就是要在函数⾥声明全局变量name ，意味着最上⾯的 name &#x3D; “Alex Li” 即使不写，程序最后⾯的print也可以打印name</strong><br> &amp;emsp;<font color="#dd0000">虽然可以改，但不建议⽤这个global语法，随着代码增多 ，会造成代码调试困难</font></p>
 <h4 id="传递列表、字典产⽣的现象"><a href="#传递列表、字典产⽣的现象" class="headerlink" title="传递列表、字典产⽣的现象"></a>传递列表、字典产⽣的现象</h4><pre class="language-python" data-language="python"><code class="language-python">d &#x3D; &#123;&quot;name&quot;:&quot;Alex&quot;,&quot;age&quot;:26,&quot;hobbie&quot;:&quot;健身&quot;&#125;
 l &#x3D; [&quot;Rebeeca&quot;,&quot;Katrina&quot;,&quot;Rachel&quot;]
 def change_data(info,girls):
@@ -616,8 +616,8 @@ change_data(d,l)
 print(d,l)</code></pre>
 <h4 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h4><pre class="language-python" data-language="python"><code class="language-python">&#123;‘name’: ‘Alex’, ‘age’: 26, ‘hobbie’: ‘学习’&#125;
 [‘Rebeeca’, ‘Katrina’, ‘Rachel’, ‘XiaoYun’]</code></pre>
-<p>&amp;emsp;&amp;emsp;不是说不能在函数⾥改全局变量么，怎么改了呀？</p>
-<p>&amp;emsp;&amp;emsp;字典，列表，集合等数据类型该数据类型本身（鱼缸）和里面的各元素（鱼），都是单独在内存中进行存放，鱼缸是一个地址，每条鱼有各自的地址</p>
+<p> &amp;emsp;不是说不能在函数⾥改全局变量么，怎么改了呀？</p>
+<p> &amp;emsp;字典，列表，集合等数据类型该数据类型本身（鱼缸）和里面的各元素（鱼），都是单独在内存中进行存放，鱼缸是一个地址，每条鱼有各自的地址</p>
 <pre class="language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; d &#x3D; &#123;&quot;name&quot;:&quot;Alex&quot;,&quot;age&quot;:26,&quot;hobbie&quot;:&quot;健身&quot;&#125;
 &gt;&gt;&gt; print(id(d))
 &gt;&gt;&gt; for k in d.keys():
@@ -635,9 +635,9 @@ hobbie ⼤保健
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/cdb48ad4dba84023901cb223e8a66807.png" width = 80%>
 </div>
-&emsp;&emsp;根据上图我们能看出， 程序只是把d这个dict的内存地址传给了change_data函数，把dict⽐作⻥缸，⾥⾯的k,v⽐作缸⾥装的⻥。现在只是把⻥缸丢给了函数，这个⻥缸本身你不能改，但是⾥⾯的⻥可以。相当于只是传了⼀个对这个d的引⽤关系给到函数的形参。这样是为了减少内存的浪费，因为如果这个dict⽐较⼤，传⼀次到函数⾥就要copy⼀份新的值的话，效率太低了。
+ &emsp;根据上图我们能看出， 程序只是把d这个dict的内存地址传给了change_data函数，把dict⽐作⻥缸，⾥⾯的k,v⽐作缸⾥装的⻥。现在只是把⻥缸丢给了函数，这个⻥缸本身你不能改，但是⾥⾯的⻥可以。相当于只是传了⼀个对这个d的引⽤关系给到函数的形参。这样是为了减少内存的浪费，因为如果这个dict⽐较⼤，传⼀次到函数⾥就要copy⼀份新的值的话，效率太低了。
 
-<h1 id="六、内置函数"><a href="#六、内置函数" class="headerlink" title="六、内置函数"></a>六、内置函数</h1><p>&amp;emsp;&amp;emsp;python解释器自带的函数</p>
+<h1 id="六、内置函数"><a href="#六、内置函数" class="headerlink" title="六、内置函数"></a>六、内置函数</h1><p> &amp;emsp;python解释器自带的函数</p>
 <div align=center>
 <img src="https://img-blog.csdnimg.cn/553be5a077b340b09de60538357d5c52.png" width = 80%>
 </div>
