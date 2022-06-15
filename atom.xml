@@ -6,7 +6,7 @@
   <link href="https://gengtianba.github.io/atom.xml" rel="self"/>
   
   <link href="https://gengtianba.github.io/"/>
-  <updated>2022-06-14T13:16:47.200Z</updated>
+  <updated>2022-06-15T02:50:12.572Z</updated>
   <id>https://gengtianba.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python模块三day1</title>
+    <link href="https://gengtianba.github.io/2022/06/15/python-mo-kuai-san-day1/"/>
+    <id>https://gengtianba.github.io/2022/06/15/python-mo-kuai-san-day1/</id>
+    <published>2022-06-15T01:39:36.000Z</published>
+    <updated>2022-06-15T02:50:12.572Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;第三模块-面向对象-amp-网络-amp-并发编程&quot;&gt;&lt;a href=&quot;#第三模块-面向对象-amp-网络-amp-并发编程&quot; class=&quot;headerlink&quot; title=&quot;第三模块 面向对象&amp;amp;网络&amp;amp;并发编程&quot;&gt;&lt;/a&gt;第三模块</summary>
+        
+      
+    
+    
+    
+    <category term="路飞学院" scheme="https://gengtianba.github.io/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/"/>
+    
+    
+    <category term="笔记" scheme="https://gengtianba.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="python" scheme="https://gengtianba.github.io/tags/python/"/>
+    
+    <category term="第二阶段" scheme="https://gengtianba.github.io/tags/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>第一阶段重点</title>
@@ -497,33 +526,6 @@
     <category term="Python" scheme="https://gengtianba.github.io/tags/Python/"/>
     
     <category term="笔记" scheme="https://gengtianba.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算R脚本</title>
-    <link href="https://gengtianba.github.io/2022/05/01/ji-suan-r-jiao-ben/"/>
-    <id>https://gengtianba.github.io/2022/05/01/ji-suan-r-jiao-ben/</id>
-    <published>2022-04-30T16:00:00.000Z</published>
-    <updated>2022-06-14T11:33:07.488Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、脚本介绍&quot;&gt;&lt;a href=&quot;#一、脚本介绍&quot; class=&quot;headerlink&quot; title=&quot;一、脚本介绍&quot;&gt;&lt;/a&gt;一、脚本介绍&lt;/h1&gt;&lt;h2 id=&quot;amp-emsp-通过1km逐月降水雨量栅格数据，计算该年降雨侵蚀因子R。&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="脚本" scheme="https://gengtianba.github.io/categories/%E8%84%9A%E6%9C%AC/"/>
-    
-    
-    <category term="python" scheme="https://gengtianba.github.io/tags/python/"/>
-    
-    <category term="学习" scheme="https://gengtianba.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
