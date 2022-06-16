@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    490
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    9 分
                 </div>
                 
 
@@ -555,8 +555,262 @@ count &#x3D; input(&quot;请输入要生成斐波那契数列的个数：&quot;)
 count &#x3D; int(count)
 fib_generator &#x3D; fib(count)
 for num in fib_generator:
-    print(num)</code></pre></li>
+    print(num)
+    </code></pre></li>
 </ul>
+<h1 id="阶段三"><a href="#阶段三" class="headerlink" title="阶段三"></a>阶段三</h1><h2 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h2><ol>
+<li><p>面向对象中的self指的是什么?</p>
+<p>答案：self是一个参数，当使用 对象.方法 的方式执行函数时，python自动传递self参数（参数的值为调用当前方法的对象）</p>
+</li>
+<li><p>补充代码实现</p>
+<pre class="language-python" data-language="python"><code class="language-python">user_list &#x3D; []
+while True:
+    user &#x3D; input(&quot;请输入用户名:&quot;)
+    pwd &#x3D; input(&quot;请输入密码:&quot;)
+    email &#x3D; input(&quot;请输入邮箱:&quot;)
+    
+&quot;&quot;&quot;
+# 需求
+1. while循环提示 户输 : 户名、密码、邮箱(正则满足邮箱格式)
+2. 为每个用户创建一个个对象，并添加到user_list中。
+3. 当列表中的添加 3个对象后，跳出循环并以此循环打印所有用户的姓名和邮箱
+&quot;&quot;&quot;</code></pre>
+
+<p>答案：</p>
+<pre class="language-python" data-language="python"><code class="language-python">import re
+
+
+class User:
+    def __init__(self, user, pwd, email):
+        self.user &#x3D; user
+        self.pwd &#x3D; pwd
+        self.email &#x3D; email
+
+
+def run():
+    user_list &#x3D; []
+    while True:
+        user &#x3D; input(&quot;请输入用户名(输入Q&#x2F;q退出):&quot;).strip()
+        if user.upper() &#x3D;&#x3D; &#39;Q&#39;:
+            break
+
+        pwd &#x3D; input(&quot;请输入密码:&quot;).strip()
+
+        email &#x3D; input(&quot;请输入邮箱:&quot;).strip()
+        email &#x3D; re.match(&#39;\w+@\w+\.\w+&#39;, email).group()
+        if not email:
+            print(&#39;输入格式错误&#39;)
+            break
+
+        user_obj &#x3D; User(user, pwd, email)
+        user_list.append(user_obj)
+
+        if len(user_list) &#x3D;&#x3D; 3:
+            break
+
+    for user in user_list:
+        message &#x3D; &#39;用户&#123;&#125;您的邮箱为&#123;&#125;&#39;.format(user.user, user.email)
+        print(message)
+
+
+run()</code></pre>
+
+</li>
+<li><p>补充代码:实现 户注册和登录。</p>
+<pre class="language-python" data-language="python"><code class="language-python">class User:
+    def __init__(self, name, pwd):
+        self.name &#x3D; name
+        self.pwd &#x3D; pwd
+
+
+class Account:
+    def __init__(self):
+        # 用户列表，数据格式：[user对象，user对象，user对象]
+        self.user_list &#x3D; []
+
+    def login(self):
+        &quot;&quot;&quot;
+        用户登录，输入用户名和密码然后去self.user_list中校验用户合法性
+        :return:
+        &quot;&quot;&quot;
+        pass
+
+    def register(self):
+        &quot;&quot;&quot;
+        用户注册，没注册一个用户就创建一个user对象，然后添加到self.user_list中，表示注册成功。
+        :return:
+        &quot;&quot;&quot;
+        pass
+
+    def run(self):
+        &quot;&quot;&quot;
+        主程序
+        :return:
+        &quot;&quot;&quot;
+        pass
+
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    obj &#x3D; Account()
+    obj.run()</code></pre>
+
+<p>答案：</p>
+<pre class="language-python" data-language="python"><code class="language-python">class User:
+    def __init__(self, name, pwd):
+        self.name &#x3D; name
+        self.pwd &#x3D; pwd
+
+
+class Account:
+    def __init__(self):
+        # 用户列表，数据格式：[user对象，user对象，user对象]
+        self.user_list &#x3D; []
+
+    def login(self):
+        print(&#39;用户登录&#39;)
+        &quot;&quot;&quot;
+        用户登录，输入用户名和密码然后去self.user_list中校验用户合法性
+        :return:
+        &quot;&quot;&quot;
+        while True:
+            name &#x3D; input(&quot;请输入用户名(输入Q&#x2F;q退出): &quot;).strip()
+            if name.upper() &#x3D;&#x3D; &#39;Q&#39;:
+                break
+            pwd &#x3D; input(&quot;请输入密码: &quot;).strip()
+
+            for user in self.user_list:
+                if name &#x3D;&#x3D; user.name and pwd &#x3D;&#x3D; user.pwd:
+                    print(&quot;登录成功&quot;)
+                    break
+                else:
+                    if user &#x3D;&#x3D; self.user_list[-1]:
+                        print(&#39;登录失败&#39;)
+
+    def register(self):
+        &quot;&quot;&quot;
+        用户注册，每注册一个用户就创建一个user对象，然后添加到self.user_list中，表示注册成功。
+        :return:
+        &quot;&quot;&quot;
+        print(&#39;用户注册&#39;)
+        while True:
+            name &#x3D; input(&quot;请输入用户名(输入Q&#x2F;q退出): &quot;).strip()
+            if name.upper() &#x3D;&#x3D; &#39;Q&#39;:
+                break
+            pwd &#x3D; input(&quot;请输入密码: &quot;).strip()
+
+            user_obj &#x3D; User(name, pwd)
+            self.user_list.append(user_obj)
+
+    def run(self):
+            &quot;&quot;&quot;
+            主程序
+            :return:
+            &quot;&quot;&quot;
+            while True:
+                func_dic &#x3D; &#123;
+                    &#39;1&#39;: &#123;&#39;name&#39;: &#39;注册&#39;, &#39;func&#39;: self.register&#125;,
+                    &#39;2&#39;: &#123;&#39;name&#39;: &#39;登录&#39;, &#39;func&#39;: self.login&#125;
+                &#125;
+                # 打印提示信息
+                msg &#x3D; &#39;;&#39;.join([&#39;&#123;&#125;-&#123;&#125;&#39;.format(k, v[&#39;name&#39;]) for k, v in func_dic.items()])
+                print(msg)
+
+                choice &#x3D; input(&#39;请输入所选功能(输入Q&#x2F;q退出)： &#39;)
+                if choice.upper() &#x3D;&#x3D; &#39;Q&#39;:
+                    break
+                info &#x3D; func_dic.get(choice)
+                if not info:
+                    print(&#39;输入错误请重新输入&#39;)
+                    continue
+
+                func &#x3D; info[&#39;func&#39;]
+                func()
+
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    obj &#x3D; Account()
+    obj.run()</code></pre></li>
+</ol>
+<h2 id="面向对象进阶"><a href="#面向对象进阶" class="headerlink" title="面向对象进阶"></a>面向对象进阶</h2><ol>
+<li><p>列举面向对象的成员并简述他们的特点。</p>
+<p>答案：</p>
+<ul>
+<li><p>变量：</p>
+<ul>
+<li>实例变量：属于对象【只能对象调用】</li>
+<li>类变量：属于类【类和对象均可调用】</li>
+</ul>
+</li>
+<li><p>方法</p>
+<ul>
+<li><p>绑定方法：默认传入<code>self</code>参数，一般由对象进行调用（此时<code>self</code>就等于调用方法的对象）【类和对象均可调用】</p>
+</li>
+<li><p>类方法：默认传入<code>cls</code>参数，一般由类进行调用（此时<code>cls</code>就等于调用方法的这个类）【类和对象均可调用】</p>
+</li>
+<li><p>静态方法：默认不传人任何参数，一般由类进行调用【类和对象均可调用】</p>
+</li>
+</ul>
+</li>
+<li><p>属性：由绑定方法+<code>@property</code>实现，作用为</p>
+<ul>
+<li><code>obj.属性名</code></li>
+<li><code>obj.属性名 = 123</code></li>
+<li><code>del obj.属性名</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>__new__</code>方法的作用？</p>
+<p>答案：执行在<code>__init__</code>方法之前，用于创建一个空对象，然后<code>__init__</code>方法在其中初始化一些值。</p>
+</li>
+<li><p>简述你理解的迭代器、生成器和可迭代对象</p>
+<ul>
+<li><p>迭代器：内部封装有<code>__iter__</code>方法和<code>__next__</code>方法</p>
+<ul>
+<li><code>__iter__</code>方法：返回自身</li>
+<li><code>__next__</code>可以获取数据（终止抛出StopIteration异常），可以被for循环</li>
+</ul>
+</li>
+<li><p>可迭代对象：内部封装有<code>__iter__</code>方法并返回一个迭代器，可以被for循环</p>
+</li>
+<li><p>生成器：在定义函数时，包含yield关键字就是一个生成器函数，执行生成器函数可以获得生成器对象（一种特殊的迭代器）内部也有<code>__iter__</code>和<code>__next__</code>方法</p>
+<ul>
+<li><code>__iter__</code>方法：返回自身</li>
+<li><code>__next__</code>可以获取数据（终止抛出StopIteration异常），可以被for循环</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>看代码写结果（如有报错，请标注报错位置）</p>
+<pre class="language-python" data-language="python"><code class="language-python">class StarkConfig(object):
+    def __init__(self, num):
+        self.num &#x3D; num
+    def run(self):
+        self()
+    def __call__(self, *args, **kwargs):
+        print(self.num)
+        
+class RoleConfig(StarkConfig):
+    def __call__(self, *args, **kwargs):
+        print(345)
+    def __getitem__(self, item):
+        return self.num[item]
+    
+v1 &#x3D; RoleConfig(&#39;alex&#39;)
+v2 &#x3D; StarkConfig(&quot;wupeiqi&quot;)
+
+print(v1[1])
+print(v2[2])</code></pre>
+
+<p><font color="#dd0000">存在问题</font>：未掌握成员<code>__call__</code>和<code>__getitem__</code></p>
+<ul>
+<li><code>__call__</code>：在执行<code>对象()</code>时，自动调用该方法，并返回结果</li>
+<li><code>__getitem__</code>：在执行<code>对象[]</code>时，自动调用该方法，并返回结果</li>
+</ul>
+<p>答案：</p>
+<pre class="language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; l
+&gt;&gt;&gt; print(v2[2])  # 报错StarkConfig没有__gititem__方法，无法执行v2[]</code></pre></li>
+</ol>
 
                 
             </div>
