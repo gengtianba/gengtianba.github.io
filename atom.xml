@@ -6,7 +6,7 @@
   <link href="https://gengtianba.github.io/atom.xml" rel="self"/>
   
   <link href="https://gengtianba.github.io/"/>
-  <updated>2022-06-18T09:42:36.544Z</updated>
+  <updated>2022-06-23T03:02:35.769Z</updated>
   <id>https://gengtianba.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nc转tif脚本</title>
+    <link href="https://gengtianba.github.io/2022/06/22/nc-zhuan-tif-jiao-ben/"/>
+    <id>https://gengtianba.github.io/2022/06/22/nc-zhuan-tif-jiao-ben/</id>
+    <published>2022-06-22T12:58:07.000Z</published>
+    <updated>2022-06-23T03:02:35.769Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;（一）前置工作&quot;&gt;&lt;a href=&quot;#（一）前置工作&quot; class=&quot;headerlink&quot; title=&quot;（一）前置工作&quot;&gt;&lt;/a&gt;（一）前置工作&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;安装&lt;code&gt;numpy&lt;/code&gt;&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="脚本" scheme="https://gengtianba.github.io/categories/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+    <category term="python" scheme="https://gengtianba.github.io/tags/python/"/>
+    
+    <category term="学习" scheme="https://gengtianba.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>入职相关</title>
@@ -44,7 +73,7 @@
     <link href="https://gengtianba.github.io/2022/06/17/python-mo-kuai-san-day2/"/>
     <id>https://gengtianba.github.io/2022/06/17/python-mo-kuai-san-day2/</id>
     <published>2022-06-17T08:03:04.000Z</published>
-    <updated>2022-06-21T11:28:17.919Z</updated>
+    <updated>2022-06-23T14:38:01.826Z</updated>
     
     
       
@@ -73,7 +102,7 @@
     <link href="https://gengtianba.github.io/2022/06/15/python-mo-kuai-san-day1/"/>
     <id>https://gengtianba.github.io/2022/06/15/python-mo-kuai-san-day1/</id>
     <published>2022-06-15T01:39:36.000Z</published>
-    <updated>2022-06-17T08:02:00.316Z</updated>
+    <updated>2022-06-23T08:12:37.925Z</updated>
     
     
       
@@ -503,27 +532,6 @@
     <id>https://gengtianba.github.io/2022/05/11/python-ru-men-dao-jing-tong-5/</id>
     <published>2022-05-10T16:00:00.000Z</published>
     <updated>2022-06-14T11:34:13.929Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&quot;&gt;&lt;a href=&quot;#本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&quot; class=&quot;headerlink&quot; title=&quot;本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&quot;&gt;&lt;/a&gt;本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&lt;/h3&gt;&lt;h3 id=&quot;视频链接-Python零基础到精通7天速成&quot;&gt;&lt;a href=&quot;#视频链接-Python零基础到精通7天速成&quot; class=&quot;headerlink&quot; title=&quot;视频链接:Python零基础到精通7天速成&quot;&gt;&lt;/a&gt;视频链接:&lt;a href=&quot;https://www.bilibili.com/video/BV1Gf4y1q7SG?share_source=copy_web&quot;&gt;Python零基础到精通7天速成&lt;/a&gt;&lt;/h3&gt;</summary>
-    
-    
-    
-    <category term="Python零基础到精通7天速成" scheme="https://gengtianba.github.io/categories/Python%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%88%B0%E7%B2%BE%E9%80%9A7%E5%A4%A9%E9%80%9F%E6%88%90/"/>
-    
-    
-    <category term="Python" scheme="https://gengtianba.github.io/tags/Python/"/>
-    
-    <category term="笔记" scheme="https://gengtianba.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>day4-用Python批量处理文件</title>
-    <link href="https://gengtianba.github.io/2022/05/08/python-ru-men-dao-jing-tong-4/"/>
-    <id>https://gengtianba.github.io/2022/05/08/python-ru-men-dao-jing-tong-4/</id>
-    <published>2022-05-07T16:00:00.000Z</published>
-    <updated>2022-06-14T11:34:08.321Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&quot;&gt;&lt;a href=&quot;#本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&quot; class=&quot;headerlink&quot; title=&quot;本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&quot;&gt;&lt;/a&gt;本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记&lt;/h3&gt;&lt;h3 id=&quot;视频链接-Python零基础到精通7天速成&quot;&gt;&lt;a href=&quot;#视频链接-Python零基础到精通7天速成&quot; class=&quot;headerlink&quot; title=&quot;视频链接:Python零基础到精通7天速成&quot;&gt;&lt;/a&gt;视频链接:&lt;a href=&quot;https://www.bilibili.com/video/BV1Gf4y1q7SG?share_source=copy_web&quot;&gt;Python零基础到精通7天速成&lt;/a&gt;&lt;/h3&gt;</summary>

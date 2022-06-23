@@ -1493,24 +1493,24 @@ sock.close()</code></pre>
 <li><p>客户端</p>
 <pre class="language-python" data-language="python"><code class="language-python">import socket
 import struct
-  
+    
 client &#x3D; socket.socket()
 client.connect((&#39;127.0.0.1&#39;, 8001))
-  
+    
 # 第一条数据
 data1 &#x3D; &#39;alex正在吃&#39;.encode(&#39;utf-8&#39;)
-  
+    
 header1 &#x3D; struct.pack(&#39;i&#39;, len(data1))
-  
+    
 client.sendall(header1)
 client.sendall(data1)
-  
+    
 # 第二条数据
 data2 &#x3D; &#39;翔&#39;.encode(&#39;utf-8&#39;)
 header2 &#x3D; struct.pack(&#39;i&#39;, len(data2))
 client.sendall(header2)
 client.sendall(data2)
-  
+    
 client.close()</code></pre></li>
 </ul>
 </blockquote>

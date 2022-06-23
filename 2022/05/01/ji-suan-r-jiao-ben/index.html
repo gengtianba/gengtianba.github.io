@@ -426,7 +426,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    437
+                    406
                 </div>
                 
 
@@ -456,13 +456,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、脚本介绍"><a href="#一、脚本介绍" class="headerlink" title="一、脚本介绍"></a>一、脚本介绍</h1><h2 id="amp-emsp-通过1km逐月降水雨量栅格数据，计算该年降雨侵蚀因子R。"><a href="#amp-emsp-通过1km逐月降水雨量栅格数据，计算该年降雨侵蚀因子R。" class="headerlink" title="&amp;emsp;通过1km逐月降水雨量栅格数据，计算该年降雨侵蚀因子R。"></a>&amp;emsp;通过1km逐月降水雨量栅格数据，计算该年降雨侵蚀因子R。</h2><h2 id="（一）计算公式"><a href="#（一）计算公式" class="headerlink" title="（一）计算公式"></a>（一）计算公式</h2><div align=center>
+                <h2 id="（一）计算公式"><a href="#（一）计算公式" class="headerlink" title="（一）计算公式"></a>（一）计算公式</h2><div align=center>
 <img src="https://img-blog.csdnimg.cn/74d684baa75a48028a052f83ff4ffd60.png" width = 80%>
 </div>
 
-<h2 id="（二）数据源"><a href="#（二）数据源" class="headerlink" title="（二）数据源"></a>（二）数据源</h2><h3 id="amp-emsp-国家地球系统科学数据中心-http-www-geodata-cn"><a href="#amp-emsp-国家地球系统科学数据中心-http-www-geodata-cn" class="headerlink" title="&amp;emsp;国家地球系统科学数据中心(http://www.geodata.cn/)"></a>&amp;emsp;国家地球系统科学数据中心(<a target="_blank" rel="noopener" href="http://www.geodata.cn/">http://www.geodata.cn/</a>)</h3><div align=center>
-<img src="https://img-blog.csdnimg.cn/d2bf59b83f59438d87a7b283e11a8a09.png" width = 80%>
-</div>
+<h2 id="（二）数据源"><a href="#（二）数据源" class="headerlink" title="（二）数据源"></a>（二）数据源</h2><h3 id="amp-emsp-国家地球系统科学数据中心-http-www-geodata-cn"><a href="#amp-emsp-国家地球系统科学数据中心-http-www-geodata-cn" class="headerlink" title="&amp;emsp;国家地球系统科学数据中心(http://www.geodata.cn/)"></a>&amp;emsp;国家地球系统科学数据中心(<a target="_blank" rel="noopener" href="http://www.geodata.cn/">http://www.geodata.cn/</a>)</h3><img src="/2022/05/01/ji-suan-r-jiao-ben/d2bf59b83f59438d87a7b283e11a8a09.png" class="" title="img">
 
 <p><font color="#dd0000">※该数据为.nc格式，需要转换成tif格式</font></p>
 <h2 id="（三）数据输出"><a href="#（三）数据输出" class="headerlink" title="（三）数据输出"></a>（三）数据输出</h2><h3 id="1、年降雨总量栅格数据"><a href="#1、年降雨总量栅格数据" class="headerlink" title="1、年降雨总量栅格数据"></a>1、年降雨总量栅格数据</h3><h3 id="2、各月降雨侵蚀因子R"><a href="#2、各月降雨侵蚀因子R" class="headerlink" title="2、各月降雨侵蚀因子R"></a>2、各月降雨侵蚀因子R</h3><h3 id="3、年总降雨量侵蚀因子R"><a href="#3、年总降雨量侵蚀因子R" class="headerlink" title="3、年总降雨量侵蚀因子R"></a>3、年总降雨量侵蚀因子R</h3><h2 id="（四）操作过程"><a href="#（四）操作过程" class="headerlink" title="（四）操作过程"></a>（四）操作过程</h2><h3 id="1、将12各月的降雨量栅格数据输入文件夹"><a href="#1、将12各月的降雨量栅格数据输入文件夹" class="headerlink" title="1、将12各月的降雨量栅格数据输入文件夹"></a>1、将12各月的降雨量栅格数据输入文件夹</h3><h3 id="2、更改文件工作环境，运行脚本"><a href="#2、更改文件工作环境，运行脚本" class="headerlink" title="2、更改文件工作环境，运行脚本"></a>2、更改文件工作环境，运行脚本</h3><h2 id="（五）Python2源码"><a href="#（五）Python2源码" class="headerlink" title="（五）Python2源码"></a>（五）Python2源码</h2><pre class="language-python" data-language="python"><code class="language-python"># coding&#x3D;utf-8  ##Python2不支持中文

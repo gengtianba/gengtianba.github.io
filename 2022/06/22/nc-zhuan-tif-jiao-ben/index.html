@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="day2-开发年会抽奖小程序, Gengtianba&#39;s Blog">
+    <meta name="keywords" content="nc转tif脚本, Gengtianba&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>day2-开发年会抽奖小程序 | Gengtianba&#39;s Blog</title>
+    <title>nc转tif脚本 | Gengtianba&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">day2-开发年会抽奖小程序</h1>
+                    <h1 class="description center-align post-title">nc转tif脚本</h1>
                 </div>
             </div>
         </div>
@@ -388,12 +388,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">学习</span>
                             </a>
                         
                     </div>
@@ -404,8 +404,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%88%B0%E7%B2%BE%E9%80%9A7%E5%A4%A9%E9%80%9F%E6%88%90/" class="post-category">
-                                Python零基础到精通7天速成
+                            <a href="/categories/%E8%84%9A%E6%9C%AC/" class="post-category">
+                                脚本
                             </a>
                         
                     </div>
@@ -417,7 +417,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-03
+                    2022-06-22
                 </div>
                 
 
@@ -426,14 +426,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    792
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    3 分
                 </div>
                 
 
@@ -456,145 +456,124 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记"><a href="#本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记" class="headerlink" title="本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记"></a>本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记</h3><h3 id="视频链接-Python零基础到精通7天速成"><a href="#视频链接-Python零基础到精通7天速成" class="headerlink" title="视频链接:Python零基础到精通7天速成"></a>视频链接:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Gf4y1q7SG?share_source=copy_web">Python零基础到精通7天速成</a></h3><span id="more"></span>
-<h1 id="一、for循环"><a href="#一、for循环" class="headerlink" title="一、for循环"></a>一、for循环</h1><h2 id="（一）多次猜年龄"><a href="#（一）多次猜年龄" class="headerlink" title="（一）多次猜年龄"></a>（一）多次猜年龄</h2><pre class="language-python" data-language="python"><code class="language-python">true_age &#x3D; 48
+                <h2 id="（一）前置工作"><a href="#（一）前置工作" class="headerlink" title="（一）前置工作"></a>（一）前置工作</h2><ul>
+<li><p>安装<code>numpy</code></p>
+<pre class="language-none"><code class="language-none">pip install numpy</code></pre>
+</li>
+<li><p>安装<code>netCDF4</code></p>
+<pre class="language-none"><code class="language-none">pip install netCDF</code></pre>
+</li>
+<li><p>安装<code>osgeo</code></p>
+<p>直接用<code>pip</code>安装<code>osgeo</code>包会报错，手动安装GDAL包</p>
+<p><a target="_blank" rel="noopener" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">GDAL安装包下载地址</a></p>
+</li>
+</ul>
+<img src="nc转tif脚本/image-20220623101808209.png" alt="image-20220623101808209" style="zoom:50%;" />
 
-for i in range(3):    
-    guess_age &#x3D; int(input(&#39;please guess a number: &#39;))
-    if guess_age &gt; true_age:
-        print(&#39;猜的太大了&#39;)
-    elif guess_age &lt; true_age:
-        print(&#39;猜的太小了&#39;)
-    else:
-        # 只要猜对就退出程序，并打印提示语句
-        exit(&#39;恭喜你，猜对了&#39;)</code></pre>
-<h2 id="（二）打印0-100的奇偶数"><a href="#（二）打印0-100的奇偶数" class="headerlink" title="（二）打印0-100的奇偶数"></a>（二）打印0-100的奇偶数</h2><pre class="language-python" data-language="python"><code class="language-python">for i in range(101):
-    if i%2 &#x3D;&#x3D; 0:  # 说明i是偶数
-        print(f&#39;&#123;i&#125; is even&#39;)
-    else:
-        print(f&#39;&#123;i&#125; is odd&#39;)</code></pre>
-<h2 id="（三）打印门牌号"><a href="#（三）打印门牌号" class="headerlink" title="（三）打印门牌号"></a>（三）打印门牌号</h2><pre class="language-python" data-language="python"><code class="language-python"># 一共5层，每层9个房间，打印出房间号格式如L2-203(2楼3号房)
-for floor in range (1, 6):
-    for room in range(1, 10):
-        print(f&#39;L&#123;floor&#125;-&#123;floor&#125;0&#123;room&#125;&#39;)</code></pre>
-<h2 id="（四）打印下方图形"><a href="#（四）打印下方图形" class="headerlink" title="（四）打印下方图形"></a>（四）打印下方图形</h2><div align=center>
-<img src="https://img-blog.csdnimg.cn/b7a57af6ed454d219eb4e8353ed19bc9.png" width = 10%>
-</div>
+<p>注意根据电脑下载对应版本</p>
+<pre class="language-none"><code class="language-none">pip install C:\Users\Geng\Documents\WeChat Files\wxid_rh9270rkkf7z22\FileStorage\MsgAttach\5a9a159f4743700fac722dbd14c562d1\File\2022-06\GDAL-3.4.3-cp310-cp310-win_amd64.whl</code></pre>
 
-<pre class="language-python" data-language="python"><code class="language-python">for i in range(10):
-    if i &lt;&#x3D;5:
-        print(i*&quot;*&quot;)
-    else:
-        print((10-i)*&quot;*&quot;)</code></pre>
+<p>注意：<code>install</code>后为<code>GDAL</code>包的绝对路径</p>
+<h2 id="（二）数据源"><a href="#（二）数据源" class="headerlink" title="（二）数据源"></a>（二）数据源</h2><ul>
+<li>此处以<a target="_blank" rel="noopener" href="http://www.geodata.cn/">国家地球系统科学数据中心</a>,月平均气温数据为例</li>
+</ul>
+<img src="nc转tif脚本/image-20220623102910567.png" alt="image-20220623102910567" style="zoom:50%;" />
 
-<h1 id="二、break和continue"><a href="#二、break和continue" class="headerlink" title="二、break和continue"></a>二、break和continue</h1><p><font color="#dd0000">用于控制循环流程，只能在循环中使用</font></p>
-<h2 id="（一）break"><a href="#（一）break" class="headerlink" title="（一）break"></a>（一）break</h2><p> &amp;emsp;<font color="#dd0000">当程序遇到break，就会结束当前循环</font>（如果是多层嵌套循环，只结束当前循环）</p>
-<pre class="language-python" data-language="python"><code class="language-python"># 一共5层，每层9个房间，当遇到房间404时，不再打印4层房间号
-for floor in range (1, 6):
-    for room in range(1, 10):
-        if floor&#x3D;&#x3D;4 and room&#x3D;&#x3D;4:
-            break
-        print(f&#39;L&#123;floor&#125;-&#123;floor&#125;0&#123;room&#125;&#39;)</code></pre>
-
-<h2 id="（二）continue"><a href="#（二）continue" class="headerlink" title="（二）continue"></a>（二）continue</h2><p> &amp;emsp;<font color="#dd0000">当程序遇到continue，就会结束本次循环，直接进入下一次循环</font></p>
-<pre class="language-python" data-language="python"><code class="language-python"># 一共5层，每层9个房间，当遇到第三层时不打印房间号其它层都打印
-for floor in range (1, 6):
-    if floor &#x3D;&#x3D; 3:
-        continue
-    for room in range(1, 10):
-        print(f&#39;L&#123;floor&#125;-&#123;floor&#125;0&#123;room&#125;&#39;)</code></pre>
-
-<h1 id="三、while"><a href="#三、while" class="headerlink" title="三、while"></a>三、while</h1><p><font color="#dd0000">&amp;emsp;&amp;emsp;与for循环不一样的是，while循环的次数可以是不定的，只要条件满足就可以一直循环下去。<br></font></p>
-<pre class="language-python" data-language="python"><code class="language-python"># while版猜年龄，当猜到的年龄和真实年龄不符时，继续猜提示，猜到时退出。
-true_age &#x3D; 48
-guess_age &#x3D; 0
-while guess_age !&#x3D; true_age:
-    guess_age &#x3D; int(input(&#39;please guess a number: &#39;))
-    if guess_age &gt; true_age:
-        print(&#39;猜的太大了&#39;)
-    elif guess_age &lt; true_age:
-        print(&#39;猜的太小了&#39;)
-    else:
-        print(&#39;恭喜你，猜对了&#39;)
-        break</code></pre>
-
-<h1 id="四、打印九九乘法表"><a href="#四、打印九九乘法表" class="headerlink" title="四、打印九九乘法表"></a>四、打印九九乘法表</h1><div align=center>
-<img src="https://img-blog.csdnimg.cn/cc75c013d07b42c0a36608ec8ab288e0.png" width = 80%>
-</div>
-
-<pre class="language-python" data-language="python"><code class="language-python">for i in range(1, 10):
-    for j in range(1,i+1):
-        print(f&#39;&#123;i&#125;*&#123;j&#125;&#x3D;&#123;i*j&#125;&#39;, end&#x3D;&#39; &#39;)
-    print()  # 每执行一次大循环，进行换行</code></pre>
-<h1 id="五、京牌摇号小程序"><a href="#五、京牌摇号小程序" class="headerlink" title="五、京牌摇号小程序"></a>五、京牌摇号小程序</h1><h2 id="（一）需求："><a href="#（一）需求：" class="headerlink" title="（一）需求："></a>（一）需求：</h2><p>1、允许用户最多选三次<br>2、每次放出20个车牌供用户选择<br>3、京[A-Z]-[xxxxx]，可以是字母和数字的组合</p>
-<h2 id="（二）思路"><a href="#（二）思路" class="headerlink" title="（二）思路"></a>（二）思路</h2><p>1、车牌由两个部分组成，第一部分京+A-Z的随机数；第二部分五位字母和数字组合随机数<br>2、随机数的实现<br>（1）random模块</p>
-<pre class="language-python" data-language="python"><code class="language-python">import random
-random.choice(&#39;abcdefg&#39;)  # 参数也可以是一个列表
-
-s &#x3D; &#39;abcdefghijk&#39;
-random.sample(s, 3)  # 从数据源s中随机选三个值
-
-random.randint(1, 100)  # 打印一个1到100的随机数 </code></pre>
-<p>（2）string模块</p>
-<pre class="language-python" data-language="python"><code class="language-python">import string
-
-string.digits  #打印数字
-
-string.ascii_letters  # 大写字母加小写字母
-string.ascii_uppercase  # 大写字母
-string.ascii_lowercase  # 小写字母
-
-string.punctuation  # 打印特殊字符 </code></pre>
-<p>（3）join方法</p>
-<pre class="language-python" data-language="python"><code class="language-python">引号内为链接符，join接受列表，列表元素必须全部为字符串
-&#39;--&#39;.join([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;,&#39;1&#39;,&#39;2&#39;])</code></pre>
-
-<h2 id="（三）代码"><a href="#（三）代码" class="headerlink" title="（三）代码"></a>（三）代码</h2><pre class="language-python" data-language="python"><code class="language-python">import random
-import string
-
-times &#x3D; 0
-while times &lt; 3:
-    times +&#x3D; 1
-    license_plates &#x3D; []
-    for i in range(20):
-        area &#x3D; random.choice(string.ascii_uppercase)  # 选择A-Z其中一个作为地区
-        part1 &#x3D; &#39;京&#39; + area + &#39;-&#39;  # 拼接车牌第一部分
-
-        num_str &#x3D; string.digits + string.ascii_uppercase  # 车牌第二部分在A-Z和0-9数字中选择
-        part2 &#x3D; &#39;&#39;.join(random.sample(num_str, 5))  # 拼接车牌第二部分
-
-        license_plates.append(part1 + part2)  # 拼接整个车牌
-    print(license_plates)
-
-    choice &#x3D; input(f&#39;please choice a license_plate  in the list \
-    and you hanv 3 chance to choice a number: you have &#123;3 - times&#125; times left： &#39;)
-    print(str.center(&#39;&#39;, 80, &#39;~&#39;))
-
-    if choice in license_plates:
-        exit(f&#39;your license_plates is &#123;choice&#125;&#39;)
-</code></pre>
-
-<h1 id="六、综合联系–年会抽奖小程序"><a href="#六、综合联系–年会抽奖小程序" class="headerlink" title="六、综合联系–年会抽奖小程序"></a>六、综合联系–年会抽奖小程序</h1><h2 id="（一）需求"><a href="#（一）需求" class="headerlink" title="（一）需求"></a>（一）需求</h2><p> &amp;emsp;张三科技公司有300个员工，开年会抽奖，奖项如下:<br>一等奖 3名：泰国五日游<br>二等奖 6名：iPhone手机<br>三等奖 30名：羽毛球拍一副</p>
-<h2 id="（二）规则"><a href="#（二）规则" class="headerlink" title="（二）规则"></a>（二）规则</h2><p>1、共抽三次，第一次抽三等奖，第二次抽二等奖，第三次抽一等奖<br>2、每个员工限中奖一次</p>
-<h2 id="（三）代码-1"><a href="#（三）代码-1" class="headerlink" title="（三）代码"></a>（三）代码</h2><pre class="language-python" data-language="python"><code class="language-python">import random
-
-employees &#x3D; [employee for employee in range(300)]  # 一共300名员工
-winners_each_round &#x3D; [30, 6, 3]  # 抽3轮每轮中奖人数
-times &#x3D; 0
+<ul>
+<li>选择2022年的气温数据（如果选择年份为多个年份如1952-1954）同样可以使用本脚本</li>
+</ul>
+<img src="nc转tif脚本/image-20220623103101088.png" alt="image-20220623103101088" style="zoom:50%;" />
 
 
-def choice_winner(participants, number_of_winners):  # 定义函数，实现抽奖并移除中奖人员
-    winners &#x3D; random.sample(participants, number_of_winners)
-    print(f&#39;中&#123;times+1&#125;等奖人员编号为：&#123;winners&#125;&#39;)
-    for winner in winners:
-        participants.remove(winner)
+
+<h2 id="（三）查看数据"><a href="#（三）查看数据" class="headerlink" title="（三）查看数据"></a>（三）查看数据</h2><p>通过对数据的查看确定数据的维度等信息其中<font color="#dd0000"><strong>变量名称</strong></font>最为重要后续要使用</p>
+<pre class="language-python" data-language="python"><code class="language-python">import netCDF4 as nc
+
+# 了解nc数据情况
+data &#x3D; r&#39;C:\Users\Geng\Desktop\nc\tmp_2020.nc&#39;
+nc_data_object &#x3D; nc.Dataset(data)
+print(&#39;这是整体数据描述&#39;.center(80, &quot;*&quot;))
+print(nc_data_object)
+
+# 查看nc文件包含的变量,注意最后一个变量此处文tmp
+variables &#x3D; nc_data_object.variables
+for variable in variables.keys():
+    print(&#39;变量&#123;&#125;&#39;.format(variable).center(80, &quot;*&quot;))
+    print(variables[variable])
+
+# 单独查看nc文件中存储的变量信息
+variable &#x3D; nc_data_object.variables[&#39;tmp&#39;]
+print(&#39;这是变量的信息此处为温度信息tmp&#39;.center(80, &quot;*&quot;))
+print(variable)</code></pre>
 
 
-while times &lt; len(winners_each_round):  # 进行抽奖,一共抽三轮
-    choice_winner(employees, winners_each_round[times])
-    times +&#x3D; 1
-</code></pre>
 
+<h2 id="（三）数据输出"><a href="#（三）数据输出" class="headerlink" title="（三）数据输出"></a>（三）数据输出</h2><p>将2022年每个月温度数据信息进行输出，单位为0.1℃</p>
+<h2 id="（四）操作过程"><a href="#（四）操作过程" class="headerlink" title="（四）操作过程"></a>（四）操作过程</h2><ul>
+<li><p>修改变量信息<code>tmp</code>为该nc数据中存储的变量，通过<code>nc_data_obj.variables</code>查看</p>
+</li>
+<li><p>修改<code>Input_folder</code>路径到.nc文件上级目录</p>
+</li>
+<li><p>修改<code>Output_folder</code>路径到指定文件夹</p>
+</li>
+</ul>
+<h2 id="（五）Python2源码"><a href="#（五）Python2源码" class="headerlink" title="（五）Python2源码"></a>（五）Python2源码</h2><pre class="language-python" data-language="python"><code class="language-python">import numpy as np
+import netCDF4 as nc
+from osgeo import gdal,osr
+import glob
+
+
+# 单个nc数据降雨量数据读取为多个tif文件
+def NC_to_tiffs(data, Output_folder):
+    nc_data_obj &#x3D; nc.Dataset(data)
+    Lon &#x3D; nc_data_obj.variables[&#39;lon&#39;][:]
+    Lat &#x3D; nc_data_obj.variables[&#39;lat&#39;][:]
+    pre_arr &#x3D; np.asarray(nc_data_obj.variables[&#39;tmp&#39;])  # 根据数据存储变量信息进行更改
+
+    # 影像的左上角和右下角坐标
+    LonMin, LatMax, LonMax, LatMin &#x3D; [Lon.min(), Lat.max(), Lon.max(), Lat.min()]
+
+    # 分辨率计算
+    N_Lat &#x3D; len(Lat)
+    N_Lon &#x3D; len(Lon)
+    Lon_Res &#x3D; (LonMax - LonMin) &#x2F; (float(N_Lon) - 1)
+    Lat_Res &#x3D; (LatMax - LatMin) &#x2F; (float(N_Lat) - 1)
+
+    for i in range(len(pre_arr[:])):
+        # 创建.tif文件
+        driver &#x3D; gdal.GetDriverByName(&#39;GTiff&#39;)
+        out_tif_name &#x3D; Output_folder + &#39;\\&#39; + data.split(&#39;\\&#39;)[-1].split(&#39;.&#39;)[0] + &#39;_&#39; + str(i + 1) + &#39;.tif&#39;
+        out_tif &#x3D; driver.Create(out_tif_name, N_Lon, N_Lat, 1, gdal.GDT_Float32)
+
+        # 设置影像的显示范围
+        # -Lat_Res一定要是-的
+        geotransform &#x3D; (LonMin, Lon_Res, 0, LatMax, 0, -Lat_Res)
+        out_tif.SetGeoTransform(geotransform)
+
+        # 获取地理坐标系统信息，用于选取需要的地理坐标系统
+        srs &#x3D; osr.SpatialReference()
+        srs.ImportFromEPSG(4326)  # 定义输出的坐标系为&quot;WGS 84&quot;，AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]
+        out_tif.SetProjection(srs.ExportToWkt())  # 给新建图层赋予投影信息
+
+        # 数据写出
+        out_tif.GetRasterBand(1).WriteArray(pre_arr[i])  # 将数据写入内存，此时没有写入硬盘
+        out_tif.FlushCache()  # 将数据写入硬盘
+        out_tif &#x3D; None  # 注意必须关闭tif文件
+
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    Input_folder &#x3D; r&#39;F:\tmp_2000_2002&#39;
+    Output_folder &#x3D; r&#39;F:\tmp_2000_2002\out&#39;
+
+    # 读取所有nc数据
+    data_list &#x3D; glob.glob(Input_folder + &#39;\\*.nc&#39;)
+
+    for i in range(len(data_list)):
+        data &#x3D; data_list[i]
+        NC_to_tiffs(data,Output_folder)
+        print(data + &#39;-----转tif成功&#39;)
+
+    print(&#39;----转换结束----&#39;)</code></pre>
 
                 
             </div>
@@ -621,7 +600,7 @@ while times &lt; len(winners_each_round):  # 进行抽奖,一共抽三轮
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gengtianba.github.io/2022/05/03/python-ru-men-dao-jing-tong-2/">https://gengtianba.github.io/2022/05/03/python-ru-men-dao-jing-tong-2/</a>
+                    <a href="https://gengtianba.github.io/2022/06/22/nc-zhuan-tif-jiao-ben/">https://gengtianba.github.io/2022/06/22/nc-zhuan-tif-jiao-ben/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -659,12 +638,12 @@ while times &lt; len(winners_each_round):  # 进行抽奖,一共抽三轮
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">学习</span>
                                 </a>
                             
                         </div>
@@ -1097,81 +1076,29 @@ while times &lt; len(winners_each_round):  # 进行抽奖,一共抽三轮
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/05/05/python-ru-men-dao-jing-tong-3/">
+                <a href="/2022/06/22/nc-zhuan-tif-jiao-ben/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="day3-顺丰快递分拣小程序">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="nc转tif脚本">
                         
-                        <span class="card-title">day3-顺丰快递分拣小程序</span>
+                        <span class="card-title">nc转tif脚本</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文章为金角大王Alex《Python零基础到精通7天速成》视频笔记视频链接:Python零基础到精通7天速成
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-05
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Python%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%88%B0%E7%B2%BE%E9%80%9A7%E5%A4%A9%E9%80%9F%E6%88%90/" class="post-category">
-                                    Python零基础到精通7天速成
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/05/01/ji-suan-r-jiao-ben/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="计算R脚本">
-                        
-                        <span class="card-title">计算R脚本</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            通过1km逐月降水雨量栅格数据，计算该年降雨侵蚀因子R
+                            部分地理信息数据使用.nc格式进行存储，要在ArcMAP中进行打开，需要将其转化为.tif格式
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-22
                             </span>
                         <span class="publish-author">
                             
@@ -1185,6 +1112,7 @@ while times &lt; len(winners_each_round):  # 进行抽奖,一共抽三轮
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1196,6 +1124,47 @@ while times &lt; len(winners_each_round):  # 进行抽奖,一共抽三轮
                         <span class="chip bg-color">学习</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/18/ru-zhi-xiang-guan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="入职相关">
+                        
+                        <span class="card-title">入职相关</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            了解入职相关必要知识
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A5%E4%BD%9C/" class="post-category">
+                                    工作
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
