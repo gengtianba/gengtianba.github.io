@@ -460,7 +460,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="十三、函数高级"><a href="#十三、函数高级" class="headerlink" title="十三、函数高级"></a>十三、函数高级</h1><img src="/2022/06/02/python-mo-kuai-er-day4/image-20201228153850400.png" class="" title="image-20201228153850400">
+                <h2 id="十三、函数高级"><a href="#十三、函数高级" class="headerlink" title="十三、函数高级"></a>十三、函数高级</h2><img src="/2022/06/02/python-mo-kuai-er-day4/image-20201228153850400.png" class="" title="image-20201228153850400">
 
 <p>课程目标：掌握函数嵌套、闭包、装饰器等高级知识点。</p>
 <p>今日概要：</p>
@@ -470,7 +470,7 @@
 <li>装饰器</li>
 </ul>
 <p>上述内容均属于函数部分必备知识，以后开发时直接和间接都会使用，请务必理解<font color="#dd0000">（重在理解，不要去死记硬背）。</font></p>
-<h2 id="1-函数嵌套"><a href="#1-函数嵌套" class="headerlink" title="1. 函数嵌套"></a>1. 函数嵌套</h2><p>​		Python中以函数为作用域，在作用域中定义的相关数据只能被当前作用域或子作用域使用。</p>
+<h3 id="1-函数嵌套"><a href="#1-函数嵌套" class="headerlink" title="1. 函数嵌套"></a>1. 函数嵌套</h3><p>​		Python中以函数为作用域，在作用域中定义的相关数据只能被当前作用域或子作用域使用。</p>
 <pre class="language-python" data-language="python"><code class="language-python">NAME &#x3D; &quot;武沛齐&quot;
 print(NAME)
 
@@ -481,7 +481,7 @@ func()</code></pre>
 
 
 
-<h3 id="1-1-函数在作用域中"><a href="#1-1-函数在作用域中" class="headerlink" title="1.1 函数在作用域中"></a>1.1 函数在作用域中</h3><p>​		其实，函数也是定义在作用域中的数据，在执行函数时候，也同样遵循：优先在自己作用域中寻找，没有则向上一接作用域寻找，例如：</p>
+<h4 id="1-1-函数在作用域中"><a href="#1-1-函数在作用域中" class="headerlink" title="1.1 函数在作用域中"></a>1.1 函数在作用域中</h4><p>​		其实，函数也是定义在作用域中的数据，在执行函数时候，也同样遵循：优先在自己作用域中寻找，没有则向上一接作用域寻找，例如：</p>
 <pre class="language-python" data-language="python"><code class="language-python"># 1. 在全局作用域定义了函数func
 def func():
     print(&quot;你好&quot;)
@@ -537,7 +537,7 @@ def func():
 func()
 execute()</code></pre></li>
 </ul>
-<h3 id="1-2-函数定义的位置"><a href="#1-2-函数定义的位置" class="headerlink" title="1.2 函数定义的位置"></a>1.2 函数定义的位置</h3><p>​		上述示例中的函数均定义在全局作用域，其实<strong>函数也可以定义在局部作用域</strong>，这样函数被局部作用域和其子作用于中调用<font color="#dd0000">（函数的嵌套）</font>。</p>
+<h4 id="1-2-函数定义的位置"><a href="#1-2-函数定义的位置" class="headerlink" title="1.2 函数定义的位置"></a>1.2 函数定义的位置</h4><p>​		上述示例中的函数均定义在全局作用域，其实<strong>函数也可以定义在局部作用域</strong>，这样函数被局部作用域和其子作用于中调用<font color="#dd0000">（函数的嵌套）</font>。</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func():
     print(&quot;沙河高晓松&quot;)
     
@@ -651,7 +651,7 @@ print(code)
 
 
 
-<h3 id="1-3-嵌套引发的作用域问题"><a href="#1-3-嵌套引发的作用域问题" class="headerlink" title="1.3 嵌套引发的作用域问题"></a>1.3 嵌套引发的作用域问题</h3><p>基于内存和执行过程分析作用域。</p>
+<h4 id="1-3-嵌套引发的作用域问题"><a href="#1-3-嵌套引发的作用域问题" class="headerlink" title="1.3 嵌套引发的作用域问题"></a>1.3 嵌套引发的作用域问题</h4><p>基于内存和执行过程分析作用域。</p>
 <pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;
 
 def run():
@@ -842,7 +842,7 @@ print(v1,v2)
 
 <img src="/2022/06/02/python-mo-kuai-er-day4/image-20201229171258454.png" class="" title="image-20201229171258454"></li>
 </ol>
-<h2 id="2-闭包"><a href="#2-闭包" class="headerlink" title="2.闭包"></a>2.闭包</h2><p>​		闭包，简而言之就是将数据封装在一个包（区域）中，使用时再去里面取。（本质上 闭包是基于函数嵌套搞出来一个中特殊嵌套）</p>
+<h3 id="2-闭包"><a href="#2-闭包" class="headerlink" title="2.闭包"></a>2.闭包</h3><p>​		闭包，简而言之就是将数据封装在一个包（区域）中，使用时再去里面取。（本质上 闭包是基于函数嵌套搞出来一个中特殊嵌套）</p>
 <ul>
 <li><p>闭包应用场景1：封装数据防止污染全局（<strong>使用较少，了解即可</strong>）。</p>
 <pre class="language-python" data-language="python"><code class="language-python"># 函数f4不会用到name变量，因此可以定义函数func，在func内定义变量name，并将f1，f2，f3封装到func内
@@ -970,7 +970,7 @@ POOL.shutdown()</code></pre>
 
 <img src="/2022/06/02/python-mo-kuai-er-day4/image-20201229185549102.png" class="" title="image-20201229185549102"></li>
 </ul>
-<h2 id="3-装饰器"><a href="#3-装饰器" class="headerlink" title="3.装饰器"></a>3.装饰器</h2><p>​		现在给你一个函数，在不修改函数源码的前提下，实现在函数执行前和执行后分别输入 “before” 和 “after”。</p>
+<h3 id="3-装饰器"><a href="#3-装饰器" class="headerlink" title="3.装饰器"></a>3.装饰器</h3><p>​		现在给你一个函数，在不修改函数源码的前提下，实现在函数执行前和执行后分别输入 “before” 和 “after”。</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func():
     print(&quot;我是func函数&quot;)
     value &#x3D; (11,22,33,44) 
@@ -981,7 +981,7 @@ print(result)</code></pre>
 
 
 
-<h3 id="3-1-第一回合"><a href="#3-1-第一回合" class="headerlink" title="3.1 第一回合"></a>3.1 第一回合</h3><p>你的实现思路：</p>
+<h4 id="3-1-第一回合"><a href="#3-1-第一回合" class="headerlink" title="3.1 第一回合"></a>3.1 第一回合</h4><p>你的实现思路：</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func():
     print(&quot;before&quot;)
     
@@ -1034,7 +1034,7 @@ result &#x3D; func()</code></pre>
 
 
 
-<h3 id="3-2-第二回合"><a href="#3-2-第二回合" class="headerlink" title="3.2 第二回合"></a>3.2 第二回合</h3><p>在Python中有个一个特殊的语法糖：</p>
+<h4 id="3-2-第二回合"><a href="#3-2-第二回合" class="headerlink" title="3.2 第二回合"></a>3.2 第二回合</h4><p>在Python中有个一个特殊的语法糖：</p>
 <pre class="language-python" data-language="python"><code class="language-python">&#39;&#39;&#39;
 在Python中有个一个特殊的语法糖：
 @函数名
@@ -1070,7 +1070,7 @@ func()
 
 
 
-<h3 id="3-3-第三回合"><a href="#3-3-第三回合" class="headerlink" title="3.3 第三回合"></a>3.3 第三回合</h3><p>请在这3个函数执行前和执行后分别输入 “before” 和 “after”</p>
+<h4 id="3-3-第三回合"><a href="#3-3-第三回合" class="headerlink" title="3.3 第三回合"></a>3.3 第三回合</h4><p>请在这3个函数执行前和执行后分别输入 “before” 和 “after”</p>
 <pre class="language-python" data-language="python"><code class="language-python">&#39;&#39;&#39;
 3个函数执行前和执行后分别输入 &quot;before&quot; 和 &quot;after&quot;
 &#39;&#39;&#39;
@@ -1184,7 +1184,7 @@ func2()
 func3()</code></pre>
 
 <p>​		<strong>装饰器</strong>，在不修改原函数内容的前提下，通过@函数可以实现在函数前后自定义执行一些功能<font color="#dd0000"><strong>（批量操作会更有意义）。</strong></font></p>
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>优化以支持多个参数的情况。</p>
+<h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><p>优化以支持多个参数的情况。</p>
 <pre class="language-python" data-language="python"><code class="language-python">&#39;&#39;&#39;
 3个函数执行前和执行后分别输入 &quot;before&quot; 和 &quot;after&quot;,并且每个函数都有参数
 &#39;&#39;&#39;
@@ -1237,7 +1237,7 @@ func3(1, a2&#x3D;3)
 <li>实现效果：可以在不改变原函数内部代码 和 调用方式的前提下，实现在函数执行和执行扩展功能。</li>
 <li>适用场景：多个函数系统统一在 执行前后自定义一些功能。</li>
 </ul>
-<h3 id="伪应用场景"><a href="#伪应用场景" class="headerlink" title="伪应用场景"></a>伪应用场景</h3><p>​		在以后编写一个网站时，如果项目共有100个页面，其中99个是需要登录成功之后才有权限访问，就可以基于装饰器来实现。</p>
+<h4 id="伪应用场景"><a href="#伪应用场景" class="headerlink" title="伪应用场景"></a>伪应用场景</h4><p>​		在以后编写一个网站时，如果项目共有100个页面，其中99个是需要登录成功之后才有权限访问，就可以基于装饰器来实现。</p>
 <pre class="language-none"><code class="language-none">pip3 install flask</code></pre>
 
 <p>基于第三方模块Flask（框架）快速写一个网站：</p>
@@ -1312,7 +1312,7 @@ app.run()
 
 
 
-<h3 id="重要补充：functools"><a href="#重要补充：functools" class="headerlink" title="重要补充：functools"></a>重要补充：functools</h3><p>​		你会发现装饰器实际上就是将原函数更改为其他的函数，然后再此函数中再去调用原函数。</p>
+<h4 id="重要补充：functools"><a href="#重要补充：functools" class="headerlink" title="重要补充：functools"></a>重要补充：functools</h4><p>​		你会发现装饰器实际上就是将原函数更改为其他的函数，然后再此函数中再去调用原函数。</p>
 <pre class="language-python" data-language="python"><code class="language-python">def handler():
     pass
 
@@ -1347,7 +1347,7 @@ handler()
 print(handler.__name__)  # handler</code></pre>
 
 <p>​		其实，一般情况下大家不用functools也可以实现装饰器的基本功能，但后期<strong>在项目开发时，不加functools会出错（内部会读取<code>__name__</code>，且<code>__name__</code>重名的话就报错）</strong>，所以在此大家就要规范起来自己的写法。</p>
-<h3 id="面试题：手写装饰器示例"><a href="#面试题：手写装饰器示例" class="headerlink" title="面试题：手写装饰器示例"></a>面试题：<font color="#dd0000"><strong>手写装饰器示例</strong></font></h3><pre class="language-python" data-language="python"><code class="language-python">import functools
+<h4 id="面试题-手写装饰器示例"><a href="#面试题-手写装饰器示例" class="headerlink" title="面试题:手写装饰器示例"></a><font color="#dd0000"><strong>面试题:手写装饰器示例</strong></font></h4><pre class="language-python" data-language="python"><code class="language-python">import functools
 
 
 def auth(func):
@@ -1365,7 +1365,7 @@ def auth(func):
 
 
 
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
 <li><p>函数可以定义在全局、也可以定义另外一个函数中（函数的嵌套）</p>
 </li>
 <li><p>学会<strong>分析函数执行的步骤（内存中作用域的管理）</strong></p>
@@ -1395,7 +1395,7 @@ def auth(func):
 </ul>
 </li>
 </ol>
-<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><ol>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ol>
 <li><p>请为以下所有函数编写一个装饰器，添加上装饰器后可以实现：执行func时，先执行func函数内部代码，再输出 “after”</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func(a1):
     return a1 + &quot;傻叉&quot;
@@ -1640,7 +1640,7 @@ print(v2)</code></pre>
 <pre class="language-python" data-language="python"><code class="language-python"># 33
 # 46</code></pre></li>
 </ol>
-<h1 id="十四、内置函数和推导式"><a href="#十四、内置函数和推导式" class="headerlink" title="十四、内置函数和推导式"></a>十四、内置函数和推导式</h1><img src="/2022/06/02/python-mo-kuai-er-day4/image-20201230125816095.png" class="" title="image-20201230125816095"> 
+<h2 id="十四、内置函数和推导式"><a href="#十四、内置函数和推导式" class="headerlink" title="十四、内置函数和推导式"></a>十四、内置函数和推导式</h2><img src="/2022/06/02/python-mo-kuai-er-day4/image-20201230125816095.png" class="" title="image-20201230125816095"> 
 
 <p>今日概要：</p>
 <ul>
@@ -1649,7 +1649,7 @@ print(v2)</code></pre>
 <li>内置函数</li>
 <li><span style='color:red;'><strong>附加</strong></span>：推导式，属于数据类型的知识，内部的高级的用法会涉及到【生成器】和【函数】的知识。</li>
 </ul>
-<h2 id="1-匿名函数"><a href="#1-匿名函数" class="headerlink" title="1. 匿名函数"></a>1. 匿名函数</h2><p>传统的函数的定义包括了：函数名 + 函数体。</p>
+<h3 id="1-匿名函数"><a href="#1-匿名函数" class="headerlink" title="1. 匿名函数"></a>1. 匿名函数</h3><p>传统的函数的定义包括了：函数名 + 函数体。</p>
 <pre class="language-python" data-language="python"><code class="language-python">def send_email():
     pass
 
@@ -1700,7 +1700,7 @@ print(v1) # 110</code></pre></li>
 foo &#x3D; lambda a1,a2: a1 + a2 + 100</code></pre>
 
 <p><strong>匿名函数适用于简单的业务处理，可以快速并简单的创建函数。</strong></p>
-<h3 id="练习题-1"><a href="#练习题-1" class="headerlink" title="练习题"></a>练习题</h3><p>根据函数写写出其匿名函数的表达方式</p>
+<h4 id="练习题-1"><a href="#练习题-1" class="headerlink" title="练习题"></a>练习题</h4><p>根据函数写写出其匿名函数的表达方式</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func(a1,a2):
     return a1 + a2
 
@@ -1718,7 +1718,7 @@ func&#x3D; lambda data: data.replace(&quot;苍老师&quot;,&quot;***&quot;)</cod
 func &#x3D; lambda data: data.replace(&quot;.&quot;)[-1]</code></pre>
 
 <p>在编写匿名函数时，由于受限 函数体只能写一行，所以匿名函数只能处理非常简单的功能。</p>
-<h3 id="扩展：三元运算"><a href="#扩展：三元运算" class="headerlink" title="扩展：三元运算"></a>扩展：三元运算</h3><pre class="language-python" data-language="python"><code class="language-python">num &#x3D; input(&quot;请写入内容&quot;)
+<h4 id="扩展：三元运算"><a href="#扩展：三元运算" class="headerlink" title="扩展：三元运算"></a>扩展：三元运算</h4><pre class="language-python" data-language="python"><code class="language-python">num &#x3D; input(&quot;请写入内容&quot;)
 
 if &quot;苍老师&quot; in num:
     data &#x3D; &quot;臭不要脸&quot;
@@ -1760,7 +1760,7 @@ def func(x):
 <li><p><strong>简单的条件语句，可以基于三元运算实现，例如：</strong></p>
 </li>
 </ul>
-<h2 id="2-生成器"><a href="#2-生成器" class="headerlink" title="2. 生成器"></a>2. 生成器</h2><p>​		生成器是由函数+yield关键字创造出来的写法，在特定情况下，用他可以帮助我们节省内存。</p>
+<h3 id="2-生成器"><a href="#2-生成器" class="headerlink" title="2. 生成器"></a>2. 生成器</h3><p>​		生成器是由函数+yield关键字创造出来的写法，在特定情况下，用他可以帮助我们节省内存。</p>
 <ul>
 <li><p>生成器函数，但函数中有yield存在时，这个函数就是生产生成器函数。</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func():
@@ -1829,7 +1829,7 @@ for item in data:
     print(item)</code></pre></li>
 </ul>
 <p>​		生成器的特点是，记录在函数中的执行位置，下次执行next时，会从上一次的位置基础上再继续向下执行。</p>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ul>
 <li><p>假设要让你生成 300w个随机的4位数，并打印出来。</p>
 <ul>
 <li>在内存中一次性创建300w个</li>
@@ -1869,7 +1869,7 @@ data_list &#x3D; gen_random_num(3000000)
 <img src="Python模块二day4/image-20201230174253215.png" alt="image-20201230174253215" style="zoom: 33%;" />
 
 <p>所以，当以后需要我们在内存中创建很多数据时，可以想着用基于生成器来实现一点一点生成（用一点生产一点），以节省内存的开销。</p>
-<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><pre class="language-python" data-language="python"><code class="language-python">def func():
+<h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4><pre class="language-python" data-language="python"><code class="language-python">def func():
     print(111)
     v1 &#x3D; yield 1
     print(v1)
@@ -1901,7 +1901,7 @@ print(n4)</code></pre>
 
 
 
-<h2 id="3-内置函数"><a href="#3-内置函数" class="headerlink" title="3.内置函数"></a>3.内置函数</h2><img src="Python模块二day4/image-20201230201618164.png" alt="image-20201230201618164" style="zoom:50%;" />
+<h3 id="3-内置函数"><a href="#3-内置函数" class="headerlink" title="3.内置函数"></a>3.内置函数</h3><img src="Python模块二day4/image-20201230201618164.png" alt="image-20201230201618164" style="zoom:50%;" />
 
 <p>Python内部为我们提供了很多方便的内置函数，在此整理出来<strong>36</strong>个给大家来讲解。</p>
 <ul>
@@ -2112,7 +2112,7 @@ print(result)</code></pre></li>
 </ul>
 </li>
 </ul>
-<h2 id="4-推导式"><a href="#4-推导式" class="headerlink" title="4.推导式"></a>4.推导式</h2><p>​		推导式是Python中提供了一个非常方便的功能，可以让我们通过一行代码实现创建list、dict、tuple、set 的同时初始化一些值。</p>
+<h3 id="4-推导式"><a href="#4-推导式" class="headerlink" title="4.推导式"></a>4.推导式</h3><p>​		推导式是Python中提供了一个非常方便的功能，可以让我们通过一行代码实现创建list、dict、tuple、set 的同时初始化一些值。</p>
 <p>请创建一个列表，并在列表中初始化：0、1、2、3、4、5、6、7、8、9…299 整数元素。</p>
 <pre class="language-python" data-language="python"><code class="language-python">data &#x3D; []
 for i in range(300):
@@ -2147,7 +2147,7 @@ print(data)
 for item in data:
     print(item)</code></pre></li>
 </ul>
-<h3 id="练习题-2"><a href="#练习题-2" class="headerlink" title="练习题"></a>练习题</h3><ol>
+<h4 id="练习题-2"><a href="#练习题-2" class="headerlink" title="练习题"></a>练习题</h4><ol>
 <li><p>去除列表中每个元素的 <code>.mp4</code>后缀。</p>
 <pre class="language-python" data-language="python"><code class="language-python">data_list &#x3D; [
     &#39;1-5 编译器和解释器.mp4&#39;,
@@ -2297,7 +2297,7 @@ print(result)
 result &#x3D; [m(2) for m in num()]  # [0,2,4,6 ]
 print(result)</code></pre></li>
 </ol>
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><ol>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ol>
 <li>匿名函数，基于lambda表达式实现一行创建一个函数。一般用于编写简单的函数。</li>
 <li>三元运算，用一行代码实现处理简单的条件判断和赋值。</li>
 <li>生成器，函数中如果yield关键字<ul>
@@ -2318,7 +2318,7 @@ print(result)</code></pre></li>
 </ul>
 </li>
 </ol>
-<h2 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h2><ol>
+<h3 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h3><ol>
 <li><p>看代码写结果</p>
 <pre class="language-none"><code class="language-none">v &#x3D; [ lambda :x  for x in range(10)] 
 print(v)

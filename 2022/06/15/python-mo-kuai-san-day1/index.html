@@ -460,7 +460,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第三模块-面向对象-amp-网络-amp-并发编程"><a href="#第三模块-面向对象-amp-网络-amp-并发编程" class="headerlink" title="第三模块 面向对象&amp;网络&amp;并发编程"></a>第三模块 面向对象&amp;网络&amp;并发编程</h1><img src="/2022/06/15/python-mo-kuai-san-day1/image-20210117230507748-16552576104391.png" class="">
+                <h2 id="第三模块-面向对象-amp-网络-amp-并发编程"><a href="#第三模块-面向对象-amp-网络-amp-并发编程" class="headerlink" title="第三模块 面向对象&amp;网络&amp;并发编程"></a>第三模块 面向对象&amp;网络&amp;并发编程</h2><img src="/2022/06/15/python-mo-kuai-san-day1/image-20210117230507748-16552576104391.png" class="">
 
 <p>从今天开始，我们将进入系列课程第3个模块的的学习，此模块包含如下三大部分知识：</p>
 <ul>
@@ -504,7 +504,7 @@ obj.func()</code></pre></li>
 - 按照以前的思路，逐一下载就需要20分钟。
 - 按照并发的思路，创建10个线程&#x2F;进程来实现，大概需要2分钟就可以完成。</code></pre></li>
 </ul>
-<h1 id="十八、面向对象基础"><a href="#十八、面向对象基础" class="headerlink" title="十八、面向对象基础"></a>十八、面向对象基础</h1><img src="/2022/06/15/python-mo-kuai-san-day1/image-20210118204107085-16552576104393.png" class="">
+<h2 id="十八、面向对象基础"><a href="#十八、面向对象基础" class="headerlink" title="十八、面向对象基础"></a>十八、面向对象基础</h2><img src="/2022/06/15/python-mo-kuai-san-day1/image-20210118204107085-16552576104393.png" class="">
 
 <p>课程目标：了解面向对象并可以根据面向对象知识进行编写代码。</p>
 <p>课程概要：</p>
@@ -518,7 +518,7 @@ obj.func()</code></pre></li>
 </li>
 <li>再看数据类型</li>
 </ul>
-<h2 id="1-初识面向对象"><a href="#1-初识面向对象" class="headerlink" title="1. 初识面向对象"></a>1. 初识面向对象</h2><p>想要通过面向对象去实现某个或某些功能时需要2步：</p>
+<h3 id="1-初识面向对象"><a href="#1-初识面向对象" class="headerlink" title="1. 初识面向对象"></a>1. 初识面向对象</h3><p>想要通过面向对象去实现某个或某些功能时需要2步：</p>
 <ul>
 <li><p>定义类，在类中定义方法，在方法中去实现具体的功能。</p>
 </li>
@@ -565,7 +565,7 @@ msg_object.send_wechat(&quot;武沛齐&quot;, &quot;注册成功&quot;)</code></
 <p>你会发现，用面向对象编程写的类有点像归类的意思：将某些相似的函数划分到一个类中。</p>
 <p>但，这种编写方式让人感觉有些鸡肋，直接用 函数 写多好呀。对吧？ </p>
 <p>别着急，接着往下看。</p>
-<h3 id="1-1-对象和self"><a href="#1-1-对象和self" class="headerlink" title="1.1 对象和self"></a>1.1 对象和self</h3><p>在每个类中都可以定义个特殊的：<code>__init__ 初始化方法 </code>，在实例化类创建对象时自动执行，即：<code>对象=类()</code>。</p>
+<h4 id="1-1-对象和self"><a href="#1-1-对象和self" class="headerlink" title="1.1 对象和self"></a>1.1 对象和self</h4><p>在每个类中都可以定义个特殊的：<code>__init__ 初始化方法 </code>，在实例化类创建对象时自动执行，即：<code>对象=类()</code>。</p>
 <pre class="language-python" data-language="python"><code class="language-python">class Message:
 
     def __init__(self, content):
@@ -630,7 +630,7 @@ login_object.send_wechat(&quot;武沛齐&quot;)</code></pre>
 <li><font color="#dd0000"><strong>self</strong></font>，本质上就是一个参数。这个参数是Python内部会提供，其实本质上就是调用当前方法的那个对象。</li>
 <li><font color="#dd0000"><strong>对象</strong></font>，基于类实例化出来”一块内存“，默认里面没有数据；经过类的 <code>__init__</code>方法，可以在内存中初始化一些数据。</li>
 </ul>
-<h3 id="1-2-常见成员"><a href="#1-2-常见成员" class="headerlink" title="1.2 常见成员"></a>1.2 常见成员</h3><p>在编写面向对象相关代码时，最常见成员有：</p>
+<h4 id="1-2-常见成员"><a href="#1-2-常见成员" class="headerlink" title="1.2 常见成员"></a>1.2 常见成员</h4><p>在编写面向对象相关代码时，最常见成员有：</p>
 <ul>
 <li>实例变量，属于对象，只能通过对象调用。</li>
 <li>绑定方法，属于类，通过对象调用 或 通过类调用。</li>
@@ -674,7 +674,7 @@ p1 &#x3D; Person(&quot;武沛齐&quot;,20)
 
 
 
-<h3 id="1-3-应用示例"><a href="#1-3-应用示例" class="headerlink" title="1.3 应用示例"></a>1.3 应用示例</h3><ol>
+<h4 id="1-3-应用示例"><a href="#1-3-应用示例" class="headerlink" title="1.3 应用示例"></a>1.3 应用示例</h4><ol>
 <li><p>将数据封装到一个对象，便于以后使用。</p>
 <pre class="language-python" data-language="python"><code class="language-python">class UserInfo:
     def __init__(self, name, pwd,age):
@@ -909,13 +909,13 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 <li>封装数据 + 方法再对数据进行加工处理（示例二）。</li>
 <li>创建同一类的数据且同类数据可以具有相同的功能（方法）（示例三）。</li>
 </ul>
-<h2 id="2-三大特性"><a href="#2-三大特性" class="headerlink" title="2. 三大特性"></a>2. 三大特性</h2><p>面向对象编程在很多语言中都存在，这种编程方式有三大特性：封装、继承、多态。</p>
-<h3 id="2-1-封装"><a href="#2-1-封装" class="headerlink" title="2.1 封装"></a>2.1 封装</h3><p>封装主要体现在两个方面：</p>
+<h3 id="2-三大特性"><a href="#2-三大特性" class="headerlink" title="2. 三大特性"></a>2. 三大特性</h3><p>面向对象编程在很多语言中都存在，这种编程方式有三大特性：封装、继承、多态。</p>
+<h4 id="2-1-封装"><a href="#2-1-封装" class="headerlink" title="2.1 封装"></a>2.1 封装</h4><p>封装主要体现在两个方面：</p>
 <ul>
 <li>将同一类方法封装到了一个类中，例如上述示例中：匪徒的相关方法都写在Terrorist类中；警察的相关方法都写在Police类中。</li>
 <li>将数据封装到了对象中，在实例化一个对象时，可以通过<code>__init__</code>初始化方法在对象中封装一些数据，便于以后使用。</li>
 </ul>
-<h3 id="2-2-继承"><a href="#2-2-继承" class="headerlink" title="2.2 继承"></a>2.2 继承</h3><p>传统的理念中有：儿子可以继承父亲的财产。</p>
+<h4 id="2-2-继承"><a href="#2-2-继承" class="headerlink" title="2.2 继承"></a>2.2 继承</h4><p>传统的理念中有：儿子可以继承父亲的财产。</p>
 <p>在面向对象中也有这样的理念，即：子类可以继承父类中的方法和类变量（不是拷贝一份，父类的还是属于父类，子类可以继承而已）。</p>
 <pre class="language-none"><code class="language-none">父类
 子类
@@ -966,7 +966,8 @@ o1.f1()</code></pre>
 
 
 
-<h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><pre class="language-python" data-language="python"><code class="language-python">class Base:
+<p><strong>练习题</strong></p>
+<pre class="language-python" data-language="python"><code class="language-python">class Base:
 
     def f1(self):
         print(&#39;base.f1&#39;)
@@ -1112,7 +1113,7 @@ obj.serve_forever()</code></pre>
 <li>Python支持多继承：先继承左边、再继承右边的。</li>
 <li>self到底是谁？去self对应的那个类中去获取成员，没有就按照继承关系向上查找 。</li>
 </ul>
-<h3 id="2-3-多态"><a href="#2-3-多态" class="headerlink" title="2.3 多态"></a>2.3 多态</h3><p>多态，按字面翻译其实就是多种形态。</p>
+<h4 id="2-3-多态"><a href="#2-3-多态" class="headerlink" title="2.3 多态"></a>2.3 多态</h4><p>多态，按字面翻译其实就是多种形态。</p>
 <ul>
 <li>其他编程语言多态</li>
 <li>Python中多态</li>
@@ -1229,7 +1230,7 @@ func(v2)</code></pre>
 func(&quot;武沛齐&quot;)
 func([11,22,33,44])</code></pre></li>
 </ul>
-<h2 id="3-扩展：再看数据类型"><a href="#3-扩展：再看数据类型" class="headerlink" title="3. 扩展：再看数据类型"></a>3. 扩展：再看数据类型</h2><p>在初步了解面向对象之后，再来看看我们之前学习的：str、list、dict等数据类型，他们其实都一个类，根据类可以创建不同类的对象。</p>
+<h3 id="3-扩展：再看数据类型"><a href="#3-扩展：再看数据类型" class="headerlink" title="3. 扩展：再看数据类型"></a>3. 扩展：再看数据类型</h3><p>在初步了解面向对象之后，再来看看我们之前学习的：str、list、dict等数据类型，他们其实都一个类，根据类可以创建不同类的对象。</p>
 <img src="/2022/06/15/python-mo-kuai-san-day1/image-20210118203012874-16552576104408.png" class="">
 
 
@@ -1246,7 +1247,7 @@ print(data)</code></pre>
 
 
 
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
 <li><p>类和对象的关系。</p>
 </li>
 <li><p>面向对象编程中常见的成员：</p>
@@ -1280,7 +1281,7 @@ class Foo(object):
 </ul>
 </li>
 </ol>
-<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><ol>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ol>
 <li><p>简述面向对象三大特性?</p>
 <p>答：</p>
 <ul>
@@ -1649,7 +1650,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
                 if user &#x3D;&#x3D; self.user_list[-1]:
                     print(&#39;登录失败&#39;)</code></pre></li>
 </ul>
-<h1 id="十九、面向对象进阶"><a href="#十九、面向对象进阶" class="headerlink" title="十九、面向对象进阶"></a>十九、面向对象进阶</h1><img src="/2022/06/15/python-mo-kuai-san-day1/image-20210127104158850.png" class="">
+<h2 id="十九、面向对象进阶"><a href="#十九、面向对象进阶" class="headerlink" title="十九、面向对象进阶"></a>十九、面向对象进阶</h2><img src="/2022/06/15/python-mo-kuai-san-day1/image-20210127104158850.png" class="">
 
 <p>课程目标：掌握面向对象进阶相关知识点，能沟通更加自如的使用面向对象来进行编程。</p>
 <p>今日概要：</p>
@@ -1677,7 +1678,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 <li><p>特殊成员：一些项目源码中大量使用，方便读懂源码</p>
 </li>
 </ul>
-<h2 id="1-成员"><a href="#1-成员" class="headerlink" title="1.成员"></a>1.成员</h2><p>面向对象中的所有成员如下：</p>
+<h3 id="1-成员"><a href="#1-成员" class="headerlink" title="1.成员"></a>1.成员</h3><p>面向对象中的所有成员如下：</p>
 <ul>
 <li>变量<ul>
 <li>实例变量</li>
@@ -1693,7 +1694,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 <li>属性</li>
 </ul>
 <p>通过面向对象进行编程时，会遇到很多种情况，也会使用不同的成员来实现，接下来我们来逐一介绍成员特性和应用场景。</p>
-<h3 id="1-1-变量"><a href="#1-1-变量" class="headerlink" title="1.1 变量"></a>1.1 变量</h3><ul>
+<h4 id="1-1-变量"><a href="#1-1-变量" class="headerlink" title="1.1 变量"></a>1.1 变量</h4><ul>
 <li>实例变量，属于对象，每个对象中各自维护自己的数据。</li>
 <li>类变量，属于类，可以被所有对象共享，一般用于给对象提供公共数据（类似于全局变量）。</li>
 </ul>
@@ -1835,7 +1836,7 @@ print(Parent.x, Child1.x, Child2.x) # 3 2 3</code></pre>
 
 
 
-<h3 id="1-2-方法"><a href="#1-2-方法" class="headerlink" title="1.2 方法"></a>1.2 方法</h3><ul>
+<h4 id="1-2-方法"><a href="#1-2-方法" class="headerlink" title="1.2 方法"></a>1.2 方法</h4><ul>
 <li>绑定方法，默认有一个self参数，由对象进行调用（此时self就等于调用方法的这个对象）【对象&amp;类均可调用】</li>
 <li>类方法，默认有一个cls参数，用类或对象都可以调用（此时cls就等于调用方法的这个类）【对象&amp;类均可调用】</li>
 <li>静态方法，无默认参数，用类和对象都可以调用。【对象&amp;类均可调用】</li>
@@ -1903,6 +1904,8 @@ obj &#x3D; Download(&quot;video&quot;)
 obj.download_dou_yin()
 </code></pre>
 
+
+
 <h4 id="【面试题】：在类中-classmethod-和-staticmethod-的作用？"><a href="#【面试题】：在类中-classmethod-和-staticmethod-的作用？" class="headerlink" title="【面试题】：在类中 @classmethod 和 @staticmethod 的作用？"></a><font color="#dd0000">【面试题】</font>：在类中 <code>@classmethod</code> 和 <code>@staticmethod</code> 的作用？</h4><blockquote>
 <p>在类中，方法装饰上@classmethod和@staticmethod后，该方法变为类方法或静态方法。</p>
 <ul>
@@ -1910,7 +1913,7 @@ obj.download_dou_yin()
 <li>在静态方法中不用传入任何参数</li>
 </ul>
 </blockquote>
-<h3 id="1-3-属性"><a href="#1-3-属性" class="headerlink" title="1.3 属性"></a>1.3 属性</h3><p>属性其实是由绑定方法 + 特殊装饰器（<code>@property</code>） 组合创造出来的，<strong>让我们以后在调用方法时可以不加括号</strong>，例如：</p>
+<h4 id="1-3-属性"><a href="#1-3-属性" class="headerlink" title="1.3 属性"></a>1.3 属性</h4><p>属性其实是由绑定方法 + 特殊装饰器（<code>@property</code>） 组合创造出来的，<strong>让我们以后在调用方法时可以不加括号</strong>，例如：</p>
 <p>在自己写代码的过程中应用较少，学习后主要应用场景为<strong>更好的阅读别人的源码</strong></p>
 <pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
 
@@ -2188,7 +2191,7 @@ print(obj.name)</code></pre>
 
 
 
-<h2 id="2-成员修饰符"><a href="#2-成员修饰符" class="headerlink" title="2.成员修饰符"></a>2.成员修饰符</h2><p>Python中成员的修饰符就是指的是：公有、私有。</p>
+<h3 id="2-成员修饰符"><a href="#2-成员修饰符" class="headerlink" title="2.成员修饰符"></a>2.成员修饰符</h3><p>Python中成员的修饰符就是指的是：公有、私有。</p>
 <ul>
 <li>公有，在任何地方都可以调用这个成员。</li>
 <li>私有，只有在类的内部才可以调用改成员（成员是以两个下划线开头，则表示该成员为私有）。</li>
@@ -2331,7 +2334,7 @@ obj._Foo__msg()</code></pre>
 <li>可以，公有。</li>
 <li>不可以，内部其他放的一个辅助，私有。</li>
 </ul>
-<h2 id="3-对象嵌套"><a href="#3-对象嵌套" class="headerlink" title="3.对象嵌套"></a>3.对象嵌套</h2><p>在基于面向对象进行编程时，对象之间可以存在各种各样的关系，例如：组合、关联、依赖等（Java中的称呼），用大白话来说就是各种嵌套。</p>
+<h3 id="3-对象嵌套"><a href="#3-对象嵌套" class="headerlink" title="3.对象嵌套"></a>3.对象嵌套</h3><p>在基于面向对象进行编程时，对象之间可以存在各种各样的关系，例如：组合、关联、依赖等（Java中的称呼），用大白话来说就是各种嵌套。</p>
 <p>下面我们就用示例来学习常见的嵌套的情景：</p>
 <p>情景一：</p>
 <pre class="language-python" data-language="python"><code class="language-python">class Student(object):
@@ -2471,7 +2474,7 @@ for obj in user_object_list:
 
 
 
-<h2 id="4-特殊成员"><a href="#4-特殊成员" class="headerlink" title="4.特殊成员"></a>4.特殊成员</h2><p>在Python的类中存在一些特殊的方法，这些方法都是 <code>__方法__</code> 格式，这种方法在内部均有特殊的含义，接下来我们来讲一些常见的特殊成员：</p>
+<h3 id="4-特殊成员"><a href="#4-特殊成员" class="headerlink" title="4.特殊成员"></a>4.特殊成员</h3><p>在Python的类中存在一些特殊的方法，这些方法都是 <code>__方法__</code> 格式，这种方法在内部均有特殊的含义，接下来我们来讲一些常见的特殊成员：</p>
 <ul>
 <li><p><code>__init__</code>，初始化方法</p>
 <pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
@@ -2803,7 +2806,7 @@ print( isinstance(v2, Iterable) )  # True，判断依据是是否有 __iter__且
 </ul>
 </li>
 </ul>
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><ol>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ol>
 <li><p>面向对象编程中的成员</p>
 <ul>
 <li>变量<ul>
@@ -2831,7 +2834,7 @@ print( isinstance(v2, Iterable) )  # True，判断依据是是否有 __iter__且
 </ul>
 </li>
 </ol>
-<h2 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h2><ol>
+<h3 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h3><ol>
 <li><p>列举面向对象的成员并简述他们的特点。</p>
 <p>答：</p>
 <ul>
@@ -3387,7 +3390,7 @@ print(root[1][1][0].title)</code></pre>
 &gt;&gt;&gt; 廊坊
 &gt;&gt;&gt; 雄安</code></pre></li>
 </ol>
-<h1 id="二十、面向对象高级和应用"><a href="#二十、面向对象高级和应用" class="headerlink" title="二十、面向对象高级和应用"></a>二十、面向对象高级和应用</h1><img src="/2022/06/15/python-mo-kuai-san-day1/image-20210129122824670.png" class="">
+<h2 id="二十、面向对象高级和应用"><a href="#二十、面向对象高级和应用" class="headerlink" title="二十、面向对象高级和应用"></a>二十、面向对象高级和应用</h2><img src="/2022/06/15/python-mo-kuai-san-day1/image-20210129122824670.png" class="">
 
 <p>课程目标：掌握面向对象高级知识和相关应用。</p>
 <p>今日概要</p>
@@ -3397,7 +3400,7 @@ print(root[1][1][0].title)</code></pre>
 <li>异常处理：重要（以后开发中经常使用）</li>
 <li>反射：重要（以后开发中经常使用）</li>
 </ul>
-<h2 id="1-继承【补充】"><a href="#1-继承【补充】" class="headerlink" title="1. 继承【补充】"></a>1. 继承【补充】</h2><p>对于Python面向对象中的继承，我们已学过：</p>
+<h3 id="1-继承【补充】"><a href="#1-继承【补充】" class="headerlink" title="1. 继承【补充】"></a>1. 继承【补充】</h3><p>对于Python面向对象中的继承，我们已学过：</p>
 <ul>
 <li><p>继承存在意义：将公共的方法提取到父类中，有利于增加代码重用性。</p>
 </li>
@@ -3440,7 +3443,7 @@ class Foo(Base,Bar):
 
 
 
-<h3 id="1-1-mro和c3算法"><a href="#1-1-mro和c3算法" class="headerlink" title="1.1 mro和c3算法"></a>1.1 mro和c3算法</h3><p>如果类中存在继承关系，在可以通过<code>mro()</code>获取当前类的继承关系（找成员的顺序）。</p>
+<h4 id="1-1-mro和c3算法"><a href="#1-1-mro和c3算法" class="headerlink" title="1.1 mro和c3算法"></a>1.1 mro和c3算法</h4><p>如果类中存在继承关系，在可以通过<code>mro()</code>获取当前类的继承关系（找成员的顺序）。</p>
 <p>示例1：</p>
 <img src="/2022/06/15/python-mo-kuai-san-day1/image-20210129134831112.png" class="">
 
@@ -3665,7 +3668,7 @@ print(A.mro()) # 简写为：A -&gt; B -&gt; D -&gt; G -&gt; H -&gt; K -&gt; C -
 
 
 
-<h3 id="1-2-py2和py3区别（了解）"><a href="#1-2-py2和py3区别（了解）" class="headerlink" title="1.2 py2和py3区别（了解）"></a>1.2 py2和py3区别（了解）</h3><p>概述：</p>
+<h4 id="1-2-py2和py3区别（了解）"><a href="#1-2-py2和py3区别（了解）" class="headerlink" title="1.2 py2和py3区别（了解）"></a>1.2 py2和py3区别（了解）</h4><p>概述：</p>
 <ul>
 <li><p>在python2.2之前，只支持经典类【从左到右，深度优先，大小钻石，不留顶端】</p>
 </li>
@@ -3804,7 +3807,7 @@ class Bar(object):
 </ul>
 </li>
 </ul>
-<h2 id="2-内置函数补充"><a href="#2-内置函数补充" class="headerlink" title="2. 内置函数补充"></a>2. 内置函数补充</h2><p>本次要给讲解的内置函数共8个，他们都跟面向对象的知识相关。</p>
+<h3 id="2-内置函数补充"><a href="#2-内置函数补充" class="headerlink" title="2. 内置函数补充"></a>2. 内置函数补充</h3><p>本次要给讲解的内置函数共8个，他们都跟面向对象的知识相关。</p>
 <ul>
 <li><p>classmethod、staticmethod、property 。</p>
 </li>
@@ -4003,7 +4006,7 @@ class Foo(Base):
 print(issubclass(Foo, Base))  # True
 print(issubclass(Foo, Top))   # True</code></pre></li>
 </ul>
-<h2 id="3-异常处理"><a href="#3-异常处理" class="headerlink" title="3.异常处理"></a>3.异常处理</h2><p>在程序开发中如果遇到一些 <code>不可预知</code>的错误 或 你懒得做一些判断 时，可以选择用异常处理来做。</p>
+<h3 id="3-异常处理"><a href="#3-异常处理" class="headerlink" title="3.异常处理"></a>3.异常处理</h3><p>在程序开发中如果遇到一些 <code>不可预知</code>的错误 或 你懒得做一些判断 时，可以选择用异常处理来做。</p>
 <pre class="language-python" data-language="python"><code class="language-python">import requests
 
 while True:
@@ -4085,7 +4088,7 @@ finally:
 
 
 
-<h3 id="3-1-异常细分"><a href="#3-1-异常细分" class="headerlink" title="3.1 异常细分"></a>3.1 异常细分</h3><pre class="language-python" data-language="python"><code class="language-python">import requests
+<h4 id="3-1-异常细分"><a href="#3-1-异常细分" class="headerlink" title="3.1 异常细分"></a>3.1 异常细分</h4><pre class="language-python" data-language="python"><code class="language-python">import requests
 
 while True:
     url &#x3D; input(&quot;请输入要下载网页地址：&quot;)
@@ -4212,7 +4215,7 @@ ZeroDivisionError
 
 
 
-<h3 id="3-2-自定义异常-amp-抛出异常"><a href="#3-2-自定义异常-amp-抛出异常" class="headerlink" title="3.2 自定义异常&amp;抛出异常"></a>3.2 自定义异常&amp;抛出异常</h3><p>上面都是Python内置的异常，只有遇到特定的错误之后才会抛出相应的异常。</p>
+<h4 id="3-2-自定义异常-amp-抛出异常"><a href="#3-2-自定义异常-amp-抛出异常" class="headerlink" title="3.2 自定义异常&amp;抛出异常"></a>3.2 自定义异常&amp;抛出异常</h4><p>上面都是Python内置的异常，只有遇到特定的错误之后才会抛出相应的异常。</p>
 <p>其实，在开发中也可以自定义异常。</p>
 <pre class="language-python" data-language="python"><code class="language-python">class MyException(Exception):
     pass</code></pre>
@@ -4333,7 +4336,7 @@ while True:
 
 
 
-<h3 id="3-4-特殊的finally"><a href="#3-4-特殊的finally" class="headerlink" title="3.4 特殊的finally"></a>3.4 特殊的finally</h3><pre class="language-python" data-language="python"><code class="language-python">try:
+<h4 id="3-3-特殊的finally"><a href="#3-3-特殊的finally" class="headerlink" title="3.3 特殊的finally"></a>3.3 特殊的finally</h4><pre class="language-python" data-language="python"><code class="language-python">try:
     # 逻辑代码
 except Exception as e:
     # try中的代码如果有异常，则此代码块中的代码会执行。
@@ -4354,7 +4357,7 @@ print(&quot;end&quot;)</code></pre>
 func()</code></pre>
 
 <p>在try或except中即使定义了return，也会执行最后的finally块中的代码。</p>
-<h3 id="练习题-1"><a href="#练习题-1" class="headerlink" title="练习题"></a>练习题</h3><ol>
+<h4 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h4><ol>
 <li><p>补充代码实现捕获程序中的错误。</p>
 <pre class="language-python" data-language="python"><code class="language-python"># 迭代器
 class IterRange(object):
@@ -4532,7 +4535,7 @@ print(res)</code></pre>
 &gt;&gt;&gt; END
 &gt;&gt;&gt; 成功</code></pre></li>
 </ol>
-<h2 id="4-反射"><a href="#4-反射" class="headerlink" title="4.反射"></a>4.反射</h2><p>反射，提供了一种更加灵活的方式让你可以实现去 对象 中操作成员（以字符串的形式去 <code>对象</code> 中进行成员的操作）。</p>
+<h3 id="4-反射"><a href="#4-反射" class="headerlink" title="4.反射"></a>4.反射</h3><p>反射，提供了一种更加灵活的方式让你可以实现去 对象 中操作成员（以字符串的形式去 <code>对象</code> 中进行成员的操作）。</p>
 <pre class="language-python" data-language="python"><code class="language-python">class Person(object):
     
     def __init__(self,name,wx):
@@ -4611,7 +4614,7 @@ def run(self):
 
 
 
-<h3 id="4-1-一些皆对象"><a href="#4-1-一些皆对象" class="headerlink" title="4.1 一些皆对象"></a>4.1 一些皆对象</h3><p>在Python中有这么句话：<code>一切皆对象</code>。 每个对象的内部都有自己维护的成员。</p>
+<h4 id="4-1-一些皆对象"><a href="#4-1-一些皆对象" class="headerlink" title="4.1 一些皆对象"></a>4.1 一些皆对象</h4><p>在Python中有这么句话：<code>一切皆对象</code>。 每个对象的内部都有自己维护的成员。</p>
 <ul>
 <li><p>对象是对象</p>
 <pre class="language-python" data-language="python"><code class="language-python">class Person(object):
@@ -4661,7 +4664,7 @@ print(v2)</code></pre>
 
 
 
-<h3 id="4-2-import-module-反射"><a href="#4-2-import-module-反射" class="headerlink" title="4.2 import_module + 反射"></a><font color="#dd0000">4.2 import_module + 反射</font></h3><p>在Python中如果想要导入一个模块，可以通过import语法导入；企业也可以通过字符串的形式导入。<font color="#dd0000"><strong>可提高代码的可扩展性。</strong></font></p>
+<h4 id="4-2-import-module-反射"><a href="#4-2-import-module-反射" class="headerlink" title="4.2 import_module + 反射"></a><font color="#dd0000">4.2 import_module + 反射</font></h4><p>在Python中如果想要导入一个模块，可以通过import语法导入；企业也可以通过字符串的形式导入。<font color="#dd0000"><strong>可提高代码的可扩展性。</strong></font></p>
 <p>示例一：</p>
 <pre class="language-python" data-language="python"><code class="language-python"># 导入模块
 import random
@@ -4716,7 +4719,7 @@ print(cls)</code></pre>
 
 <p>我们在开发中也可以基于这个来进行开发，提高代码的可扩展性，例如：请在项目中实现一个发送 短信、微信 的功能。</p>
 <p>参考示例代码中的：auto_message 项目。</p>
-<h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2><ol>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><ol>
 <li><p>了解 mro和c3算法</p>
 </li>
 <li><p>python2和python3在面向对象中的区别。</p>
@@ -4732,7 +4735,7 @@ getattr,setattr,hasattr,delattr</code></pre>
 <li><p>根据字符串的形式操作成员 <code>反射-getattr,setattr,hasattr,delattr</code></p>
 </li>
 </ol>
-<h2 id="作业-2"><a href="#作业-2" class="headerlink" title="作业"></a>作业</h2><ol>
+<h3 id="作业-2"><a href="#作业-2" class="headerlink" title="作业"></a>作业</h3><ol>
 <li><p>super的作用？</p>
 <p>答：super()可以调用上n层继承关系中的类的变量和方法</p>
 <p><font color="#dd0000">存在问题：未掌握知识点</font></p>

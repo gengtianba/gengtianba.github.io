@@ -460,7 +460,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="十五、模块"><a href="#十五、模块" class="headerlink" title="十五、模块"></a>十五、模块</h1><img src="/2022/06/08/python-mo-kuai-er-day5/image-20210102105502236.png" class="" title="image-20210102105502236">
+                <h2 id="十五、模块"><a href="#十五、模块" class="headerlink" title="十五、模块"></a>十五、模块</h2><img src="/2022/06/08/python-mo-kuai-er-day5/image-20210102105502236.png" class="" title="image-20210102105502236">
 
 <p>课程目标：掌握Python中常用模块的使用方法。</p>
 <p>今日概要：</p>
@@ -469,7 +469,7 @@
 <li>第三方模块</li>
 <li>内置模块【1&#x2F;2】</li>
 </ul>
-<h2 id="1-自定义模块"><a href="#1-自定义模块" class="headerlink" title="1. 自定义模块"></a>1. 自定义模块</h2><h3 id="1-1-模块和包"><a href="#1-1-模块和包" class="headerlink" title="1.1 模块和包"></a>1.1 模块和包</h3><pre class="language-python" data-language="python"><code class="language-python">import hashlib
+<h3 id="1-自定义模块"><a href="#1-自定义模块" class="headerlink" title="1. 自定义模块"></a>1. 自定义模块</h3><h4 id="1-1-模块和包"><a href="#1-1-模块和包" class="headerlink" title="1.1 模块和包"></a>1.1 模块和包</h4><pre class="language-python" data-language="python"><code class="language-python">import hashlib
 
 
 def encrypt(data):
@@ -510,7 +510,7 @@ print(message)
 <li>py2必须有，如果没有导入包就会失败。</li>
 <li>py3可有可无。</li>
 </ul>
-<h3 id="1-2-导入"><a href="#1-2-导入" class="headerlink" title="1.2 导入"></a>1.2 导入</h3><p>​		当定义好一个模块或包之后，如果想要使用其中定义的功能，必须要<strong>先导入，然后再能使用</strong>。导入，其实就是将模块或包加载的内存中，以后再去内存中去拿就行。</p>
+<h4 id="1-2-导入"><a href="#1-2-导入" class="headerlink" title="1.2 导入"></a>1.2 导入</h4><p>​		当定义好一个模块或包之后，如果想要使用其中定义的功能，必须要<strong>先导入，然后再能使用</strong>。导入，其实就是将模块或包加载的内存中，以后再去内存中去拿就行。</p>
 <p>关于导如时的路径：</p>
 <blockquote>
 <p> 在Python内部默认设置了一些路径，导入模块或包时，都会按照指定顺序逐一去特定的路径查找。</p>
@@ -628,7 +628,7 @@ import xxxxx  # 导入路径A下的一个xxxxx.py文件</code></pre>
 </ul>
 </li>
 </ul>
-<h3 id="1-3-相对导入（不建议使用）"><a href="#1-3-相对导入（不建议使用）" class="headerlink" title="1.3 相对导入（不建议使用）"></a>1.3 相对导入（不建议使用）</h3><p>​		在导入模块时，对于 <code>from xx import xx</code>这种模式，还支持相对到导入。例如：</p>
+<h4 id="1-3-相对导入（不建议使用）"><a href="#1-3-相对导入（不建议使用）" class="headerlink" title="1.3 相对导入（不建议使用）"></a>1.3 相对导入（不建议使用）</h4><p>​		在导入模块时，对于 <code>from xx import xx</code>这种模式，还支持相对到导入。例如：</p>
 <img src="Python模块二day5/image-20210102182539642.png" alt="image-20210102182539642" style="zoom:50%;" />
 
 
@@ -638,7 +638,7 @@ import xxxxx  # 导入路径A下的一个xxxxx.py文件</code></pre>
 
 
 
-<h3 id="1-4-导入别名"><a href="#1-4-导入别名" class="headerlink" title="1.4 导入别名"></a>1.4 导入别名</h3><p>​		如果项目中导入 成员&#x2F;模块&#x2F;包 有重名，那么后导入的会覆盖之前导入，为了避免这种情况的发生，Python支持重命名，即：</p>
+<h4 id="1-4-导入别名"><a href="#1-4-导入别名" class="headerlink" title="1.4 导入别名"></a>1.4 导入别名</h4><p>​		如果项目中导入 成员&#x2F;模块&#x2F;包 有重名，那么后导入的会覆盖之前导入，为了避免这种情况的发生，Python支持重命名，即：</p>
 <pre class="language-python" data-language="python"><code class="language-python">from xxx.xxx import xx as xo
 import x1.x2 as pg</code></pre>
 
@@ -656,7 +656,7 @@ v1 &#x3D; commons.page.pagination()</code></pre>
 
 v1 &#x3D; pg.pagination()</code></pre></li>
 </ul>
-<h3 id="1-5-主文件"><a href="#1-5-主文件" class="headerlink" title="1.5 主文件"></a>1.5 主文件</h3><ul>
+<h4 id="1-5-主文件"><a href="#1-5-主文件" class="headerlink" title="1.5 主文件"></a>1.5 主文件</h4><ul>
 <li><p>执行一个py文件时</p>
 <pre class="language-none"><code class="language-none">__name__ &#x3D; &quot;__main__&quot;</code></pre>
 </li>
@@ -692,7 +692,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     start()</code></pre>
 
 <p>​		只有是以主文件的形式运行此脚本时start函数才会执行，被导入时则不会被执行。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><ol>
 <li><p>模块和包的区别</p>
 </li>
 <li><p>导入模块的两种方式：</p>
@@ -708,10 +708,10 @@ from xxx import xxx</code></pre>
 <li><p>在项目开发中，一般在主文件中会写上 main （主文件标记，不是绝对的，因为其他文件在开发调试时候有时候也可能有main）。</p>
 </li>
 </ol>
-<h2 id="2-第三方模块"><a href="#2-第三方模块" class="headerlink" title="2. 第三方模块"></a>2. 第三方模块</h2><p>Python内部提供的模块有限，所以在平时在开发的过程中，经常会使用第三方模块。</p>
+<h3 id="2-第三方模块"><a href="#2-第三方模块" class="headerlink" title="2. 第三方模块"></a>2. 第三方模块</h3><p>Python内部提供的模块有限，所以在平时在开发的过程中，经常会使用第三方模块。</p>
 <p>而第三方模块必须要先安装才能可以使用，下面介绍常见的3中安装第三方模块的方式。</p>
 <p>其实，使用第三方模块的行为就是去用别人写好并开源出来的py代码，这样自己拿来就用，不必重复造轮子了。。。。</p>
-<h3 id="2-1-pip（最常用）"><a href="#2-1-pip（最常用）" class="headerlink" title="2.1 pip（最常用）"></a>2.1 pip（最常用）</h3><p>这是Python中最最最常用的安装第三方模块的方式。</p>
+<h4 id="2-1-pip（最常用）"><a href="#2-1-pip（最常用）" class="headerlink" title="2.1 pip（最常用）"></a>2.1 pip（最常用）</h4><p>这是Python中最最最常用的安装第三方模块的方式。</p>
 <p>pip其实是一个第三方模块包管理工具，默认安装Python解释器时自动会安装，默认目录：</p>
 <pre class="language-none"><code class="language-none">MAC系统，即：Python安装路径的bin目录下
 	&#x2F;Library&#x2F;Frameworks&#x2F;Python.framework&#x2F;Versions&#x2F;3.9&#x2F;bin&#x2F;pip3
@@ -747,11 +747,11 @@ Windows系统，即：Python安装路径的scripts目录下
 例如：
 pip3 install django&#x3D;&#x3D;2.2</code></pre>
 
-<h4 id="2-1-1-pip更新"><a href="#2-1-1-pip更新" class="headerlink" title="2.1.1 pip更新"></a>2.1.1 pip更新</h4><p>​		上图的黄色字体提示：目前我电脑上的pip是20.2.3版本，最新的是 20.3.3 版本，如果想要升级为最新的版本，可以在终端执行他提示的命令：</p>
+<h5 id="2-1-1-pip更新"><a href="#2-1-1-pip更新" class="headerlink" title="2.1.1 pip更新"></a>2.1.1 pip更新</h5><p>​		上图的黄色字体提示：目前我电脑上的pip是20.2.3版本，最新的是 20.3.3 版本，如果想要升级为最新的版本，可以在终端执行他提示的命令：</p>
 <pre class="language-none"><code class="language-none">&#x2F;Library&#x2F;Frameworks&#x2F;Python.framework&#x2F;Versions&#x2F;3.9&#x2F;bin&#x2F;python3.9 -m pip install --upgrade pip</code></pre>
 
 <p>注意：根据自己电脑的提示命令去执行，不要用我这里的提示命令哈。</p>
-<h4 id="2-1-2-豆瓣源"><a href="#2-1-2-豆瓣源" class="headerlink" title="2.1.2 豆瓣源"></a>2.1.2 豆瓣源</h4><p>​		<strong>pip默认是去 <code>https://pypi.org</code> 去下载第三方模块（本质上就是别人写好的py代码），国外的网站速度会比较慢，为了加速可以使用国内的豆瓣源。</strong></p>
+<h5 id="2-1-2-豆瓣源"><a href="#2-1-2-豆瓣源" class="headerlink" title="2.1.2 豆瓣源"></a>2.1.2 豆瓣源</h5><p>​		<strong>pip默认是去 <code>https://pypi.org</code> 去下载第三方模块（本质上就是别人写好的py代码），国外的网站速度会比较慢，为了加速可以使用国内的豆瓣源。</strong></p>
 <ul>
 <li><p>一次性使用</p>
 <pre class="language-none"><code class="language-none">pip3.9 install 模块名称  -i  https:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F;</code></pre>
@@ -779,7 +779,7 @@ Writing to &#x2F;Users&#x2F;wupeiqi&#x2F;.config&#x2F;pip&#x2F;pip.conf</code></
 
 
 
-<h3 id="2-2-源码"><a href="#2-2-源码" class="headerlink" title="2.2 源码"></a>2.2 源码</h3><p>​		如果要安装的模块在pypi.org中不存在 或 因特殊原因无法通过pip install 安装时，可以直接下载源码，然后基于源码安装，例如：</p>
+<h4 id="2-2-源码"><a href="#2-2-源码" class="headerlink" title="2.2 源码"></a>2.2 源码</h4><p>​		如果要安装的模块在pypi.org中不存在 或 因特殊原因无法通过pip install 安装时，可以直接下载源码，然后基于源码安装，例如：</p>
 <ul>
 <li><p>下载requests源码（压缩包zip、tar、tar.gz）并解压。</p>
 <pre class="language-none"><code class="language-none">下载地址：https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;requests&#x2F;#files</code></pre>
@@ -793,7 +793,7 @@ python3 setup.py install</code></pre>
 <img src="/2022/06/08/python-mo-kuai-er-day5/image-20210102215833498.png" class="" title="image-20210102215833498">
 </li>
 </ul>
-<h3 id="2-3-wheel"><a href="#2-3-wheel" class="headerlink" title="2.3 wheel"></a>2.3 wheel</h3><p>​		wheel是Python的第三方模块包的文件格式的一种，我们也可以基于wheel去安装一些第三方模块。</p>
+<h4 id="2-3-wheel"><a href="#2-3-wheel" class="headerlink" title="2.3 wheel"></a>2.3 wheel</h4><p>​		wheel是Python的第三方模块包的文件格式的一种，我们也可以基于wheel去安装一些第三方模块。</p>
 <ul>
 <li><p>安装wheel格式支持，这样pip再安装第三方模块时，就可以处理wheel格式的文件了。</p>
 <pre class="language-python" data-language="python"><code class="language-python">pip3.9 install wheel</code></pre>
@@ -811,8 +811,8 @@ Windows系统：
 	C:\Python39\Lib\site-packages\</code></pre>
 
 <p>提醒：这个目录在sys.path中，所以我们直接在代码中直接导入下载的第三方包是没问题的。</p>
-<h2 id="3-内置模块（一）"><a href="#3-内置模块（一）" class="headerlink" title="3.内置模块（一）"></a>3.内置模块（一）</h2><p>​		Python内置的模块有很多，我们也已经接触了不少相关模块，接下来咱们就来做一些汇总和介绍。内置模块有很多 &amp; 模块中的功能也非常多，我们是没有办法注意全局给大家讲解，在此我会整理出项目开发最常用的来进行讲解。</p>
-<h3 id="3-1-os"><a href="#3-1-os" class="headerlink" title="3.1 os"></a>3.1 os</h3><pre class="language-python" data-language="python"><code class="language-python">import os
+<h3 id="3-内置模块（一）"><a href="#3-内置模块（一）" class="headerlink" title="3.内置模块（一）"></a>3.内置模块（一）</h3><p>​		Python内置的模块有很多，我们也已经接触了不少相关模块，接下来咱们就来做一些汇总和介绍。内置模块有很多 &amp; 模块中的功能也非常多，我们是没有办法注意全局给大家讲解，在此我会整理出项目开发最常用的来进行讲解。</p>
+<h4 id="3-1-os"><a href="#3-1-os" class="headerlink" title="3.1 os"></a>3.1 os</h4><pre class="language-python" data-language="python"><code class="language-python">import os
 
 # 1. 获取当前脚本绝对路径
 &quot;&quot;&quot;
@@ -897,7 +897,9 @@ for path, folder_list, file_list in data:
         if ext &#x3D;&#x3D; &quot;mp4&quot;:
             print(file_abs_path)</code></pre>
 
-<h3 id="3-2-shutil"><a href="#3-2-shutil" class="headerlink" title="3.2 shutil"></a>3.2 shutil</h3><pre class="language-python" data-language="python"><code class="language-python">import shutil
+
+
+<h4 id="3-2-shutil"><a href="#3-2-shutil" class="headerlink" title="3.2 shutil"></a>3.2 shutil</h4><pre class="language-python" data-language="python"><code class="language-python">import shutil
 
 # 1. 删除文件夹
 &quot;&quot;&quot;
@@ -941,7 +943,7 @@ shutil.move(&quot;&#x2F;Users&#x2F;wupeiqi&#x2F;PycharmProjects&#x2F;CodeReposit
 
 
 
-<h3 id="3-3-sys"><a href="#3-3-sys" class="headerlink" title="3.3 sys"></a>3.3 sys</h3><pre class="language-python" data-language="python"><code class="language-python">import sys
+<h4 id="3-3-sys"><a href="#3-3-sys" class="headerlink" title="3.3 sys"></a>3.3 sys</h4><pre class="language-python" data-language="python"><code class="language-python">import sys
 
 # 1. 获取解释器版本
 &quot;&quot;&quot;
@@ -990,7 +992,9 @@ def run():
 if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     run()</code></pre>
 
-<h3 id="3-4-random"><a href="#3-4-random" class="headerlink" title="3.4 random"></a>3.4 random</h3><pre class="language-python" data-language="python"><code class="language-python">import random
+
+
+<h4 id="3-4-random"><a href="#3-4-random" class="headerlink" title="3.4 random"></a>3.4 random</h4><pre class="language-python" data-language="python"><code class="language-python">import random
 
 # 1. 获取范围内的随机整数
 v &#x3D; random.randint(10, 20)
@@ -1015,7 +1019,7 @@ print(data)</code></pre>
 
 
 
-<h3 id="3-5-hashlib"><a href="#3-5-hashlib" class="headerlink" title="3.5 hashlib"></a>3.5 hashlib</h3><pre class="language-python" data-language="python"><code class="language-python">import hashlib
+<h4 id="3-5-hashlib"><a href="#3-5-hashlib" class="headerlink" title="3.5 hashlib"></a>3.5 hashlib</h4><pre class="language-python" data-language="python"><code class="language-python">import hashlib
 
 hash_object &#x3D; hashlib.md5()
 hash_object.update(&quot;武沛齐&quot;.encode(&#39;utf-8&#39;))
@@ -1031,9 +1035,9 @@ print(result)</code></pre>
 
 
 
-<h3 id="3-6-configparser"><a href="#3-6-configparser" class="headerlink" title="3.6 configparser"></a>3.6 configparser</h3><p>见：day09</p>
-<h3 id="3-7-xml"><a href="#3-7-xml" class="headerlink" title="3.7 xml"></a>3.7 xml</h3><p>见：day09</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<h4 id="3-6-configparser"><a href="#3-6-configparser" class="headerlink" title="3.6 configparser"></a>3.6 configparser</h4><p>见：day09</p>
+<h4 id="3-7-xml"><a href="#3-7-xml" class="headerlink" title="3.7 xml"></a>3.7 xml</h4><p>见：day09</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
 <li><p>模块和包的区别</p>
 </li>
 <li><p>了解如何导入模块</p>
@@ -1071,7 +1075,7 @@ from commons.utils import encrypt</code></pre></li>
 <li><p>常见内置模块</p>
 </li>
 </ol>
-<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><ol>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ol>
 <li><p>自己去网上搜索如何基于Python计算mp4视频的时长，最终实现用代码统计某个文件夹下所有mp4的时长。</p>
 <pre class="language-python" data-language="python"><code class="language-python">&quot;&quot;&quot;
 本模块功能为统计某个文件夹下所有mp4的时长
@@ -1107,7 +1111,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         clip.close()
     print(&#39;文件夹:&#123;&#125;，电影总时长为&#123;&#125;&#39;.format(path, sum_time))</code></pre></li>
 </ol>
-<h1 id="十六、内置模块和开发规范"><a href="#十六、内置模块和开发规范" class="headerlink" title="十六、内置模块和开发规范"></a>十六、内置模块和开发规范</h1><img src="/2022/06/08/python-mo-kuai-er-day5/image-20210104122555935.png" class="" title="image-20210104122555935">
+<h2 id="十六、内置模块和开发规范"><a href="#十六、内置模块和开发规范" class="headerlink" title="十六、内置模块和开发规范"></a>十六、内置模块和开发规范</h2><img src="/2022/06/08/python-mo-kuai-er-day5/image-20210104122555935.png" class="" title="image-20210104122555935">
 
 <p>目标：掌握常见的内置模块的使用及了解软件开发的规范。</p>
 <p>今日概要：</p>
@@ -1128,7 +1132,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 </ul>
 </li>
 </ul>
-<h2 id="1-内置模块"><a href="#1-内置模块" class="headerlink" title="1. 内置模块"></a>1. 内置模块</h2><h3 id="1-1-json"><a href="#1-1-json" class="headerlink" title="1.1 json"></a>1.1 json</h3><p>​		json模块，是python内部的一个模块，可以将python的数据格式 转换为json格式的数据，也可以将json格式的数据转换为python的数据格式。</p>
+<h3 id="1-内置模块"><a href="#1-内置模块" class="headerlink" title="1. 内置模块"></a>1. 内置模块</h3><h4 id="1-1-json"><a href="#1-1-json" class="headerlink" title="1.1 json"></a>1.1 json</h4><p>​		json模块，是python内部的一个模块，可以将python的数据格式 转换为json格式的数据，也可以将json格式的数据转换为python的数据格式。</p>
 <p>​		json格式，是一个数据格式（<font color="#dd0000"><strong>本质上就是个字符串，常用语网络数据传输</strong></font>）</p>
 <pre class="language-python" data-language="python"><code class="language-python"># Python中的数据类型的格式
 data &#x3D; [
@@ -1142,7 +1146,7 @@ value &#x3D; &#39;[&#123;&quot;id&quot;: 1, &quot;name&quot;: &quot;武沛齐&qu
 
 
 
-<h4 id="1-1-1-核心功能"><a href="#1-1-1-核心功能" class="headerlink" title="1.1.1 核心功能"></a>1.1.1 核心功能</h4><p>​		json格式的作用？</p>
+<h5 id="1-1-1-核心功能"><a href="#1-1-1-核心功能" class="headerlink" title="1.1.1 核心功能"></a>1.1.1 核心功能</h5><p>​		json格式的作用？</p>
 <pre class="language-none"><code class="language-none">跨语言数据传输，例如：
 	A系统用Python开发，有列表类型和字典类型等。
 	B系统用Java开发，有数组、map等的类型。
@@ -1180,7 +1184,8 @@ data_list &#x3D; json.loads(data_string)
 
 print(data_list)</code></pre></li>
 </ul>
-<h4 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h4><ol>
+<p><strong>练习题</strong></p>
+<ol>
 <li><p>写网站，给用户返回json格式数据</p>
 <ul>
 <li><p>安装flask模块，协助我们快速写网站（之前已安装过）</p>
@@ -1232,7 +1237,7 @@ print(res.text)
 data_dict &#x3D; json.loads(res.text)
 print(data_dict)</code></pre></li>
 </ol>
-<h4 id="1-1-2-类型要求"><a href="#1-1-2-类型要求" class="headerlink" title="1.1.2 类型要求"></a>1.1.2 类型要求</h4><p>​		python的数据类型转换为 json 格式，对数据类型是有要求的，默认只支持：</p>
+<h5 id="1-1-2-类型要求"><a href="#1-1-2-类型要求" class="headerlink" title="1.1.2 类型要求"></a>1.1.2 类型要求</h5><p>​		python的数据类型转换为 json 格式，对数据类型是有要求的，默认只支持：</p>
 <pre class="language-none"><code class="language-none">+-------------------+---------------+
 | Python            | JSON          |
 +&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;+
@@ -1281,7 +1286,7 @@ print(res)</code></pre>
 
 
 
-<h4 id="1-1-3-其他功能"><a href="#1-1-3-其他功能" class="headerlink" title="1.1.3 其他功能"></a>1.1.3 其他功能</h4><p>json模块中常用的是：</p>
+<h5 id="1-1-3-其他功能"><a href="#1-1-3-其他功能" class="headerlink" title="1.1.3 其他功能"></a>1.1.3 其他功能</h5><p>json模块中常用的是：</p>
 <ul>
 <li><p><code>json.dumps</code>，序列化生成一个字符串。</p>
 </li>
@@ -1311,14 +1316,14 @@ print(data)
 
 file_object.close()</code></pre></li>
 </ul>
-<h3 id="1-2-时间处理"><a href="#1-2-时间处理" class="headerlink" title="1.2 时间处理"></a>1.2 时间处理</h3><ul>
+<h4 id="1-2-时间处理"><a href="#1-2-时间处理" class="headerlink" title="1.2 时间处理"></a>1.2 时间处理</h4><ul>
 <li><p>UTC&#x2F;GMT：世界时间</p>
 </li>
 <li><p>本地时间：本地时区的时间。</p>
 </li>
 </ul>
 <p>Python中关于时间处理的模块有两个，分别是time和datetime。</p>
-<h4 id="1-2-1-time"><a href="#1-2-1-time" class="headerlink" title="1.2.1 time"></a>1.2.1 time</h4><pre class="language-python" data-language="python"><code class="language-python">import time
+<h5 id="1-2-1-time"><a href="#1-2-1-time" class="headerlink" title="1.2.1 time"></a>1.2.1 time</h5><pre class="language-python" data-language="python"><code class="language-python">import time
 
 # 获取当前时间戳（自1970-1-1 00:00）
 v1 &#x3D; time.time()  # 单位秒
@@ -1336,7 +1341,7 @@ print(&#39;结束&#39;)
 
 
 
-<h4 id="1-2-2-datetime"><a href="#1-2-2-datetime" class="headerlink" title="1.2.2 datetime"></a>1.2.2 datetime</h4><p>​		在平时开发过程中的时间一般是以为如下三种格式存在：</p>
+<h5 id="1-2-2-datetime"><a href="#1-2-2-datetime" class="headerlink" title="1.2.2 datetime"></a>1.2.2 datetime</h5><p>​		在平时开发过程中的时间一般是以为如下三种格式存在：</p>
 <ul>
 <li><p>datetime</p>
 <pre class="language-python" data-language="python"><code class="language-python">from datetime import datetime, timezone, timedelta
@@ -1403,7 +1408,8 @@ print(val)</code></pre></li>
 </ul>
 <img src="/2022/06/08/python-mo-kuai-er-day5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220608200220.jpg" class="" title="微信图片编辑_20220608200220">
 
-<h4 id="练习题-1"><a href="#练习题-1" class="headerlink" title="练习题"></a>练习题</h4><ol>
+<p><strong>练习题</strong></p>
+<ol>
 <li><p>日志记录，将用户输入的信息写入到文件，文件名格式为<code>年-月-日-时-分.txt</code>。</p>
 <pre class="language-python" data-language="python"><code class="language-python">from datetime import datetime
 
@@ -1474,7 +1480,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     run()
 </code></pre></li>
 </ol>
-<h3 id="1-3-正则表达式相关"><a href="#1-3-正则表达式相关" class="headerlink" title="1.3 正则表达式相关"></a>1.3 正则表达式相关</h3><p>​		当给你一大堆文本信息，让你提取其中的指定数据时，可以使用正则来实现。例如：提取文本中的邮箱和手机号</p>
+<h4 id="1-3-正则表达式相关"><a href="#1-3-正则表达式相关" class="headerlink" title="1.3 正则表达式相关"></a>1.3 正则表达式相关</h4><p>​		当给你一大堆文本信息，让你提取其中的指定数据时，可以使用正则来实现。例如：提取文本中的邮箱和手机号</p>
 <pre class="language-python" data-language="python"><code class="language-python">import re
 
 text &#x3D; &quot;楼主太牛逼了，在线想要 442662578@qq.com和xxxxx@live.com谢谢楼主，手机号也可15131255789，搞起来呀&quot;
@@ -1484,7 +1490,7 @@ print(phone_list)</code></pre>
 
 
 
-<h4 id="1-3-1-正则表达式"><a href="#1-3-1-正则表达式" class="headerlink" title="1.3.1 正则表达式"></a>1.3.1 正则表达式</h4><h5 id="1-字符相关"><a href="#1-字符相关" class="headerlink" title="1. 字符相关"></a>1. 字符相关</h5><ul>
+<h5 id="1-3-1-正则表达式"><a href="#1-3-1-正则表达式" class="headerlink" title="1.3.1 正则表达式"></a>1.3.1 正则表达式</h5><h6 id="1-字符相关"><a href="#1-字符相关" class="headerlink" title="1. 字符相关"></a>1. 字符相关</h6><ul>
 <li><p><code>wupeiqi</code> 匹配文本中的wupeiqi</p>
 <pre class="language-python" data-language="python"><code class="language-python">import re
 
@@ -1565,7 +1571,7 @@ text &#x3D; &quot;root admin add admin&quot;
 data_list &#x3D; re.findall(&quot;a\w+\s\w+&quot;, text)
 print(data_list) # [&#39;admin add&#39;]</code></pre></li>
 </ul>
-<h5 id="2-数量相关"><a href="#2-数量相关" class="headerlink" title="2. 数量相关"></a>2. 数量相关</h5><ul>
+<h6 id="2-数量相关"><a href="#2-数量相关" class="headerlink" title="2. 数量相关"></a>2. 数量相关</h6><ul>
 <li><p><code>*</code> 重复0次或更多次</p>
 <pre class="language-python" data-language="python"><code class="language-python">import re
 
@@ -1609,7 +1615,7 @@ text &#x3D; &quot;楼主太牛逼了，在线想要 442662578@qq.com和xxxxx@liv
 data_list &#x3D; re.findall(&quot;\d&#123;10,15&#125;&quot;, text)
 print(data_list) # [&#39;15131255789&#39;]</code></pre></li>
 </ul>
-<h5 id="3-括号（分组）"><a href="#3-括号（分组）" class="headerlink" title="3. 括号（分组）"></a>3. 括号（分组）</h5><ul>
+<h6 id="3-括号（分组）"><a href="#3-括号（分组）" class="headerlink" title="3. 括号（分组）"></a>3. 括号（分组）</h6><ul>
 <li><p>提取数据区域</p>
 <pre class="language-python" data-language="python"><code class="language-python">import re
 
@@ -1644,14 +1650,9 @@ print(data_list)  # [&#39;root太&#39;, &#39;255789&#39;]</code></pre>
 
 text &#x3D; &quot;楼主15131root太牛15131alex逼了，在线想要 442662578@qq.com和xxxxx@live.com谢谢楼主，手机号也可15131255789，搞起来呀&quot;
 data_list &#x3D; re.findall(&quot;(15131(2\d&#123;5&#125;|r\w+太))&quot;, text)
-print(data_list)  # [(&#39;15131root太&#39;, &#39;root太&#39;), (&#39;15131255789&#39;, &#39;255789&#39;)]</code></pre>
-
-
-
-
-
-<h5 id="练习题-2"><a href="#练习题-2" class="headerlink" title="练习题"></a>练习题</h5></li>
+print(data_list)  # [(&#39;15131root太&#39;, &#39;root太&#39;), (&#39;15131255789&#39;, &#39;255789&#39;)]</code></pre></li>
 </ul>
+<p><strong>练习题</strong></p>
 <ol>
 <li><p>利用正则匹配QQ号码</p>
 <pre class="language-none"><code class="language-none"># 不能以0开头，至少是五位的数字
@@ -1738,7 +1739,7 @@ for comment_object in comment_object_list:
     # 请继续补充代码，提取text中的邮箱地址
 </code></pre></li>
 </ol>
-<h5 id="4-起始和结束"><a href="#4-起始和结束" class="headerlink" title="4. 起始和结束"></a>4. 起始和结束</h5><p>上述示例中都是去一段文本中提取数据，只要文本中存在即可。</p>
+<h6 id="4-起始和结束"><a href="#4-起始和结束" class="headerlink" title="4. 起始和结束"></a>4. 起始和结束</h6><p>上述示例中都是去一段文本中提取数据，只要文本中存在即可。</p>
 <p>但，如果要求用户输入的内容必须是指定的内容开头和结尾，比就需要用到如下两个字符。</p>
 <ul>
 <li><code>^</code> 开始</li>
@@ -1770,7 +1771,7 @@ else:
 
 
 
-<h5 id="5-特殊字符"><a href="#5-特殊字符" class="headerlink" title="5. 特殊字符"></a>5. 特殊字符</h5><p>由于正则表达式中 <code>*  .  \ &#123; &#125; ( ) </code> 等都具有特殊的含义，所以如果想要在正则中匹配这种指定的字符，需要转义，例如：</p>
+<h6 id="5-特殊字符"><a href="#5-特殊字符" class="headerlink" title="5. 特殊字符"></a>5. 特殊字符</h6><p>由于正则表达式中 <code>*  .  \ &#123; &#125; ( ) </code> 等都具有特殊的含义，所以如果想要在正则中匹配这种指定的字符，需要转义，例如：</p>
 <pre class="language-python" data-language="python"><code class="language-python">import re
 
 text &#x3D; &quot;我是你&#123;5&#125;爸爸&quot;
@@ -1785,7 +1786,7 @@ print(data)</code></pre>
 
 
 
-<h4 id="1-3-2-re模块"><a href="#1-3-2-re模块" class="headerlink" title="1.3.2 re模块"></a>1.3.2 re模块</h4><p>python中提供了re模块，可以处理正则表达式并对文本进行处理。</p>
+<h5 id="1-3-2-re模块"><a href="#1-3-2-re模块" class="headerlink" title="1.3.2 re模块"></a>1.3.2 re模块</h5><p>python中提供了re模块，可以处理正则表达式并对文本进行处理。</p>
 <ul>
 <li><p>findall，获取匹配到的所有数据</p>
 <pre class="language-python" data-language="python"><code class="language-python">import re
@@ -1864,7 +1865,7 @@ for item in data_list:
     info_dict &#x3D; item.groupdict()
     print(info_dict)</code></pre></li>
 </ul>
-<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>到此，关于最常见的内置模块就全部讲完了（共11个），现阶段只需要掌握这些模块的使用即可，在后续的课程和练习题中也会涉及到一起其他内置模块。</p>
+<h4 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h4><p>到此，关于最常见的内置模块就全部讲完了（共11个），现阶段只需要掌握这些模块的使用即可，在后续的课程和练习题中也会涉及到一起其他内置模块。</p>
 <ul>
 <li>os</li>
 <li>shutil</li>
@@ -1878,8 +1879,8 @@ for item in data_list:
 <li>datetime</li>
 <li>re</li>
 </ul>
-<h2 id="2-项目开发规范"><a href="#2-项目开发规范" class="headerlink" title="2. 项目开发规范"></a>2. 项目开发规范</h2><p>​		现阶段，我们在开发一些程序时（终端运行），应该遵循一些结构的规范，让你的系统更加专业。</p>
-<h3 id="2-1-单文件应用"><a href="#2-1-单文件应用" class="headerlink" title="2.1 单文件应用"></a>2.1 单文件应用</h3><p>​		当基于python开发简单应用时（一个py文件就能搞定），需要注意如下几点。</p>
+<h3 id="2-项目开发规范"><a href="#2-项目开发规范" class="headerlink" title="2. 项目开发规范"></a>2. 项目开发规范</h3><p>​		现阶段，我们在开发一些程序时（终端运行），应该遵循一些结构的规范，让你的系统更加专业。</p>
+<h4 id="2-1-单文件应用"><a href="#2-1-单文件应用" class="headerlink" title="2.1 单文件应用"></a>2.1 单文件应用</h4><p>​		当基于python开发简单应用时（一个py文件就能搞定），需要注意如下几点。</p>
 <pre class="language-python" data-language="python"><code class="language-python">&quot;&quot;&quot;
 文件注释
 &quot;&quot;&quot;
@@ -1920,7 +1921,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 
 
 
-<h3 id="2-2-单可执行文件"><a href="#2-2-单可执行文件" class="headerlink" title="2.2 单可执行文件"></a>2.2 单可执行文件</h3><p>​		新创建一个项目，假设名字叫 【crm】，可以创建如下文件和文件夹来存放代码和数据。</p>
+<h4 id="2-2-单可执行文件"><a href="#2-2-单可执行文件" class="headerlink" title="2.2 单可执行文件"></a>2.2 单可执行文件</h4><p>​		新创建一个项目，假设名字叫 【crm】，可以创建如下文件和文件夹来存放代码和数据。</p>
 <pre class="language-python" data-language="python"><code class="language-python">crm
 ├── app.py        文件，程序的主文件（尽量精简）
 ├── config.py     文件，配置文件（放相关配置信息，代码中读取配置信息，如果想要修改配置，即可以在此修改，不用再去代码中逐一修改了）
@@ -1934,7 +1935,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 
 
 
-<h3 id="2-3-多可执行文件"><a href="#2-3-多可执行文件" class="headerlink" title="2.3 多可执行文件"></a>2.3 多可执行文件</h3><p>​		新创建项目，假设名称叫【killer】，可以创建如下文件和文件夹来存放代码和数据。</p>
+<h4 id="2-3-多可执行文件"><a href="#2-3-多可执行文件" class="headerlink" title="2.3 多可执行文件"></a>2.3 多可执行文件</h4><p>​		新创建项目，假设名称叫【killer】，可以创建如下文件和文件夹来存放代码和数据。</p>
 <pre class="language-none"><code class="language-none">killer
 ├── bin					文件夹，存放多个主文件（可运行）
 │   ├── app1.py
@@ -1956,7 +1957,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 
 
 
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><ol>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ol>
 <li>json格式和json模块</li>
 <li>json模块处理特殊的数据类型</li>
 <li>datetime格式与字符串、时间戳以及相关之间的转换。</li>
@@ -1965,7 +1966,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 <li>了解正则表达式的编写方式和python中re模块的使用。</li>
 <li>项目开发规范。</li>
 </ol>
-<h2 id="作业：开发短视频资讯平台"><a href="#作业：开发短视频资讯平台" class="headerlink" title="作业：开发短视频资讯平台"></a>作业：开发短视频资讯平台</h2><ul>
+<h3 id="作业：开发短视频资讯平台"><a href="#作业：开发短视频资讯平台" class="headerlink" title="作业：开发短视频资讯平台"></a>作业：开发短视频资讯平台</h3><ul>
 <li><p>有video.csv视频库文件，其中有999条短视频数据，格式如下：【 video.csv 文件已为大家提供好，在day15课件目录下。 】</p>
 <img src="/2022/06/08/python-mo-kuai-er-day5/image-20210105223331765.png" class="" title="image-20210105223331765">
 </li>
@@ -2033,7 +2034,8 @@ print(&quot;\n下载完成&quot;)</code></pre></li>
 </ul>
 </li>
 </ul>
-<h2 id="附赠"><a href="#附赠" class="headerlink" title="附赠"></a>附赠</h2><p>​		自动采集梨视频1000条资讯的爬虫脚本。<span style='color:red;'>梨视频平台系统更新后可能会导致下载失败，到时候需根据平台调整再来修改代码。</span></p>
+<p><strong>附赠</strong></p>
+<p>​		自动采集梨视频1000条资讯的爬虫脚本。<span style='color:red;'>梨视频平台系统更新后可能会导致下载失败，到时候需根据平台调整再来修改代码。</span></p>
 <pre class="language-python" data-language="python"><code class="language-python">&quot;&quot;&quot;
 下载梨视频的：视频ID，视频标题，视频URL地址 并写入到本次 video.csv 文件中。
 
@@ -2088,7 +2090,8 @@ def download_video():
 if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     download_video()</code></pre>
 
-<h4 id="我的版本"><a href="#我的版本" class="headerlink" title="我的版本"></a>我的版本</h4><pre class="language-python" data-language="python"><code class="language-python">import os
+<p><strong>我的版本</strong></p>
+<pre class="language-python" data-language="python"><code class="language-python">import os
 import re
 import time
 
@@ -2212,17 +2215,20 @@ while True:
     zone(read_file(FILE_NAME))
 </code></pre>
 
-<h4 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h4><pre class="language-none"><code class="language-none">1. 可以将不同的功能用文件进行分割，参照项目规范进行更改
+<p><strong>存在问题</strong></p>
+<pre class="language-none"><code class="language-none">1. 可以将不同的功能用文件进行分割，参照项目规范进行更改
 2. 功能内部过长可以适当拆分</code></pre>
 
-<h4 id="老师的版本"><a href="#老师的版本" class="headerlink" title="老师的版本"></a>老师的版本</h4><h1 id="十七、阶段总结"><a href="#十七、阶段总结" class="headerlink" title="十七、阶段总结"></a>十七、阶段总结</h1><p>课程目标：对第二模块  “函数和模块” 阶段的知识点进行总结和考试，让学员更好的掌握此模块的相关知识。</p>
+
+
+<h2 id="十七、阶段总结"><a href="#十七、阶段总结" class="headerlink" title="十七、阶段总结"></a>十七、阶段总结</h2><p>课程目标：对第二模块  “函数和模块” 阶段的知识点进行总结和考试，让学员更好的掌握此模块的相关知识。</p>
 <p>课程概要：</p>
 <ul>
 <li>知识补充</li>
 <li>阶段总结（思维导图）</li>
 <li><span style='color:red;'>考试题（全部都是面试题）</span></li>
 </ul>
-<h2 id="1-知识补充"><a href="#1-知识补充" class="headerlink" title="1.知识补充"></a>1.知识补充</h2><h3 id="1-1-nolocal关键字"><a href="#1-1-nolocal关键字" class="headerlink" title="1.1 nolocal关键字"></a>1.1 nolocal关键字</h3><p>在之前的课程中，我们学过global关键字。</p>
+<h3 id="1-知识补充"><a href="#1-知识补充" class="headerlink" title="1.知识补充"></a>1.知识补充</h3><h4 id="1-1-nolocal关键字"><a href="#1-1-nolocal关键字" class="headerlink" title="1.1 nolocal关键字"></a>1.1 nolocal关键字</h4><p>在之前的课程中，我们学过global关键字。</p>
 <pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &#39;root&#39;
 
 
@@ -2310,7 +2316,7 @@ print(name)</code></pre>
 
 
 
-<h3 id="1-2-yield-from"><a href="#1-2-yield-from" class="headerlink" title="1.2 yield from"></a>1.2 yield from</h3><p>在生成器部分我们了解了yield关键字，其在python3.3之后有引入了一个yield from。</p>
+<h4 id="1-2-yield-from"><a href="#1-2-yield-from" class="headerlink" title="1.2 yield from"></a>1.2 yield from</h4><p>在生成器部分我们了解了yield关键字，其在python3.3之后有引入了一个yield from。</p>
 <pre class="language-python" data-language="python"><code class="language-python">def foo():
     yield 2
     yield 2
@@ -2331,7 +2337,7 @@ for item in func():
 
 
 
-<h3 id="1-3-深浅拷贝"><a href="#1-3-深浅拷贝" class="headerlink" title="1.3 深浅拷贝"></a>1.3 深浅拷贝</h3><ul>
+<h4 id="1-3-深浅拷贝"><a href="#1-3-深浅拷贝" class="headerlink" title="1.3 深浅拷贝"></a>1.3 深浅拷贝</h4><ul>
 <li><p>浅拷贝</p>
 <ul>
 <li><p>不可变类型，不拷贝。</p>
@@ -2440,13 +2446,13 @@ print(id(v2[2]))  # 140563140535744</code></pre>
 </ul>
 </li>
 </ul>
-<h2 id="2-阶段总结"><a href="#2-阶段总结" class="headerlink" title="2.阶段总结"></a>2.阶段总结</h2><img src="/2022/06/08/python-mo-kuai-er-day5/image-20210106143928141.png" class="" title="image-20210106143928141">
+<h3 id="2-阶段总结"><a href="#2-阶段总结" class="headerlink" title="2.阶段总结"></a>2.阶段总结</h3><img src="/2022/06/08/python-mo-kuai-er-day5/image-20210106143928141.png" class="" title="image-20210106143928141">
 
 
 
 
 
-<h2 id="3-考试题"><a href="#3-考试题" class="headerlink" title="3.考试题"></a>3.考试题</h2><p>考试题的目的是让大家对自己近期知识点学习练习 以及 自测，请大家务必【独立】完成（切勿翻看笔记 &amp; 切勿网上搜索 ）。</p>
+<h3 id="3-考试题"><a href="#3-考试题" class="headerlink" title="3.考试题"></a>3.考试题</h3><p>考试题的目的是让大家对自己近期知识点学习练习 以及 自测，请大家务必【独立】完成（切勿翻看笔记 &amp; 切勿网上搜索 ）。</p>
 <ul>
 <li><p>第一步：自己独立完成（编程题目可以在pycharm中编写）</p>
 </li>

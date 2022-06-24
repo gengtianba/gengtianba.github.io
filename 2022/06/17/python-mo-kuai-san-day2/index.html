@@ -460,7 +460,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="二十一、网络编程：理解即可"><a href="#二十一、网络编程：理解即可" class="headerlink" title="二十一、网络编程：理解即可"></a>二十一、网络编程：理解即可</h1><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210220091551058.png" class="" title="image-20210220091551058">
+                <h2 id="二十一、网络编程：理解即可"><a href="#二十一、网络编程：理解即可" class="headerlink" title="二十一、网络编程：理解即可"></a>二十一、网络编程：理解即可</h2><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210220091551058.png" class="" title="image-20210220091551058">
 
 <p>课程目标：掌握网络相关的基础知识并可以基于Python开发程序（基于网络进行数据传输）。</p>
 <p>课程概要：</p>
@@ -469,8 +469,8 @@
 <li>网络编程（Python代码）</li>
 <li>B&#x2F;S和C&#x2F;S架构</li>
 </ul>
-<h2 id="1-必备基础"><a href="#1-必备基础" class="headerlink" title="1.必备基础"></a>1.必备基础</h2><p>你必须了解的网络相关设备和基础概念。</p>
-<h3 id="1-1-网络架构"><a href="#1-1-网络架构" class="headerlink" title="1.1 网络架构"></a>1.1 网络架构</h3><p>假设 <strong>alex</strong> 上了一个野鸡大学买了一台电脑，电脑里存了1部小电影，整宿整宿的在宿舍反复的看。</p>
+<h3 id="1-必备基础"><a href="#1-必备基础" class="headerlink" title="1.必备基础"></a>1.必备基础</h3><p>你必须了解的网络相关设备和基础概念。</p>
+<h4 id="1-1-网络架构"><a href="#1-1-网络架构" class="headerlink" title="1.1 网络架构"></a>1.1 网络架构</h4><p>假设 <strong>alex</strong> 上了一个野鸡大学买了一台电脑，电脑里存了1部小电影，整宿整宿的在宿舍反复的看。</p>
 <img src="/2022/06/17/python-mo-kuai-san-day2/image-20210204184431053-3881170.png" class="" title="image-20210204184431053">
 
 
@@ -480,7 +480,7 @@
 
 
 
-<h4 id="1-1-1-交换机"><a href="#1-1-1-交换机" class="headerlink" title="1.1.1 交换机"></a>1.1.1 交换机</h4><p>其他2位室友如何也想和他们的电脑相互连接然后进行资源的共享，此时就需要一个设备 【二层交换机】组件一个局域网。</p>
+<h5 id="1-1-1-交换机"><a href="#1-1-1-交换机" class="headerlink" title="1.1.1 交换机"></a>1.1.1 交换机</h5><p>其他2位室友如何也想和他们的电脑相互连接然后进行资源的共享，此时就需要一个设备 【二层交换机】组件一个局域网。</p>
 <pre class="language-python" data-language="python"><code class="language-python">当电脑接入交换机之后，我们需要为每台电脑分配一个IP，例如：
     - 电脑1：192.168.10.1
     - 电脑2：192.168.10.2
@@ -529,7 +529,7 @@
 
 
 
-<h4 id="1-1-2-路由器"><a href="#1-1-2-路由器" class="headerlink" title="1.1.2 路由器"></a>1.1.2 路由器</h4><p>多个宿舍之间想想要组建一个相互可以通信网络，此时需要【二层交换机】和【企业路由器】配合组建稍微大一点的局域网（同时也可缓解广播风暴）。</p>
+<h5 id="1-1-2-路由器"><a href="#1-1-2-路由器" class="headerlink" title="1.1.2 路由器"></a>1.1.2 路由器</h5><p>多个宿舍之间想想要组建一个相互可以通信网络，此时需要【二层交换机】和【企业路由器】配合组建稍微大一点的局域网（同时也可缓解广播风暴）。</p>
 <pre class="language-none"><code class="language-none">划分好网络结构之后，其实会给各宿舍的电脑分配IP和网关，例如：
    宿舍A：
 		- 电脑1：192.168.10.1  网关：192.168.10.254
@@ -560,7 +560,9 @@
 
 <img src="Python模块三day2/image-20210221145506980.png" alt="image-20210221145506980" style="zoom:33%;" />
 
-<h4 id="1-1-3-三层交换机"><a href="#1-1-3-三层交换机" class="headerlink" title="1.1.3 三层交换机"></a>1.1.3 三层交换机</h4><p>三层交换机集成了 交换机 &amp; 路由器的功能（大部分路由器功能），上述的三个设备其实可以用一个三层交换机就可以搞定。</p>
+
+
+<h5 id="1-1-3-三层交换机"><a href="#1-1-3-三层交换机" class="headerlink" title="1.1.3 三层交换机"></a>1.1.3 三层交换机</h5><p>三层交换机集成了 交换机 &amp; 路由器的功能（大部分路由器功能），上述的三个设备其实可以用一个三层交换机就可以搞定。</p>
 <pre class="language-python" data-language="python"><code class="language-python">按照下图，在三层交换机上分别做如下几件事：
 
 1. 划分两个vlan，模拟出来路由器的两个接口。
@@ -591,20 +593,21 @@
 
 
 
-<h4 id="1-1-4-小型企业基础网络架构"><a href="#1-1-4-小型企业基础网络架构" class="headerlink" title="1.1.4 小型企业基础网络架构"></a>1.1.4 小型企业基础网络架构</h4><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210206225844012.png" class="" title="image-20210206225844012">
+<h5 id="1-1-4-小型企业基础网络架构"><a href="#1-1-4-小型企业基础网络架构" class="headerlink" title="1.1.4 小型企业基础网络架构"></a>1.1.4 小型企业基础网络架构</h5><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210206225844012.png" class="" title="image-20210206225844012">
 
 
 
-<h4 id="1-1-5-家庭网络架构"><a href="#1-1-5-家庭网络架构" class="headerlink" title="1.1.5 家庭网络架构"></a>1.1.5 家庭网络架构</h4><p>家用路由器集成了是交换机和路由的功能（性能差、价格便宜）。</p>
+<p>1.1.5 家庭网络架构</p>
+<p>家用路由器集成了是交换机和路由的功能（性能差、价格便宜）。</p>
 <img src="/2022/06/17/python-mo-kuai-san-day2/image-20210206231121896.png" class="" title="image-20210206231121896">
 
-<h4 id="1-1-6-互联网"><a href="#1-1-6-互联网" class="headerlink" title="1.1.6 互联网"></a>1.1.6 互联网</h4><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210206231602247.png" class="" title="image-20210206231602247">
+<h5 id="1-1-6-互联网"><a href="#1-1-6-互联网" class="headerlink" title="1.1.6 互联网"></a>1.1.6 互联网</h5><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210206231602247.png" class="" title="image-20210206231602247">
 
 
 
 
 
-<h3 id="1-2-网络核心词汇"><a href="#1-2-网络核心词汇" class="headerlink" title="1.2 网络核心词汇"></a>1.2 网络核心词汇</h3><h4 id="1-2-1-子网掩码和IP"><a href="#1-2-1-子网掩码和IP" class="headerlink" title="1.2.1 子网掩码和IP"></a>1.2.1 子网掩码和IP</h4><p>之前说过，接入网络设备后，需要一个IP来代指次电脑，例如：192.168.10.1 。</p>
+<h4 id="1-2-网络核心词汇"><a href="#1-2-网络核心词汇" class="headerlink" title="1.2 网络核心词汇"></a>1.2 网络核心词汇</h4><h6 id="1-2-1-子网掩码和IP"><a href="#1-2-1-子网掩码和IP" class="headerlink" title="1.2.1 子网掩码和IP"></a>1.2.1 子网掩码和IP</h6><p>之前说过，接入网络设备后，需要一个IP来代指次电脑，例如：192.168.10.1 。</p>
 <p>IP其是一个32位的二进制，为了便于记忆就将它分为4组，每组8位，由小数点分开，例如：</p>
 <pre class="language-none"><code class="language-none">二进制表示：00000000.10010111.11111111.00001111
 十进制表示：251.151.255.15
@@ -660,7 +663,7 @@
 <img src="/2022/06/17/python-mo-kuai-san-day2/image-20210207001644433.png" class="" title="image-20210207001644433">
 <img src="/2022/06/17/python-mo-kuai-san-day2/image-20210207135331788.png" class="" title="image-20210207135331788"></li>
 </ul>
-<h4 id="1-2-2-DHCP"><a href="#1-2-2-DHCP" class="headerlink" title="1.2.2 DHCP"></a>1.2.2 DHCP</h4><p>在一个局域网内想要给某台电脑分配IP有两种方式：</p>
+<h6 id="1-2-2-DHCP"><a href="#1-2-2-DHCP" class="headerlink" title="1.2.2 DHCP"></a>1.2.2 DHCP</h6><p>在一个局域网内想要给某台电脑分配IP有两种方式：</p>
 <ul>
 <li><p>手动设置，打开指定菜单栏在里面输入相应的IP信息。</p>
 </li>
@@ -676,7 +679,7 @@
 
 
 
-<h4 id="1-2-3-内网和公网IP"><a href="#1-2-3-内网和公网IP" class="headerlink" title="1.2.3 内网和公网IP"></a>1.2.3 内网和公网IP</h4><pre class="language-none"><code class="language-none">一般情况下，内网IP都用这些（潜规则）：
+<h6 id="1-2-3-内网和公网IP"><a href="#1-2-3-内网和公网IP" class="headerlink" title="1.2.3 内网和公网IP"></a>1.2.3 内网和公网IP</h6><pre class="language-none"><code class="language-none">一般情况下，内网IP都用这些（潜规则）：
 	- 10.0.0.0 到 10.255.255.255
 	- 172.16.0.0 到172.31.255.255
 	- 192.168.0.0 到192.168.255.255</code></pre>
@@ -713,7 +716,7 @@ IPv6，长度为 128 位（16 个字节），用&quot;:&quot;分成8段，格式
 
 
 
-<h4 id="1-2-4-云服务器"><a href="#1-2-4-云服务器" class="headerlink" title="1.2.4 云服务器"></a>1.2.4 云服务器</h4><p>大家可能之前听说过：阿里云、腾讯云、亚马逊aws等之类的平台都在搞云服务器，那是个啥？</p>
+<h6 id="1-2-4-云服务器"><a href="#1-2-4-云服务器" class="headerlink" title="1.2.4 云服务器"></a>1.2.4 云服务器</h6><p>大家可能之前听说过：阿里云、腾讯云、亚马逊aws等之类的平台都在搞云服务器，那是个啥？</p>
 <img src="Python模块三day2/image-20210207214828047.png" alt="image-20210207214828047" style="zoom:50%;" />
 
 
@@ -725,7 +728,7 @@ IPv6，长度为 128 位（16 个字节），用&quot;:&quot;分成8段，格式
 
 
 
-<h4 id="1-2-5-端口"><a href="#1-2-5-端口" class="headerlink" title="1.2.5 端口"></a>1.2.5 端口</h4><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210207221334711.png" class="" title="image-20210207221334711">
+<h6 id="1-2-5-端口"><a href="#1-2-5-端口" class="headerlink" title="1.2.5 端口"></a>1.2.5 端口</h6><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210207221334711.png" class="" title="image-20210207221334711">
 
 
 
@@ -743,7 +746,7 @@ IPv6，长度为 128 位（16 个字节），用&quot;:&quot;分成8段，格式
 
 
 <p>提示：如果在浏览器上只写IP不写端口，则默认是80端口。</p>
-<h4 id="1-2-6-域名"><a href="#1-2-6-域名" class="headerlink" title="1.2.6 域名"></a>1.2.6 域名</h4><p>假设你创业开发了一个网站，用户很难记住你的公网IP：<code>123.206.15.88:80</code>   &#96;&#96;123.206.15.88&#96;。</p>
+<h6 id="1-2-6-域名"><a href="#1-2-6-域名" class="headerlink" title="1.2.6 域名"></a>1.2.6 域名</h6><p>假设你创业开发了一个网站，用户很难记住你的公网IP：<code>123.206.15.88:80</code>   &#96;&#96;123.206.15.88&#96;。</p>
 <p>所以，域名就诞生了，让域名和IP创建对应关系，用户只需要记住域名就可以了，例如：</p>
 <pre class="language-none"><code class="language-none">www.baidu.com   --&gt;  110.242.68.3
 www.taobao.com  --&gt; 121.18.239.232
@@ -811,7 +814,7 @@ www.taobao.com  --&gt; 121.18.239.232
 
 <img src="/2022/06/17/python-mo-kuai-san-day2/image-20210208110938038.png" class="" title="image-20210208110938038"></li>
 </ul>
-<h2 id="2-网络编程"><a href="#2-网络编程" class="headerlink" title="2. 网络编程"></a>2. 网络编程</h2><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210207221334711.png" class="" title="image-20210207221334711">
+<h3 id="2-网络编程"><a href="#2-网络编程" class="headerlink" title="2. 网络编程"></a>2. 网络编程</h3><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210207221334711.png" class="" title="image-20210207221334711">
 
 <p>Python中内置了一个socket模块，可以快速实现网络之间进行传输数据。例如：</p>
 <ul>
@@ -888,7 +891,7 @@ client.close()</code></pre></li>
 <li><p>互联网</p>
 <pre class="language-python" data-language="python"><code class="language-python">服务端IP：123.206.15.88（外网IP）</code></pre></li>
 </ul>
-<h3 id="案例：智障客服"><a href="#案例：智障客服" class="headerlink" title="案例：智障客服"></a>案例：智障客服</h3><ul>
+<h4 id="案例：智障客服"><a href="#案例：智障客服" class="headerlink" title="案例：智障客服"></a>案例：智障客服</h4><ul>
 <li><p>服务端</p>
 <pre class="language-python" data-language="python"><code class="language-python">import socket
 
@@ -946,7 +949,7 @@ while True:
 # 关闭连接，关闭连接时会向服务端发送空数据。
 client.close()</code></pre></li>
 </ul>
-<h3 id="案例：文件上传"><a href="#案例：文件上传" class="headerlink" title="案例：文件上传"></a>案例：文件上传</h3><ul>
+<h4 id="案例：文件上传"><a href="#案例：文件上传" class="headerlink" title="案例：文件上传"></a>案例：文件上传</h4><ul>
 <li><p>服务端</p>
 <pre class="language-python" data-language="python"><code class="language-python">import socket
 
@@ -1007,7 +1010,7 @@ while True:
 
 client.close()</code></pre></li>
 </ul>
-<h2 id="3-B-x2F-S和C-x2F-S架构"><a href="#3-B-x2F-S和C-x2F-S架构" class="headerlink" title="3. B&#x2F;S和C&#x2F;S架构"></a>3. B&#x2F;S和C&#x2F;S架构</h2><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210207221334711.png" class="" title="image-20210207221334711">
+<h3 id="3-B-x2F-S和C-x2F-S架构"><a href="#3-B-x2F-S和C-x2F-S架构" class="headerlink" title="3. B&#x2F;S和C&#x2F;S架构"></a>3. B&#x2F;S和C&#x2F;S架构</h3><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210207221334711.png" class="" title="image-20210207221334711">
 
 <p>平时在开发或与人沟通时，经常会有人提到b&#x2F;s和c&#x2F;s架构，他们是啥意思呢？</p>
 <ul>
@@ -1024,13 +1027,13 @@ client.close()</code></pre></li>
 客户端：不需要开发，用现成的浏览器即可。</code></pre></li>
 </ul>
 <p>简而言之，B&#x2F;S架构就是开发网站；C&#x2F;S架构就是开发安装在电脑的软件。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
 <li>了解常见设备和网络架构。</li>
 <li>掌握常见网络词汇的意思。</li>
 <li>了解B&#x2F;S和C&#x2F;S架构的区别。</li>
 <li>基于Python的socket模块实现网络编程。</li>
 </ol>
-<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><ol>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ol>
 <li><p>简述 二层交换机 &amp; 路由器 &amp; 三层交换机 的作用。</p>
 <p>答：</p>
 <ul>
@@ -1125,7 +1128,7 @@ while True:
 # 4. 关闭连接
 client.close()</code></pre></li>
 </ol>
-<h1 id="二十二、网络编程（下）"><a href="#二十二、网络编程（下）" class="headerlink" title="二十二、网络编程（下）"></a>二十二、网络编程（下）</h1><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210222072456318.png" class="" title="image-20210222072456318">
+<h2 id="二十二、网络编程（下）"><a href="#二十二、网络编程（下）" class="headerlink" title="二十二、网络编程（下）"></a>二十二、网络编程（下）</h2><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210222072456318.png" class="" title="image-20210222072456318">
 
 <p>课程目标：学会网络编程开发的必备知识点。</p>
 <p>今日概要：</p>
@@ -1136,7 +1139,7 @@ client.close()</code></pre></li>
 <li>阻塞和非阻塞——理论，理解即可</li>
 <li>IO多路复用——理论，理解即可</li>
 </ul>
-<h2 id="1-OSI-7层模型"><a href="#1-OSI-7层模型" class="headerlink" title="1. OSI 7层模型"></a>1. OSI 7层模型</h2><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210222072652918.png" class="" title="image-20210222072652918">
+<h3 id="1-OSI-7层模型"><a href="#1-OSI-7层模型" class="headerlink" title="1. OSI 7层模型"></a>1. OSI 7层模型</h3><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210222072652918.png" class="" title="image-20210222072652918">
 
 
 
@@ -1222,7 +1225,7 @@ client.close()</code></pre>
 
 
 
-<h2 id="2-UDP和TCP协议"><a href="#2-UDP和TCP协议" class="headerlink" title="2. UDP和TCP协议"></a>2. UDP和TCP协议</h2><p>协议，其实就是规定 连接、收发数据的一些规定。</p>
+<h3 id="2-UDP和TCP协议"><a href="#2-UDP和TCP协议" class="headerlink" title="2. UDP和TCP协议"></a>2. UDP和TCP协议</h3><p>协议，其实就是规定 连接、收发数据的一些规定。</p>
 <p>在OSI的 传输层 除了定义端口信息以外，常见的还可以指定UDP或TCP的协议，协议不同连接和传输数据的细节也会不同。</p>
 <ul>
 <li><p>UDP（User Data Protocol）用户数据报协议， 是⼀个⽆连接的简单的⾯向数据报的传输层协议。 UDP不提供可靠性， 它只是把应⽤程序传给IP层的数据报发送出去， 但是并不能保证它们能到达⽬的地。 由于UDP在传输数据报前不⽤在客户和服务器之间建⽴⼀个连接， 且没有超时重发等机制， 故⽽传输速度很快。</p>
@@ -1231,7 +1234,7 @@ client.close()</code></pre>
 <li><p>TCP（Transmission Control Protocol，传输控制协议）是面向连接的协议，也就是说，在收发数据前，必须和对方建立可靠的连接，然后再进行收发数据。</p>
 <pre class="language-none"><code class="language-none">常见有：网站、手机APP数据获取等。</code></pre></li>
 </ul>
-<h3 id="2-1-UDP和TCP-示例代码"><a href="#2-1-UDP和TCP-示例代码" class="headerlink" title="2.1 UDP和TCP 示例代码"></a>2.1 UDP和TCP 示例代码</h3><p>UDP示例如下：</p>
+<h4 id="2-1-UDP和TCP-示例代码"><a href="#2-1-UDP和TCP-示例代码" class="headerlink" title="2.1 UDP和TCP 示例代码"></a>2.1 UDP和TCP 示例代码</h4><p>UDP示例如下：</p>
 <ul>
 <li><p>服务端</p>
 <pre class="language-python" data-language="python"><code class="language-python">import socket
@@ -1302,7 +1305,7 @@ print(reply)
 # 4. 关闭连接
 client.close()</code></pre></li>
 </ul>
-<h3 id="2-2-TCP三次握手和四次挥手"><a href="#2-2-TCP三次握手和四次挥手" class="headerlink" title="2.2 TCP三次握手和四次挥手"></a>2.2 TCP三次握手和四次挥手</h3><p>这是一个常见的面试题。</p>
+<h4 id="2-2-TCP三次握手和四次挥手"><a href="#2-2-TCP三次握手和四次挥手" class="headerlink" title="2.2 TCP三次握手和四次挥手"></a>2.2 TCP三次握手和四次挥手</h4><p>这是一个常见的面试题。</p>
 <img src="/2022/06/17/python-mo-kuai-san-day2/image-20210222072652918.png" class="" title="image-20210222072652918">
 
 
@@ -1391,7 +1394,7 @@ client.close() # 关闭连接</code></pre>
   
 4.  TIME-WAIT   --&gt; &lt;seq&#x3D;101&gt;&lt;ack&#x3D;301&gt;&lt;CTL&#x3D;ACK&gt;      --&gt; CLOSED</code></pre></li>
 </ul>
-<h2 id="3-粘包"><a href="#3-粘包" class="headerlink" title="3. 粘包"></a>3. 粘包</h2><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210222072652918.png" class="" title="image-20210222072652918">
+<h3 id="3-粘包"><a href="#3-粘包" class="headerlink" title="3. 粘包"></a>3. 粘包</h3><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210222072652918.png" class="" title="image-20210222072652918">
 
 <img src="/2022/06/17/python-mo-kuai-san-day2/image-20210215074546610.png" class="" title="image-20210215074546610">
 
@@ -1493,28 +1496,28 @@ sock.close()</code></pre>
 <li><p>客户端</p>
 <pre class="language-python" data-language="python"><code class="language-python">import socket
 import struct
-    
+      
 client &#x3D; socket.socket()
 client.connect((&#39;127.0.0.1&#39;, 8001))
-    
+      
 # 第一条数据
 data1 &#x3D; &#39;alex正在吃&#39;.encode(&#39;utf-8&#39;)
-    
+      
 header1 &#x3D; struct.pack(&#39;i&#39;, len(data1))
-    
+      
 client.sendall(header1)
 client.sendall(data1)
-    
+      
 # 第二条数据
 data2 &#x3D; &#39;翔&#39;.encode(&#39;utf-8&#39;)
 header2 &#x3D; struct.pack(&#39;i&#39;, len(data2))
 client.sendall(header2)
 client.sendall(data2)
-    
+      
 client.close()</code></pre></li>
 </ul>
 </blockquote>
-<h3 id="案例：消息-amp-文件上传"><a href="#案例：消息-amp-文件上传" class="headerlink" title="案例：消息 &amp; 文件上传"></a>案例：消息 &amp; 文件上传</h3><ul>
+<h4 id="案例：消息-amp-文件上传"><a href="#案例：消息-amp-文件上传" class="headerlink" title="案例：消息 &amp; 文件上传"></a>案例：消息 &amp; 文件上传</h4><ul>
 <li><p>服务端</p>
 <pre class="language-python" data-language="python"><code class="language-python">import os
 import json
@@ -1683,7 +1686,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     run()
 </code></pre></li>
 </ul>
-<h2 id="4-阻塞和非阻塞"><a href="#4-阻塞和非阻塞" class="headerlink" title="4. 阻塞和非阻塞"></a>4. 阻塞和非阻塞</h2><p>默认情况下我们编写的网络编程的代码都是阻塞的（等待），阻塞主要体现在：</p>
+<h3 id="4-阻塞和非阻塞"><a href="#4-阻塞和非阻塞" class="headerlink" title="4. 阻塞和非阻塞"></a>4. 阻塞和非阻塞</h3><p>默认情况下我们编写的网络编程的代码都是阻塞的（等待），阻塞主要体现在：</p>
 <pre class="language-python" data-language="python"><code class="language-python"># ################### socket服务端（接收者）###################
 import socket
 
@@ -1758,7 +1761,7 @@ client.close()</code></pre>
 <p>如果代码变成了非阻塞，程序运行时一旦遇到 <code>accept</code>、<code>recv</code>、<code>connect</code> 就会抛出 BlockingIOError 的异常。</p>
 <p>这不是代码编写的有错误，而是原来的IO阻塞变为非阻塞之后，由于没有接收到相关的IO请求抛出的固定错误。</p>
 <p>非阻塞的代码一般与IO多路复用结合，可以迸发出更大的作用。</p>
-<h2 id="5-IO多路复用"><a href="#5-IO多路复用" class="headerlink" title="5. IO多路复用"></a>5. IO多路复用</h2><p>I&#x2F;O多路复用指：通过一种机制，可以<strong>监视多个描述符</strong>，一旦某个描述符就绪（一般是读就绪或者写就绪），能够通知程序进行相应的读写操作。</p>
+<h3 id="5-IO多路复用"><a href="#5-IO多路复用" class="headerlink" title="5. IO多路复用"></a>5. IO多路复用</h3><p>I&#x2F;O多路复用指：通过一种机制，可以<strong>监视多个描述符</strong>，一旦某个描述符就绪（一般是读就绪或者写就绪），能够通知程序进行相应的读写操作。</p>
 <p>IO多路复用 + 非阻塞，可以实现让TCP的服务端同时处理多个客户端的请求，例如：</p>
 <pre class="language-python" data-language="python"><code class="language-python"># ################### socket服务端 ###################
 import select
@@ -1920,7 +1923,7 @@ epoll同样只告知那些就绪的文件描述符，而且当我们调用epoll_
 
 
 <p>补充：socket + 非阻塞+ IO多路复用（IO操作对象都可以监测 + 文件）。</p>
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><ol>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ol>
 <li><p>OSI 7层模型</p>
 <pre class="language-python" data-language="python"><code class="language-python">应用层、表示层、会话层、传输层、网络层、数据链路层、物理层。</code></pre>
 </li>
@@ -1943,7 +1946,7 @@ TCP，需要先创建可靠连接，在进行收发数据（ack）。</code></pr
 </ul>
 </li>
 </ol>
-<h2 id="作业（模块大作业）"><a href="#作业（模块大作业）" class="headerlink" title="作业（模块大作业）"></a>作业（模块大作业）</h2><p>请基于TCP协议实现一个网盘系统，包含客户端、服务端，各自需求如下：</p>
+<h3 id="作业（模块大作业）"><a href="#作业（模块大作业）" class="headerlink" title="作业（模块大作业）"></a>作业（模块大作业）</h3><p>请基于TCP协议实现一个网盘系统，包含客户端、服务端，各自需求如下：</p>
 <ul>
 <li><p>客户端</p>
 <ul>

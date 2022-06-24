@@ -460,7 +460,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第二模块-函数-amp-模块"><a href="#第二模块-函数-amp-模块" class="headerlink" title="第二模块 函数&amp;模块"></a>第二模块 函数&amp;模块</h1><p>​		从今天开始，我们将进入系列课程第二模块的的学习。第一模块主要是学习python基础知识，从第二模块开始就可以通过程序去解决工作中实际的问题。</p>
+                <p>​		从今天开始，我们将进入系列课程第二模块的的学习。第一模块主要是学习python基础知识，从第二模块开始就可以通过程序去解决工作中实际的问题。</p>
 <img src="/2022/05/27/python-mo-kuai-er-day3/image-20201216140222926.png" class="" title="image-20201216140222926">
 
 <p>从今天开始，我们将进入第二模块的学习，此模块主要包含两大部分：</p>
@@ -501,7 +501,7 @@ print(v3) # 0.3</code></pre>
 </ul>
 </li>
 </ul>
-<h1 id="十、-文件操作相关"><a href="#十、-文件操作相关" class="headerlink" title="十、 文件操作相关"></a>十、 文件操作相关</h1><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201216175307239.png" class="" title="image-20201216175307239">
+<h2 id="十、-文件操作相关"><a href="#十、-文件操作相关" class="headerlink" title="十、 文件操作相关"></a>十、 文件操作相关</h2><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201216175307239.png" class="" title="image-20201216175307239">
 
 <p>课程目标：</p>
 <p>​		掌握基于Python对文件相关操作。</p>
@@ -516,7 +516,7 @@ print(v3) # 0.3</code></pre>
 <li>压缩文件</li>
 </ul>
 <p>​		注意：每种格式包含很多相关操作，大家在学习的过程中只要掌握知识点的用法，<font color="#dd0000">参考笔记可以实现相关的练习即可，不必背会（在企业开发过程中也是边搜边实现。）</font></p>
-<h2 id="1-文件操作"><a href="#1-文件操作" class="headerlink" title="1. 文件操作"></a>1. 文件操作</h2><p>​		在学习文件操作之前，先来回顾一下编码的相关以及先关数据类型的知识。</p>
+<h3 id="1-文件操作"><a href="#1-文件操作" class="headerlink" title="1. 文件操作"></a>1. 文件操作</h3><p>​		在学习文件操作之前，先来回顾一下编码的相关以及先关数据类型的知识。</p>
 <ul>
 <li><p>字符串类型（str），在程序中用于表示文字信息，<strong>本质上是unicode编码中的二进制</strong>。</p>
 <pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;</code></pre>
@@ -536,7 +536,7 @@ print(result) # &quot;武沛齐&quot;</code></pre>
 </ul>
 </li>
 </ul>
-<h3 id="1-1-读文件"><a href="#1-1-读文件" class="headerlink" title="1.1 读文件"></a>1.1 读文件</h3><ul>
+<h4 id="1-1-读文件"><a href="#1-1-读文件" class="headerlink" title="1.1 读文件"></a>1.1 读文件</h4><ul>
 <li><p>读文本文件</p>
 <pre class="language-python" data-language="python"><code class="language-python"># 1.打开文件
 #	- 路径：
@@ -637,7 +637,7 @@ if exists:
 else:
     print(&quot;文件不存在&quot;)</code></pre></li>
 </ul>
-<h3 id="1-2-写文件"><a href="#1-2-写文件" class="headerlink" title="1.2 写文件"></a>1.2 写文件</h3><ul>
+<h4 id="1-2-写文件"><a href="#1-2-写文件" class="headerlink" title="1.2 写文件"></a>1.2 写文件</h4><ul>
 <li><p>写文本文件</p>
 <pre class="language-python" data-language="python"><code class="language-python"># 1.打开文件
 file_object &#x3D; open(&quot;t1.txt&quot;, mode&#x3D;&#39;wt&#39;, encoding&#x3D;&#39;utf-8&#39;)
@@ -696,7 +696,7 @@ file_object.close()
 </li>
 <li><p>使用第三方模块</p>
 <pre class="language-python" data-language="python"><code class="language-python">import requests
-                              
+                                
 res &#x3D; requests.get(url&#x3D;&quot;网址&quot;)
 print(res)</code></pre></li>
 </ul>
@@ -748,7 +748,7 @@ file_object.close()</code></pre>
 </li>
 <li>文件不存在时，w模式会新建然后再写入内容；文件存在时，w模式会清空文件再写入内容。</li>
 </ul>
-<h3 id="1-3-文件打开模式"><a href="#1-3-文件打开模式" class="headerlink" title="1.3 文件打开模式"></a>1.3 文件打开模式</h3><p>​		上文我们基于文件操作基本实现了读、写的功能，其中涉及的文件操作模式：rt、rb、wt、wb，其实在文件操作中还有其他的很多模式。</p>
+<h4 id="1-3-文件打开模式"><a href="#1-3-文件打开模式" class="headerlink" title="1.3 文件打开模式"></a>1.3 文件打开模式</h4><p>​		上文我们基于文件操作基本实现了读、写的功能，其中涉及的文件操作模式：rt、rb、wt、wb，其实在文件操作中还有其他的很多模式。</p>
 <pre class="language-none"><code class="language-none">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
 Character Meaning
 --------- ---------------------------------------------------------------
@@ -887,7 +887,7 @@ file_object.close()</code></pre>
 
 
 
-<h3 id="1-4-常见功能"><a href="#1-4-常见功能" class="headerlink" title="1.4 常见功能"></a>1.4 常见功能</h3><p>​		在上述对文件的操作中，我们只使用了write和read来对文件进行读写，其实在文件操作中还有很多其他的功能来辅助实现更好的读写文件的内容。</p>
+<h4 id="1-4-常见功能"><a href="#1-4-常见功能" class="headerlink" title="1.4 常见功能"></a>1.4 常见功能</h4><p>​		在上述对文件的操作中，我们只使用了write和read来对文件进行读写，其实在文件操作中还有很多其他的功能来辅助实现更好的读写文件的内容。</p>
 <ul>
 <li><p>read，读</p>
 <ul>
@@ -1019,7 +1019,7 @@ print(p2)  # 3
 
 f.close()</code></pre></li>
 </ul>
-<h3 id="1-5-上下文管理"><a href="#1-5-上下文管理" class="headerlink" title="1.5 上下文管理"></a>1.5 上下文管理</h3><p>​		之前对文件进行操作时，每次都要打开和关闭文件，比较繁琐且容易忘记关闭文件。以后再进行文件操作时，推荐大家使用with上下文管理，它可以自动实现关闭文件。</p>
+<h4 id="1-5-上下文管理"><a href="#1-5-上下文管理" class="headerlink" title="1.5 上下文管理"></a>1.5 上下文管理</h4><p>​		之前对文件进行操作时，每次都要打开和关闭文件，比较繁琐且容易忘记关闭文件。以后再进行文件操作时，推荐大家使用with上下文管理，它可以自动实现关闭文件。</p>
 <pre class="language-python" data-language="python"><code class="language-python">with open(&quot;xxxx.txt&quot;, mode&#x3D;&#39;rb&#39;) as file_object:
     data &#x3D; file_object.read()
     print(data)</code></pre>
@@ -1032,7 +1032,7 @@ f.close()</code></pre></li>
 
 
 
-<h3 id="练习题（能根据以上笔记完成即可）"><a href="#练习题（能根据以上笔记完成即可）" class="headerlink" title="练习题（能根据以上笔记完成即可）"></a>练习题（能根据以上笔记完成即可）</h3><ol>
+<h4 id="练习题（能根据以上笔记完成即可）"><a href="#练习题（能根据以上笔记完成即可）" class="headerlink" title="练习题（能根据以上笔记完成即可）"></a>练习题（能根据以上笔记完成即可）</h4><ol>
 <li><p>补充代码：实现下载视频并保存到本地</p>
 <pre class="language-python" data-language="python"><code class="language-python">import requests
 
@@ -1181,7 +1181,7 @@ with open(&#39;files&#x2F;ha.conf&#39;, mode&#x3D;&#39;rt&#39;, encoding&#x3D;&#
         new_line &#x3D; line.replace(&#39;luffycity&#39;, &#39;pythonav&#39;)
         write_object_file.write(new_line)</code></pre></li>
 </ol>
-<h2 id="2-csv格式文件"><a href="#2-csv格式文件" class="headerlink" title="2.csv格式文件"></a>2.csv格式文件</h2><p>​		<strong>逗号分隔值</strong>（Comma-Separated Values，<strong>CSV</strong>，有时也称为<strong>字符分隔值</strong>，因为分隔字符也可以不是逗号），其文件以纯文本形式存储表格数据（数字和文本）。</p>
+<h3 id="2-csv格式文件"><a href="#2-csv格式文件" class="headerlink" title="2.csv格式文件"></a>2.csv格式文件</h3><p>​		<strong>逗号分隔值</strong>（Comma-Separated Values，<strong>CSV</strong>，有时也称为<strong>字符分隔值</strong>，因为分隔字符也可以不是逗号），其文件以纯文本形式存储表格数据（数字和文本）。</p>
 <p>对于这种格式的数据，我们需要利用open函数来读取文件并根据逗号分隔的特点来进行处理。</p>
 <pre class="language-none"><code class="language-none">股票代码,股票名称,当前价,涨跌额,涨跌幅,年初至今
 SH601778,N晶科,6.29,+1.92,-43.94%,+43.94%
@@ -1277,7 +1277,7 @@ with open(&#39;files&#x2F;mn.csv&#39;, mode&#x3D;&#39;rt&#39;, encoding&#x3D;&#3
 
 
 
-<h2 id="3-ini格式文件"><a href="#3-ini格式文件" class="headerlink" title="3.ini格式文件"></a>3.ini格式文件</h2><p>​		ini文件是Initialization File的缩写，平时用于存储软件的的配置文件。例如：MySQL数据库的配置文件。</p>
+<h3 id="3-ini格式文件"><a href="#3-ini格式文件" class="headerlink" title="3.ini格式文件"></a>3.ini格式文件</h3><p>​		ini文件是Initialization File的缩写，平时用于存储软件的的配置文件。例如：MySQL数据库的配置文件。</p>
 <pre class="language-ini" data-language="ini"><code class="language-ini">[mysqld]
 datadir&#x3D;&#x2F;var&#x2F;lib&#x2F;mysql
 socket&#x3D;&#x2F;var&#x2F;lib&#x2F;mysql&#x2F;mysql.sock
@@ -1363,7 +1363,7 @@ config.remove_section(&quot;SEC_2&quot;)
 config.remove_option(&#39;SEC_1&#39;, &#39;k10&#39;)
 config.write(open(&#39;&#x2F;Users&#x2F;wupeiqi&#x2F;PycharmProjects&#x2F;luffyCourse&#x2F;day09&#x2F;files&#x2F;new.conf&#39;, &#39;w&#39;))</code></pre></li>
 </ul>
-<h2 id="4-XML格式文件"><a href="#4-XML格式文件" class="headerlink" title="4.XML格式文件"></a>4.XML格式文件</h2><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/2885849">可扩展标记语言</a>，是一种简单的数据存储语言，XML 被设计用来传输和存储数据。</p>
+<h3 id="4-XML格式文件"><a href="#4-XML格式文件" class="headerlink" title="4.XML格式文件"></a>4.XML格式文件</h3><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/2885849">可扩展标记语言</a>，是一种简单的数据存储语言，XML 被设计用来传输和存储数据。</p>
 <ul>
 <li>存储，可用来存放配置文件，例如：java的配置文件。</li>
 <li>传输，网络传输时以这种格式存在，例如：早期ajax传输的数据、soap协议等。</li>
@@ -1393,7 +1393,8 @@ config.write(open(&#39;&#x2F;Users&#x2F;wupeiqi&#x2F;PycharmProjects&#x2F;luffyC
 
 <p>​		注意：在Python开发中用的相对来比较少，大家作为了解即可（后期课程在讲解微信支付、微信公众号消息处理 时会用到基于xml传输数据）。</p>
 <p>例如：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html">https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html</a></p>
-<h3 id="4-1-读取文件和内容"><a href="#4-1-读取文件和内容" class="headerlink" title="4.1 读取文件和内容"></a>4.1 读取文件和内容</h3><h4 id="以xml文件存在"><a href="#以xml文件存在" class="headerlink" title="以xml文件存在"></a>以xml文件存在</h4><pre class="language-python" data-language="python"><code class="language-python">from xml.etree import ElementTree as ET
+<h4 id="4-1-读取文件和内容"><a href="#4-1-读取文件和内容" class="headerlink" title="4.1 读取文件和内容"></a>4.1 读取文件和内容</h4><p><strong>以xml文件存在</strong></p>
+<pre class="language-python" data-language="python"><code class="language-python">from xml.etree import ElementTree as ET
 
 # ET去打开xml文件
 tree &#x3D; ET.parse(&quot;files&#x2F;xo.xml&quot;)
@@ -1403,7 +1404,8 @@ root &#x3D; tree.getroot()
 
 print(root) # &lt;Element &#39;data&#39; at 0x7f94e02763b0&gt;</code></pre>
 
-<h4 id="通过网络获取或str格式"><a href="#通过网络获取或str格式" class="headerlink" title="通过网络获取或str格式"></a>通过网络获取或str格式</h4><pre class="language-python" data-language="python"><code class="language-python">from xml.etree import ElementTree as ET
+<p><strong>通过网络获取或str格式</strong></p>
+<pre class="language-python" data-language="python"><code class="language-python">from xml.etree import ElementTree as ET
 
 content &#x3D; &quot;&quot;&quot;
 &lt;data&gt;
@@ -1427,7 +1429,9 @@ content &#x3D; &quot;&quot;&quot;
 root &#x3D; ET.XML(content)
 print(root)  # &lt;Element &#39;data&#39; at 0x7fdaa019cea0&gt;</code></pre>
 
-<h3 id="4-2-读取节点数据"><a href="#4-2-读取节点数据" class="headerlink" title="4.2 读取节点数据"></a>4.2 读取节点数据</h3><pre class="language-python" data-language="python"><code class="language-python">from xml.etree import ElementTree as ET
+
+
+<h4 id="4-2-读取节点数据"><a href="#4-2-读取节点数据" class="headerlink" title="4.2 读取节点数据"></a>4.2 读取节点数据</h4><pre class="language-python" data-language="python"><code class="language-python">from xml.etree import ElementTree as ET
 
 content &#x3D; &quot;&quot;&quot;
 &lt;data&gt;
@@ -1519,7 +1523,7 @@ print(v2.text)</code></pre>
 
 
 
-<h3 id="4-3-修改和删除节点"><a href="#4-3-修改和删除节点" class="headerlink" title="4.3 修改和删除节点"></a>4.3 修改和删除节点</h3><pre class="language-python" data-language="python"><code class="language-python">from xml.etree import ElementTree as ET
+<h4 id="4-3-修改和删除节点"><a href="#4-3-修改和删除节点" class="headerlink" title="4.3 修改和删除节点"></a>4.3 修改和删除节点</h4><pre class="language-python" data-language="python"><code class="language-python">from xml.etree import ElementTree as ET
 
 content &#x3D; &quot;&quot;&quot;
 &lt;data&gt;
@@ -1568,7 +1572,7 @@ tree.write(&quot;newnew.xml&quot;, encoding&#x3D;&#39;utf-8&#39;)</code></pre>
 
 
 
-<h3 id="4-4-构建文档"><a href="#4-4-构建文档" class="headerlink" title="4.4 构建文档"></a>4.4 构建文档</h3><pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>home</span><span class="token punctuation">></span></span>
+<h4 id="4-4-构建文档"><a href="#4-4-构建文档" class="headerlink" title="4.4 构建文档"></a>4.4 构建文档</h4><pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>home</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>son</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>儿1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>grandson</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>儿11<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>grandson</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>grandson</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>儿12<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>grandson</span><span class="token punctuation">></span></span>
@@ -1705,7 +1709,7 @@ print(info)</code></pre>
 
 
 
-<h2 id="5-Excel格式文件"><a href="#5-Excel格式文件" class="headerlink" title="5.Excel格式文件"></a>5.Excel格式文件</h2><p>Python内部未提供处理Excel文件的功能，想要在Python中操作Excel需要按照第三方的模块。</p>
+<h3 id="5-Excel格式文件"><a href="#5-Excel格式文件" class="headerlink" title="5.Excel格式文件"></a>5.Excel格式文件</h3><p>Python内部未提供处理Excel文件的功能，想要在Python中操作Excel需要按照第三方的模块。</p>
 <pre class="language-none"><code class="language-none">pip install openpyxl</code></pre>
 
 <p>此模块中集成了Python操作Excel的相关功能，接下来我们就需要去学习该模块提供的相关功能即可。</p>
@@ -1713,7 +1717,7 @@ print(info)</code></pre>
 
 
 
-<h3 id="5-1-读Excel"><a href="#5-1-读Excel" class="headerlink" title="5.1 读Excel"></a>5.1 读Excel</h3><ul>
+<h4 id="5-1-读Excel"><a href="#5-1-读Excel" class="headerlink" title="5.1 读Excel"></a>5.1 读Excel</h4><ul>
 <li><p>读sheet</p>
 <pre class="language-python" data-language="python"><code class="language-python">from openpyxl import load_workbook
 
@@ -1833,7 +1837,7 @@ for row in sheet.rows:
 (&lt;MergedCell &#39;Sheet1&#39;.A4&gt;, &lt;Cell &#39;Sheet1&#39;.B4&gt;, &lt;Cell &#39;Sheet1&#39;.C4&gt;)
 (&lt;Cell &#39;Sheet1&#39;.A5&gt;, &lt;Cell &#39;Sheet1&#39;.B5&gt;, &lt;Cell &#39;Sheet1&#39;.C5&gt;)</code></pre></li>
 </ul>
-<h3 id="5-1-写Excel"><a href="#5-1-写Excel" class="headerlink" title="5.1 写Excel"></a>5.1 写Excel</h3><p>在Excel中想要写文件，大致要分为在：</p>
+<h4 id="5-2-写Excel"><a href="#5-2-写Excel" class="headerlink" title="5.2 写Excel"></a>5.2 写Excel</h4><p>在Excel中想要写文件，大致要分为在：</p>
 <ul>
 <li><p>原Excel文件基础上写内容。</p>
 <pre class="language-python" data-language="python"><code class="language-python">from openpyxl import load_workbook
@@ -2074,7 +2078,8 @@ wb.save(&quot;p2.xlsx&quot;)
 
 
 
-<h2 id="6-压缩文件"><a href="#6-压缩文件" class="headerlink" title="6.压缩文件"></a>6.压缩文件</h2><p>基于Python内置的shutil模块可以实现对压缩文件的操作。</p>
+<p>6.压缩文件</p>
+<p>基于Python内置的shutil模块可以实现对压缩文件的操作。</p>
 <pre class="language-python" data-language="python"><code class="language-python">import shutil
 
 # 1. 压缩文件
@@ -2096,13 +2101,13 @@ wb.save(&quot;p2.xlsx&quot;)
 
 
 
-<h2 id="7-路径相关"><a href="#7-路径相关" class="headerlink" title="7.路径相关"></a>7.路径相关</h2><h3 id="7-1-转义"><a href="#7-1-转义" class="headerlink" title="7.1  转义"></a>7.1  转义</h3><p>​		windows路径使用的是\，linux路径使用的是&#x2F;。特别的，在windows系统中如果有这样的一个路径<code>D:\nxxx\txxx\x1</code>，程序会报错。因为在路径中存在特殊符 <code>\n</code>（换行符）和<code>\t</code>（制表符），Python解释器无法自动区分。</p>
+<h3 id="7-路径相关"><a href="#7-路径相关" class="headerlink" title="7.路径相关"></a>7.路径相关</h3><h4 id="7-1-转义"><a href="#7-1-转义" class="headerlink" title="7.1  转义"></a>7.1  转义</h4><p>​		windows路径使用的是\，linux路径使用的是&#x2F;。特别的，在windows系统中如果有这样的一个路径<code>D:\nxxx\txxx\x1</code>，程序会报错。因为在路径中存在特殊符 <code>\n</code>（换行符）和<code>\t</code>（制表符），Python解释器无法自动区分。</p>
 <p>所以，在windows中编写路径时，一般有两种方式：</p>
 <ul>
 <li>加转义符，例如：<code>&quot;D:\\nxxx\\txxx\\x1&quot;</code></li>
 <li>路径前加r，例如：<code>r&quot;D:\\nxxx\\txxx\\x1&quot;</code></li>
 </ul>
-<h3 id="7-2-程序当前路径"><a href="#7-2-程序当前路径" class="headerlink" title="7.2 程序当前路径"></a>7.2 程序当前路径</h3><p>​		项目中如果使用了相对路径，那么一定要注意当前所在的位置。</p>
+<h4 id="7-2-程序当前路径"><a href="#7-2-程序当前路径" class="headerlink" title="7.2 程序当前路径"></a>7.2 程序当前路径</h4><p>​		项目中如果使用了相对路径，那么一定要注意当前所在的位置。</p>
 <p>​		例如：在<code>/Users/wupeiqi/PycharmProjects/CodeRepository/</code>路径下编写 <code>demo.py</code>文件</p>
 <pre class="language-python" data-language="python"><code class="language-python">with open(&quot;a1.txt&quot;, mode&#x3D;&#39;w&#39;, encoding&#x3D;&#39;utf-8&#39;) as f:
     f.write(&quot;你好呀&quot;)</code></pre>
@@ -2140,7 +2145,7 @@ else:
 
 
 
-<h3 id="7-3-文件和路径相关"><a href="#7-3-文件和路径相关" class="headerlink" title="7.3 文件和路径相关"></a>7.3 文件和路径相关</h3><pre class="language-python" data-language="python"><code class="language-python">import shutil
+<h4 id="7-3-文件和路径相关"><a href="#7-3-文件和路径相关" class="headerlink" title="7.3 文件和路径相关"></a>7.3 文件和路径相关</h4><pre class="language-python" data-language="python"><code class="language-python">import shutil
 import os
 
 # 1. 获取当前脚本绝对路径
@@ -2220,7 +2225,7 @@ shutil.move(&quot;&#x2F;Users&#x2F;wupeiqi&#x2F;PycharmProjects&#x2F;CodeReposit
 
 
 
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​		今天我们主要围绕着<code>文件</code> 相关的操作来展开进行讲解，让大家能够基于Python处理不同格式的文件。由于涉及的知识点比较多，所以今日的内容学起来会比较耗时，但都比较简单，只需要理解并编写好相关笔记以便后期开发时翻阅。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>​		今天我们主要围绕着<code>文件</code> 相关的操作来展开进行讲解，让大家能够基于Python处理不同格式的文件。由于涉及的知识点比较多，所以今日的内容学起来会比较耗时，但都比较简单，只需要理解并编写好相关笔记以便后期开发时翻阅。</p>
 <ol>
 <li><p>文件相对路径，在使用相对路径时可能会执行程序的目录不同，导致路径出问题。所以，如若使用相对路径请务必清楚当前运行程序所在目录。</p>
 </li>
@@ -2250,7 +2255,7 @@ file_path &#x3D; os.path.join(base_dir, &#39;files&#39;, &#39;info.txt&#39;)</co
 <li><p>其他格式：csv、ini、xml、excel格式的处理（无序记忆，做好笔记即可）。</p>
 </li>
 </ol>
-<h2 id="作业-参照笔记完成即可"><a href="#作业-参照笔记完成即可" class="headerlink" title="作业(参照笔记完成即可)"></a>作业(参照笔记完成即可)</h2><ol>
+<h3 id="作业-参照笔记完成即可"><a href="#作业-参照笔记完成即可" class="headerlink" title="作业(参照笔记完成即可)"></a>作业(参照笔记完成即可)</h3><ol>
 <li><p>基于csv格式实现 用户的注册 &amp; 登录认证。详细需求如下：</p>
 <ul>
 <li>用户注册时，新注册用户要写入文件csv文件中，输入Q或q则退出。</li>
@@ -2752,7 +2757,7 @@ with open(file_name, mode&#x3D;&#39;wb&#39;) as file_object:
 unpack_file_name &#x3D; os.path.join(base_dir, &#39;files&#39;, &#39;html&#39;) 
 shutil.unpack_archive(file_name, extract_dir&#x3D;unpack_file_name, format&#x3D;&#39;zip&#39;)  # unpack文件时文件路径不存在会自动创建不用if...</code></pre></li>
 </ol>
-<h1 id="十一、-函数入门"><a href="#十一、-函数入门" class="headerlink" title="十一、 函数入门"></a>十一、 函数入门</h1><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201220155910093.png" class="" title="image-20201220155910093">
+<h2 id="十一、-函数入门"><a href="#十一、-函数入门" class="headerlink" title="十一、 函数入门"></a>十一、 函数入门</h2><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201220155910093.png" class="" title="image-20201220155910093">
 
 <p>目标：掌握函数的编写方式以及函数的基本使用。</p>
 <p>今日概要：</p>
@@ -2761,7 +2766,7 @@ shutil.unpack_archive(file_name, extract_dir&#x3D;unpack_file_name, format&#x3D;
 <li>函数的参数</li>
 <li>函数的返回值</li>
 </ul>
-<h2 id="1-初识函数"><a href="#1-初识函数" class="headerlink" title="1. 初识函数"></a>1. 初识函数</h2><blockquote>
+<h3 id="1-初识函数"><a href="#1-初识函数" class="headerlink" title="1. 初识函数"></a>1. 初识函数</h3><blockquote>
 <p> 函数到底是个什么东西？</p>
 </blockquote>
 <p>​		函数，可以当做是<strong>一大堆功能代码的集合。</strong></p>
@@ -2845,7 +2850,7 @@ calculate_straight_rule()
 </code></pre></li>
 </ul>
 <p>​		以前我们变成是按照业务逻辑从上到下逐步完成，称为：<font color="#dd0000"><strong>面向过程编程。</strong></font>；现在学了函数之后，利用函数编程称为：<font color="#dd0000"><strong>函数式编程。</strong></font></p>
-<h2 id="2-函数的参数"><a href="#2-函数的参数" class="headerlink" title="2. 函数的参数"></a>2. 函数的参数</h2><p>​		之前说了很好多次发送邮件的案例，下面就来教大家用python发邮件，然后再由此引出函数的参数。</p>
+<h3 id="2-函数的参数"><a href="#2-函数的参数" class="headerlink" title="2. 函数的参数"></a>2. 函数的参数</h3><p>​		之前说了很好多次发送邮件的案例，下面就来教大家用python发邮件，然后再由此引出函数的参数。</p>
 <ul>
 <li>注册邮箱</li>
 <li>基础配置<ul>
@@ -2984,7 +2989,7 @@ send_email(v2)
 v3 &#x3D; &quot;wupeiqi@live.com&quot;
 send_email(v3)</code></pre></li>
 </ul>
-<h3 id="2-1-参数"><a href="#2-1-参数" class="headerlink" title="2.1 参数"></a>2.1 参数</h3><p>​		在定义函数时，如果在括号中添加<code>变量</code>，我们称它为函数的<strong>形式参数</strong>：</p>
+<h4 id="2-1-参数"><a href="#2-1-参数" class="headerlink" title="2.1 参数"></a>2.1 参数</h4><p>​		在定义函数时，如果在括号中添加<code>变量</code>，我们称它为函数的<strong>形式参数</strong>：</p>
 <pre class="language-python" data-language="python"><code class="language-python"># ###### 定义有三个参数的函数（a1&#x2F;a2&#x2F;a3一般称为形式参数-形参） #####
 def func(a1,a2,a3):
     print(a1+a2+a3)
@@ -3031,7 +3036,7 @@ func(9, 2, 103)
 func(a1&#x3D;99, a3&#x3D;1, a2&#x3D;88)</code></pre>
 
 <p>​		<font color="#dd0000"><strong>注意事项：当位置传参和关键词传参混合时，位置传参必须在关键字传参前面</strong></font></p>
-<h3 id="2-2-默认参数"><a href="#2-2-默认参数" class="headerlink" title="2.2 默认参数"></a>2.2 默认参数</h3><pre class="language-python" data-language="python"><code class="language-python">def func(a1, a2, a3&#x3D;10):
+<h4 id="2-2-默认参数"><a href="#2-2-默认参数" class="headerlink" title="2.2 默认参数"></a>2.2 默认参数</h4><pre class="language-python" data-language="python"><code class="language-python">def func(a1, a2, a3&#x3D;10):
     print(a1 + a2 + a3)
 
 
@@ -3048,7 +3053,7 @@ func(a1&#x3D;12, a2&#x3D;9, a3&#x3D;90)</code></pre>
 
 
 
-<h3 id="2-3-动态参数"><a href="#2-3-动态参数" class="headerlink" title="2.3 动态参数"></a>2.3 动态参数</h3><ul>
+<h4 id="2-3-动态参数"><a href="#2-3-动态参数" class="headerlink" title="2.3 动态参数"></a>2.3 动态参数</h4><ul>
 <li><p><code>*args</code></p>
 <pre class="language-python" data-language="python"><code class="language-python">def func(*args):
     print(args) # 元组类型 (22,)   (22,33,99,)  ()
@@ -3102,7 +3107,7 @@ func3(11, 22, 33, 44, 55, 66, 77, a5&#x3D;10, a10&#x3D;123)</code></pre>
 
 
 
-<h2 id="3-函数返回值"><a href="#3-函数返回值" class="headerlink" title="3. 函数返回值"></a>3. 函数返回值</h2><p>​		在开发过程中，我们希望函数可以帮助我们实现某个功能，但让函数实现某功能之后有时也需要有一些结果需要反馈给我们，例如：</p>
+<h3 id="3-函数返回值"><a href="#3-函数返回值" class="headerlink" title="3. 函数返回值"></a>3. 函数返回值</h3><p>​		在开发过程中，我们希望函数可以帮助我们实现某个功能，但让函数实现某功能之后有时也需要有一些结果需要反馈给我们，例如：</p>
 <pre class="language-python" data-language="python"><code class="language-python">import requests
 from xml.etree import ElementTree as ET
 
@@ -3244,7 +3249,7 @@ foo()</code></pre></li>
 <li><font color="#dd0000">return:结束掉函数，后面print()的内容也不会执行</font></li>
 <li><font color="#dd0000">break:结束循环，后面print()的内容会执行</font></li>
 </ul>
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><ol>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ol>
 <li><p>如何定义一个函数？</p>
 </li>
 <li><p>函数名的规范。（同变量名规范）</p>
@@ -3283,7 +3288,7 @@ foo()</code></pre></li>
 </ul>
 </li>
 </ol>
-<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><ol>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ol>
 <li><p>请定义一个函数，用于计算一个字符串中字符<code>a</code>出现的次数并通过return返回。</p>
 <ul>
 <li>参数，字符串。</li>
@@ -3551,7 +3556,9 @@ else:
     print(&#39;登录失败&#39;)
 </code></pre>
 
-<h1 id="十二、-函数进阶"><a href="#十二、-函数进阶" class="headerlink" title="十二、 函数进阶"></a>十二、 函数进阶</h1><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201222145103056.png" class="" title="image-20201222145103056">
+
+
+<h2 id="十二、-函数进阶"><a href="#十二、-函数进阶" class="headerlink" title="十二、 函数进阶"></a>十二、 函数进阶</h2><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201222145103056.png" class="" title="image-20201222145103056">
 
 <p>目标：掌握函数相关易错点 &amp; 项目开发必备技能。</p>
 <p>今日概要：</p>
@@ -3561,9 +3568,9 @@ else:
 <li>返回值和print，傻傻分不清楚。</li>
 <li>函数的作用域</li>
 </ul>
-<h2 id="1-参数的补充"><a href="#1-参数的补充" class="headerlink" title="1.参数的补充"></a>1.参数的补充</h2><p>​		在函数基础部分，我们掌握函数和参数基础知识，掌握这些其实完全就可以进行项目的开发。</p>
+<h3 id="1-参数的补充"><a href="#1-参数的补充" class="headerlink" title="1.参数的补充"></a>1.参数的补充</h3><p>​		在函数基础部分，我们掌握函数和参数基础知识，掌握这些其实完全就可以进行项目的开发。</p>
 <p>今天的补充的内容属于进阶知识，包含：<font color="#dd0000"><strong>内存地址相关、面试题相关等，在特定情况下也可以让代码更加简洁，提升开发效率。</strong></font></p>
-<h3 id="1-1-参数内存地址相关【面试题】"><a href="#1-1-参数内存地址相关【面试题】" class="headerlink" title="1.1 参数内存地址相关【面试题】"></a>1.1 参数内存地址相关<font color="#dd0000"><strong>【面试题】</strong></font></h3><p>​		在开始讲参数内存地址相关之前，我们先来学习一个技能：如果想要查看下某个值的在内存中的地址？</p>
+<h4 id="1-1-【面试题】-参数内存地址相关"><a href="#1-1-【面试题】-参数内存地址相关" class="headerlink" title="1.1 【面试题】:参数内存地址相关"></a>1.1 <font color="#dd0000"><strong>【面试题】:参数内存地址相关</strong></font></h4><p>​		在开始讲参数内存地址相关之前，我们先来学习一个技能：如果想要查看下某个值的在内存中的地址？</p>
 <pre class="language-python" data-language="python"><code class="language-python">v1 &#x3D; &quot;武沛齐&quot;
 addr &#x3D; id(v1)
 
@@ -3641,7 +3648,7 @@ print(v1)  # [11,22,33]</code></pre>
 
 
 
-<h3 id="1-2-函数的返回值是内存地址"><a href="#1-2-函数的返回值是内存地址" class="headerlink" title="1.2 函数的返回值是内存地址"></a>1.2 函数的返回值是<font color="#dd0000"><strong>内存地址</strong></font></h3><pre class="language-python" data-language="python"><code class="language-python">def func():
+<h4 id="1-2-函数的返回值是内存地址"><a href="#1-2-函数的返回值是内存地址" class="headerlink" title="1.2 函数的返回值是内存地址"></a>1.2 函数的返回值是<font color="#dd0000"><strong>内存地址</strong></font></h4><pre class="language-python" data-language="python"><code class="language-python">def func():
     data &#x3D; [11, 22, 33]
     return data
 
@@ -3698,7 +3705,7 @@ v2 &#x3D; func()
 print(v2, id(v2))  # [11, 22, 33] 2027827944512</code></pre>
 
 <p><font color="#dd0000"><strong>注意事项：字符串和数字在运行上述代码时两次内存地址相同，这是因为Python内部的缓存和驻留机制。</strong></font></p>
-<h3 id="1-3-参数的默认值【面试题】"><a href="#1-3-参数的默认值【面试题】" class="headerlink" title="1.3 参数的默认值【面试题】"></a>1.3 参数的默认值<font color="#dd0000"><strong>【面试题】</strong></font></h3><p>这个知识点在面试题中出现的概率比较高，但真正实际开发中用的比较少。</p>
+<h4 id="1-3-参数的默认值【面试题】"><a href="#1-3-参数的默认值【面试题】" class="headerlink" title="1.3 参数的默认值【面试题】"></a>1.3 参数的默认值<font color="#dd0000"><strong>【面试题】</strong></font></h4><p>这个知识点在面试题中出现的概率比较高，但真正实际开发中用的比较少。</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func(a1,a2&#x3D;18):
     print(a1,a2)</code></pre>
 
@@ -3800,7 +3807,7 @@ print(v2) # [1, 2, 10, 20, 40]
 print(v3) # [11,22,30]
 print(v4) # [1, 2, 10, 20, 40] </code></pre></li>
 </ul>
-<h3 id="1-4-动态参数"><a href="#1-4-动态参数" class="headerlink" title="1.4 动态参数"></a>1.4 动态参数</h3><p>动态参数，定义函数时在形参位置用 <code>*或**</code> 可以接任意个参数。</p>
+<h4 id="1-4-动态参数"><a href="#1-4-动态参数" class="headerlink" title="1.4 动态参数"></a>1.4 动态参数</h4><p>动态参数，定义函数时在形参位置用 <code>*或**</code> 可以接任意个参数。</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func(*args,**kwargs):
     print(args,kwargs)
     
@@ -3898,7 +3905,7 @@ with open(&#39;files&#x2F;视频.csv&#39;, mode&#x3D;&#39;rt&#39;, encoding&#x3D
         download_move(*data_list)
 </code></pre></li>
 </ol>
-<h2 id="2-函数和函数名"><a href="#2-函数和函数名" class="headerlink" title="2. 函数和函数名"></a>2. 函数和函数名</h2><p>​		函数名其实就是一个<strong>变量</strong>，这个变量只不过代指的函数而已。</p>
+<h3 id="2-函数和函数名"><a href="#2-函数和函数名" class="headerlink" title="2. 函数和函数名"></a>2. 函数和函数名</h3><p>​		函数名其实就是一个<strong>变量</strong>，这个变量只不过代指的函数而已。</p>
 <pre class="language-python" data-language="python"><code class="language-python">name &#x3D; &quot;武沛齐&quot;</code></pre>
 
 <pre class="language-python" data-language="python"><code class="language-python">def add(n1,n2):
@@ -3921,7 +3928,7 @@ def add(n1,n2):
 
 
 
-<h3 id="2-1-函数做元素"><a href="#2-1-函数做元素" class="headerlink" title="2.1 函数做元素"></a>2.1 函数做元素</h3><p>​		既然函数就相当于是一个变量，那么在列表等元素中是否可以把函数当做元素呢？</p>
+<h4 id="2-1-函数做元素"><a href="#2-1-函数做元素" class="headerlink" title="2.1 函数做元素"></a>2.1 函数做元素</h4><p>​		既然函数就相当于是一个变量，那么在列表等元素中是否可以把函数当做元素呢？</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func():
     return 123
 
@@ -4125,7 +4132,7 @@ for item in func_list:
 
 
 
-<h3 id="2-2-函数名赋值"><a href="#2-2-函数名赋值" class="headerlink" title="2.2 函数名赋值"></a>2.2 函数名赋值</h3><ul>
+<h4 id="2-2-函数名赋值"><a href="#2-2-函数名赋值" class="headerlink" title="2.2 函数名赋值"></a>2.2 函数名赋值</h4><ul>
 <li><p>将函数名赋值给其他变量，函数名其实就个变量，代指某函数；如果将函数名赋值给另外一个变量，则此变量也会代指该函数，例如：</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func(a1,a2):
     print(a1,a2)
@@ -4185,7 +4192,7 @@ def len(a1,a2):
 v3 &#x3D; len(1,2)
 print(v3)</code></pre></li>
 </ul>
-<h3 id="2-3-函数名做参数和返回值"><a href="#2-3-函数名做参数和返回值" class="headerlink" title="2.3 函数名做参数和返回值"></a>2.3 函数名做参数和返回值</h3><p>​		函数名其实就一个变量，代指某个函数，所以，他和其他的数据类型一样，<font color="#dd0000"><strong>函数也可以当做函数的参数和返回值。</strong></font></p>
+<h4 id="2-3-函数名做参数和返回值"><a href="#2-3-函数名做参数和返回值" class="headerlink" title="2.3 函数名做参数和返回值"></a>2.3 函数名做参数和返回值</h4><p>​		函数名其实就一个变量，代指某个函数，所以，他和其他的数据类型一样，<font color="#dd0000"><strong>函数也可以当做函数的参数和返回值。</strong></font></p>
 <ul>
 <li><p>参数</p>
 <pre class="language-python" data-language="python"><code class="language-python">def plus(num):
@@ -4211,7 +4218,7 @@ result &#x3D; handler()
 data &#x3D; result(20) # 120
 print(data)</code></pre></li>
 </ul>
-<h2 id="3-返回值和print"><a href="#3-返回值和print" class="headerlink" title="3.返回值和print"></a>3.返回值和print</h2><p>​		对于初学者的同学，很多人都对print和返回值分不清楚，例如：</p>
+<h3 id="3-返回值和print"><a href="#3-返回值和print" class="headerlink" title="3.返回值和print"></a>3.返回值和print</h3><p>​		对于初学者的同学，很多人都对print和返回值分不清楚，例如：</p>
 <pre class="language-python" data-language="python"><code class="language-python">def add(n1,n2):
     print(n1 + n2)
 
@@ -4277,8 +4284,8 @@ None</code></pre>
 
 
 
-<h2 id="4-作用域"><a href="#4-作用域" class="headerlink" title="4. 作用域"></a>4. 作用域</h2><p>​		作用域，<strong>可以理解为一块空间，这块空间的数据是可以共享的。</strong>通俗点来说，作用域就类似于一个房子，房子中的东西归里面的所有人共享，其他房子的人无法获取。</p>
-<h3 id="4-1-函数为作用域"><a href="#4-1-函数为作用域" class="headerlink" title="4.1 函数为作用域"></a>4.1 函数为作用域</h3><p>​		Python以函数为作用域，所以在函数内创建的所有数据，可以此函数中被使用，无法在其他函数中被使用。</p>
+<h3 id="4-作用域"><a href="#4-作用域" class="headerlink" title="4. 作用域"></a>4. 作用域</h3><p>​		作用域，<strong>可以理解为一块空间，这块空间的数据是可以共享的。</strong>通俗点来说，作用域就类似于一个房子，房子中的东西归里面的所有人共享，其他房子的人无法获取。</p>
+<h4 id="4-1-函数为作用域"><a href="#4-1-函数为作用域" class="headerlink" title="4.1 函数为作用域"></a>4.1 函数为作用域</h4><p>​		Python以函数为作用域，所以在函数内创建的所有数据，可以此函数中被使用，无法在其他函数中被使用。</p>
 <pre class="language-python" data-language="python"><code class="language-python">def func():
     name &#x3D; &quot;武沛齐&quot;
     data_list &#x3D; [11,22,33,44]
@@ -4328,7 +4335,7 @@ func()</code></pre>
 
 
 
-<h3 id="4-2-全局和局部"><a href="#4-2-全局和局部" class="headerlink" title="4.2 全局和局部"></a>4.2 全局和局部</h3><p>Python中以函数为作用域，函数的作用域其实是一个局部作用域。</p>
+<h4 id="4-2-全局和局部"><a href="#4-2-全局和局部" class="headerlink" title="4.2 全局和局部"></a>4.2 全局和局部</h4><p>Python中以函数为作用域，函数的作用域其实是一个局部作用域。</p>
 <img src="/2022/05/27/python-mo-kuai-er-day3/image-20201223022803940.png" class="" title="image-20201223022803940">
 
 
@@ -4466,7 +4473,7 @@ http:&#x2F;&#x2F;www.xxx.com
 
 
 
-<h3 id="4-3-global关键字"><a href="#4-3-global关键字" class="headerlink" title="4.3 global关键字"></a>4.3 global关键字</h3><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201223022803940-16547788868353.png" class="" title="image-20201223022803940">
+<h4 id="4-3-global关键字"><a href="#4-3-global关键字" class="headerlink" title="4.3 global关键字"></a>4.3 global关键字</h4><img src="/2022/05/27/python-mo-kuai-er-day3/image-20201223022803940-16547788868353.png" class="" title="image-20201223022803940">
 
 <p>​		<strong>默认情况下，在局部作用域对全局变量只能进行：读取和修改内部元素（可变类型），无法对全局变量进行重新赋值。</strong></p>
 <ul>
@@ -4538,7 +4545,7 @@ upload()</code></pre>
 
 
 
-<h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2><ol>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><ol>
 <li><p>函数参数传递的是内存地址。</p>
 <ul>
 <li><p>想重新创建一份数据再传递给参数，可以手动拷贝一份。</p>
@@ -4588,7 +4595,7 @@ def func(a,b&#x3D;[]):
 <li><p>基于 global关键字可以在局部作用域中实现对全局作用域中的变量（全局变量）重新赋值。</p>
 </li>
 </ol>
-<h2 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h2><ol>
+<h3 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h3><ol>
 <li><p>如何查看一个值得内存地址？</p>
 <p>​		<code>id()</code></p>
 </li>
