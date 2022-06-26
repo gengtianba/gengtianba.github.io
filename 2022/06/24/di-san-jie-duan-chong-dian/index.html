@@ -396,6 +396,10 @@
                                 <span class="chip bg-color">第三阶段</span>
                             </a>
                         
+                            <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">面向对象&amp;网络编程</span>
+                            </a>
+                        
                             <a href="/tags/%E6%80%BB%E7%BB%93/">
                                 <span class="chip bg-color">总结</span>
                             </a>
@@ -430,14 +434,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1
+                    3.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    14 分
                 </div>
                 
 
@@ -460,7 +464,441 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2>
+                <h2 id="一、面向对象基础"><a href="#一、面向对象基础" class="headerlink" title="一、面向对象基础"></a>一、面向对象基础</h2><h3 id="（一）面向对象的三大特性"><a href="#（一）面向对象的三大特性" class="headerlink" title="（一）面向对象的三大特性"></a>（一）面向对象的三大特性</h3><ul>
+<li><p>封装性：将方法封装到类中 或 将数据封装到对象中，便于以后使用。</p>
+</li>
+<li><p>继承性：将类中的公共的方法提取到基类中去实现。</p>
+</li>
+<li><p>多态性：Python默认支持多态（这种方式称之为鸭子类型），最简单的基础下面的这段代码即可。</p>
+</li>
+</ul>
+<h2 id="二、面向对象进阶"><a href="#二、面向对象进阶" class="headerlink" title="二、面向对象进阶"></a>二、面向对象进阶</h2><h3 id="（一）面向对象中的成员"><a href="#（一）面向对象中的成员" class="headerlink" title="（一）面向对象中的成员"></a>（一）面向对象中的成员</h3><ul>
+<li>变量：<ul>
+<li>类变量：属于类，可以被所有对象共享，一般用于给对象提供公共数据（类似于全局变量）。</li>
+<li>实例变量：属于对象，每个对象中各自维护自己的数据。</li>
+</ul>
+</li>
+<li>方法：<ul>
+<li>绑定方法：默认有一个self参数，由对象进行调用（此时self就等于调用方法的这个对象）【对象&amp;类均可调用】</li>
+<li>类方法：默认有一个cls参数，用类或对象都可以调用（此时cls就等于调用方法的这个类）【对象&amp;类均可调用】</li>
+<li>静态方法：无默认参数，用类和对象都可以调用。【对象&amp;类均可调用】</li>
+</ul>
+</li>
+<li>属性：属性其实是由绑定方法 + 特殊装饰器（<code>@property</code>） 组合创造出来的，<strong>让我们以后在调用方法时可以不加括号</strong></li>
+</ul>
+<h3 id="（二）特殊成员"><a href="#（二）特殊成员" class="headerlink" title="（二）特殊成员"></a>（二）特殊成员</h3><h4 id="1、-new-初始化方法"><a href="#1、-new-初始化方法" class="headerlink" title="1、__new__初始化方法"></a>1、<code>__new__</code>初始化方法</h4><p>在构造方法前创建空对象并返回</p>
+<pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
+
+    def __new__(cls, *args, **kwargs):
+        print(&quot;第一步：先创建空对象并返回&quot;)
+        return object.__new__(cls)
+
+
+obj &#x3D; Foo(&quot;武沛齐&quot;)  # 第一步：先创建空对象并返回</code></pre>
+
+
+
+<h4 id="2、-init-构造方法"><a href="#2、-init-构造方法" class="headerlink" title="2、__init__构造方法"></a>2、<code>__init__</code>构造方法</h4><p>对对象进行初始化操作</p>
+<pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
+    def __init__(self, name):
+        print(&quot;第二步：初始化对象，在空对象中创建数据&quot;)
+        self.name &#x3D; name
+
+    def __new__(cls, *args, **kwargs):
+        print(&quot;第一步：先创建空对象并返回&quot;)
+        return object.__new__(cls)
+
+
+obj &#x3D; Foo(&quot;武沛齐&quot;)
+
+&gt;&gt;&gt;第一步：先创建空对象并返回
+&gt;&gt;&gt;第二步：初始化对象，在空对象中创建数据</code></pre>
+
+
+
+<h4 id="3、-call"><a href="#3、-call" class="headerlink" title="3、__call__"></a>3、<code>__call__</code></h4><p>使对象可以被执行&#x2F;可以被加括号<code>()</code></p>
+<ul>
+<li>不定义<code>__call__</code>方法执行<code>对象()</code>会报错：’Foo’ object is not callable</li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
+    def __call__(self, *args, **kwargs):
+        print(&quot;执行call方法&quot;)
+
+
+obj &#x3D; Foo()
+obj()  # 执行call方法</code></pre>
+
+
+
+<h4 id="4、-str"><a href="#4、-str" class="headerlink" title="4、__str__"></a>4、<code>__str__</code></h4><p>在对象被print打印的时候，直接返回<code>__str__</code>方法的返回值，方法需要返回一个字符串，当做这个对象的描写。</p>
+<ul>
+<li>不定义<code>__str__</code>：执行<code>print(obj)</code>返回一个对象<code>&lt;__main__.Foo object at 0x000001DA77C8CD00&gt;</code></li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
+
+    def __str__(self):
+        return &quot;哈哈哈哈&quot;
+
+
+obj &#x3D; Foo()
+print(obj)</code></pre>
+
+
+
+<h4 id="5、-dict"><a href="#5、-dict" class="headerlink" title="5、__dict__"></a>5、<code>__dict__</code></h4><p>获取类或对象的变量和功能</p>
+<pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
+    def __init__(self, name, age):
+        self.name &#x3D; name
+        self.age &#x3D; age
+
+
+obj &#x3D; Foo(&quot;武沛齐&quot;, 19)
+print(Foo.__dict__)  # &#123;&#39;__module__&#39;: &#39;__main__&#39;, &#39;__init__&#39;: &lt;function Foo.__init__ at 0x000002BB3FC8B4C0&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Foo&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Foo&#39; objects&gt;, &#39;__doc__&#39;: None&#125;
+
+print(obj.__dict__)  # &#123;&#39;name&#39;: &#39;武沛齐&#39;, &#39;age&#39;: 19&#125;
+</code></pre>
+
+
+
+<h4 id="6、-getitem-、-setitem-、-delitem"><a href="#6、-getitem-、-setitem-、-delitem" class="headerlink" title="6、__getitem__、__setitem__、__delitem__"></a>6、<code>__getitem__</code>、<code>__setitem__</code>、<code>__delitem__</code></h4><p>使对象可以通过<code>[]</code>进行获取、设置和删除元素的操作</p>
+<ul>
+<li>不定义<code>__getitem__</code>执行<code>obj[&quot;x1&quot;]</code>报错：’Foo’ object is not subscriptable</li>
+<li>不定义<code>__setitem__</code>执行<code>obj[&#39;x2&#39;] = 123</code>报错：’Foo’ object does not support item assignment</li>
+<li>不定义<code>__delitem__</code>执行<code>del obj[&#39;x3&#39;]</code>报错：’Foo’ object does not support item deletion</li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
+
+    def __getitem__(self, item):
+        pass
+
+    def __setitem__(self, key, value):
+        pass
+
+    def __delitem__(self, key):
+        pass
+
+
+obj &#x3D; Foo()
+
+obj[&quot;x1&quot;]  # 不定义__getitem__报错：&#39;Foo&#39; object is not subscriptable
+obj[&#39;x2&#39;] &#x3D; 123  # 不定义__setitem__报错：&#39;Foo&#39; object does not support item assignment
+del obj[&#39;x3&#39;]  # 不定义__delitem__报错：&#39;Foo&#39; object does not support item deletion</code></pre>
+
+
+
+<h4 id="7、-enter-、-exit"><a href="#7、-enter-、-exit" class="headerlink" title="7、__enter__、__exit__"></a>7、<code>__enter__</code>、<code>__exit__</code></h4><p>使对象可以使用with关键字</p>
+<ul>
+<li>不定义<code>__enter__</code>和<code>__exit__</code>使用with关键字报错：AttributeError</li>
+</ul>
+<h4 id="【面试题】：补充代码，实现如下功能"><a href="#【面试题】：补充代码，实现如下功能" class="headerlink" title="【面试题】：补充代码，实现如下功能"></a><font color="#dd0000"><strong>【面试题】：补充代码，实现如下功能</strong></font></h4><pre class="language-python" data-language="python"><code class="language-python"># （补充代码，实现如下功能）
+
+class Context:
+    
+    def do_something(self):
+        print(&#39;内部执行&#39;)
+
+
+with Context() as ctx:
+    print(&#39;内部执行&#39;)
+    ctx.do_something()</code></pre>
+
+<p>答案：</p>
+<pre class="language-python" data-language="python"><code class="language-python">class Context:
+
+    def __enter__(self):
+        return self
+
+    def do_something(self):
+        print(&#39;内部执行&#39;)
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
+
+
+with Context() as ctx:
+    print(&#39;内部执行&#39;)
+    ctx.do_something()</code></pre>
+
+
+
+<h4 id="8、-add"><a href="#8、-add" class="headerlink" title="8、__add__"></a>8、<code>__add__</code></h4><p>使对象可以使用<code>+</code>号</p>
+<pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
+    def __init__(self, name):
+        self.name &#x3D; name
+
+    def __add__(self, other):
+        return &quot;&#123;&#125;-&#123;&#125;&quot;.format(self.name, other.name)
+
+
+v1 &#x3D; Foo(&quot;alex&quot;)
+v2 &#x3D; Foo(&quot;sb&quot;)
+
+# 对象+值，内部会去执行 对象.__add__方法，并将+后面的值当做参数传递过去。
+v3 &#x3D; v1 + v2
+print(v3)</code></pre>
+
+
+
+<h4 id="9、-iter-、-next"><a href="#9、-iter-、-next" class="headerlink" title="9、__iter__、__next__"></a>9、<code>__iter__</code>、<code>__next__</code></h4><ul>
+<li><p>迭代器：</p>
+<ul>
+<li>类中定义了<code>__iter__</code>和<code>__next__</code>两个方法</li>
+<li><code>__iter__ </code>方法需要返回对象本身，即：<code>self</code></li>
+<li><code>__next__ </code>方法，返回下一个数据，如果没有数据了，则需要抛出一个<code>StopIteration</code>的异常</li>
+</ul>
+</li>
+<li><p>生成器：如果按照迭代器的规定来看，其实生成器类也是一种特殊的迭代器类（生成器也是一种特殊的迭代器）。</p>
+</li>
+<li><p>可迭代对象</p>
+<ul>
+<li>如果一个类中有<code>__iter__</code>方法且返回一个迭代器对象 ；则我们称以这个类创建的对象为可迭代对象。</li>
+</ul>
+</li>
+<li><p>示例代码</p>
+</li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python"># 创建 迭代器类型 ：
+	class IT(object):
+        def __init__(self):
+            self.counter &#x3D; 0
+
+        def __iter__(self):
+            return self
+
+        def __next__(self):
+            self.counter +&#x3D; 1
+            if self.counter &#x3D;&#x3D; 3:
+                raise StopIteration()
+            return self.counter
+
+# 根据类实例化创建一个迭代器对象：
+    obj1 &#x3D; IT()
+    
+    # v1 &#x3D; obj1.__next__()
+    # v2 &#x3D; obj1.__next__()
+    # v3 &#x3D; obj1.__next__() # 抛出异常
+    
+    v1 &#x3D; next(obj1) # obj1.__next__()
+    print(v1)
+
+    v2 &#x3D; next(obj1)
+    print(v2)
+
+    v3 &#x3D; next(obj1)
+    print(v3)
+
+
+    obj2 &#x3D; IT()
+	for item in obj2:  # 首先会执行迭代器对象的__iter__方法并获取返回值，一直去反复的执行 next(对象) 
+		print(item)
+        
+# 迭代器对象支持通过next取值，如果取值结束则自动抛出StopIteration。
+# for循环内部在循环时，先执行__iter__方法，获取一个迭代器对象，然后不断执行的next取值（有异常StopIteration则终止循环）。</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 创建生成器函数
+    def func():
+        yield 1
+        yield 2
+    
+# 创建生成器对象（内部是根据生成器类generator创建的对象），生成器类的内部也声明了：__iter__、__next__ 方法。
+    obj1 &#x3D; func()
+    
+    v1 &#x3D; next(obj1)
+    print(v1)
+
+    v2 &#x3D; next(obj1)
+    print(v2)
+
+    v3 &#x3D; next(obj1)
+    print(v3)
+
+
+    obj2 &#x3D; func()
+    for item in obj2:
+        print(item)
+
+如果按照迭代器的规定来看，其实生成器类也是一种特殊的迭代器类（生成器也是一种特殊的迭代器）。</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"># 如果一个类中有__iter__方法且返回一个迭代器对象 ；则我们称以这个类创建的对象为可迭代对象。
+
+class Foo(object):
+    
+    def __iter__(self):
+        return 迭代器对象(生成器对象)
+    
+obj &#x3D; Foo() # obj是 可迭代对象。
+
+# 可迭代对象是可以使用for来进行循环，在循环的内部其实是先执行 __iter__ 方法，获取其迭代器对象，然后再在内部执行这个迭代器对象的next功能，逐步取值。
+for item in obj:
+    pass</code></pre>
+
+
+
+<h2 id="三、面向对象高级和应用"><a href="#三、面向对象高级和应用" class="headerlink" title="三、面向对象高级和应用"></a>三、面向对象高级和应用</h2><h3 id="（一）mro和c3算法"><a href="#（一）mro和c3算法" class="headerlink" title="（一）mro和c3算法"></a>（一）mro和c3算法</h3><ul>
+<li><p>mro：获取类的继承关系</p>
+<pre class="language-python" data-language="python"><code class="language-python">class C(object):
+    pass
+
+class B(object):
+    pass
+
+class A(B, C):
+    pass
+
+print( A.mro() )   # [&lt;class &#39;__main__.A&#39;&gt;, &lt;class &#39;__main__.B&#39;&gt;, &lt;class &#39;__main__.C&#39;&gt;, &lt;class &#39;object&#39;&gt;]</code></pre>
+</li>
+<li><p>c3算法：<font color="#dd0000"><strong>从左到右，深度优先，大小钻石，留住顶端</strong></font></p>
+</li>
+</ul>
+<h3 id="（二）内置函数补充"><a href="#（二）内置函数补充" class="headerlink" title="（二）内置函数补充"></a>（二）内置函数补充</h3><ul>
+<li><p><code>staticmethod</code></p>
+</li>
+<li><p><code>classmethod</code></p>
+</li>
+<li><p><code>property</code></p>
+</li>
+<li><p><code>callable</code></p>
+</li>
+<li><p><code>isinstance</code></p>
+</li>
+<li><p><code>issubclass</code></p>
+</li>
+<li><p><code>super</code></p>
+</li>
+<li><p>反射相关：</p>
+<ul>
+<li><p><code>getattr</code></p>
+</li>
+<li><p><code>setattr</code></p>
+</li>
+<li><p><code>hasattr</code></p>
+</li>
+<li><p><code>delattr</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="（三）字符串操作"><a href="#（三）字符串操作" class="headerlink" title="（三）字符串操作"></a>（三）字符串操作</h3><ol>
+<li>根据字符串的形式导入模块 <code>import_module</code></li>
+<li>根据字符串的形式操作成员 <code>反射-getattr,setattr,hasattr,delattr</code></li>
+</ol>
+<h2 id="四、网络编程基础"><a href="#四、网络编程基础" class="headerlink" title="四、网络编程基础"></a>四、网络编程基础</h2><h4 id="（一）二层交换机-amp-路由器-amp-三层交换机-的作用"><a href="#（一）二层交换机-amp-路由器-amp-三层交换机-的作用" class="headerlink" title="（一）二层交换机 &amp; 路由器 &amp; 三层交换机 的作用"></a>（一）二层交换机 &amp; 路由器 &amp; 三层交换机 的作用</h4><ul>
+<li><p>二层交换机：构建局域网，并且实现局域网内数据的转发</p>
+</li>
+<li><p>路由器：实现跨局域网通信</p>
+</li>
+<li><p>三层交换机：具备二层交换机和路由器的功能</p>
+</li>
+</ul>
+<h4 id="（二）简述常见词：IP、子网掩码、DHCP、公网IP、端口、域名的作用。"><a href="#（二）简述常见词：IP、子网掩码、DHCP、公网IP、端口、域名的作用。" class="headerlink" title="（二）简述常见词：IP、子网掩码、DHCP、公网IP、端口、域名的作用。"></a>（二）简述常见词：IP、子网掩码、DHCP、公网IP、端口、域名的作用。</h4><ul>
+<li><p>IP：本质上是一组32位2进制，通过<code>.</code>划分为4个8位的二进制</p>
+</li>
+<li><p>子网掩码：用于指定IP的网络地址和主机地址</p>
+</li>
+<li><p>DHCP：网络设备中的一个服务，用于给接入网络的设备自动设置IP、子网掩码和网关</p>
+</li>
+<li><p>公网IP：一般企业拉专线是会给固定的公网IP，只有具有公网IP才能被互联网上其它电脑访问</p>
+</li>
+<li><p>端口：IP用于表示某台具体电脑，端口表示该电脑上某个具体程序。（0-65535）</p>
+</li>
+<li><p>域名：与IP构造对应关系，方便用户记忆</p>
+</li>
+</ul>
+<h4 id="（三）B-x2F-S架构和C-x2F-S架构"><a href="#（三）B-x2F-S架构和C-x2F-S架构" class="headerlink" title="（三）B&#x2F;S架构和C&#x2F;S架构"></a>（三）B&#x2F;S架构和C&#x2F;S架构</h4><ul>
+<li><p>B&#x2F;S架构，是Browser和Server的简称。开发这种架构的程序意味着你开发服务端即可，客户端用用户电脑上的浏览器来代替。</p>
+</li>
+<li><p>C&#x2F;S架构，是Client和Server的简称。开发这种架构的程序意味着你即需要开发客户端也需要开发服务端。</p>
+</li>
+</ul>
+<h2 id="五、网络编程进阶"><a href="#五、网络编程进阶" class="headerlink" title="五、网络编程进阶"></a>五、网络编程进阶</h2><h3 id="（一）OSI-7层模型"><a href="#（一）OSI-7层模型" class="headerlink" title="（一）OSI 7层模型"></a>（一）OSI 7层模型</h3><ul>
+<li><p>应用层：规定数据的格式。</p>
+<pre class="language-python" data-language="python"><code class="language-python">&quot;GET &#x2F;s?wd&#x3D;你好 HTTP&#x2F;1.1\r\nHost:www.baidu.com\r\n\r\n&quot;</code></pre>
+</li>
+<li><p>表示层：对应用层数据的编码、压缩（解压缩）、分块、加密（解密）等任务。</p>
+<pre class="language-python" data-language="python"><code class="language-python">&quot;GET &#x2F;s?wd&#x3D;你好 HTTP&#x2F;1.1\r\nHost:www.baidu.com\r\n\r\n你好&quot;.encode(&#39;utf-8&#39;)</code></pre>
+</li>
+<li><p>会话层：负责与目标建立、中断连接。</p>
+<pre class="language-none"><code class="language-none">在发送数据之前，需要会先发送 “连接” 的请求，与远程建立连接后，再发送数据。当然，发送完毕之后，也涉及中断连接的操作。</code></pre>
+</li>
+<li><p>传输层：建立端口到端口的通信，其实就确定双方的端口信息。</p>
+<pre class="language-none"><code class="language-none">数据：&quot;GET &#x2F;s?wd&#x3D;你好 HTTP&#x2F;1.1\r\nHost:www.baidu.com\r\n\r\n你好&quot;.encode(&#39;utf-8&#39;)
+端口：
+	- 目标：80
+	- 本地：6784</code></pre>
+</li>
+<li><p>网络层：标记目标IP信息（IP协议层）</p>
+<pre class="language-none"><code class="language-none">数据：&quot;GET &#x2F;s?wd&#x3D;你好 HTTP&#x2F;1.1\r\nHost:www.baidu.com\r\n\r\n你好&quot;.encode(&#39;utf-8&#39;)
+端口：
+	- 目标：80
+	- 本地：6784
+IP：
+	- 目标IP：110.242.68.3（百度）
+	- 本地IP：192.168.10.1</code></pre>
+</li>
+<li><p>数据链路层：对数据进行分组并设置源和目标mac地址</p>
+<pre class="language-none"><code class="language-none">数据：&quot;POST &#x2F;s?wd&#x3D;你好 HTTP&#x2F;1.1\r\nHost:www.baidu.com\r\n\r\n你好&quot;.encode(&#39;utf-8&#39;)
+端口：
+	- 目标：80
+	- 本地：6784
+IP：
+	- 目标IP：110.242.68.3（百度）
+	- 本地IP：192.168.10.1
+MAC：
+	- 目标MAC：FF-FF-FF-FF-FF-FF 
+	- 本机MAC：11-9d-d8-1a-dd-cd</code></pre>
+</li>
+<li><p>物理层：将二进制数据在物理媒体上传输。</p>
+<pre class="language-none"><code class="language-none">通过网线将二进制数据发送出去</code></pre></li>
+</ul>
+<h3 id="（二）UDP和TCP协议"><a href="#（二）UDP和TCP协议" class="headerlink" title="（二）UDP和TCP协议"></a>（二）UDP和TCP协议</h3><p>协议，其实就是规定 连接、收发数据的一些规定。</p>
+<ul>
+<li><p>UDP（User Data Protocol）用户数据报协议， 是⼀个⽆连接的简单的⾯向数据报的传输层协议。 UDP不提供可靠性， 它只是把应⽤程序传给IP层的数据报发送出去， 但是并不能保证它们能到达⽬的地。 由于UDP在传输数据报前不⽤在客户和服务器之间建⽴⼀个连接， 且没有超时重发等机制， 故⽽传输速度很快。</p>
+<pre class="language-none"><code class="language-none">常见的有：语音通话、视频通话、实时游戏画面 等。</code></pre>
+</li>
+<li><p>TCP（Transmission Control Protocol，传输控制协议）是面向连接的协议，也就是说，在收发数据前，必须和对方建立可靠的连接，然后再进行收发数据。</p>
+<pre class="language-none"><code class="language-none">常见有：网站、手机APP数据获取等。</code></pre></li>
+</ul>
+<h3 id="（三）TCP三次握手和四次挥手"><a href="#（三）TCP三次握手和四次挥手" class="headerlink" title="（三）TCP三次握手和四次挥手"></a>（三）TCP三次握手和四次挥手</h3><pre class="language-none"><code class="language-none">    客户端                                                服务端
+
+  1.  SYN-SENT    --&gt; &lt;seq&#x3D;100&gt;&lt;CTL&#x3D;SYN&gt;               --&gt; SYN-RECEIVED
+
+  2.  ESTABLISHED &lt;-- &lt;seq&#x3D;300&gt;&lt;ack&#x3D;101&gt;&lt;CTL&#x3D;SYN,ACK&gt;  &lt;-- SYN-RECEIVED
+
+  3.  ESTABLISHED --&gt; &lt;seq&#x3D;101&gt;&lt;ack&#x3D;301&gt;&lt;CTL&#x3D;ACK&gt;       --&gt; ESTABLISHED
+
+      
+At this point, both the client and server have received an acknowledgment of the connection. The steps 1, 2 establish the connection parameter (sequence number) for one direction and it is acknowledged. The steps 2, 3 establish the connection parameter (sequence number) for the other direction and it is acknowledged. With these, a full-duplex communication is established.</code></pre>
+
+<pre class="language-none"><code class="language-none">     TCP A                                                TCP B
+  
+1.  FIN-WAIT-1  --&gt; &lt;seq&#x3D;100&gt;&lt;ack&#x3D;300&gt;&lt;CTL&#x3D;FIN,ACK&gt;  --&gt; CLOSE-WAIT
+  
+2.  FIN-WAIT-2  &lt;-- &lt;seq&#x3D;300&gt;&lt;ack&#x3D;101&gt;&lt;CTL&#x3D;ACK&gt;      &lt;-- CLOSE-WAIT
+  
+3.  TIME-WAIT   &lt;-- &lt;seq&#x3D;300&gt;&lt;ack&#x3D;101&gt;&lt;CTL&#x3D;FIN,ACK&gt;  &lt;-- LAST-ACK
+  
+4.  TIME-WAIT   --&gt; &lt;seq&#x3D;101&gt;&lt;ack&#x3D;301&gt;&lt;CTL&#x3D;ACK&gt;      --&gt; CLOSED</code></pre>
+
+
+
+<h3 id="（四）粘包"><a href="#（四）粘包" class="headerlink" title="（四）粘包"></a>（四）粘包</h3><p>两台电脑在进行收发数据时，其实不是直接将数据传输给对方。</p>
+<ul>
+<li>对于发送者，执行 <code>sendall/send</code> 发送消息时，是将数据先发送至自己网卡的 写缓冲区 ，再由缓冲区将数据发送给到对方网卡的读缓冲区。</li>
+<li>对于接受者，执行 <code>recv</code> 接收消息时，是从自己网卡的读缓冲区获取数据。</li>
+</ul>
+<p>所以，如果发送者连续快速的发送了2条信息，接收者在读取时会认为这是1条信息，即：<strong>2个数据包粘在了一起。</strong></p>
+<blockquote>
+<blockquote>
+<p>每次发送的消息时，都将消息划分为 头部（固定字节长度） 和 数据 两部分。例如：头部，用4个字节表示后面数据的长度。</p>
+</blockquote>
+<ul>
+<li>发送数据，先发送数据的长度，再发送数据（或拼接起来再发送）。</li>
+<li>接收数据，先读4个字节就可以知道自己这个数据包中的数据长度，再根据长度读取到数据。</li>
+</ul>
+<p>对于头部需要一个数字并固定为4个字节，这个功能可以借助python的struct包来实现：</p>
+<img src="/2022/06/24/di-san-jie-duan-chong-dian/image-20210215090446549.png" class="">
+</blockquote>
+
                 
             </div>
             <hr/>
@@ -530,6 +968,10 @@
                             
                                 <a href="/tags/%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
                                     <span class="chip bg-color">第三阶段</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">面向对象&amp;网络编程</span>
                                 </a>
                             
                                 <a href="/tags/%E6%80%BB%E7%BB%93/">
@@ -966,30 +1408,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/06/24/di-san-jie-duan-chong-dian/">
+                <a href="/2022/06/24/python-mo-kuai-si-day1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第三阶段重点">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python模块四day1">
                         
-                        <span class="card-title">第三阶段重点</span>
+                        <span class="card-title">Python模块四day1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            路飞学院Python数据分析课程第三阶段重点总结
+                            路飞学院PYTHON课程模块四笔记
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-24
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1002,7 +1443,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1010,12 +1450,16 @@
                         <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
-                        <span class="chip bg-color">第三阶段</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
-                    <a href="/tags/%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">总结</span>
+                    <a href="/tags/%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5/">
+                        <span class="chip bg-color">第四阶段</span>
+                    </a>
+                    
+                    <a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">MySQL数据库</span>
                     </a>
                     
                 </div>

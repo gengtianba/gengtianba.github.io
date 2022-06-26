@@ -1,0 +1,3498 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python模块四day1, Gengtianba&#39;s Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Python模块四day1 | Gengtianba&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Gengtianba's Blog" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Gengtianba&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Gengtianba&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python模块四day1</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5/">
+                                <span class="chip bg-color">第四阶段</span>
+                            </a>
+                        
+                            <a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">MySQL数据库</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/" class="post-category">
+                                路飞学院
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-06-24
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    15.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    71 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>从今天开始，我们将进入系列课程的 第四模块 的学习，这个模块就是给大家讲解MySQL数据库。</p>
+<p>以前，在开发程序时，我们会把很多的数据和信息存储到某个文件夹中的文件中，例如：user.txt 、db.xlsx 等。</p>
+<p>现在，有那么一个叫：数据库管理系统（DBMS，Database Management System）的软件，可以帮助我们实现对文件夹中的文件进行操作，而我们只要学习DBMS能识别的指令， 就能控制它去帮助我们实现的文件和文件夹的处理。例如：</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210507211911641.png" class="" title="image-20210507211911641">
+
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210508090834860.png" class="" title="image-20210508090834860">
+
+
+
+<p>数据库管理系统（DBMS）专注于帮助开发者解决数据存储的问题，这样开发者就可以把主要精力放在实现业务功能上了。</p>
+<p>业内有很多的的数据库管理系统产品，例如：</p>
+<ul>
+<li><strong>MySQL</strong>，原来是sun公司，后来被甲骨文收购。现在互联网企业几乎都在使用。【免费 + 收费】</li>
+<li>Oracle，甲骨文。收费，一般国企、事业单位居多。【收费】</li>
+<li>Microsoft SQL Server，微软。【收费】</li>
+<li>DB2，IBM。【免费 + 收费】</li>
+<li>SQLite，D. Richard Hipp个人开发。【免费】</li>
+<li>Access， 微软。【收费】</li>
+<li>PostgreSQL，加州大学伯克利分校。【免费】</li>
+<li>等众多..</li>
+</ul>
+<p>由于各大公司都是使用MySQL，所以我们课程主要给大家讲解MySQL数据库。</p>
+<p>在项目开发中想要基于MySQL来进行数据存储，大致应该怎么做呢？</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210508102020237.png" class="" title="image-20210508102020237">
+
+<p>本系列的MySQL模块会分为5部分来讲解：</p>
+<ul>
+<li>MySQL入门，安装和快速应用Python实现数据库的操作。</li>
+<li>必备SQL和授权，学习更多必备的指令让数据库实现更多业务场景。</li>
+<li><font color="#dd0000"><strong>SQL强化和实践，强化练习必备”指令“（项目开发写的最多）。</strong></font></li>
+<li>索引和函数以及存储过程，掌握常见性能提升手段以及那些应用不是很频繁却又需了解的知识点。</li>
+<li>Python操作MySQL和应用，侧重点在于Python开发，让大家了解Python开发中必备的实战应用，例如：锁、事务、数据库连接池等。</li>
+</ul>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210528190629407.png" class="" title="image-20210528190629407">
+
+
+
+<h2 id="二十五、MySQL入门"><a href="#二十五、MySQL入门" class="headerlink" title="二十五、MySQL入门"></a>二十五、MySQL入门</h2><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210528192555988.png" class="" title="image-20210528192555988">
+
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210508102020237.png" class="" title="image-20210508102020237">
+
+<p>课程目标：学习安装和快速应用Python实现数据库的操作。</p>
+<p>课程概要：</p>
+<ul>
+<li>安装 &amp; 配置 &amp; 启动<ul>
+<li>win</li>
+<li>mac</li>
+</ul>
+</li>
+<li>数据库 管理（类比文件夹）</li>
+<li>表 管理        （类比文件夹下的Excel文件）</li>
+<li>数据行 管理（类比Excel文件中的数据行）</li>
+<li>Python操作MySQL及相关安全的问题</li>
+</ul>
+<h3 id="1-安装-amp-配置-amp-启动"><a href="#1-安装-amp-配置-amp-启动" class="headerlink" title="1. 安装 &amp; 配置 &amp; 启动"></a>1. 安装 &amp; 配置 &amp; 启动</h3><p>MySQL现在的版本主要分为：</p>
+<ul>
+<li>5.x 版本，现在互联网企业中的主流版本，包括：头条、美图、百度、腾讯等互联网公司主流的版本。</li>
+<li>8.x 版本，新增了一些了窗口函数、持久化配置、隐藏索引等其他功能。</li>
+</ul>
+<p>所以，我们课程会以常用大版本中最新的版本为例来讲解，即：5.7.31 （依然有很多企业在用5.6.x，但新项目基本上都是5.7.x了）。</p>
+<h4 id="1-1-win系统"><a href="#1-1-win系统" class="headerlink" title="1.1 win系统"></a>1.1 win系统</h4><h5 id="第1步：下载安装"><a href="#第1步：下载安装" class="headerlink" title="第1步：下载安装"></a>第1步：下载安装</h5><p><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210508103751068.png" class="" title="image-20210508103751068">
+
+<p>注意：下载5.7.31版本</p>
+<h5 id="第2步：解压至任意文件夹"><a href="#第2步：解压至任意文件夹" class="headerlink" title="第2步：解压至任意文件夹"></a>第2步：解压至任意文件夹</h5><p>建议解压至软件安装目录，例如：</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210508105417186.png" class="" title="image-20210508105417186">
+
+
+
+<h5 id="第3步：创建配置文件"><a href="#第3步：创建配置文件" class="headerlink" title="第3步：创建配置文件"></a>第3步：创建配置文件</h5><p>在MySQL的安装目录下创建 <code>my.ini</code> 的文件，作为MySQL的配置文件。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210508120708175.png" class="" title="image-20210508120708175">
+
+
+
+<p>其实，MySQL的配置文件可以放在很多的目录，下图是配置文件的优先级（注意要使用管理员权限打开命令行窗口）：</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510150530193.png" class="" title="image-20210510150530193">
+
+
+
+<p>强烈，建议大家还是把配置文件放在MySQL安装目录下，这样以后电脑上想要安装多个版本的MySQL时，配置文件可以相互独立不影响。</p>
+<p>注意：如果你电脑的上述其他目录存在MySQL配置文件，建议删除，否则可能会影响MySQL的启动。</p>
+<h5 id="第4步：初始化"><a href="#第4步：初始化" class="headerlink" title="第4步：初始化"></a>第4步：初始化</h5><pre class="language-none"><code class="language-none">&gt;&gt;&gt; &quot;C:\Program Files\mysql-5.7.31-winx64\bin\mysqld.exe&quot;  --initialize-insecure</code></pre>
+
+<p>初始化命令在执行时，会自动读取配置文件并执行初始化，此过程主要会做两件事：</p>
+<ul>
+<li>自动创建data目录，以后我们的数据都会存放在这个目录。</li>
+<li>同时创建建必备一些的数据，例如默认账户 root （无密码），用于登录MySQL并通过指令操作MySQL。</li>
+</ul>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510151829891.png" class="" title="image-20210510151829891">
+
+
+
+<p>在windowns安装过程中如果有报错 （ msvcr120.dll不存在 ），请下载并安装下面的两个补丁：</p>
+<ul>
+<li><p>vcredist：<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/download/confirmation.aspx?id=40784">https://www.microsoft.com/zh-cn/download/confirmation.aspx?id=40784</a>  （主要）</p>
+<img src="Python模块四day1/image-20210508115414183.png" alt="image-20210508115414183" style="zoom:33%;" />
+</li>
+<li><p>dirctx：<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-CN/download/details.aspx?id=35">https://www.microsoft.com/zh-CN/download/details.aspx?id=35</a></p>
+<img src="Python模块四day1/image-20210508115521913.png" alt="image-20210508115521913" style="zoom: 33%;" /></li>
+</ul>
+<h5 id="第5步：启动"><a href="#第5步：启动" class="headerlink" title="第5步：启动"></a>第5步：启动</h5><p>启动MySQL常见的有两种方式：</p>
+<ul>
+<li><p>临时启动</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">&gt;&gt;&gt; &quot;C:\Program Files\mysql-5.7.31-winx64\bin\mysqld.exe&quot;</code></pre>
+
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510152448745.png" class="" title="image-20210510152448745">
+
+<p>注意：此时程序会挂起，内部就是可以接收客户端发来的MySQL指令，关闭窗口或Ctrl+c 就可以停止运行。</p>
+<p>这种启动方式每次开机或想要开启都需要手动执行一遍命令比较麻烦。</p>
+</li>
+<li><p>制作windows服务，基于windows服务管理。</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">&gt;&gt;&gt;&quot;C:\Program Files\mysql-5.7.31-winx64\bin\mysqld.exe&quot; --install mysql57</code></pre>
+
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510152702489.png" class="">
+
+<p>创建好服务之后，可以通过命令 启动和关闭服务，例如：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">&gt;&gt;&gt; net start mysql57
+&gt;&gt;&gt; net stop mysql57</code></pre>
+
+<p>也可以在window的服务管理中点击按钮启动和关闭服务。例如：</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210529225011045.png" class="">
+
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210529225043126.png" class="">
+
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510152740268.png" class="">
+
+
+
+<p>以后不再想要使用window服务了，也可以将制作的这个MySQL服务删除。</p>
+<pre class="language-none"><code class="language-none">&gt;&gt;&gt;&quot;C:\Program Files\mysql-5.7.31-winx64\bin\mysqld.exe&quot; --remove mysql57</code></pre>
+
+<img src="Python模块四day1/image-20210510152809233.png" style="zoom:25%;" /></li>
+</ul>
+<h5 id="第6步：测试连接MySQL"><a href="#第6步：测试连接MySQL" class="headerlink" title="第6步：测试连接MySQL"></a>第6步：测试连接MySQL</h5><p>安装并启动MySQL之后，就可以连接MySQL来测试是否已正确安装并启动成功。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510153336093.png" class="" title="image-20210510153336093">
+
+<p>以后在开发时，肯定是要用Python代码来连接MySQL并且进行数据操作（后面讲）。</p>
+<p>在安装MySQL时，其实也自动安装了一个工具（客户端），让我们快速实现连接MySQL并发送指令。</p>
+<blockquote>
+<p>“C:\Program Files\mysql-5.7.31-winx64\bin\mysql.exe” -h 127.0.0.1 -P 3306 -u root -p</p>
+</blockquote>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510154446628.png" class="">
+
+<p>注意：</p>
+<ul>
+<li><p><code>mysql57</code>服务开启时，才能连接数据库</p>
+</li>
+<li><p>如果把bin目录加入环境变量，每次在运行命令时，就不用再重新输入绝对路径了。</p>
+</li>
+</ul>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210529225251803.png" class="">
+
+
+
+<p>上述过程如果操作完成之后，证明你的安装和启动过程就搞定了。</p>
+<h4 id="1-2-mac系统"><a href="#1-2-mac系统" class="headerlink" title="1.2 mac系统"></a>1.2 mac系统</h4><p>mac系统和win不同，MySQL为他提供了非常方便的一站式安装程序，只要点击、next就可以安装、初始化完成。</p>
+<h5 id="第1步：安装和初始化"><a href="#第1步：安装和初始化" class="headerlink" title="第1步：安装和初始化"></a>第1步：安装和初始化</h5><p><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+<img src="Python模块四day1/image-20210508103830229.png" alt="image-20210508103830229"  />
+
+<img src="Python模块四day1/image-20210508165414794.png" alt="image-20210508165414794" style="zoom:50%;" />
+
+
+
+<img src="Python模块四day1/image-20210508171059416.png" alt="image-20210508171059416" style="zoom:50%;" />
+
+
+
+<p>这个基于dmg文件的安装过程，其实包含了：</p>
+<ul>
+<li>安装，默认安装在了 <code>/usr/local/mysql-5.7.31-macos10.14-x86_64/</code>目录。</li>
+<li>初始化，在安装目录下创建data目录用于存放数据； 初始化模块数据库以及账户相关等，例如： 账cd</li>
+</ul>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510103342842.png" class="" title="image-20210510103342842">
+
+
+
+<h5 id="第2步：创建配置文件"><a href="#第2步：创建配置文件" class="headerlink" title="第2步：创建配置文件"></a>第2步：创建配置文件</h5><p>建议在MySQL安装目录下创建 <code>etc/my.cnf</code> 作为MySQL的配置文件。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510161700478.png" class="">
+
+
+
+<p>MySQL的配置文件按照优先级，会在以下目录中寻找：</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510161845843.png" class="">
+
+
+
+<p>为了避免多个版本共存时，配置文件混乱的问题，建议大家还是把配置文件放在当前MySQL的安装目录下。</p>
+<h5 id="第3步：启动"><a href="#第3步：启动" class="headerlink" title="第3步：启动"></a>第3步：启动</h5><p>在Mac系统中启动MySQL常见的有2种方式：</p>
+<ul>
+<li><p>安装目录中自带 <code>mysql.server</code> 脚本（建议）</p>
+<pre class="language-python" data-language="python"><code class="language-python">sudo &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;support-files&#x2F;mysql.server start
+# 输入电脑密码
+
+sudo mysql.server start
+# 输入电脑密码</code></pre>
+
+<pre class="language-none"><code class="language-none">sudo &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;support-files&#x2F;mysql.server stop</code></pre>
+
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510162854578.png" class="">
+
+
+<p>为了避免每次执行命令都需要些路径，可以将路径 <code>/usr/local/mysql/support-files</code>加入到环境变量中。</p>
+</li>
+</ul>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510165107737.png" class="">
+
+<p>  操作完成之后，再在终端执行下命令：<code>source ~/.zprofile</code> 让设置的环境变量立即生效。</p>
+<p>  注意：mac系统的版本如果比较老，会显示空白的 <code>zprofile</code> 文件，此就要去打开   <code>bash_profile</code> 文件。</p>
+<p>  这样设置好之后，以后就可以使用下面的命令去启动和关闭MySQL了。</p>
+  <pre class="language-none"><code class="language-none">sudo mysql.server start
+sudo mysql.server stop</code></pre>
+
+<ul>
+<li>系统偏好设置（不推荐）</li>
+</ul>
+<img src="Python模块四day1/image-20210510104009559.png" alt="image-20210510104009559" style="zoom: 33%;" />
+
+
+
+
+
+<p>第一种<code>mysql.server</code>脚本的形式，内部是使用 <code>mysqld_safe</code>运行，可以守护我们的MySQL进程，如意外挂掉可自动重启。</p>
+<h5 id="第4步：测试连接MySQL"><a href="#第4步：测试连接MySQL" class="headerlink" title="第4步：测试连接MySQL"></a>第4步：测试连接MySQL</h5><p>安装并启动MySQL之后，就可以连接MySQL来测试是否已正确安装并启动成功。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510153336093.png" class="" title="image-20210510153336093">
+
+<p>以后在开发时，肯定是要用Python代码来连接MySQL并且进行数据操作（后面讲）。</p>
+<p>在安装MySQL时，其实也自动安装了一个工具（客户端），让我们快速实现连接MySQL并发送指令。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510171029083.png" class="">
+
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510171004699.png" class="">
+
+
+
+<p>注意：<code>/usr/local/mysql/bin</code>也可以加入到环境变量。</p>
+<p>至此，在Mac系统中关于MySQL的安装和配置就完成了。</p>
+<h4 id="1-3-关于配置文件"><a href="#1-3-关于配置文件" class="headerlink" title="1.3 关于配置文件"></a>1.3 关于配置文件</h4><p>上述的过程中，我们在配置文件中只添加了很少的配置。</p>
+<p>其实，配置项有很多，而哪些配置项都有默认值，如果我们不配置，MySQL则自动使用默认值。</p>
+<h4 id="1-4-关于密码"><a href="#1-4-关于密码" class="headerlink" title="1.4 关于密码"></a>1.4 关于密码</h4><h5 id="1-设置和修改root密码"><a href="#1-设置和修改root密码" class="headerlink" title="1. 设置和修改root密码"></a>1. 设置和修改root密码</h5><p>在windows系统中模块默认 root 账户是没有密码的，如果想要为账户设定密码，可以在利用root账户登录成功之后，执行：</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210530001548192.png" class="">
+
+
+
+<h5 id="2-忘记root密码"><a href="#2-忘记root密码" class="headerlink" title="2. 忘记root密码"></a>2. 忘记root密码</h5><p>如果你忘记了MySQL账户的密码。</p>
+<ul>
+<li><p>修改配置文件，在 [mysqld] 节点下添加 <code>skip-grant-tables=1</code></p>
+<pre class="language-none"><code class="language-none">[mysqld]
+...
+skip-grant-tables&#x3D;1
+...</code></pre>
+</li>
+<li><p>重启MySQL，再次登录时，不需要密码直接可以进去了</p>
+<ul>
+<li><p>windows重启</p>
+<pre class="language-none"><code class="language-none">net stop mysql57
+net start mysql57</code></pre>
+</li>
+<li><p>mac重启</p>
+<pre class="language-none"><code class="language-none">sudo mysql.server restart</code></pre></li>
+</ul>
+<p>重启后，无序密码就可以进入。</p>
+<pre class="language-none"><code class="language-none">&gt;&gt;&gt; mysql -u root -p</code></pre>
+</li>
+<li><p>进入数据库后执行修改密码命令</p>
+<pre class="language-none"><code class="language-none">use mysql;
+update user set authentication_string &#x3D; password(&#39;新密码&#39;),password_last_changed&#x3D;now() where user&#x3D;&#39;root&#39;;</code></pre>
+</li>
+<li><p>退出并再次修改配置文件，删除 [mysqld] 节点下的 <code>skip-grant-tables=1</code></p>
+<pre class="language-none"><code class="language-none">[mysqld]
+...
+# skip-grant-tables&#x3D;1
+...</code></pre>
+</li>
+<li><p>再次重启，以后就可以使用新密码登录了。</p>
+</li>
+</ul>
+<h3 id="2-数据库-管理"><a href="#2-数据库-管理" class="headerlink" title="2. 数据库 管理"></a>2. 数据库 管理</h3><p>安装上数据库之后，就需要开始学习指令了，通过指令让MySQL去做出一些文件操作。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210507211911641.png" class="">
+
+
+
+<p>如果将数据库管理系统与之前的文件管理做类比的话：</p>
+<table>
+<thead>
+<tr>
+<th>数据库管理系统</th>
+<th>文件管理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据库</td>
+<td>文件夹</td>
+</tr>
+<tr>
+<td>数据表</td>
+<td>文件夹下的excel文件</td>
+</tr>
+</tbody></table>
+<p>接下来，我们先学习 数据库（文件夹）相关操作的指令。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510153336093.png" class="">
+
+<h4 id="2-1-内置客户端操作"><a href="#2-1-内置客户端操作" class="headerlink" title="2.1 内置客户端操作"></a>2.1 内置客户端操作</h4><p>当连接上MySQL之后，执行如下指令（一般称为SQL语句），就可以对MySQL的数据进行操作。</p>
+<ul>
+<li><p>查看当前所有的数据库：  <code>show databases;</code></p>
+</li>
+<li><p>创建数据库：<code>create database 数据库名 DEFAULT CHARSET utf8 COLLATE utf8_general_ci;</code> </p>
+<pre class="language-none"><code class="language-none">create database day25db;
+
+create database day25db DEFAULT CHARSET utf8 COLLATE utf8_general_ci;</code></pre>
+</li>
+<li><p>删除数据库：<code>drop database 数据库名</code>;</p>
+</li>
+<li><p>进入数据（进入文件）：<code>use 数据库;</code></p>
+</li>
+</ul>
+<p>示例：<font color="#dd0000"> <strong>【mysql数据库操作】：不用记住，用到时回来翻看</strong></font></p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"># 1.登录MySQL
+wupeiqi@wupeiqideMBP ~ % &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 5
+Server version: 5.7.31 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2020, Oracle and&#x2F;or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+# 2.查看当前数据库
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+# 3. 创建数据库:  create database 数据库名 default charset 编码 collate 排序规则;
+mysql&gt; create database db1 default charset utf8 collate utf8_general_ci;
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| db1                |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+# 4. 删除数据库
+mysql&gt; drop database db1;
+Query OK, 0 rows affected (0.00 sec)
+
+# 5. 查看当前数据库
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+# 6. 进入数据库
+mysql&gt; use mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+# 7. 进入mysql数据库（文件夹），查看此数据库下的所有表。
+mysql&gt; show tables;
++---------------------------+
+| Tables_in_mysql           |
++---------------------------+
+| columns_priv              |
+| db                        |
+| engine_cost               |
+| event                     |
+| func                      |
+| general_log               |
+| gtid_executed             |
+| help_category             |
+| help_keyword              |
+| help_relation             |
+| help_topic                |
+| innodb_index_stats        |
+| innodb_table_stats        |
+| ndb_binlog_index          |
+| plugin                    |
+| proc                      |
+| procs_priv                |
+| proxies_priv              |
+| server_cost               |
+| servers                   |
+| slave_master_info         |
+| slave_relay_log_info      |
+| slave_worker_info         |
+| slow_log                  |
+| tables_priv               |
+| time_zone                 |
+| time_zone_leap_second     |
+| time_zone_name            |
+| time_zone_transition      |
+| time_zone_transition_type |
+| user                      |
++---------------------------+
+31 rows in set (0.00 sec)
+
+# 8. 退出
+mysql&gt;exit;</code></pre>
+
+<h4 id="2-2-Python代码操作"><a href="#2-2-Python代码操作" class="headerlink" title="2.2 Python代码操作"></a>2.2 Python代码操作</h4><p>无论通过何种方式去连接MySQL，本质上发送的 <strong>指令</strong> 都是相同的，只是连接的方式和操作形式不同而已。</p>
+<p>当连接上MySQL之后，执行如下指令，就可以对MySQL的数据进行操作。（同上述过程）</p>
+<ul>
+<li>查看当前所有的数据库  <code>show databases;</code></li>
+<li>创建数据库：<code>create database 数据库名 default charset utf8 collate utf8_general_ci;</code> </li>
+<li>删除数据库：<code>drop database 数据库名</code>;</li>
+<li>进入数据（进入文件）：<code>use 数据库;</code></li>
+</ul>
+<p>想要使用Python操作MySQL需要安装第三方模块：</p>
+<pre class="language-none"><code class="language-none">pip3 install pymysql</code></pre>
+
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510153336093.png" class="" title="image-20210510153336093">
+
+<p>安装完成后，就可以编写代码：</p>
+<pre class="language-python" data-language="python"><code class="language-python">import pymysql
+
+# 连接MySQL（socket）
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, charset&#x3D;&quot;utf8&quot;)
+cursor &#x3D; conn.cursor()
+
+# 1. 查看数据库
+# 发送指令
+cursor.execute(&quot;show databases&quot;)
+# 获取指令的结果
+result &#x3D; cursor.fetchall()
+print(result) # ((&#39;information_schema&#39;,), (&#39;mysql&#39;,), (&#39;performance_schema&#39;,), (&#39;sys&#39;,))
+
+# 2. 创建数据库（新增、删除、修改）
+# 发送指令
+cursor.execute(&quot;create database db3 default charset utf8 collate utf8_general_ci&quot;)
+conn.commit()
+
+# 3. 查看数据库
+# 发送指令
+cursor.execute(&quot;show databases&quot;)
+# 获取指令的结果
+result &#x3D; cursor.fetchall()
+print(result) # ((&#39;information_schema&#39;,), (&#39;db3&#39;,), (&#39;mysql&#39;,), (&#39;performance_schema&#39;,), (&#39;sys&#39;,))
+
+# 4. 删除数据库
+# 发送指令
+cursor.execute(&quot;drop database db3&quot;)
+conn.commit()
+
+# 3. 查看数据库
+# 发送指令
+cursor.execute(&quot;show databases&quot;)
+# 获取指令的结果
+result &#x3D; cursor.fetchall()
+print(result) # ((&#39;information_schema&#39;,), (&#39;mysql&#39;,), (&#39;performance_schema&#39;,), (&#39;sys&#39;,))
+
+# 5. 进入数据库，查看表
+# 发送指令
+cursor.execute(&quot;use mysql&quot;)
+cursor.execute(&quot;show tables&quot;)
+result &#x3D; cursor.fetchall()
+print(result) # ((&#39;columns_priv&#39;,), (&#39;db&#39;,), (&#39;engine_cost&#39;,), (&#39;event&#39;,), (&#39;func&#39;,), (&#39;general_log&#39;,),....
+
+# 关闭连接
+cursor.close()
+conn.close()</code></pre>
+
+<p><font color="#dd0000"> <strong>注意：用Python连接mysql时</strong></font></p>
+<ul>
+<li>做查询操作：加上<code>cursor.fetchall()</code>、<code>cursor.fetxx()</code>以接受返回值</li>
+<li>做增删改操作：加上<code>conn.commit()</code>以确定操作</li>
+</ul>
+<h3 id="3-数据表-管理"><a href="#3-数据表-管理" class="headerlink" title="3. 数据表 管理"></a>3. 数据表 管理</h3><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210507211911641.png" class="" title="image-20210507211911641">
+
+<p>如果将数据库管理系统与之前的文件管理做类比的话：</p>
+<table>
+<thead>
+<tr>
+<th>数据库管理系统</th>
+<th>文件管理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据库</td>
+<td>文件夹</td>
+</tr>
+<tr>
+<td>数据表</td>
+<td>文件夹下的文件</td>
+</tr>
+</tbody></table>
+<p>接下来，我们先学习 数据表（文件夹中的文件）相关操作的指令。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210510153336093.png" class="" title="image-20210510153336093">
+
+<p>其实在数据库中创建数据库 和 创建Excel非常类似，需要指定： <code>表名</code>、<code>列名称</code>、<code>类类型（整型、字符串或其他)</code>。</p>
+<h4 id="3-1-内置客户端操作"><a href="#3-1-内置客户端操作" class="headerlink" title="3.1 内置客户端操作"></a>3.1 内置客户端操作</h4><p>数据表常见操作的指令：<font color="#dd0000"> <strong>【mysql数据表操作】：不用记住，用到时回来翻看</strong></font></p>
+<ul>
+<li><p>进入数据库 <code>use 数据库;</code>，查看当前所有表：<code>show tables;</code></p>
+</li>
+<li><p>创建表结构</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210511102323966.png" class="" title="image-20210511102323966">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table 表名(
+    列名  类型,
+    列名  类型,
+    列名  类型
+)default charset&#x3D;utf8;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table tb1(
+	id int,
+    name varchar(16)
+)default charset&#x3D;utf8;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table tb2(
+	id int,
+    name varchar(16) not null,   -- 不允许为空
+    email varchar(32) null,      -- 允许为空（默认）
+    age int
+)default charset&#x3D;utf8;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table tb3(
+	id int,
+    name varchar(16) not null,   -- 不允许为空
+    email varchar(32) null,      -- 允许为空（默认）
+    age int default 3            -- 插入数据时，如果不给age列设置值，默认值：3
+)default charset&#x3D;utf8;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table tb4(
+	id int primary key,			 -- 主键（不允许为空、不能重复）
+    name varchar(16) not null,   -- 不允许为空
+    email varchar(32) null,      -- 允许为空（默认）
+    age int default 3            -- 插入数据时，如果不给age列设置值，默认值：3
+)default charset&#x3D;utf8;</code></pre>
+
+<p>主键一般用于表示当前这条数据的ID编号（类似于人的身份证），需要我们自己来维护一个不重复的值，比较繁琐。所以，在数据库中一般会将主键和自增结合。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table tb5(
+	id int not null auto_increment primary key,	-- 不允许为空 &amp; 主键 &amp; 自增
+    name varchar(16) not null,   		-- 不允许为空
+    email varchar(32) null,      		-- 允许为空（默认）
+    age int default 3            		-- 插入数据时，如果不给age列设置值，默认值：3
+)default charset&#x3D;utf8;</code></pre>
+
+<p><font color="#dd0000"> <strong>注意：一个表中只能有一个自增列【自增列，一般都是主键】。</strong></font></p>
+</li>
+<li><p>删除表 <code>drop table 表名;</code></p>
+</li>
+<li><p>清空表 <code>delete from 表名;</code> 或 <code>truncate table 表名;</code>（速度快、无法回滚撤销等）</p>
+</li>
+<li><p>修改表</p>
+<ul>
+<li><p>添加列 </p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table 表名 add 列名 类型;
+alter table 表名 add 列名 类型 DEFAULT 默认值;
+alter table 表名 add 列名 类型 not null default 默认值;
+alter table 表名 add 列名 类型 not null primary key auto_increment;</code></pre>
+</li>
+<li><p>删除列</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table 表名 drop column 列名;</code></pre>
+</li>
+<li><p>修改列 类型</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table 表名 modify column 列名 类型;</code></pre>
+</li>
+<li><p>修改列 类型 + 名称</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table 表名 change 原列名 新列名 新类型;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table  tb change id nid int not null;
+alter table  tb change id id int not null default 5;
+alter table  tb change id id int not null primary key auto_increment;
+
+alter table  tb change id id int; -- 允许为空，删除默认值，删除自增。</code></pre>
+</li>
+<li><p>修改列 默认值</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">ALTER TABLE 表名 ALTER 列名 SET DEFAULT 1000;</code></pre>
+</li>
+<li><p>删除列 默认值</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">ALTER TABLE 表名 ALTER 列名 DROP DEFAULT;</code></pre>
+</li>
+<li><p>添加主键</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table 表名 add primary key(列名);</code></pre>
+</li>
+<li><p>删除主键</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table 表名 drop primary key;</code></pre></li>
+</ul>
+</li>
+<li><p>查询表各列信息</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">desc 表名;</code></pre>
+
+
+</li>
+<li><p>常见列类型</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table 表(
+	id int,
+    name varchar(16)
+)default charset&#x3D;utf8;</code></pre>
+
+<ul>
+<li><p><code>int[(m)][unsigned][zerofill]</code></p>
+<pre class="language-none"><code class="language-none">int				表示有符号，取值范围：-2147483648 ～ 2147483647
+int unsigned	表示无符号，取值范围：0 ～ 4294967295
+int(5)zerofill	仅用于显示，当不满足5位时，按照左边补0，例如：00002；满足时，正常显示。</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">mysql&gt; create table L1(id int, uid int unsigned, zid int(5) zerofill) default charset&#x3D;utf8;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql&gt; insert into L1(id,uid,zid) values(1,2,3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; insert into L1(id,uid,zid) values(2147483641,4294967294,300000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from L1;
++------------+------------+--------+
+| id         | uid        | zid    |
++------------+------------+--------+
+|          1 |          2 |  00003 |
+| 2147483641 | 4294967294 | 300000 |
++------------+------------+--------+
+2 rows in set (0.00 sec)
+
+mysql&gt; insert into L1(id,uid,zid) values(214748364100,4294967294,300000);
+ERROR 1264 (22003): Out of range value for column &#39;id&#39; at row 1
+mysql&gt;</code></pre>
+</li>
+<li><p><code>tinyint[(m)] [unsigned] [zerofill]</code></p>
+<pre class="language-none"><code class="language-none">有符号，取值范围：-128 ～ 127.
+无符号，取值范围：0 ～ 255</code></pre>
+</li>
+<li><p><code>bigint[(m)][unsigned][zerofill]</code></p>
+<pre class="language-none"><code class="language-none">有符号，取值范围：-9223372036854775808 ～ 9223372036854775807
+无符号，取值范围：0  ～  18446744073709551615</code></pre>
+</li>
+<li><p><code>decimal[(m[,d])] [unsigned] [zerofill]</code></p>
+<pre class="language-none"><code class="language-none">准确的小数值，m是数字总个数（负号不算），d是小数点后个数。 m最大值为65，d最大值为30。
+
+例如：
+create table L2(
+	id int not null primary key auto_increment,
+	salary decimal(8,2)
+)default charset&#x3D;utf8;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">mysql&gt; create table L2(id int not null primary key auto_increment,salary decimal(8,2))default charset&#x3D;utf8;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql&gt; insert into L2(salary) values(1.28);
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; insert into L2(salary) values(5.289);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql&gt; insert into L2(salary) values(5.282);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql&gt; insert into L2(salary) values(512132.28);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; insert into L2(salary) values(512132.283);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql&gt; select * from L2;
++----+-----------+
+| id | salary    |
++----+-----------+
+|  1 |      1.28 |
+|  2 |      5.29 |
+|  3 |      5.28 |
+|  4 | 512132.28 |
+|  5 | 512132.28 |
++----+-----------+
+5 rows in set (0.00 sec)
+
+mysql&gt; insert into L2(salary) values(5121321.283);
+ERROR 1264 (22003): Out of range value for column &#39;salary&#39; at row 1
+mysql&gt;</code></pre>
+</li>
+<li><p><code>FLOAT[(M,D)] [UNSIGNED] [ZEROFILL]</code></p>
+<pre class="language-none"><code class="language-none">单精度浮点数，非准确小数值，m是数字总个数，d是小数点后个数。</code></pre>
+</li>
+<li><p><code>DOUBLE[(M,D)] [UNSIGNED] [ZEROFILL]</code></p>
+<pre class="language-none"><code class="language-none">双精度浮点数（非准确小数值），m是数字总个数，d是小数点后个数。</code></pre>
+</li>
+<li><p><code>char(m)</code></p>
+<pre class="language-none"><code class="language-none">定长字符串，m代表字符串的长度，最多可容纳255个字符。
+
+定长的体现：即使内容长度小于m，也会占用m长度。例如：char(5)，数据是：yes，底层也会占用5个字符；如果超出m长度限制（默认MySQL是严格模式，所以会报错）。
+    如果在配置文件中加入如下配置，
+        sql-mode&#x3D;&quot;NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&quot;
+    保存并重启，此时MySQL则是非严格模式，此时超过长度则自动截断（不报错）。。
+
+注意：默认底层存储是固定的长度（不够则用空格补齐），但是查询数据时，会自动将空白去除。 如果想要保留空白，在sql-mode中加入 PAD_CHAR_TO_FULL_LENGTH 即可。
+查看模式sql-mode，执行命令：show variables  like &#39;sql_mode&#39;;
+
+一般适用于：固定长度的内容。
+
+create table L3(
+    id int not null primary key auto_increment,
+    name varchar(5),
+    depart char(3)
+)default charset&#x3D;utf8;
+
+insert into L3(name,depart) values(&quot;alexsb&quot;,&quot;sbalex&quot;);</code></pre>
+</li>
+<li><p><code>varchar(m)</code></p>
+<pre class="language-none"><code class="language-none">变长字符串，m代表字符串的长度，最多可容纳65535个字节。
+
+变长的体现：内容小于m时，会按照真实数据长度存储；如果超出m长度限制（（默认MySQL是严格模式，所以会报错）。
+    如果在配置文件中加入如下配置，
+        sql-mode&#x3D;&quot;NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&quot;
+    保存并重启，此时MySQL则是非严格模式，此时超过长度则自动截断（不报错）。
+
+例如：
+create table L3(
+    id int not null primary key auto_increment,
+    name varchar(5),
+    depart char(3)
+)default charset&#x3D;utf8;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">mysql&gt; create table L3(id int not null primary key auto_increment,name varchar(5),depart char(3))default charset&#x3D;utf8;
+Query OK, 0 rows affected (0.03 sec)
+
+-- 插入多行
+mysql&gt; insert into L3(name,depart) values(&quot;wu&quot;,&quot;WU&quot;),(&quot;wupei&quot;,&quot;ALS&quot;);
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql&gt; select * from L3;
++----+-------+--------+
+| id | name  | depart |
++----+-------+--------+
+|  1 | wu    | WU     |
+|  2 | wupei | ALS    |
++----+-------+--------+
+2 rows in set (0.00 sec)
+
+-- 非严格模式下，不会报错。
+mysql&gt; insert into L3(name,depart) values(&quot;wupeiqi&quot;,&quot;ALS&quot;);
+ERROR 1406 (22001): Data too long for column &#39;name&#39; at row 1
+mysql&gt; insert into L3(name,depart) values(&quot;wupei&quot;,&quot;ALSB&quot;);
+ERROR 1406 (22001): Data too long for column &#39;depart&#39; at row 1
+mysql&gt;
+
+-- 如果 sql-mode 中加入了 PAD_CHAR_TO_FULL_LENGTH ，则查询时char时空白会保留。
+mysql&gt; select name,length(name),depart,length(depart) from L3;
++-------+--------------+--------+----------------+
+| name  | length(name) | depart | length(depart) |
++-------+--------------+--------+----------------+
+| wu    |            2 | WU     |              3 |
+| wupei |            5 | ALS    |              3 |
++-------+--------------+--------+----------------+
+4 rows in set (0.00 sec)
+mysql&gt;</code></pre>
+</li>
+<li><p><code>text</code></p>
+<pre class="language-none"><code class="language-none">text数据类型用于保存变长的大字符串，可以组多到65535 (2**16 − 1)个字符。
+
+一般情况下，长文本会用text类型。例如：文章、新闻等。</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table L4(
+	id int not null primary key auto_increment,
+    title varchar(128),
+	content text
+)default charset&#x3D;utf8;</code></pre>
+</li>
+<li><p><code>mediumtext</code></p>
+<pre class="language-none"><code class="language-none">A TEXT column with a maximum length of 16,777,215 (2**24 − 1) characters.</code></pre>
+</li>
+<li><p><code>longtext</code></p>
+<pre class="language-none"><code class="language-none">A TEXT column with a maximum length of 4,294,967,295 or 4GB (2**32 − 1)</code></pre>
+
+
+</li>
+<li><p><code>datetime</code></p>
+<pre class="language-none"><code class="language-none">YYYY-MM-DD HH:MM:SS（1000-01-01 00:00:00&#x2F;9999-12-31 23:59:59）</code></pre>
+</li>
+<li><p><code>timestamp</code></p>
+<pre class="language-none"><code class="language-none">YYYY-MM-DD HH:MM:SS（1970-01-01 00:00:00&#x2F;2037年）</code></pre>
+
+<pre class="language-none"><code class="language-none">对于TIMESTAMP，它把客户端插入的时间从当前时区转化为UTC（世界标准时间）进行存储，查询时，将其又转化为客户端当前时区进行返回。
+
+对于DATETIME，不做任何改变，原样输入和输出。</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">mysql&gt; create table L5(
+    -&gt; id int not null primary key auto_increment,
+    -&gt; dt datetime,
+    -&gt; tt timestamp
+    -&gt; )default charset&#x3D;utf8;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql&gt; insert into L5(dt,tt) values(&quot;2025-11-11 11:11:44&quot;, &quot;2025-11-11 11:11:44&quot;);
+
+mysql&gt; select * from L5;
++----+---------------------+---------------------+
+| id | dt                  | tt                  |
++----+---------------------+---------------------+
+|  1 | 2025-11-11 11:11:44 | 2025-11-11 11:11:44 |
++----+---------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql&gt; show variables like &#39;%time_zone%&#39;;
++------------------+--------+
+| Variable_name    | Value  |
++------------------+--------+
+| system_time_zone | CST    | 
+| time_zone        | SYSTEM |
++------------------+--------+
+2 rows in set (0.00 sec)
+-- “CST”指的是MySQL所在主机的系统时间，是中国标准时间的缩写，China Standard Time UT+8:00
+
+mysql&gt; set time_zone&#x3D;&#39;+0:00&#39;;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; show variables like &#39;%time_zone%&#39;;
++------------------+--------+
+| Variable_name    | Value  |
++------------------+--------+
+| system_time_zone | CST    |
+| time_zone        | +00:00 |
++------------------+--------+
+2 rows in set (0.01 sec)
+
+mysql&gt; select * from L5;
++----+---------------------+---------------------+
+| id | dt                  | tt                  |
++----+---------------------+---------------------+
+|  1 | 2025-11-11 11:11:44 | 2025-11-11 03:11:44 |
++----+---------------------+---------------------+
+1 row in set (0.00 sec)</code></pre>
+</li>
+<li><p><code>date</code></p>
+<pre class="language-none"><code class="language-none">YYYY-MM-DD（1000-01-01&#x2F;9999-12-31）</code></pre>
+</li>
+<li><p><code>time</code></p>
+<pre class="language-none"><code class="language-none">HH:MM:SS（&#39;-838:59:59&#39;&#x2F;&#39;838:59:59&#39;）</code></pre></li>
+</ul>
+<p>MySQL还有很多其他的数据类型，例如：<em>set、enum、TinyBlob、Blob、MediumBlob、LongBlob 等</em>，详细见官方文档：<a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/data-types.html">https://dev.mysql.com/doc/refman/5.7/en/data-types.html</a></p>
+</li>
+</ul>
+<p>上述就是关于数据表的一些基本操作。</p>
+<h4 id="3-2-MySQL代码操作"><a href="#3-2-MySQL代码操作" class="headerlink" title="3.2 MySQL代码操作"></a>3.2 MySQL代码操作</h4><p>基于Python去连接MySQL之后，想要进行数据表的管理的话，发送的指令其实都是相同的，例如：</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">import pymysql
+
+# 连接MySQL
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, charset&#x3D;&quot;utf8&quot;)
+cursor &#x3D; conn.cursor()
+
+# 1. 创建数据库
+&quot;&quot;&quot;
+cursor.execute(&quot;create database db4 default charset utf8 collate utf8_general_ci&quot;)
+conn.commit()
+&quot;&quot;&quot;
+
+# 2. 进入数据库、查看数据表
+&quot;&quot;&quot;
+cursor.execute(&quot;use db4&quot;)
+cursor.execute(&quot;show tables&quot;)
+result &#x3D; cursor.fetchall()
+print(result)
+&quot;&quot;&quot;
+
+# 3. 进入数据库创建表
+cursor.execute(&quot;use db4&quot;)
+sql &#x3D; &quot;&quot;&quot;
+create table L4(
+    id int not null primary key auto_increment,
+    title varchar(128),
+    content text,
+    ctime datetime
+)default charset&#x3D;utf8;
+&quot;&quot;&quot;
+cursor.execute(sql)
+conn.commit()
+
+# 4. 查看数据库中的表
+&quot;&quot;&quot;
+cursor.execute(&quot;show tables&quot;)
+result &#x3D; cursor.fetchall()
+print(result)
+&quot;&quot;&quot;
+
+# 5. 其他 drop table... 略过
+
+
+# 关闭连接
+cursor.close()
+conn.close()</code></pre>
+
+
+
+
+
+
+
+<h3 id="4-数据行"><a href="#4-数据行" class="headerlink" title="4.数据行"></a>4.数据行</h3><p>当数据库和数据表创建完成之后，就需要对数据表中的内容进行：增、删、改、查了。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210511102323966.png" class="" title="image-20210511102323966">
+
+
+
+<h4 id="4-1-内置客户端操作"><a href="#4-1-内置客户端操作" class="headerlink" title="4.1 内置客户端操作"></a>4.1 内置客户端操作</h4><p>数据行操作的相关SQL语句（指令）如下：</p>
+<ul>
+<li><p>新<strong>增</strong>数据</p>
+<pre class="language-none"><code class="language-none">insert into 表名 (列名,列名,列名) values(对应列的值,对应列的值,对应列的值);</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">insert into tb1(name,password) values(&#39;武沛齐&#39;,&#39;123123&#39;);
+insert into tb1(name,password) values(&#39;武沛齐&#39;,&#39;123123&#39;),(&#39;alex&#39;,&#39;123&#39;); -- 新增多行数据
+
+insert into tb1 values(&#39;武沛齐&#39;,&#39;123123&#39;),(&#39;alex&#39;,&#39;123&#39;); -- 如果表中只有2列</code></pre>
+</li>
+<li><p><strong>删</strong>除数据</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">delete from 表名;
+delete from 表名 where 条件;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">delete from tb1;
+delete from tb1 where name&#x3D;&quot;wupeiqi&quot;;
+delete from tb1 where name&#x3D;&quot;wupeiqi&quot; and password&#x3D;&quot;123&quot;;
+delete from tb1 where id&gt;9;</code></pre>
+</li>
+<li><p>修<strong>改</strong>数据</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">update 表名 set 列名&#x3D;值;
+update 表名 set 列名&#x3D;值 where 条件;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">update tb1 set name&#x3D;&quot;wupeiqi&quot;;
+update tb1 set name&#x3D;&quot;wupeiqi&quot; where id&#x3D;1;
+
+update tb1 set age&#x3D;age+1;  -- 整型
+update tb1 set age&#x3D;age+1 where id&#x3D;2;
+
+update L3 set name&#x3D;concat(name,&quot;db&quot;);
+update L3 set name&#x3D;concat(name,&quot;123&quot;)  where id&#x3D;2;  -- concat一个函数，可以拼接字符串</code></pre>
+</li>
+<li><p><strong>查</strong>询数据</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from 表名;
+select 列名,列名,列名 from 表名;
+select 列名,列名 as 别名,列名 from 表名;
+select * from 表名 where 条件;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from tb1;
+select id,name,age from tb1;
+select id,name as N,age, from tb1;
+select id,name as N,age, 111 from tb1;
+
+select * from tb1 where id &#x3D; 1;
+select * from tb1 where id &gt; 1;
+select * from tb1 where id !&#x3D; 1;
+select * from tb1 where name&#x3D;&quot;wupeiqi&quot; and password&#x3D;&quot;123&quot;;</code></pre></li>
+</ul>
+<h4 id="4-2-Python代码操作"><a href="#4-2-Python代码操作" class="headerlink" title="4.2 Python代码操作"></a>4.2 Python代码操作</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210511102323966.png" class="" title="image-20210511102323966">
+
+<pre class="language-python" data-language="python"><code class="language-python">import pymysql
+
+# 连接MySQL，自动执行 use userdb; -- 进入数据库
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, charset&#x3D;&quot;utf8&quot;, db&#x3D;&#39;userdb&#39;)
+cursor &#x3D; conn.cursor()
+
+
+# 1.新增（需commit）
+&quot;&quot;&quot;
+cursor.execute(&quot;insert into tb1(name,password) values(&#39;武沛齐&#39;,&#39;123123&#39;)&quot;)
+conn.commit()
+&quot;&quot;&quot;
+
+# 2.删除（需commit）
+&quot;&quot;&quot;
+cursor.execute(&quot;delete from tb1 where id&#x3D;1&quot;)
+conn.commit()
+&quot;&quot;&quot;
+
+# 3.修改（需commit)
+&quot;&quot;&quot;
+cursor.execute(&quot;update tb1 set name&#x3D;&#39;xx&#39; where id&#x3D;1&quot;)
+conn.commit()
+&quot;&quot;&quot;
+
+# 4.查询
+&quot;&quot;&quot;
+cursor.execute(&quot;select * from tb where id&gt;10&quot;)
+data &#x3D; cursor.fetchone() # cursor.fetchall()
+print(data)
+&quot;&quot;&quot;
+
+# 关闭连接
+cursor.close()
+conn.close()</code></pre>
+
+
+
+
+
+<p>其实在真正做项目开发时，流程如下：</p>
+<ul>
+<li>第一步：根据项目的功能来设计相应的 数据库 &amp; 表结构（不会经常变动，在项目设计之初就确定好了）。</li>
+<li>第二步：操作表结构中的数据，已达到实现业务逻辑的目的。</li>
+</ul>
+<p><strong>例如：实现一个 用户管理系统。</strong></p>
+<p>先使用MySQL自带的客户端创建相关 数据库和表结构（相当于先创建好Excel结构）。</p>
+<ul>
+<li>第一步：登录mysql</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">mysql -u root -p
+Enter password: root123</code></pre>
+
+
+
+<ul>
+<li>第二步：创建并进入数据库<code>usersdb</code></li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create database usersdb default charset utf8 collate utf8_general_ci;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">use usersdb;</code></pre>
+
+
+
+<ul>
+<li>第三步：创建数据表table</li>
+</ul>
+<p>	</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table users(
+	id int not null primary key auto_increment,
+    name varchar(32),
+	password varchar(64)
+)default charset&#x3D;utf8;</code></pre>
+
+<p><font color="#dd0000"> <strong>注意：前三步一般在终端完成</strong></font></p>
+<ul>
+<li>第四步：再在程序中执行编写相应的功能实现 注册、登录 等功能。</li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python">import pymysql
+
+
+def register():
+    print(&quot;用户注册&quot;)
+
+    user &#x3D; input(&quot;请输入用户名：&quot;) # alex
+    password &#x3D; input(&quot;请输入密码：&quot;) # sb
+
+    # 连接指定数据
+    conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, charset&#x3D;&quot;utf8&quot;, db&#x3D;&quot;usersdb&quot;)
+    cursor &#x3D; conn.cursor()
+
+    # 执行SQL语句（有SQL注入风险，稍后讲解）
+    # sql &#x3D; &#39;insert into users(name,password)values(&quot;alex&quot;,&quot;sb&quot;)&#39;
+    sql &#x3D; &#39;insert into users(name,password) values(&quot;&#123;&#125;&quot;,&quot;&#123;&#125;&quot;)&#39;.format(user, password)
+    
+    cursor.execute(sql)
+    conn.commit()
+
+    # 关闭数据库连接
+    cursor.close()
+    conn.close()
+
+    print(&quot;注册成功，用户名：&#123;&#125;,密码:&#123;&#125;&quot;.format(user, password))
+
+
+def login():
+    print(&quot;用户登录&quot;)
+
+    user &#x3D; input(&quot;请输入用户名：&quot;)
+    password &#x3D; input(&quot;请输入密码：&quot;)
+
+    # 连接指定数据
+    conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, charset&#x3D;&quot;utf8&quot;, db&#x3D;&quot;usersdb&quot;)
+    cursor &#x3D; conn.cursor()
+
+    # 执行SQL语句（有SQL注入风险，稍后讲解）
+    # sql &#x3D; select * from users where name&#x3D;&#39;wupeiqi&#39; and password&#x3D;&#39;123&#39;
+    sql &#x3D; &quot;select * from users where name&#x3D;&#39;&#123;&#125;&#39; and password&#x3D;&#39;&#123;&#125;&#39;&quot;.format(user, password)
+    cursor.execute(sql)
+    
+    result &#x3D; cursor.fetchone() # 去向mysql获取第一个结果并返回
+    # cursor.fetchone()返回结果由以下两种情况
+    # None
+    # 返回匹配结果的整个列的元组 (id, name, password)如：(1,wupeiqi,123)
+    
+    
+    # 关闭数据库连接
+    cursor.close()
+    conn.close()
+
+    if result:
+        print(&quot;登录成功&quot;, result)
+    else:
+        print(&quot;登录失败&quot;)
+
+
+def run():
+    choice &#x3D; input(&quot;1.注册；2.登录&quot;)
+    if choice &#x3D;&#x3D; &#39;1&#39;:
+        register()
+    elif choice &#x3D;&#x3D; &#39;2&#39;:
+        login()
+    else:
+        print(&quot;输入错误&quot;)
+
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    run()
+</code></pre>
+
+<p>So，你会发现， 在项目开发时，数据库 &amp; 数据表 的操作其实就做那么一次，最最常写的还是 对数据行 的操作。</p>
+<h3 id="5-关于SQL注入"><a href="#5-关于SQL注入" class="headerlink" title="5.关于SQL注入"></a>5.关于SQL注入</h3><p>假如，你开发了一个用户认证的系统，应该用户登录成功后才能正确的返回相应的用户结果。 </p>
+<pre class="language-python" data-language="python"><code class="language-python">import pymysql
+
+# 输入用户名和密码
+user &#x3D; input(&quot;请输入用户名：&quot;) # &#39; or 1&#x3D;1 -- 
+pwd &#x3D; input(&quot;请输入密码：&quot;) # 123
+
+
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, charset&#x3D;&quot;utf8&quot;,db&#x3D;&#39;usersdb&#39;)
+cursor &#x3D; conn.cursor()
+
+# 基于字符串格式化来 拼接SQL语句
+# sql &#x3D; &quot;select * from users where name&#x3D;&#39;alex&#39; and password&#x3D;&#39;123&#39;&quot;
+# sql &#x3D; &quot;select * from users where name&#x3D;&#39;&#39; or 1&#x3D;1 -- &#39; and password&#x3D;&#39;123&#39;&quot;
+sql &#x3D; &quot;select * from users where name&#x3D;&#39;&#123;&#125;&#39; and password&#x3D;&#39;&#123;&#125;&#39;&quot;.format(user, pwd)
+cursor.execute(sql)
+
+result &#x3D; cursor.fetchone()
+print(result) # None，不是None
+
+cursor.close()
+conn.close()</code></pre>
+
+
+
+<p>如果用户在输入user时，输入了：   <code>&#39; or 1=1 --  </code>    ，这样即使用户输入的密码不存在，也会可以通过验证。</p>
+<p><strong>为什么呢？</strong></p>
+<p>因为在SQL拼接时，拼接后的结果是：</p>
+<pre class="language-none"><code class="language-none">select * from users where name&#x3D;&#39;&#39; or 1&#x3D;1 -- &#39; and password&#x3D;&#39;123&#39;</code></pre>
+
+<p>注意：在MySQL中 <code>--</code> 表示注释。</p>
+<p><strong>那么，在Python开发中 如何来避免SQL注入呢？</strong></p>
+<p>切记，SQL语句不要在使用python的字符串格式化，而是使用pymysql的execute方法。</p>
+<pre class="language-python" data-language="python"><code class="language-python">import pymysql
+
+# 输入用户名和密码
+user &#x3D; input(&quot;请输入用户名：&quot;)
+pwd &#x3D; input(&quot;请输入密码：&quot;)
+
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, charset&#x3D;&quot;utf8&quot;, db&#x3D;&#39;userdb&#39;)
+
+cursor &#x3D; conn.cursor()
+
+cursor.execute(&quot;select * from users where name&#x3D;%s and password&#x3D;%s&quot;, [user, pwd])
+# 或
+# cursor.execute(&quot;select * from users where name&#x3D;%(n1)s and password&#x3D;%(n2)s&quot;, &#123;&quot;n1&quot;: user, &#39;n2&#39;: pwd&#125;)
+
+result &#x3D; cursor.fetchone()
+print(result)
+
+cursor.close()
+conn.close()</code></pre>
+
+
+
+
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210508102020237.png" class="" title="image-20210508102020237">
+
+<p>除了 【第5步 用户授权】以外，现在使用的是默认root账户（拥有最大权限），上述所有的过程已讲解完毕。</p>
+<p>本节内容大家需要掌握：</p>
+<ul>
+<li>安装和启动MySQL</li>
+<li>SQL语句：<ul>
+<li>数据库操作</li>
+<li>表操作</li>
+<li>数据行操作</li>
+</ul>
+</li>
+<li>基于Python操作MySQL</li>
+<li>注意SQL注入的问题</li>
+</ul>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ol>
+<li><p>根据要求 创建表 结构并编写相应的SQL语句（基于MySQL自带客户端操作）</p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int</td>
+<td>不为空 &amp; 自增 &amp; 主键</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(32)</td>
+<td>不为空</td>
+</tr>
+<tr>
+<td>password</td>
+<td>varchar(64)</td>
+<td>不为空</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>char(1)</td>
+<td>不为空，支持：男、女</td>
+</tr>
+<tr>
+<td>email</td>
+<td>varchar(64)</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>decimal(10,2)</td>
+<td>不为空 &amp; 默认值为 0</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>datetime</td>
+<td>新增时的时间<br />提示：可基于datetime模块实现</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>根据上述表的要求创建相应的数据和表结构（注意编码）。</p>
+</li>
+<li><p>任意插入5条数据。</p>
+</li>
+<li><p>将 <code>id&lt;3</code>的所有人的性别改为  男。</p>
+</li>
+<li><p>查询余额 <code>amount&gt;1000</code>的所有用户。</p>
+</li>
+<li><p>让每个人的余额在自己原的基础上 +1000 。</p>
+</li>
+<li><p>删除性别为男的所有数据。</p>
+</li>
+<li><p>通过Python代码实现上述除了第一个以外的操作。</p>
+<pre class="language-none"><code class="language-none">插入5条数据时，ctime那一列不要自己写“2021-11-11.。。” 而是使用datatime模块生成当前时间。</code></pre></li>
+</ul>
+<p>终端：</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"># 创建并打开day25数据库
+create database day25 default charset utf8 collate utf8_general_ci;
+use day25
+
+# 创建task1数据表
+create table task1(
+	id int not null primary key auto_increment,
+    name varchar(32) not null,
+	password varchar(64) not null,
+    gender char(1) not null,
+    email varchar(64),
+    amount decimal(10,2) not null default 0,
+    ctime datetime
+)default charset&#x3D;utf8;
+
+desc task1; -- 查看数据表是否创建正确
+
+# 插入数据
+insert into task1 values(1,&#39;小赵&#39;,&#39;111&#39;,&#39;男&#39;,&#39;111@qq.com&#39;,&#39;12000.445&#39;,&#39;2022-6-26 09:37:50&#39;),(2,&#39;小孙&#39;,&#39;222&#39;,&#39;女&#39;,&#39;222@qq.com&#39;,&#39;15000.6788&#39;,&#39;2022-6-26 09:40:23&#39;),(3,&#39;小李&#39;,&#39;333&#39;,&#39;女&#39;,&#39;333@qq.com&#39;,&#39;899.93&#39;,&#39;2022-6-26 09:45:23&#39;),(4,&#39;小李&#39;,&#39;444&#39;,&#39;男&#39;,&#39;444@qq.com&#39;,&#39;444.445&#39;,&#39;2022-6-26 09:35:50&#39;),(5,&#39;小周&#39;,&#39;555&#39;,&#39;男&#39;,&#39;555@qq.com&#39;,&#39;1200.459&#39;,&#39;2022-6-26 09:37:50&#39;); 
+
+select * from task1; -- 查看数据行是否插入正确
+
+# 将 id&lt;3的所有人的性别改为  男。
+update task1 set gender&#x3D;&#39;男&#39; where id&lt;3;
+select * from task1; -- 查看数据行是否修改正确
+
+# 查询余额 amount&gt;1000的所有用户
+select * from task1 where amount&gt;1000; -- 看满足要求的数据的所有列
+select amount from task1 where amount&gt;1000;  -- 只看满足要求的数据的amount列
+select * from task1; -- 查看数据行是否查询正确
+
+# 让每个人的余额在自己原的基础上 +1000 。
+update task1 set amount&#x3D;amount+1000;
+select * from task1; -- 查看数据行是否修改正确
+
+# 删除性别为男的所有数据。
+delete from task1 where gender&#x3D;&#39;男&#39;;
+select * from task1; -- 查看数据行是否删除正确</code></pre>
+
+
+</li>
+<li><p>编写脚本实现将 csv 文件的内容录入到 MySQL 数据库中。<br>要求：自己创建一个自增列作为主键（不要用csv文件中的第一列作为主键）。</p>
+<pre class="language-none"><code class="language-none">1715046,河北大学取消考试学生紧急离校,老师:回不了家的到老师家过年,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715046-15562045_adpkg-ad_hd.mp4
+1715020,重庆两口子因琐事吵架，男子怒将自家车推进涪江,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715020-15561817_adpkg-ad_hd.mp4
+1715031,成都九峰山因雪景引游客暴增，致垃圾遍地野猴觅食,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715031-15561980_adpkg-ad_hd.mp4
+1715014,女子子宫摘除32年后CT报告称未见异常，医生：贴的模版忘删了,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715014-15561686_adpkg-ad_hd.mp4
+1715025,监控画面曝光！甘肃天水一公交车与救护车相撞后坠桥,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715025-15561875_adpkg-ad_hd.mp4
+1715010,男子称退伍后发现被贷款100万：征信逾期数十次，非自己签名,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715010-15561845_adpkg-ad_hd.mp4
+1715007,东北老交警零下43度执勤落下老寒腿:穿2斤重棉裤,已习以为常,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715007-15561958_adpkg-ad_hd.mp4
+1715011,女教师公寓熟睡被同事弟弟连砍数刀：全身刀疤，不敢告诉父母,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715011-15561664_adpkg-ad_hd.mp4
+1714970,网曝江西一村庄现两千平违建，房主回应：建给村里当文化中心,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714970-15561752_adpkg-ad_hd.mp4
+1715006,河南一新建足球场内惊现坟墓，官方：会尽快迁坟,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715006-15561679_adpkg-ad_hd.mp4
+1715009,老师收到毕业24年学生送的定制台历：他高考失利，我开导过,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715009-15561658_adpkg-ad_hd.mp4
+1715000,尚德机构回应未兑现宝马奖励：名单仍在确认中，会负责到底,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1715000-15561545_adpkg-ad_hd.mp4
+1714993,沈阳重点管控区日常产90吨生活垃圾，重点疫点垃圾由专人运走,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714993-15561434_adpkg-ad_hd.mp4
+1714995,消费者称遭移动外呼10088套路换套餐，客服致歉：口径有问题,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714995-1427-174135_adpkg-ad_hd.mp4
+1714979,泪流满面！武警相隔两千公里与妻子隔屏举行婚礼,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714979-15561542_adpkg-ad_hd.mp4
+1714992,村民结婚两男子拄拐上门要钱：给少了不走，反问&quot;咋拿得出手&quot;,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714992-15561429_adpkg-ad_hd.mp4
+1714457,36年嫌疑人：儿女被骂“杀人犯的孩子”，不想把骂名带进棺材,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714457-1491-170515_adpkg-ad_hd.mp4
+1714981,男子偷手机被发现挣脱失主逃跑，执勤辅警狂追八百米擒获,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714981-99-172939_adpkg-ad_hd.mp4
+1714977,八旬老太捡拾垃圾成瘾，堆满楼道院子漫进邻居家,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714977-15561306_adpkg-ad_hd.mp4
+1714972,昆明一楼盘消防喷淋离地仅2米1，业主吐槽：直接当喷头用,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714972-15561247_adpkg-ad_hd.mp4
+1714973,居民家浓烟弥漫邻居敲门不应，民警赶来一看是屋主在熏腊肉,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714973-15561249_adpkg-ad_hd.mp4
+1714966,石家庄有超市停业，学校紧急放假，学生：下午考试被临时取消,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714966-15561248_adpkg-ad_hd.mp4
+1714902,杭州地铁7号线施工大揭秘：940天完成近40公里地铁线,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714902-15561394_adpkg-ad_hd.mp4
+1714928,沈阳已设置重点管控区域，大连志愿者挨家挨户配送生活物资,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714928-15561018_adpkg-ad_hd.mp4
+1714950,女孩考第一溺亡双胞胎姐姐不吃不喝，家属诉求：给予心理疏导,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714950-15561100_adpkg-ad_hd.mp4
+1714924,70万1针特效药降价，2岁患儿母亲哽咽：会拼全力救孩子,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714924-58-162201_adpkg-ad_hd.mp4
+1714930,贵州大叔嫁女陪嫁28万现金和一套房：儿子结婚只花了十几万,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714930-15561017_adpkg-ad_hd.mp4
+1714927,张家口云顶滑雪场通报一滑雪者摔倒身亡：警方已介入,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714927-15560963_adpkg-ad_hd.mp4
+1714926,邢台全面进入战时状态，小区进出需要健康码,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714926-15560829_adpkg-ad_hd.mp4
+1714918,石家庄多个小区采取封闭管理：发现阳性检测者，全员核酸检测,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714918-15560835_adpkg-ad_hd.mp4
+1714693,兰大女生当兵2年后重返校园：学会自律，珍惜在校时光,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714693-15560791_adpkg-ad_hd.mp4
+1714920,猴哥尝到投喂甜头赖老太家不走，逗鸡毁菜气到村民报警,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714920-15560793_adpkg-ad_hd.mp4
+1714916,沈阳确诊出车司机搭载的抚顺3名乘客全部找到，核酸均为阴性,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714916-15560758_adpkg-ad_hd.mp4
+1714894,轿车被48米建筑垃圾围堵三个月，车主无法用车叫苦不迭,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714894-15560731_adpkg-ad_hd.mp4
+1714861,考第一被质疑后溺亡女孩同学：她自尊心强，曾说被怀疑作弊,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714861-15560701_adpkg-ad_hd.mp4
+1714886,东北汉子冲进火场救人被熏成黑脸：差几秒，我就倒在里面了,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714886-15560659_adpkg-ad_hd.mp4
+1714908,探访石家庄疫情高风险地区：部分村庄封村，外村人一律不让进,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714908-15560638_adpkg-ad_hd.mp4
+1714906,“北京时间”产生于西安，科学家解读选址考量因素,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714906-15560549_adpkg-ad_hd.mp4
+1714907,16人聚餐吃了800元无人结账，老板询问反遭怼：多大点事儿,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714907-15560637_adpkg-ad_hd.mp4
+1714892,重庆一地铁站出口建在坡顶，居民：期待未来的变化,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714892-15560550_adpkg-ad_hd.mp4
+1714900,河北南宫一小区发现高度疑似密接人员，小区全面封闭只进不出,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714900-15560548_adpkg-ad_hd.mp4
+1714901,杭州运河边8平米小书摊开了13年，店主兼职拉货补贴,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714901-15560544_adpkg-ad_hd.mp4
+1714877,河南商丘鹦鹉卖家被追刑责，养殖户：不敢卖不敢放，放也犯法,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714877-15560499_adpkg-ad_hd.mp4
+1714895,石家庄小果庄村1天增加8例确诊病例，为全国唯一高风险地区,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714895-15560459_adpkg-ad_hd.mp4
+1714801,48岁女教师重新高考学法律：直接进入老年生活是种损失,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714801-15560352_adpkg-ad_hd.mp4
+1714873,不认失散聋哑儿夫妻已接走儿子，养父：两验DNA，归属没说清,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714873-15560356_adpkg-ad_hd.mp4
+1714846,7岁男童煤气中毒脑死亡，父母含泪为其捐器官救同龄人,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714846-15560326_adpkg-ad_hd.mp4
+1714875,连夜出发！衡水110名护士紧急集结支援中风险地区,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714875-15560268_adpkg-ad_hd.mp4
+1713843,打满全场丨院感专家李素英回忆援鄂：90后00后医护最让我感动,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210104&#x2F;cont-1713843-15559433_adpkg-ad_hd.mp4
+1714869,河北新增14例确诊30例无症状，石家庄一村庄调整为高风险地区,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714869-15560218_adpkg-ad_hd.mp4
+1714862,应急部披露襄汾饭店坍塌致29死细节：8次违规扩建，监管不严,https:&#x2F;&#x2F;video.pearvideo.com&#x2F;mp4&#x2F;adshort&#x2F;20210105&#x2F;cont-1714862-15560157_adpkg-ad_hd.mp4</code></pre></li>
+</ol>
+<p>答：</p>
+<pre class="language-python" data-language="python"><code class="language-python">&quot;&quot;&quot;
+使用python自动将db中的csv格式数据录入mysql：
+&quot;&quot;&quot;
+import pymysql
+import re
+
+# 创建连接：连接MySQL，自动执行 use userdb; -- 使用创建好的day25数据库
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, charset&#x3D;&quot;utf8&quot;, db&#x3D;&#39;day25&#39;)
+cursor &#x3D; conn.cursor()  # 创建游标
+
+# 创建数据表
+sql &#x3D; &quot;&quot;&quot;
+create table input_csv(
+	id int not null primary key auto_increment,
+  vedio_id int(7) unsigned not null,
+  title text not null,
+	url varchar(200) not null
+)default charset&#x3D;utf8;
+
+&quot;&quot;&quot;
+cursor.execute(sql)
+conn.commit()
+
+# 查看数据表是否创建正确
+cursor.execute(&quot;desc input_csv&quot;)
+data &#x3D; cursor.fetchall()
+print(data)
+
+file_obj &#x3D; open(&#39;db.csv&#39;, mode&#x3D;&#39;rt&#39;, encoding&#x3D;&#39;utf-8&#39;)
+conn.commit()
+for line in file_obj:
+    line &#x3D; line.strip()
+    file_id &#x3D; re.match(&#39;^\d&#123;7&#125;&#39;, line).group()
+    file_title &#x3D; &#39;&#39;.join(re.findall(&#39;([\u0391-\uFFE5]+)&#39;, line))
+    file_url &#x3D; re.findall(&#39;https.+&#39;, line)[0]
+    # print(file_id, file_title, file_url)
+    # 拼接sql字符串
+    sql &#x3D; &#39;insert into input_csv values(NULL, &quot;&#123;&#125;&quot;,&quot;&#123;&#125;&quot;, &quot;&#123;&#125;&quot;)&#39;.format(file_id, file_title, file_url)
+    cursor.execute(sql)
+    conn.commit()
+
+file_obj.close()</code></pre>
+
+
+
+<h2 id="二十六、必备SQL和表关系及授权"><a href="#二十六、必备SQL和表关系及授权" class="headerlink" title="二十六、必备SQL和表关系及授权"></a>二十六、必备SQL和表关系及授权</h2><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210530161018798.png" class="">
+
+<p>课程目标：掌握开发中最常见的SQL语句和表关系及授权相关知识点。</p>
+<p>课程概要：</p>
+<ul>
+<li><p>必备SQL（8个必备）</p>
+</li>
+<li><p>表关系</p>
+</li>
+<li><p>授权</p>
+</li>
+</ul>
+<h3 id="1-必备SQL语句"><a href="#1-必备SQL语句" class="headerlink" title="1. 必备SQL语句"></a>1. 必备SQL语句</h3><p>上一节讲解了最基础SQL语句：增删改查，其实在日常的开发中还有很多必备的SQL语句。这一部分的SQL语句都是围绕着对 <font color="#dd0000"> <strong>表中的数据进行操作的。</strong></font></p>
+<p>提示：今天的所有操作我都只会在 MySQL自带的客户端工具上进行操作。	</p>
+<p>例如：现在创建如下两张表。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210517184555990.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create database day26 default charset utf8 collate utf8_general_ci;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table depart(
+	id int not null auto_increment primary key,
+    title varchar(16) not null
+)default charset&#x3D;utf8;
+
+
+create table info(
+	id int not null auto_increment primary key,
+    name varchar(16) not null,
+    email varchar(32) not null,
+    age int,
+    depart_id int
+)default charset&#x3D;utf8;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">insert into depart(title) values(&quot;开发&quot;),(&quot;运营&quot;),(&quot;销售&quot;);
+
+insert into info(name,email,age,depart_id) values(&quot;武沛齐&quot;,&quot;wupeiqi@live.com&quot;,19,1);
+insert into info(name,email,age,depart_id) values(&quot;于超&quot;,&quot;pyyu@live.com&quot;,49,1);
+insert into info(name,email,age,depart_id) values(&quot;alex&quot;,&quot;alex@live.com&quot;,9,2);
+insert into info(name,email,age,depart_id) values(&quot;tony&quot;,&quot;tony@live.com&quot;,29,1);
+insert into info(name,email,age,depart_id) values(&quot;kelly&quot;,&quot;kelly@live.com&quot;,99,3);
+insert into info(name,email,age,depart_id) values(&quot;james&quot;,&quot;james@live.com&quot;,49,1);
+insert into info(name,email,age,depart_id) values(&quot;李杰&quot;,&quot;lijie@live.com&quot;,49,1);</code></pre>
+
+
+
+<h4 id="1-1-条件"><a href="#1-1-条件" class="headerlink" title="1.1 条件"></a>1.1 条件</h4><p>根据条件搜索结果。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210517184600205.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info where age &gt; 30;
+select * from info where id &gt; 1;
+select * from info where id &#x3D; 1;
+select * from info where id &gt;&#x3D; 1;
+select * from info where id !&#x3D; 1;
+select * from info where id between 2 and 4;   -- id大于等于2、且小于等于4
+
+select * from info where name &#x3D; &#39;武沛齐&#39; and age &#x3D; 19;
+select * from info where name &#x3D; &#39;alex&#39; or age &#x3D; 49;
+select * from info where (name &#x3D; &#39;李杰&#39; or email&#x3D;&quot;pyyu@live.com&quot;)  and age&#x3D;49;
+
+select * from info where id in (1,4,6);
+select * from info where id not in (1,4,6);
+select * from info where id in (select id from depart);
+# select * from info where id in (1,2,3);
+
+# exists：select * from depart where id&#x3D;5，去查数据是否存在，如果存在，如果不存在。
+select * from info where exists (select * from depart where id&#x3D;5);
+select * from info where not exists (select * from depart where id&#x3D;5);
+
+select * from (select * from info where id&gt;2) as T where age &gt; 10;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info where info.id &gt; 10;  -- 建议使用这种方法
+select * from info where id &gt; 10;</code></pre>
+
+
+
+<h4 id="1-2-通配符"><a href="#1-2-通配符" class="headerlink" title="1.2 通配符"></a>1.2 通配符</h4><p>一般用于模糊搜索。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210517184600205.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info where name like &quot;%沛%&quot;;
+select * from info where name like &quot;%沛&quot;;
+select * from info where email like &quot;%@live.com&quot;;
+select * from info where name like &quot;武%齐&quot;;
+select * from info where name like &quot;k%y&quot;;
+select * from info where email like &quot;wupeiqi%&quot;;
+
+
+select * from info where email like &quot;_@live.com&quot;;
+select * from info where email like &quot;_upeiqi@live.com&quot;;
+select * from info where email like &quot;__peiqi@live.com&quot;;
+select * from info where email like &quot;__peiqi_live.co_&quot;;</code></pre>
+
+<p> <font color="#dd0000"> <strong>注意：数量少可以使用通配符，数据量大的搜索一般不使用，搜索效率很低。</strong></font></p>
+<h4 id="1-3-映射"><a href="#1-3-映射" class="headerlink" title="1.3 映射"></a>1.3 映射</h4><p>想要获取的列。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210517184600205.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info;
+
+select id, name				from info;
+select id, name as NM 		from info;
+select id, name as NM, 123  from info;
+注意：少些select * ,按自己需求的列查询。
+
+select 
+	id,
+	name,
+	666 as num,
+	( select max(id) from depart ) as mid, -- max&#x2F;min&#x2F;sum
+	-- 等价于
+	-- 3 as mid 此处的3为动态查询出来的
+	( select min(id) from depart) as nid, -- max&#x2F;min&#x2F;sum
+	age
+from info;</code></pre>
+
+<p>注意：<code>( ) as nid</code> 括号中只能放一行数据</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select 
+	id,
+	name,
+	( select title from depart where depart.id&#x3D;info.depart_id) as x1
+from info;
+
+# 注意：效率很低
+
+select 
+	id,
+	name,
+	( select title from depart where depart.id&#x3D;info.depart_id) as x1,
+	( select title from depart where depart.id&#x3D;info.id) as x2
+from info;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select 
+	id,
+	name,
+	case depart_id when 1 then &quot;第1部门&quot; end v1
+from info;
+
+select 
+	id,
+	name,
+	case depart_id when 1 then &quot;第1部门&quot; else &quot;其他&quot; end v2
+from info;
+
+select 
+	id,
+	name,
+	case depart_id when 1 then &quot;第1部门&quot; end v1,
+	case depart_id when 1 then &quot;第1部门&quot; else &quot;其他&quot; end v2,
+	case depart_id when 1 then &quot;第1部门&quot; when 2 then &quot;第2部门&quot; else &quot;其他&quot; end v3,
+	case when age&lt;18 then &quot;少年&quot; end v4,
+	case when age&lt;18 then &quot;少年&quot; else &quot;油腻男&quot; end v5,
+	case when age&lt;18 then &quot;少年&quot; when age&lt;30 then &quot;青年&quot; else &quot;油腻男&quot; end v6
+from info;</code></pre>
+
+
+
+<h4 id="1-4-排序"><a href="#1-4-排序" class="headerlink" title="1.4 排序"></a>1.4 排序</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210517184600205.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info order by age desc; -- 倒序
+select * from info order by age asc;  -- 顺序
+
+select * from info order by id desc;
+select * from info order by id asc;
+select * from info order by age asc,id desc; -- 优先按照age从小到大；如果age相同则按照id从大到小。
+
+
+select * from info where id&gt;10 order by age asc,id desc;
+select * from info where id&gt;6 or name like &quot;%y&quot; order by age asc,id desc;</code></pre>
+
+
+
+<h4 id="1-5-取部分"><a href="#1-5-取部分" class="headerlink" title="1.5 取部分"></a>1.5 取部分</h4><p>一般要用于获取部分数据。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210517184600205.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info limit 5;   										-- 获取前5条数据
+select * from info order by id desc limit 3;						-- 先排序，再获取前3条数据
+select * from info where id &gt; 4 order by id desc limit 3;			-- 先排序，再获取前3条数据
+
+
+select * from info limit 3 offset 2;	-- 从位置2开始，向后获取前3数据</code></pre>
+
+<p>数据库表中：1000条数据。</p>
+<ul>
+<li>第一页：<code>select * from info limit 10 offset 0;</code></li>
+<li>第二页：<code>select * from info limit 10 offset 10;</code></li>
+<li>第三页：<code>select * from info limit 10 offset 20;</code></li>
+<li>第四页：<code>select * from info limit 10 offset 30;</code></li>
+<li>…</li>
+</ul>
+<h4 id="1-6-分组"><a href="#1-6-分组" class="headerlink" title="1.6 分组"></a>1.6 分组</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210517184600205.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select age,max(id),min(id),count(id),sum(id),avg(id) from info group by age;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select age,count(1) from info group by age;</code></pre>
+
+
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select depart_id,count(id) from info group by depart_id;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select depart_id,count(id) from info group by depart_id having count(id) &gt; 2;</code></pre>
+
+
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select count(id) from info;
+select max(id) from info;</code></pre>
+
+
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select age,max(id),min(id),sum(id),count(id) from info group by age;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select age,name from info group by age;  -- 不建议
+select * from info where id in (select max(id) from info group by age);</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select age,count(id) from info group by age having count(id) &gt; 2;
+select age,count(id) from info where id &gt; 4 group by age having count(id) &gt; 2;  -- 聚合条件放在having后面</code></pre>
+
+<pre class="language-none"><code class="language-none">到目前为止SQL执行顺序：
+    where：筛选
+    group by：分组
+    having ：对分组后的聚合条件进行搜索
+    order by：排序
+    limit：截取</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select age,count(id) from info where id &gt; 2 group by age having count(id) &gt; 1 order by age desc limit 1;
+- 要查询的表info
+- 条件 id&gt;2
+- 根据age分组
+- 对分组后的数据再根据聚合条件过滤 count(id)&gt;1
+- 根据age从大到小排序
+- 获取第1条</code></pre>
+
+
+
+<h4 id="1-7-左右连表"><a href="#1-7-左右连表" class="headerlink" title="1.7 左右连表"></a>1.7 左右连表</h4><p>多个表可以连接起来进行查询。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210517184600205.png" class="">
+
+<p>展示用户信息&amp;部门名称：</p>
+<pre class="language-none"><code class="language-none">主表 left outer join 从表 on 主表.x &#x3D; 从表.id </code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info left outer join depart on info.depart_id &#x3D; depart.id;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select info.id,info.name,info.email,depart.title from info left outer join depart on info.depart_id &#x3D; depart.id;</code></pre>
+
+
+
+<pre class="language-none"><code class="language-none">从表 right outer join 主表 on 主表.x &#x3D; 从表.id</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select info.id,info.name,info.email,depart.title from info right outer join depart on info.depart_id &#x3D; depart.id;</code></pre>
+
+<p>为了更加直接的查看效果，我们分别在 depart 表 和 info 中额外插入一条数据。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">insert into depart(title) values(&quot;运维&quot;);</code></pre>
+
+<p>此时从表存在和主表无关联的数据，这样一来主从表就有区别：</p>
+<ul>
+<li><p>info主表，就以info数据为主，depart为辅。（推荐使用）</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select info.id,info.name,info.email,depart.title from info left outer join depart on info.depart_id &#x3D; depart.id;</code></pre>
+</li>
+<li><p>depart主表，，就以depart数据为主，info为辅。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select info.id,info.name,info.email,depart.title from info right outer join depart on info.depart_id &#x3D; depart.id;</code></pre></li>
+</ul>
+<pre class="language-none"><code class="language-none">select * from info left outer join depart on ....
+select * from depart left outer join info on ....</code></pre>
+
+<p>简写：<code>select * from depart left join info on ....</code></p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">-- 内连接:    表  inner join 表  on 条件
+select * from info inner join depart on info.depart_id&#x3D;depart.id;
+
++----+-----------+------------------+------+-----------+----+--------+
+| id | name      | email            | age  | depart_id | id | title  |
++----+-----------+------------------+------+-----------+----+--------+
+|  1 | 武沛齐    | wupeiqi@live.com |   19 |         1 |  1 | 开发   |
+|  2 | 于超      | pyyu@live.com    |   49 |         1 |  1 | 开发   |
+|  3 | alex      | alex@live.com    |    9 |         2 |  2 | 运营   |
+|  4 | tony      | tony@live.com    |   29 |         1 |  1 | 开发   |
+|  5 | kelly     | kelly@live.com   |   99 |         3 |  3 | 销售   |
+|  6 | james     | james@live.com   |   49 |         1 |  1 | 开发   |
+|  7 | 李杰      | lijie@live.com   |   49 |         1 |  1 | 开发   |
++----+-----------+------------------+------+-----------+----+--------+</code></pre>
+
+<pre class="language-none"><code class="language-none">到目前为止SQL执行顺序：
+    join 
+    on 
+    where 
+    group by
+    having 
+    order by
+    limit </code></pre>
+
+<p>写在最后：多张表也可以连接。</p>
+<h4 id="1-8-联合"><a href="#1-8-联合" class="headerlink" title="1.8 联合"></a>1.8 联合</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210519093004885.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select id,title from depart 
+union
+select id,name from info;
+
+
+select id,title from depart 
+union
+select email,name from info;
+-- 列数需相同</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select id from depart 
+union
+select id from info;
+
+-- 自动去重</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select id from depart 
+union all
+select id from info;
+
+-- 保留所有</code></pre>
+
+
+
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>到目前为止，你已经掌握了如下相关指令（SQL语句）：</p>
+<ul>
+<li>数据库</li>
+<li>数据表</li>
+<li>数据行<ul>
+<li>增加</li>
+<li>删除</li>
+<li>修改</li>
+<li>查询（各种变着花样的查询）</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-表关系"><a href="#2-表关系" class="headerlink" title="2.表关系"></a>2.表关系</h3><p>在开发项目时，需要根据业务需求去创建很多的表结构，以此来实现业务逻辑，一般表结构有三类：</p>
+<ul>
+<li>单表，单独一张表就可以将信息保存。<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210519112309521.png" class=""></li>
+<li>一对多，需要两张表来存储信息，且两张表存在 <code>一对多</code> 或 <code>多对一</code>关系。<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210519112430244.png" class=""></li>
+<li>多对多，需要三张表来存储信息，两张单表 + 关系表，创造出两个单表之间<code>多对多关系</code>。<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210519113228664.png" class=""></li>
+</ul>
+<p>在上述的表：一对多的 <code>info.depart_id</code>字段、多对多的 <code>boy_girl.boy_id</code> 、<code>girl_id</code> 直接用整型存储就可以，因为他们只要存储关联表的主键ID即可。</p>
+<p>在开发中往往还会为他们添加一个 <strong>外键约束</strong>，保证某一个列的值必须是其他表中的特定列已存在的值，例如：<code>info.depart_id</code>的值必须是 <code>depart.id</code>中已存在的值。</p>
+<p><strong>一对多示例：</strong></p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210520171902550.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table depart(
+	id int not null auto_increment primary key,
+    title varchar(16) not null
+)default charset&#x3D;utf8;
+
+
+create table info(
+	id int not null auto_increment primary key,
+    name varchar(16) not null,
+    email varchar(32) not null,
+    age int,
+    depart_id int not null,
+    constraint fk_info_depart foreign key (depart_id) references depart(id)
+)default charset&#x3D;utf8;</code></pre>
+
+<p>如果表结构已创建好了，额外想要增加外键：</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table info add constraint fk_info_depart foreign key info(depart_id) references depart(id);</code></pre>
+
+<p>删除外键：</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table info drop foreign key fk_info_depart;</code></pre>
+
+
+
+<p><strong>多对多示例：</strong></p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210520171843289.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table boy(
+	id int not null auto_increment primary key,
+    name varchar(16) not null
+)default charset&#x3D;utf8;
+
+create table girl(
+	id int not null auto_increment primary key,
+    name varchar(16) not null
+)default charset&#x3D;utf8;
+
+
+create table boy_girl(
+	id int not null auto_increment primary key,
+    boy_id int not null,
+    girl_id int not null,
+    constraint fk_boy_girl_boy foreign key boy_girl(boy_id) references boy(id),
+    constraint fk_boy_girl_girl foreign key boy_girl(girl_id) references girl(id)
+)default charset&#x3D;utf8;</code></pre>
+
+<p>如果表结构已创建好了，额外想要增加外键：</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table boy_girl add constraint fk_boy_girl_boy foreign key boy_girl(boy_id) references boy(id);
+alter table boy_girl add constraint fk_boy_girl_girl foreign key boy_girl(girl_id) references girl(id);</code></pre>
+
+<p>删除外键：</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table info drop foreign key fk_boy_girl_boy;
+alter table info drop foreign key fk_boy_girl_girl;</code></pre>
+
+
+
+<p> <font color="#dd0000"> <strong>在以后项目开发时，设计表结构及其关系的是一个非常重要的技能。一般项目开始开发的步骤：</strong></font></p>
+<ul>
+<li>需求调研</li>
+<li>设计数据库表结构（根据需求）</li>
+<li>项目开发（写代码）</li>
+</ul>
+<p>大量的工作应该放在前2个步骤，前期的设计完成之后，后续的功能代码开发就比较简单了。</p>
+<h4 id="案例：简易版路飞学城"><a href="#案例：简易版路飞学城" class="headerlink" title="案例：简易版路飞学城"></a>案例：简易版路飞学城</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210530200222433.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create database luffy default charset utf8 collate utf8_general_ci;
+
+use luffy;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table info(
+	id int not null auto_increment primary key,
+    username varchar(16) not null,
+    mobile char(11) not null,
+    password varchar(64) not null
+)default charset&#x3D;utf8;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table course(
+	id int not null auto_increment primary key,
+    title varchar(16) not null
+)default charset&#x3D;utf8;
+
+
+create table module(
+	id int not null auto_increment primary key,
+    title varchar(16) not null,
+    course_id int not null,
+    constraint fk_module_course foreign key (course_id) references course(id)
+)default charset&#x3D;utf8;
+
+
+create table day(
+	id int not null auto_increment primary key,
+    title varchar(16) not null,
+	module_id int not null,
+    constraint fk_day_module foreign key (module_id) references module(id)
+)default charset&#x3D;utf8;
+
+
+create table video(
+	id int not null auto_increment primary key,
+    title varchar(16) not null,
+	day_id int not null,
+    constraint fk_video_day foreign key (day_id) references day(id)
+)default charset&#x3D;utf8;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table module_record(
+	id int not null auto_increment primary key,
+    user_id int not null,
+    module_id int not null,
+    constraint fk_user_id foreign key module_record(user_id) references info(id),
+    constraint fk_module_id foreign key module_record(module_id) references module(id)
+)default charset&#x3D;utf8;</code></pre>
+
+
+
+<h3 id="3-授权"><a href="#3-授权" class="headerlink" title="3. 授权"></a>3. 授权</h3><p>之前我们无论是基于Python代码 or 自带客户端 去连接MySQL时，均使用的是 <strong>root</strong> 账户，拥有对MySQL数据库操作的所有权限。</p>
+<img src="/2022/06/24/python-mo-kuai-si-day1/image-20210520173921204.png" class="">
+
+<p>如果有多个程序的数据库都放在同一个MySQL中，如果程序都用root账户就存在风险了。</p>
+<p><strong>这种情况怎么办呢？</strong></p>
+<blockquote>
+<p>在MySQL中支持创建账户，并给账户分配权限，例如：只拥有数据库A操作的权限、只拥有数据库B中某些表的权限、只拥有数据库B中某些表的读权限等。</p>
+</blockquote>
+<h4 id="3-1-用户管理"><a href="#3-1-用户管理" class="headerlink" title="3.1 用户管理"></a>3.1 用户管理</h4><p>在MySQL的默认数据库 <code>mysql</code> 中的 <code>user</code> 表中存储着所有的账户信息（含账户、权限等）。</p>
+<pre class="language-none"><code class="language-none">mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| day26              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+10 rows in set (0.00 sec)
+
+mysql&gt; select user,authentication_string,host from  mysql.user;
++----------------------------------+-------------------------------------------+-------------------------------+
+| user                             | authentication_string                     | host                          |
++----------------------------------+-------------------------------------------+-------------------------------+
+| root                             | *FAAFFE644E901CFAFAEC7562415E5FAEC243B8B2 | localhost                     |
+| mysql.session                    | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE | localhost                     |
+| mysql.sys                        | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE | localhost                     |
++----------------------------------+-------------------------------------------+-------------------------------+
+3 rows in set (0.00 sec)</code></pre>
+
+
+
+<ul>
+<li><p>创建和删除用户</p>
+<pre class="language-none"><code class="language-none">create user &#39;用户名&#39;@&#39;连接者的IP地址&#39; identified by &#39;密码&#39;;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create user wupeiqi1@127.0.0.1 identified by &#39;root123&#39;;
+drop user wupeiqi1@127.0.0.1;
+
+create user wupeiqi2@&#39;127.0.0.%&#39; identified by &#39;root123&#39;;
+drop user wupeiqi2@&#39;127.0.0.%&#39;;
+
+create user wupeiqi3@&#39;%&#39; identified by &#39;root123&#39;;
+drop user wupeiqi3@&#39;%&#39;;
+
+create user &#39;wupeiqi4&#39;@&#39;%&#39; identified by &#39;root123&#39;;
+drop user &#39;wupeiqi4&#39;@&#39;%&#39;;</code></pre>
+</li>
+<li><p>修改用户</p>
+<pre class="language-none"><code class="language-none">rename user &#39;用户名&#39;@&#39;IP地址&#39; to &#39;新用户名&#39;@&#39;IP地址&#39;;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">rename user wupeiqi1@127.0.0.1 to wupeiqi1@localhost;
+
+rename user &#39;wupeiqi1&#39;@&#39;127.0.0.1&#39; to &#39;wupeiqi1&#39;@&#39;localhost&#39;;</code></pre>
+</li>
+<li><p>修改密码</p>
+<pre class="language-none"><code class="language-none">set password for &#39;用户名&#39;@&#39;IP地址&#39; &#x3D; Password(&#39;新密码&#39;)</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">set password for &#39;wupeiqi4&#39;@&#39;%&#39; &#x3D; Password(&#39;123123&#39;);</code></pre></li>
+</ul>
+<h4 id="3-2-授权管理"><a href="#3-2-授权管理" class="headerlink" title="3.2 授权管理"></a>3.2 授权管理</h4><p>创建好用户之后，就可以为用户进行授权了。</p>
+<ul>
+<li><p>授权</p>
+<pre class="language-none"><code class="language-none">grant 权限 on 数据库.表 to   &#39;用户&#39;@&#39;IP地址&#39;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">grant all privileges on *.* TO &#39;wupeiqi&#39;@&#39;localhost&#39;;         -- 用户wupeiqi拥有所有数据库的所有权限
+grant all privileges on day26.* TO &#39;wupeiqi&#39;@&#39;localhost&#39;;     -- 用户wupeiqi拥有数据库day26的所有权限
+grant all privileges on day26.info TO &#39;wupeiqi&#39;@&#39;localhost&#39;;  -- 用户wupeiqi拥有数据库day26中info表的所有权限
+
+grant select on day26.info TO &#39;wupeiqi&#39;@&#39;localhost&#39;;          -- 用户wupeiqi拥有数据库day26中info表的查询权限
+grant select,insert on day26.* TO &#39;wupeiqi&#39;@&#39;localhost&#39;;      -- 用户wupeiqi拥有数据库day26所有表的查询和插入权限
+
+grant all privileges on day26db.* to &#39;wupeiqi4&#39;@&#39;%&#39;;
+
+# 注意：
+flush privileges;  -- 将数据读取到内存中，从而立即生效。</code></pre>
+
+<ul>
+<li><p>对于权限</p>
+<pre class="language-none"><code class="language-none">all privileges  除grant外的所有权限
+select          仅查权限
+select,insert   查和插入权限
+...
+usage                   无访问权限
+alter                   使用alter table
+alter routine           使用alter procedure和drop procedure
+create                  使用create table
+create routine          使用create procedure
+create temporary tables 使用create temporary tables
+create user             使用create user、drop user、rename user和revoke  all privileges
+create view             使用create view
+delete                  使用delete
+drop                    使用drop table
+execute                 使用call和存储过程
+file                    使用select into outfile 和 load data infile
+grant option            使用grant 和 revoke
+index                   使用index
+insert                  使用insert
+lock tables             使用lock table
+process                 使用show full processlist
+select                  使用select
+show databases          使用show databases
+show view               使用show view
+update                  使用update
+reload                  使用flush
+shutdown                使用mysqladmin shutdown(关闭MySQL)
+super                   􏱂􏰈使用change master、kill、logs、purge、master和set global。还允许mysqladmin􏵗􏵘􏲊􏲋调试登陆
+replication client      服务器位置的访问
+replication slave       由复制从属使用</code></pre>
+</li>
+<li><p>对于数据库和表</p>
+<pre class="language-none"><code class="language-none">数据库名.*            数据库中的所有
+数据库名.表名          指定数据库中的某张表
+数据库名.存储过程名     指定数据库中的存储过程
+*.*                  所有数据库</code></pre></li>
+</ul>
+</li>
+<li><p>查看授权</p>
+<pre class="language-none"><code class="language-none">show grants for &#39;用户&#39;@&#39;IP地址&#39;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">show grants for &#39;wupeiqi&#39;@&#39;localhost&#39;;
+show grants for &#39;wupeiqi4&#39;@&#39;%&#39;;</code></pre>
+</li>
+<li><p>取消授权</p>
+<pre class="language-none"><code class="language-none">revoke 权限 on 数据库.表 from &#39;用户&#39;@&#39;IP地址&#39;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">revoke ALL PRIVILEGES on day26.* from &#39;wupeiqi&#39;@&#39;localhost&#39;;
+
+revoke ALL PRIVILEGES on day26db.* from &#39;wupeiqi4&#39;@&#39;%&#39;;
+# 注意：
+flush privileges;   -- 将数据读取到内存中，从而立即生效。</code></pre></li>
+</ul>
+<p>一般情况下，在很多的 正规 公司，数据库都是由 DBA 来统一进行管理，DBA为每个项目的数据库创建用户，并赋予相关的权限。</p>
+<h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><p>本节主要讲解的三大部分的知识点：</p>
+<ul>
+<li>常见SQL语句，项目开发中使用最频繁的知识点。</li>
+<li>表关系，项目开发前，项目表结构设计时必备知识点。<ul>
+<li>单表</li>
+<li>一对多</li>
+<li>多对多</li>
+</ul>
+</li>
+<li>授权，在MySQL中创建用户并赋予相关权限。</li>
+</ul>
+<h4 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h4><p>本节讲解 SQL语句、表结构 是以后项目开发中最最最常见知识点，为了让大家能有更多的联系和实践，单独为了大家设置了1天的时间作为本节课程的练习，详见 day27 。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Gengtianba</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gengtianba.github.io/2022/06/24/python-mo-kuai-si-day1/">https://gengtianba.github.io/2022/06/24/python-mo-kuai-si-day1/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Gengtianba</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5/">
+                                    <span class="chip bg-color">第四阶段</span>
+                                </a>
+                            
+                                <a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">MySQL数据库</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat,weibo,douban,qzone,linkedin,twitter,facebook,google" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '9YyPLPh0zyJlFMB2ciHdondz-gzGzoHsz',
+        appKey: 'naTQJa37tbxowE4Gm70MF9b6',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/06/24/python-mo-kuai-si-day1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python模块四day1">
+                        
+                        <span class="card-title">Python模块四day1</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            路飞学院PYTHON课程模块四笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/" class="post-category">
+                                    路飞学院
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5/">
+                        <span class="chip bg-color">第四阶段</span>
+                    </a>
+                    
+                    <a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">MySQL数据库</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/24/di-san-jie-duan-chong-dian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第三阶段重点">
+                        
+                        <span class="card-title">第三阶段重点</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            路飞学院Python数据分析课程第三阶段重点总结
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/" class="post-category">
+                                    路飞学院
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
+                        <span class="chip bg-color">第三阶段</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">面向对象&amp;网络编程</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">总结</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">Gengtianba</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/gengtianba" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1138798275@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1138798275" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1138798275" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

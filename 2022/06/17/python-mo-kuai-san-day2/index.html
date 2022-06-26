@@ -388,16 +388,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
-                            </a>
-                        
                             <a href="/tags/python/">
                                 <span class="chip bg-color">python</span>
                             </a>
                         
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
                             <a href="/tags/%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
                                 <span class="chip bg-color">第三阶段</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">面向对象&amp;网络编程</span>
                             </a>
                         
                     </div>
@@ -1496,24 +1500,24 @@ sock.close()</code></pre>
 <li><p>客户端</p>
 <pre class="language-python" data-language="python"><code class="language-python">import socket
 import struct
-      
+        
 client &#x3D; socket.socket()
 client.connect((&#39;127.0.0.1&#39;, 8001))
-      
+        
 # 第一条数据
 data1 &#x3D; &#39;alex正在吃&#39;.encode(&#39;utf-8&#39;)
-      
+        
 header1 &#x3D; struct.pack(&#39;i&#39;, len(data1))
-      
+        
 client.sendall(header1)
 client.sendall(data1)
-      
+        
 # 第二条数据
 data2 &#x3D; &#39;翔&#39;.encode(&#39;utf-8&#39;)
 header2 &#x3D; struct.pack(&#39;i&#39;, len(data2))
 client.sendall(header2)
 client.sendall(data2)
-      
+        
 client.close()</code></pre></li>
 </ul>
 </blockquote>
@@ -2048,16 +2052,20 @@ TCP，需要先创建可靠连接，在进行收发数据（ack）。</code></pr
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
-                                </a>
-                            
                                 <a href="/tags/python/">
                                     <span class="chip bg-color">python</span>
                                 </a>
                             
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
                                 <a href="/tags/%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
                                     <span class="chip bg-color">第三阶段</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">面向对象&amp;网络编程</span>
                                 </a>
                             
                         </div>
@@ -2569,16 +2577,20 @@ TCP，需要先创建可靠连接，在进行收发数据（ack）。</code></pr
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
                     <a href="/tags/python/">
                         <span class="chip bg-color">python</span>
                     </a>
                     
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
                     <a href="/tags/%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5/">
                         <span class="chip bg-color">第三阶段</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">面向对象&amp;网络编程</span>
                     </a>
                     
                 </div>
