@@ -434,14 +434,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    15.2k
+                    21k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    71 分
+                    99 分
                 </div>
                 
 
@@ -1380,12 +1380,16 @@ conn.close()</code></pre>
 <h4 id="4-1-内置客户端操作"><a href="#4-1-内置客户端操作" class="headerlink" title="4.1 内置客户端操作"></a>4.1 内置客户端操作</h4><p>数据行操作的相关SQL语句（指令）如下：</p>
 <ul>
 <li><p>新<strong>增</strong>数据</p>
-<pre class="language-none"><code class="language-none">insert into 表名 (列名,列名,列名) values(对应列的值,对应列的值,对应列的值);</code></pre>
+<pre class="language-none"><code class="language-none">insert into 表名 (列名,列名,列名) values(对应列的值,对应列的值,对应列的值);
+
+insert into 表名 values(NULL,对应列的值,default);  -- 对于自增列和有默认值的列传入NULL和default</code></pre>
 
 <pre class="language-sql" data-language="sql"><code class="language-sql">insert into tb1(name,password) values(&#39;武沛齐&#39;,&#39;123123&#39;);
 insert into tb1(name,password) values(&#39;武沛齐&#39;,&#39;123123&#39;),(&#39;alex&#39;,&#39;123&#39;); -- 新增多行数据
 
-insert into tb1 values(&#39;武沛齐&#39;,&#39;123123&#39;),(&#39;alex&#39;,&#39;123&#39;); -- 如果表中只有2列</code></pre>
+insert into tb1 values(&#39;武沛齐&#39;,&#39;123123&#39;),(&#39;alex&#39;,&#39;123&#39;); -- 如果表中只有2列
+
+insert into class values(NULL,&#39;三年二班&#39;),(NULL,&#39;一年三班&#39;),(NULL,&#39;三年一班&#39;)</code></pre>
 </li>
 <li><p><strong>删</strong>除数据</p>
 <pre class="language-sql" data-language="sql"><code class="language-sql">delete from 表名;
@@ -2449,6 +2453,958 @@ flush privileges;   -- 将数据读取到内存中，从而立即生效。</code
 <li>授权，在MySQL中创建用户并赋予相关权限。</li>
 </ul>
 <h4 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h4><p>本节讲解 SQL语句、表结构 是以后项目开发中最最最常见知识点，为了让大家能有更多的联系和实践，单独为了大家设置了1天的时间作为本节课程的练习，详见 day27 。</p>
+<h2 id="二十七、SQL强化和实践"><a href="#二十七、SQL强化和实践" class="headerlink" title="二十七、SQL强化和实践"></a>二十七、SQL强化和实践</h2><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210531085557128.png" class="" title="image-20210531085557128">
+
+<p>课程目标：练习常见的SQL语句和表结构的设计。</p>
+<p>课程概要：</p>
+<ul>
+<li>SQL强化</li>
+<li>表结构设计（博客系统）</li>
+</ul>
+<h3 id="1-SQL强化"><a href="#1-SQL强化" class="headerlink" title="1. SQL强化"></a>1. SQL强化</h3><h4 id="1-1-题目"><a href="#1-1-题目" class="headerlink" title="1.1.题目"></a>1.1.题目</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210531123055185.png" class="" title="image-20210531123055185">
+
+<ol>
+<li>根据上图创建  数据库 &amp; 表结构 并 录入数据（可以自行创造数据）。</li>
+<li>创建用户 luffy 并赋予此数据库的所有权限。</li>
+<li>查询姓“波”的老师的个数。</li>
+<li>查询姓“山”的学生名单。</li>
+<li>查询男生、女生的人数。</li>
+<li>查询同名同姓学生名单，并统计同名人数。</li>
+<li>查询 “三年二班” 的所有学生。</li>
+<li>查询 每个 班级的 班级名称、班级人数。</li>
+<li>查询成绩小于60分的同学的学号、姓名、成绩、课程名称。</li>
+<li>查询选修了 “生物课” 的所有学生ID、学生姓名、成绩。</li>
+<li>查询选修了 “生物课” 且分数低于70的的所有学生ID、学生姓名、成绩。</li>
+<li>查询所有同学的学号、姓名、选课数、总成绩。</li>
+<li>查询各科被选修的学生数。</li>
+<li>查询各科成绩的总分、最高分、最低分，显示：课程ID、课程名称、总分、最高分、最低分。</li>
+<li>查询各科成绩的平均分，显示：课程ID、课程名称、平均分。</li>
+<li>查询各科成绩的平均分，显示：课程ID、课程名称、平均分（按平均分从大到小排序）。</li>
+<li>查询各科成绩的平均分和及格率，显示：课程ID、课程名称、平均分、及格率。</li>
+<li>查询平均成绩大于等于60的所有学生的学号、平均成绩；。</li>
+<li>查询平均成绩大于85的所有学生的学号、平均成绩、姓名。</li>
+<li>查询 “三年二班”  每个学生的 学号、姓名、总成绩、平均成绩。</li>
+<li>查询各个班级的班级名称、总成绩、平均成绩、及格率（按平均成绩从大到小排序）。</li>
+<li>查询学过 “波多” 老师课的同学的学号、姓名。</li>
+<li>查询没学过 “波多” 老师课的同学的学号、姓名。</li>
+<li>查询选修 “波多” 老师所授课程的学生中，成绩最高的学生姓名及其成绩（不考虑并列）。</li>
+<li>查询选修 “波多” 老师所授课程的学生中，成绩最高的学生姓名及其成绩（考虑并列）。</li>
+<li>查询只选修了一门课程的全部学生的学号、姓名。</li>
+<li>查询至少选修两门课程的学生学号、学生姓名、选修课程数量。</li>
+<li><font color="#dd0000"> <strong>查询两门及以上不及格的同学的学号、学生姓名、选修课程数量。</strong></font></li>
+<li><font color="#dd0000"><strong>查询选修了所有课程的学生的学号、姓名。</strong></font></li>
+<li><font color="#dd0000"> <strong>查询两门及以上不及格的同学的学号、学生姓名、选修课程数量。查询未选修所有课程的学生的学号、姓名。</strong></font></li>
+<li><font color="#dd0000"> <strong>查询所有学生都选修了的课程的课程号、课程名。</strong></font></li>
+<li>查询选修 “生物” 和 “物理” 课程的所有学生学号、姓名。</li>
+<li>查询至少有一门课与学号为“1”的学生所选的课程相同的其他学生学号 和 姓名 。</li>
+<li>查询与学号为 “2” 的同学选修的课程完全相同的其他 学生学号 和 姓名 。</li>
+<li>查询“生物”课程比“物理”课程成绩高的所有学生的学号；</li>
+<li>查询每门课程成绩最好的前3名 (不考虑成绩并列情况) 。</li>
+<li>查询每门课程成绩最好的前3名 (考虑成绩并列情况) 。</li>
+<li>创建一个表 <code>sc</code>，然后将 score 表中所有数据插入到 sc 表中。</li>
+<li>向 sc 表中插入一些记录，这些记录要求符合以下条件：<ul>
+<li>学生ID为：没上过课程ID为 “2” 课程的学生的 学号；</li>
+<li>课程ID为：2</li>
+<li>成绩为：80</li>
+</ul>
+</li>
+<li>向 sc 表中插入一些记录，这些记录要求符合以下条件：<ul>
+<li>学生ID为：没上过课程ID为 “2” 课程的学生的 学号。</li>
+<li>课程ID为：2。</li>
+<li>成绩为：课程ID为3的最高分。</li>
+</ul>
+</li>
+</ol>
+<h4 id="1-2-答案"><a href="#1-2-答案" class="headerlink" title="1.2.答案"></a>1.2.答案</h4><ol>
+<li><p>根据上图创建  数据库 &amp; 表结构 并 录入数据（可以自行创造数据）</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create database day27db default charset utf8 collate utf8_general_ci;
+use day27db;
+
+drop database day27db;
+drop database IF EXISTS day27db;</code></pre>
+
+<p>利用导入数据库命令：</p>
+<ul>
+<li><p>导入</p>
+<pre class="language-none"><code class="language-none">mysql -u root -p  day27db &lt; 导入文件绝对路径</code></pre>
+</li>
+<li><p>导出</p>
+<pre class="language-none"><code class="language-none"># 结构+数据
+mysqldump -u root -p  day27db &gt; 导出文件绝对路径
+
+# 结构
+mysqldump -u root -p -d day27db &gt; &#x2F;Users&#x2F;wupeiqi&#x2F;day27db3.sql</code></pre>
+</li>
+<li><p>day27db.sql文件</p>
+</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table class(
+	cid int not null auto_increment primary key,
+    caption varchar(16) not null
+)default charset&#x3D;utf8;
+
+INSERT INTO class3 VALUES (&#39;1&#39;, &#39;三年二班&#39;), (&#39;2&#39;, &#39;三年三班&#39;), (&#39;3&#39;, &#39;一年二班&#39;), (&#39;4&#39;, &#39;二年九班&#39;);
+
+
+create table student(
+	 sid int not null auto_increment primary key,
+    gender char(1) not null,
+    class_id int not null,
+    sname varchar(16) not null,
+    constraint fk_student_class foreign key (class_id) references class(cid)
+)default charset&#x3D;utf8;
+
+INSERT INTO student VALUES (&#39;1&#39;, &#39;男&#39;, &#39;1&#39;, &#39;理解&#39;), (&#39;2&#39;, &#39;女&#39;, &#39;1&#39;, &#39;钢蛋&#39;), (&#39;3&#39;, &#39;男&#39;, &#39;1&#39;, &#39;张三&#39;), (&#39;4&#39;, &#39;男&#39;, &#39;1&#39;, &#39;张一&#39;), (&#39;5&#39;, &#39;女&#39;, &#39;1&#39;, &#39;张二&#39;), (&#39;6&#39;, &#39;男&#39;, &#39;1&#39;, &#39;张四&#39;), (&#39;7&#39;, &#39;女&#39;, &#39;2&#39;, &#39;铁锤&#39;), (&#39;8&#39;, &#39;男&#39;, &#39;2&#39;, &#39;李三&#39;), (&#39;9&#39;, &#39;男&#39;, &#39;2&#39;, &#39;李一&#39;), (&#39;10&#39;, &#39;女&#39;, &#39;2&#39;, &#39;李二&#39;), (&#39;11&#39;, &#39;男&#39;, &#39;2&#39;, &#39;李四&#39;), (&#39;12&#39;, &#39;女&#39;, &#39;3&#39;, &#39;如花&#39;), (&#39;13&#39;, &#39;男&#39;, &#39;3&#39;, &#39;刘三&#39;), (&#39;14&#39;, &#39;男&#39;, &#39;3&#39;, &#39;刘一&#39;), (&#39;15&#39;, &#39;女&#39;, &#39;3&#39;, &#39;刘二&#39;), (&#39;16&#39;, &#39;男&#39;, &#39;3&#39;, &#39;刘四&#39;);
+
+
+create table teacher(
+	 tid int not null auto_increment primary key,
+    tname varchar(16) not null
+)default charset&#x3D;utf8;
+
+INSERT INTO &#96;teacher&#96; VALUES (&#39;1&#39;, &#39;张磊老师&#39;), (&#39;2&#39;, &#39;李平老师&#39;), (&#39;3&#39;, &#39;刘海燕老师&#39;), (&#39;4&#39;, &#39;朱云海老师&#39;), (&#39;5&#39;, &#39;李杰老师&#39;);
+
+
+create table course(
+	   cid int not null auto_increment primary key,
+    cname varchar(16) not null,
+    teacher_id int not null,
+    constraint fk_course_teacher foreign key (teacher_id) references teacher(tid)
+)default charset&#x3D;utf8;
+
+INSERT INTO &#96;course&#96; VALUES (&#39;1&#39;, &#39;生物&#39;, &#39;1&#39;), (&#39;2&#39;, &#39;物理&#39;, &#39;2&#39;), (&#39;3&#39;, &#39;体育&#39;, &#39;3&#39;), (&#39;4&#39;, &#39;美术&#39;, &#39;2&#39;);
+
+
+CREATE TABLE &#96;score&#96; (
+  &#96;sid&#96; int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  &#96;student_id&#96; int NOT NULL,
+  &#96;course_id&#96; int NOT NULL,
+  &#96;num&#96; int NOT NULL,
+  CONSTRAINT &#96;fk_score_course&#96; FOREIGN KEY (&#96;course_id&#96;) REFERENCES &#96;course&#96; (&#96;cid&#96;),
+  CONSTRAINT &#96;fk_score_student&#96; FOREIGN KEY (&#96;student_id&#96;) REFERENCES &#96;student&#96; (&#96;sid&#96;)
+) DEFAULT CHARSET&#x3D;utf8;
+
+
+INSERT INTO &#96;score&#96; VALUES (&#39;1&#39;, &#39;1&#39;, &#39;1&#39;, &#39;10&#39;), (&#39;2&#39;, &#39;1&#39;, &#39;2&#39;, &#39;9&#39;), (&#39;5&#39;, &#39;1&#39;, &#39;4&#39;, &#39;66&#39;), (&#39;6&#39;, &#39;2&#39;, &#39;1&#39;, &#39;8&#39;), (&#39;8&#39;, &#39;2&#39;, &#39;3&#39;, &#39;68&#39;), (&#39;9&#39;, &#39;2&#39;, &#39;4&#39;, &#39;99&#39;), (&#39;10&#39;, &#39;3&#39;, &#39;1&#39;, &#39;77&#39;), (&#39;11&#39;, &#39;3&#39;, &#39;2&#39;, &#39;66&#39;), (&#39;12&#39;, &#39;3&#39;, &#39;3&#39;, &#39;87&#39;), (&#39;13&#39;, &#39;3&#39;, &#39;4&#39;, &#39;99&#39;), (&#39;14&#39;, &#39;4&#39;, &#39;1&#39;, &#39;79&#39;), (&#39;15&#39;, &#39;4&#39;, &#39;2&#39;, &#39;11&#39;), (&#39;16&#39;, &#39;4&#39;, &#39;3&#39;, &#39;67&#39;), (&#39;17&#39;, &#39;4&#39;, &#39;4&#39;, &#39;100&#39;), (&#39;18&#39;, &#39;5&#39;, &#39;1&#39;, &#39;79&#39;), (&#39;19&#39;, &#39;5&#39;, &#39;2&#39;, &#39;11&#39;), (&#39;20&#39;, &#39;5&#39;, &#39;3&#39;, &#39;67&#39;), (&#39;21&#39;, &#39;5&#39;, &#39;4&#39;, &#39;100&#39;), (&#39;22&#39;, &#39;6&#39;, &#39;1&#39;, &#39;9&#39;), (&#39;23&#39;, &#39;6&#39;, &#39;2&#39;, &#39;100&#39;), (&#39;24&#39;, &#39;6&#39;, &#39;3&#39;, &#39;67&#39;), (&#39;25&#39;, &#39;6&#39;, &#39;4&#39;, &#39;100&#39;), (&#39;26&#39;, &#39;7&#39;, &#39;1&#39;, &#39;9&#39;), (&#39;27&#39;, &#39;7&#39;, &#39;2&#39;, &#39;100&#39;), (&#39;28&#39;, &#39;7&#39;, &#39;3&#39;, &#39;67&#39;), (&#39;29&#39;, &#39;7&#39;, &#39;4&#39;, &#39;88&#39;), (&#39;30&#39;, &#39;8&#39;, &#39;1&#39;, &#39;9&#39;), (&#39;31&#39;, &#39;8&#39;, &#39;2&#39;, &#39;100&#39;), (&#39;32&#39;, &#39;8&#39;, &#39;3&#39;, &#39;67&#39;), (&#39;33&#39;, &#39;8&#39;, &#39;4&#39;, &#39;88&#39;), (&#39;34&#39;, &#39;9&#39;, &#39;1&#39;, &#39;91&#39;), (&#39;35&#39;, &#39;9&#39;, &#39;2&#39;, &#39;88&#39;), (&#39;36&#39;, &#39;9&#39;, &#39;3&#39;, &#39;67&#39;), (&#39;37&#39;, &#39;9&#39;, &#39;4&#39;, &#39;22&#39;), (&#39;38&#39;, &#39;10&#39;, &#39;1&#39;, &#39;90&#39;), (&#39;39&#39;, &#39;10&#39;, &#39;2&#39;, &#39;77&#39;), (&#39;40&#39;, &#39;10&#39;, &#39;3&#39;, &#39;43&#39;), (&#39;41&#39;, &#39;10&#39;, &#39;4&#39;, &#39;87&#39;), (&#39;42&#39;, &#39;11&#39;, &#39;1&#39;, &#39;90&#39;), (&#39;43&#39;, &#39;11&#39;, &#39;2&#39;, &#39;77&#39;), (&#39;44&#39;, &#39;11&#39;, &#39;3&#39;, &#39;43&#39;), (&#39;45&#39;, &#39;11&#39;, &#39;4&#39;, &#39;87&#39;), (&#39;46&#39;, &#39;12&#39;, &#39;1&#39;, &#39;90&#39;), (&#39;47&#39;, &#39;12&#39;, &#39;2&#39;, &#39;77&#39;), (&#39;48&#39;, &#39;12&#39;, &#39;3&#39;, &#39;43&#39;), (&#39;49&#39;, &#39;12&#39;, &#39;4&#39;, &#39;87&#39;), (&#39;52&#39;, &#39;13&#39;, &#39;3&#39;, &#39;87&#39;);</code></pre>
+</li>
+<li><p>创建用户 luffy 并赋予此数据库的所有权限。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create user &#39;luffy&#39;@&#39;%&#39; identified by &#39;root123&#39;;
+grant all privileges on day27db.* TO &#39;luffy&#39;@&#39;%&#39;;
+flush privileges;</code></pre>
+</li>
+<li><p>查询姓“李”的老师的个数。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from teacher where tname like &quot;李%&quot;;</code></pre>
+</li>
+<li><p>查询姓“张”的学生名单。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from student where sname like &quot;张%&quot;;</code></pre>
+</li>
+<li><p>查询男生、女生的人数。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select gender,count(1) from student group by gender;</code></pre>
+</li>
+<li><p>查询同名同姓学生名单，并统计同名人数。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select sname,count(1) from student group by sname;
+select sname,count(1) from student group by sname having count(1) &gt; 1;</code></pre>
+</li>
+<li><p>查询 “三年二班” 的所有学生。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from student left join class on student.class_id &#x3D; class.cid where class.caption&#x3D;&quot;三年二班&quot;;</code></pre>
+</li>
+<li><p>查询 每个 班级的 班级名称、班级人数。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select class_id,count(1) from student group by class_id;
+
+select class.caption,count(1) from student left join class on student.class_id &#x3D; class.cid group by class.caption;</code></pre>
+</li>
+<li><p>查询成绩小于60分的同学的学号、姓名、成绩、课程名称。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from score where num &lt;60;
+
+select 
+	student.sid,
+	student.sname,
+	score.num,
+	course.cname 
+from 
+	score 
+	left join student on score.student_id&#x3D;student.sid 
+	left join course on score.course_id &#x3D;course.cid 
+where num &lt;60;</code></pre>
+</li>
+<li><p>查询选修了 “生物课” 的所有学生ID、学生姓名、成绩。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from score left join course on score.course_id &#x3D;course.cid where course.cname&#x3D;&quot;生物&quot;;
+
+
+select 
+	student.sid,
+	student.sname,
+	score.num 
+from 
+	score 
+	left join course on score.course_id &#x3D;course.cid 
+	left join student on score.student_id&#x3D;student.sid 
+where course.cname&#x3D;&quot;生物&quot;;</code></pre>
+</li>
+<li><p>查询选修了 “生物课” 且分数低于60的的所有学生ID、学生姓名、成绩。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select
+	student.sid,
+	student.sname,
+	score.num 
+from 
+	score 
+	left join course on score.course_id &#x3D;course.cid 
+	left join student on score.student_id&#x3D;student.sid 
+where course.cname&#x3D;&quot;生物&quot; and score.num &lt; 60;</code></pre>
+
+
+</li>
+<li><p>查询所有同学的学号、姓名、选课数、总成绩。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select student_id,count(1),sum(num) from score group by student_id;
+
+select 
+	student_id,
+	student.sname,
+	count(1),
+	sum(num) 
+from 
+	score 
+	left join student on score.student_id&#x3D;student.sid 
+group by student_id;</code></pre>
+</li>
+<li><p>查询各科被选修的学生数。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select course_id,count(1) from score group by course_id;
+
+select 
+	course_id,
+	course.cname,
+	count(1) 
+from 
+	score 
+	left join course on score.course_id &#x3D;course.cid 
+group by course_id;</code></pre>
+</li>
+<li><p>查询各科成绩的总分、最高分、最低分，显示：课程ID、课程名称、总分、最高分、最低分。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select 
+	course_id,
+	course.cname,sum(num), 
+	max(num), 
+	min(num) 
+from 
+	score 
+	left join course on score.course_id &#x3D;course.cid 
+group by course_id;</code></pre>
+</li>
+<li><p>查询各科成绩的平均分，显示：课程ID、课程名称、平均分。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select 
+	course_id,
+	course.cname,
+	avg(num) 
+from 
+	score 
+	left join course on score.course_id &#x3D;course.cid 
+group by course_id;</code></pre>
+</li>
+<li><p>查询各科成绩的平均分，显示：课程ID、课程名称、平均分（按平均分从大到小排序）。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select 
+	course_id,
+	course.cname,
+	avg(num) 
+from 
+	score 
+	left join course on score.course_id &#x3D;course.cid 
+group by course_id 
+order by avg(num) desc;
+
+
+select 
+	course_id,
+	course.cname,
+	avg(num) as A 
+from 
+	score 
+	left join course on score.course_id &#x3D;course.cid 
+group by course_id 
+order by A desc;</code></pre>
+</li>
+<li><p>查询各科成绩的平均分和及格率，显示：课程ID、课程名称、平均分、及格率。</p>
+<pre class="language-none"><code class="language-none">10&#x2F;20 &#x3D; 及格率
+
+select course_id,count(1) from score group by course_id;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select 
+	sid,
+	course_id,
+	num,
+	case when score.num &gt;&#x3D; 60 then 1 else 0 end &quot;是否及格&quot; 
+from score;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select sid,course_id,num,case when score.num &gt; 60 then 1 else 0 end &quot;是否及格&quot; from score;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select 
+	course_id,
+	course.cname,
+	avg(num),
+	count(1) as total,
+	sum(case when score.num &gt; 60 then 1 else 0 end) 
+from 
+	score 
+	left join course on score.course_id &#x3D;course.cid 
+group by 
+	course_id;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select 
+	course_id,
+	course.cname,
+	avg(num),
+	sum(case when score.num &gt; 60 then 1 else 0 end)&#x2F;count(1) *100 as percent 
+from 
+	score 
+	left join course on score.course_id &#x3D;course.cid 
+group by 
+	course_id;</code></pre>
+
+
+</li>
+<li><p>查询平均成绩大于60的所有学生的学号、平均成绩；</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select student_id,avg(num) from score group by student_id having avg(num) &gt; 60;</code></pre>
+</li>
+<li><p>查询平均成绩大于85的所有学生的学号、平均成绩、姓名。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select student_id,avg(num) from score group by student_id having avg(num) &gt; 85;
+
+select student_id,avg(num),student.sname from score left join student on score.student_id&#x3D;student.sid   group by student_id having avg(num) &gt; 85;</code></pre>
+</li>
+<li><p>查询 “三年二班”  每个学生的 学号、姓名、总成绩、平均成绩。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	* 
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+	LEFT JOIN class ON class.cid &#x3D; student.class_id;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	* 
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+	LEFT JOIN class ON class.cid &#x3D; student.class_id 
+WHERE
+	class.caption &#x3D; &quot;三年二班&quot;;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student_id,
+	sname,
+	sum( num ),
+	avg( num ) 
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+	LEFT JOIN class ON class.cid &#x3D; student.class_id 
+WHERE
+	class.caption &#x3D; &quot;三年二班&quot; 
+GROUP BY
+	student_id</code></pre>
+</li>
+<li><p>查询各个班级的班级名称、总成绩、平均成绩、及格率（按平均成绩从大到小排序）。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	class.cid,
+	class.caption,
+	sum( num ),
+	avg( num ) as av,
+	sum( CASE WHEN score.num &gt; 60 THEN 1 ELSE 0 END ) &#x2F; count( 1 ) * 100 as JG
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+	LEFT JOIN class ON class.cid &#x3D; student.class_id 
+GROUP BY
+	class.cid
+ORDER BY
+	av desc
+	</code></pre>
+</li>
+<li><p>查询学过 “波多” 老师课的同学的学号、姓名。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+	LEFT JOIN teacher ON course.teacher_id &#x3D; teacher.tid
+WHERE
+	teacher.tname &#x3D; &quot;波多&quot; </code></pre>
+</li>
+<li><p>查询没学过 “波多” 老师课的同学的学号、姓名。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"># 错误的思路
+SELECT
+	student.sid,
+	student.sname
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+	LEFT JOIN teacher ON course.teacher_id &#x3D; teacher.tid
+WHERE
+	teacher.tname !&#x3D; &quot;波多&quot; </code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from student where sid not in(
+    SELECT
+        student.sid
+    FROM
+        score
+        LEFT JOIN student ON score.student_id &#x3D; student.sid
+        LEFT JOIN course ON score.course_id &#x3D; course.cid
+        LEFT JOIN teacher ON course.teacher_id &#x3D; teacher.tid
+    WHERE
+        teacher.tname &#x3D; &quot;波多&quot; 
+)</code></pre>
+</li>
+<li><p>查询选修 “苍空” 老师所授课程的学生中，成绩最高的学生姓名及其成绩（不考虑并列）。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname 
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+	LEFT JOIN teacher ON course.teacher_id &#x3D; teacher.tid 
+WHERE
+	teacher.tname &#x3D; &quot;苍空&quot; 
+ORDER BY
+	score.num DESC 
+	LIMIT 1</code></pre>
+</li>
+<li><p>查询选修 “苍空” 老师所授课程的学生中，成绩最高的学生姓名及其成绩（考虑并列）。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname 
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+	LEFT JOIN teacher ON course.teacher_id &#x3D; teacher.tid 
+WHERE
+	teacher.tname &#x3D; &quot;苍空&quot; 
+	AND score.num &#x3D; (
+        SELECT
+            max( num ) 
+        FROM
+            score
+            LEFT JOIN course ON score.course_id &#x3D; course.cid
+            LEFT JOIN teacher ON course.teacher_id &#x3D; teacher.tid 
+        WHERE
+        teacher.tname &#x3D; &quot;苍空&quot; 
+	)</code></pre>
+</li>
+<li><p>查询只选修了一门课程的全部学生的学号、姓名。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname 
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid 
+GROUP BY
+	student_id 
+HAVING
+	count( 1 ) &#x3D;1</code></pre>
+</li>
+<li><p>查询至少选修两门课程的学生学号、学生姓名、选修课程数量。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname ,
+	count(1)
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid 
+GROUP BY
+	student_id 
+HAVING
+	count( 1 ) &gt;&#x3D; 2</code></pre>
+</li>
+<li><p>查询两门及以上不及格的同学的学号、学生姓名、选修课程数量。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname ,
+	count(1)
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid 
+where 
+	num &lt; 60
+GROUP BY
+	student_id 
+HAVING
+	count( 1 ) &gt;&#x3D; 2</code></pre>
+</li>
+<li><p>查询选修了所有课程的学生的学号、姓名。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid 
+GROUP BY
+	student_id 
+HAVING
+	count( 1 ) &#x3D; ( SELECT count( 1 ) FROM course )</code></pre>
+</li>
+<li><p>查询未选修所有课程的学生的学号、姓名。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname
+FROM
+	score
+	LEFT JOIN student ON score.student_id &#x3D; student.sid 
+GROUP BY
+	student_id 
+HAVING
+	count( 1 ) !&#x3D; ( SELECT count( 1 ) FROM course )</code></pre>
+</li>
+<li><p>查询所有学生都选修了的课程的课程号、课程名。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	course.cid,
+	course.cname
+FROM
+	score
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+GROUP BY
+	course_id 
+HAVING
+	count( 1 ) &#x3D; ( SELECT count( 1 ) FROM student )</code></pre>
+</li>
+<li><p>查询选修 “生物” 和 “物理” 课程的所有学生学号、姓名。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname
+FROM
+	score
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+WHERE
+	course.cname in (&quot;生物&quot;,&quot;物理&quot;)
+GROUP BY
+	student_id
+having 
+	count(1) &#x3D; 2;</code></pre>
+</li>
+<li><p>查询至少有一门课与学号为“1”的学生所选的课程相同的其他学生学号 和 姓名 。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname
+FROM
+	score
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+WHERE
+	score.course_id in ( select course_id from score where student_id&#x3D;1)  -- （）中为学生1选的课程
+	and score.student_id !&#x3D; 1
+GROUP BY
+	student_id
+HAVING
+	count(1) &gt; 1</code></pre>
+</li>
+<li><p>查询与学号为 “2” 的同学选修的课程完全相同的其他 学生学号 和 姓名 。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student.sid,
+	student.sname
+FROM
+	score
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+	LEFT JOIN student ON score.student_id &#x3D; student.sid
+WHERE
+	score.course_id in ( select course_id from score where student_id&#x3D;2)
+	and score.student_id in (
+    	select student_id from score where student_id!&#x3D;2 group by student having count(1) &#x3D; select count(1) from score where student_id&#x3D;2
+    )
+GROUP BY
+	student_id
+HAVING
+	count(1) &#x3D; ( select count(1) from score where student_id&#x3D;2 )
+	
+	
+# 如果id&#x3D;2学生他的课程数量和其他人的课程数量是一样。
+select student_id from score where student_id!&#x3D;2 group by student having count(1) &#x3D; select count(1) from score where student_id&#x3D;2
+
+select 
+	student_id 
+from 
+	score 
+where 
+	student_id!&#x3D;2 
+group by 
+	student_id 
+having 
+	count(1) &#x3D; select count(1) from score where student_id&#x3D;2</code></pre>
+</li>
+<li><p>查询“生物”课程比“物理”课程成绩高的所有学生的学号；</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	* 
+FROM
+	score
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+where 
+	cname in (&quot;生物&quot;,&quot;物理&quot;);</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	*,
+	case cname WHEN &quot;生物&quot; then num else -1 end sw,
+	case cname WHEN &quot;物理&quot; then num else -1 end wl
+FROM
+	score
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+where 
+	cname in (&quot;生物&quot;,&quot;物理&quot;);</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student_id,
+	max(case cname WHEN &quot;生物&quot; then num else -1 end) as sw,
+	max(case cname WHEN &quot;物理&quot; then num else -1 end) as wl
+FROM
+	score
+	LEFT JOIN course ON score.course_id &#x3D; course.cid
+where 
+	cname in (&quot;生物&quot;,&quot;物理&quot;)
+GROUP BY
+	student_id;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	student_id,
+	max( CASE cname WHEN &quot;生物&quot; THEN num ELSE 0 END ) AS sw,
+	max( CASE cname WHEN &quot;物理&quot; THEN num ELSE 0 END ) AS wl 
+FROM
+	score
+	LEFT JOIN course ON score.course_id &#x3D; course.cid 
+WHERE
+	cname IN ( &quot;生物&quot;, &quot;物理&quot; ) 
+GROUP BY
+	student_id 
+HAVING
+	sw &gt; wl;</code></pre>
+</li>
+<li><p>查询每门课程成绩最好的前3名 (不考虑成绩并列情况) 。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	cid,
+	cname,
+	( select student.sname from score left join student on student.sid &#x3D; score.student_id where course_id &#x3D; course.cid order by num desc limit 1 offset 0) as &quot;第1名&quot;,
+	( select student.sname from score left join student on student.sid &#x3D; score.student_id where course_id &#x3D; course.cid order by num desc limit 1 offset 1) as &quot;第2名&quot;,
+	( select student.sname from score left join student on student.sid &#x3D; score.student_id where course_id &#x3D; course.cid order by num desc limit 1 offset 2) as &quot;第3名&quot;
+FROM
+	course;</code></pre>
+</li>
+<li><p>查询每门课程成绩最好的前3名 (考虑成绩并列情况) 。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+	cid,
+	cname,
+	( select num from score  where course_id &#x3D; course.cid GROUP BY num order by num desc limit 1 offset 0) as &quot;最高分&quot;,
+	( select num from score  where course_id &#x3D; course.cid GROUP BY num order by num desc limit 1 offset 1) as &quot;第二高分&quot;,
+	( select num from score  where course_id &#x3D; course.cid GROUP BY num order by num desc limit 1 offset 2) as &quot;第三高分&quot;
+FROM
+	course;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">select 
+	* 
+from 
+	score 
+	
+	left join (
+		SELECT
+			cid,
+			cname,
+			( select num from score  where course_id &#x3D; course.cid GROUP BY num order by num desc limit 1 offset 0) as &quot;最高分&quot;,
+			( select num from score  where course_id &#x3D; course.cid GROUP BY num order by num desc limit 1 offset 1) as &quot;第二高分&quot;,
+			( select num from score  where course_id &#x3D; course.cid GROUP BY num order by num desc limit 1 offset 2) as third
+		FROM
+			course ) as C on score.course_id &#x3D; C.cid 
+WHERE
+	score.num &gt;&#x3D; C.third</code></pre>
+</li>
+<li><p>创建一个表 <code>sc</code>，然后将 score 表中所有数据插入到 sc 表中。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">CREATE TABLE &#96;sc&#96; (
+  &#96;sid&#96; int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  &#96;student_id&#96; int NOT NULL,
+  &#96;course_id&#96; int NOT NULL,
+  &#96;num&#96; int NOT NULL,
+  CONSTRAINT &#96;fk_sc_course&#96; FOREIGN KEY (&#96;course_id&#96;) REFERENCES &#96;course&#96; (&#96;cid&#96;),
+  CONSTRAINT &#96;fk_sc_student&#96; FOREIGN KEY (&#96;student_id&#96;) REFERENCES &#96;student&#96; (&#96;sid&#96;)
+) DEFAULT CHARSET&#x3D;utf8;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">INSERT INTO sc SELECT * from score;</code></pre>
+</li>
+<li><p>向 sc 表中插入一些记录，这些记录要求符合以下条件：</p>
+<ul>
+<li>学生ID为：没上过课程ID为 “2” 课程的学生的 学号；</li>
+<li>课程ID为：2</li>
+<li>成绩为：80</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">-- 上过
+select student_id from score where course_id &#x3D;2;
+
+-- 没上过
+SELECT
+	sid
+FROM
+	student 
+WHERE
+	sid NOT IN ( SELECT student_id FROM score WHERE course_id &#x3D; 2 )
+
+
+-- 构造数据
+SELECT
+	sid,
+	2,
+	80
+FROM
+	student 
+WHERE
+	sid NOT IN ( SELECT student_id FROM score WHERE course_id &#x3D; 2 );</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">INSERT INTO sc ( student_id, course_id, num ) SELECT
+sid,
+2,
+80 
+FROM
+	student 
+WHERE
+	sid NOT IN ( SELECT student_id FROM score WHERE course_id &#x3D; 2 )</code></pre>
+</li>
+<li><p>向 sc 表中插入一些记录，这些记录要求符合以下条件：</p>
+<ul>
+<li>学生ID为：没上过课程ID为 “2” 课程的学生的 学号。</li>
+<li>课程ID为：2。</li>
+<li>成绩为：课程ID为3的最高分。</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+sid,
+2,
+(select max(num) from score where course_id&#x3D;3) as num
+FROM
+	student 
+WHERE
+	sid NOT IN ( SELECT student_id FROM score WHERE course_id &#x3D; 2 );</code></pre>
+
+
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">INSERT INTO sc ( student_id, course_id, num ) SELECT
+sid,
+2,
+(select max(num) from score where course_id&#x3D;3) as num
+FROM
+	student 
+WHERE
+	sid NOT IN ( SELECT student_id FROM score WHERE course_id &#x3D; 2 )</code></pre></li>
+</ol>
+<h3 id="2-设计表结构"><a href="#2-设计表结构" class="headerlink" title="2. 设计表结构"></a>2. 设计表结构</h3><p>根据如下的业务需求设计相应的表结构，内部需涵盖如下功能。</p>
+<ul>
+<li>注册</li>
+<li>登录</li>
+<li>发布博客</li>
+<li>查看博客列表，显示博客标题、创建时间、阅读数量、评论数量、赞数量等。</li>
+<li>博客详细，显示博文详细、评论 等。<ul>
+<li>发表评论</li>
+<li>赞 or 踩</li>
+<li>阅读数量 + 1</li>
+</ul>
+</li>
+</ul>
+<p>参考如下图片请根据如下功能来设计相应的表结构。</p>
+<p>注意：只需要设计表结构，不需要用python代码实现具体的功能（再学一点知识点后再更好的去实现）。</p>
+<h4 id="2-1-注册和登录"><a href="#2-1-注册和登录" class="headerlink" title="2.1 注册和登录"></a>2.1 注册和登录</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210520204812764-16564929449182.png" class="">
+
+<h4 id="2-2-文章列表"><a href="#2-2-文章列表" class="headerlink" title="2.2 文章列表"></a>2.2 文章列表</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210520204735867-16564929449186.png" class="">
+
+
+
+<h4 id="2-3-文章详细"><a href="#2-3-文章详细" class="headerlink" title="2.3 文章详细"></a>2.3 文章详细</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210520205148509-16564929449183.png" class="">
+
+
+
+<h4 id="2-4-评论-amp-阅读-amp-赞-amp-踩"><a href="#2-4-评论-amp-阅读-amp-赞-amp-踩" class="headerlink" title="2.4 评论 &amp; 阅读 &amp; 赞 &amp; 踩"></a>2.4 评论 &amp; 阅读 &amp; 赞 &amp; 踩</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210520205332907-16564929449184.png" class="">
+
+<p>注意：假设都是一级评论（不能回复评论）。</p>
+<h4 id="2-5答案：表结构设计"><a href="#2-5答案：表结构设计" class="headerlink" title="2.5答案：表结构设计"></a>2.5答案：表结构设计</h4><img src="/2022/06/24/python-mo-kuai-si-day1/image-20210531083345193.png" class="">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">drop database blog;
+drop database IF EXISTS blog;
+create database blog default charset utf8 collate utf8_general_ci;
+use blog;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table user(
+	id int not null auto_increment primary key,
+    username varchar(16) not null,
+    nickname varchar(16) not null,
+	mobile char(11) not null,
+    password varchar(64) not null,
+    email varchar(64) not null,
+    ctime datetime not null
+)default charset&#x3D;utf8;
+
+
+create table article(
+	id int not null auto_increment primary key,
+    title varchar(255) not null,
+    text text not null,
+	read_count int default 0,
+	comment_count int default 0,
+	up_count int default 0,
+	down_count int default 0,
+    user_id int not null,
+    ctime datetime not null,
+    constraint fk_article_user foreign key (user_id) references user(id)
+)default charset&#x3D;utf8;
+
+
+create table comment(
+    id int not null auto_increment primary key,
+    content varchar(255) not null,
+    user_id int not null,
+	article_id int not null,
+    ctime datetime not null,
+    constraint fk_comment_user foreign key (user_id) references user(id),
+    constraint fk_comment_article foreign key (article_id) references article(id)
+)default charset&#x3D;utf8;
+
+
+create table up_down(
+    id int not null auto_increment primary key,
+    choice tinyint not null,
+    user_id int not null,
+	article_id int not null,
+    ctime datetime not null,
+    constraint fk_up_down_user foreign key (user_id) references user(id),
+    constraint fk_up_down_article foreign key (article_id) references article(id)
+)default charset&#x3D;utf8;</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 
             </div>
