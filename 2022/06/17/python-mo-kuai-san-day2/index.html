@@ -601,17 +601,12 @@
 
 
 
-<p>1.1.5 家庭网络架构</p>
-<p>家用路由器集成了是交换机和路由的功能（性能差、价格便宜）。</p>
+<h5 id="1-1-5-家庭网络架构"><a href="#1-1-5-家庭网络架构" class="headerlink" title="1.1.5 家庭网络架构"></a>1.1.5 家庭网络架构</h5><p>家用路由器集成了是交换机和路由的功能（性能差、价格便宜）。</p>
 <img src="/2022/06/17/python-mo-kuai-san-day2/image-20210206231121896.png" class="" title="image-20210206231121896">
 
-<h5 id="1-1-6-互联网"><a href="#1-1-6-互联网" class="headerlink" title="1.1.6 互联网"></a>1.1.6 互联网</h5><img src="/2022/06/17/python-mo-kuai-san-day2/image-20210206231602247.png" class="" title="image-20210206231602247">
 
 
-
-
-
-<h4 id="1-2-网络核心词汇"><a href="#1-2-网络核心词汇" class="headerlink" title="1.2 网络核心词汇"></a>1.2 网络核心词汇</h4><h6 id="1-2-1-子网掩码和IP"><a href="#1-2-1-子网掩码和IP" class="headerlink" title="1.2.1 子网掩码和IP"></a>1.2.1 子网掩码和IP</h6><p>之前说过，接入网络设备后，需要一个IP来代指次电脑，例如：192.168.10.1 。</p>
+<h5 id="1-1-6-互联网"><a href="#1-1-6-互联网" class="headerlink" title="1.1.6 互联网"></a>1.1.6 互联网<img src="/2022/06/17/python-mo-kuai-san-day2/image-20210206231602247.png" class="" title="image-20210206231602247"></h5><h4 id="1-2-网络核心词汇"><a href="#1-2-网络核心词汇" class="headerlink" title="1.2 网络核心词汇"></a>1.2 网络核心词汇</h4><h6 id="1-2-1-子网掩码和IP"><a href="#1-2-1-子网掩码和IP" class="headerlink" title="1.2.1 子网掩码和IP"></a>1.2.1 子网掩码和IP</h6><p>之前说过，接入网络设备后，需要一个IP来代指次电脑，例如：192.168.10.1 。</p>
 <p>IP其是一个32位的二进制，为了便于记忆就将它分为4组，每组8位，由小数点分开，例如：</p>
 <pre class="language-none"><code class="language-none">二进制表示：00000000.10010111.11111111.00001111
 十进制表示：251.151.255.15
@@ -1500,24 +1495,24 @@ sock.close()</code></pre>
 <li><p>客户端</p>
 <pre class="language-python" data-language="python"><code class="language-python">import socket
 import struct
-        
+          
 client &#x3D; socket.socket()
 client.connect((&#39;127.0.0.1&#39;, 8001))
-        
+          
 # 第一条数据
 data1 &#x3D; &#39;alex正在吃&#39;.encode(&#39;utf-8&#39;)
-        
+          
 header1 &#x3D; struct.pack(&#39;i&#39;, len(data1))
-        
+          
 client.sendall(header1)
 client.sendall(data1)
-        
+          
 # 第二条数据
 data2 &#x3D; &#39;翔&#39;.encode(&#39;utf-8&#39;)
 header2 &#x3D; struct.pack(&#39;i&#39;, len(data2))
 client.sendall(header2)
 client.sendall(data2)
-        
+          
 client.close()</code></pre></li>
 </ul>
 </blockquote>

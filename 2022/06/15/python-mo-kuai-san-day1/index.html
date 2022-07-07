@@ -441,7 +441,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    98 分
+                    99 分
                 </div>
                 
 
@@ -2501,7 +2501,7 @@ obj &#x3D; Foo(&quot;武沛齐&quot;)</code></pre>
 
 obj &#x3D; Foo(&quot;武沛齐&quot;)</code></pre>
 </li>
-<li><p><code>__call__</code></p>
+<li><p><code>__call__</code>，使对象可执行</p>
 <pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
     def __call__(self, *args, **kwargs):
         print(&quot;执行call方法&quot;)
@@ -2510,7 +2510,7 @@ obj &#x3D; Foo(&quot;武沛齐&quot;)</code></pre>
 obj &#x3D; Foo()
 obj()</code></pre>
 </li>
-<li><p><code>__str__</code></p>
+<li><p><code>__str__</code>，使对象支持被打印</p>
 <pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
 
     def __str__(self):
@@ -2521,17 +2521,7 @@ obj &#x3D; Foo()
 data &#x3D; str(obj)
 print(data)</code></pre>
 </li>
-<li><p><code>__dict__</code></p>
-<pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
-    def __init__(self, name, age):
-        self.name &#x3D; name
-        self.age &#x3D; age
-
-
-obj &#x3D; Foo(&quot;武沛齐&quot;,19)
-print(obj.__dict__)</code></pre>
-</li>
-<li><p><code>__getitem__</code>、<code>__setitem__</code>、<code>__delitem__</code></p>
+<li><p><code>__getitem__</code>、<code>__setitem__</code>、<code>__delitem__</code>，使对象支持通过索引查、改、删值，<code>obj[&quot;x1&quot;]</code>、<code>obj[&#39;x2&#39;] = 123</code>、<code>del obj[&#39;x3&#39;]</code></p>
 <pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
 
     def __getitem__(self, item):
@@ -2550,7 +2540,7 @@ obj[&quot;x1&quot;]
 obj[&#39;x2&#39;] &#x3D; 123
 del obj[&#39;x3&#39;]</code></pre>
 </li>
-<li><p><code>__enter__</code>、<code>__exit__</code></p>
+<li><p><code>__enter__</code>、<code>__exit__</code>，使对象支持<code>with</code>语法</p>
 <pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
 
     def __enter__(self):
@@ -2590,6 +2580,16 @@ with SqlHelper() as 连接:
 with SqlHelper() as 连接:
     连接.操作...</code></pre>
 
+</li>
+<li><p><code>__dict__</code>以字典形式返回对象&#x2F;类的所有成员</p>
+<pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
+    def __init__(self, name, age):
+        self.name &#x3D; name
+        self.age &#x3D; age
+
+obj &#x3D; Foo(&quot;武沛齐&quot;,19)
+print(obj.__dict__)</code></pre></li>
+</ul>
 <h4 id="【面试题】：-enter-和-exit"><a href="#【面试题】：-enter-和-exit" class="headerlink" title="【面试题】：__enter__和__exit__"></a><font color="#dd0000">【面试题】</font>：<code>__enter__</code>和<code>__exit__</code></h4><pre class="language-python" data-language="python"><code class="language-python"># （补充代码，实现如下功能）
 
 class Context:
@@ -2604,7 +2604,7 @@ with Context() as ctx:
 </code></pre>
 
 <p>上下文管理的语法。</p>
-</li>
+<ul>
 <li><p><code>__add__</code> 等。</p>
 <pre class="language-python" data-language="python"><code class="language-python">class Foo(object):
     def __init__(self, name):
@@ -4668,7 +4668,7 @@ print(v2)</code></pre>
 
 
 
-<h4 id="4-2-import-module-反射"><a href="#4-2-import-module-反射" class="headerlink" title="4.2 import_module + 反射"></a><font color="#dd0000">4.2 import_module + 反射</font></h4><p>在Python中如果想要导入一个模块，可以通过import语法导入；企业也可以通过字符串的形式导入。<font color="#dd0000"><strong>可提高代码的可扩展性。</strong></font></p>
+<h4 id="4-2-import-module-反射"><a href="#4-2-import-module-反射" class="headerlink" title="4.2 import_module + 反射"></a><font color="#dd0000">4.2 import_module + 反射</font></h4><p>在Python中如果想要导入一个模块，可以通过import语法导入；其实也可以通过字符串的形式导入。<font color="#dd0000"><strong>可提高代码的可扩展性。</strong></font></p>
 <p>示例一：</p>
 <pre class="language-python" data-language="python"><code class="language-python"># 导入模块
 import random

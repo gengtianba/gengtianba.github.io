@@ -1,0 +1,3065 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python第四模块day2, Gengtianba&#39;s Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Python第四模块day2 | Gengtianba&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Gengtianba's Blog" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Gengtianba&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Gengtianba&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python第四模块day2</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5/">
+                                <span class="chip bg-color">第四阶段</span>
+                            </a>
+                        
+                            <a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">MySQL数据库</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/" class="post-category">
+                                路飞学院
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-06-30
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    10.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    49 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="二十八、索引和函数及存储过程"><a href="#二十八、索引和函数及存储过程" class="headerlink" title="二十八、索引和函数及存储过程"></a>二十八、索引和函数及存储过程</h2><img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210531123330918.png" class="" title="image-20210531123330918">
+
+<p>课程目标：了解MySQL中索引、函数、存储过程、函数、触发器、视图等知识点。</p>
+<p>课程概要：</p>
+<ul>
+<li>索引</li>
+<li>函数</li>
+<li>存储过程</li>
+<li>视图</li>
+<li>触发器</li>
+</ul>
+<h3 id="1-索引"><a href="#1-索引" class="headerlink" title="1. 索引"></a>1. 索引</h3><p>在数据库中索引最核心的作用是：<strong>加速查找</strong>。  例如：在含有300w条数据的表中查询，无索引需要700秒，而利用索引可能仅需1秒。</p>
+<pre class="language-none"><code class="language-none">mysql&gt; select * from big where password&#x3D;&quot;81f98021-6927-433a-8f0d-0f5ac274f96e&quot;;
++----+---------+---------------+--------------------------------------+------+
+| id | name    | email         | password                             | age  |
++----+---------+---------------+--------------------------------------+------+
+| 11 | wu-13-1 | w-13-1@qq.com | 81f98021-6927-433a-8f0d-0f5ac274f96e |    9 |
++----+---------+---------------+--------------------------------------+------+
+1 row in set (0.70 sec)
+
+mysql&gt; select * from big where id&#x3D;11;
++----+---------+---------------+--------------------------------------+------+
+| id | name    | email         | password                             | age  |
++----+---------+---------------+--------------------------------------+------+
+| 11 | wu-13-1 | w-13-1@qq.com | 81f98021-6927-433a-8f0d-0f5ac274f96e |    9 |
++----+---------+---------------+--------------------------------------+------+
+1 row in set (0.00 sec)
+
+mysql&gt; select * from big where name&#x3D;&quot;wu-13-1&quot;;
++----+---------+---------------+--------------------------------------+------+
+| id | name    | email         | password                             | age  |
++----+---------+---------------+--------------------------------------+------+
+| 11 | wu-13-1 | w-13-1@qq.com | 81f98021-6927-433a-8f0d-0f5ac274f96e |    9 |
++----+---------+---------------+--------------------------------------+------+
+1 row in set (0.00 sec)</code></pre>
+
+<p>在开发过程中会为哪些 经常会被搜索的列 创建索引，以提高程序的响应速度。例如：查询手机号、邮箱、用户名等。</p>
+<h4 id="1-1-索引原理"><a href="#1-1-索引原理" class="headerlink" title="1.1 索引原理"></a>1.1 索引原理</h4><p>为什么加上索引之后速度能有这么大的提升呢？ 因为索引的底层是基于B+Tree的数据结构存储的。</p>
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526160040895-16565736485922.png" class="" title="image-20210526160040895">
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526155746811-16565736485933.png" class="" title="image-20210526155746811">
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526160519425-16565736485934.png" class="" title="image-20210526160519425">
+
+<p>很明显，如果有了索引结构的查询效率比表中逐行<font color="#dd0000"><strong>查询的速度要快很</strong></font>多且数据量越大越明显。但，<font color="#dd0000"><strong>数据增删改的速度会变慢。</strong></font></p>
+<p>B+Tree结构连接：<a target="_blank" rel="noopener" href="https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html">https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html</a></p>
+<p>数据库的索引是基于上述B+Tree的数据结构实现，但在创建数据库表时，如果指定不同的引擎，底层使用的B+Tree结构的原理有些不同。</p>
+<ul>
+<li><p>myisam引擎，非聚簇索引（数据 和 索引结构 分开存储）</p>
+</li>
+<li><p>innodb引擎，聚簇索引（数据 和 主键索引结构存储在一起）</p>
+</li>
+</ul>
+<h5 id="1-1-1-非聚簇索引（mysiam引擎）"><a href="#1-1-1-非聚簇索引（mysiam引擎）" class="headerlink" title="1.1.1 非聚簇索引（mysiam引擎）"></a>1.1.1 非聚簇索引（mysiam引擎）</h5><pre class="language-sql" data-language="sql"><code class="language-sql">create table 表名(
+    id int not null auto_increment primary key, 
+    name varchar(32) not null,
+    age int
+)engine&#x3D;myisam default charset&#x3D;utf8;</code></pre>
+
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526160040895-16565736485922.png" class="" title="image-20210526160040895">
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526155746811-16565736485933.png" class="" title="image-20210526155746811">
+
+<p>![image-20210526155118552](E:&#x2F;python路飞学城&#x2F;模块4&#x2F;day28 索引和函数及存储过程&#x2F;assets&#x2F;image-20210526155118552.png)</p>
+<h5 id="1-1-2-聚簇索引（innodb引擎）"><a href="#1-1-2-聚簇索引（innodb引擎）" class="headerlink" title="1.1.2 聚簇索引（innodb引擎）"></a>1.1.2 聚簇索引（innodb引擎）</h5><pre class="language-sql" data-language="sql"><code class="language-sql">create table 表名(
+    id int not null auto_increment primary key, 
+    name varchar(32) not null,
+    age int
+)engine&#x3D;innodb default charset&#x3D;utf8;</code></pre>
+
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526160040895-16565736485922.png" class="" title="image-20210526160040895">
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526155746811-16565736485933.png" class="" title="image-20210526155746811">
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526160519425-16565736485934.png" class="" title="image-20210526160519425">
+
+<p>![image-20210526155250801](E:&#x2F;python路飞学城&#x2F;模块4&#x2F;day28 索引和函数及存储过程&#x2F;assets&#x2F;image-20210526155250801.png)</p>
+<p>在MySQL文件存储中的体现：</p>
+<pre class="language-none"><code class="language-none">root@192 userdb # pwd
+&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;userdb
+root@192 userdb # ls -l
+total 1412928
+-rw-r-----  1 _mysql  _mysql       8684 May 15 22:51 big.frm，表结构。
+-rw-r-----  1 _mysql  _mysql  717225984 May 15 22:51 big.ibd，数据和索引结构。
+-rw-r-----  1 _mysql  _mysql       8588 May 16 11:38 goods.frm
+-rw-r-----  1 _mysql  _mysql      98304 May 16 11:39 goods.ibd
+-rw-r-----  1 _mysql  _mysql       8586 May 26 10:57 t2.frm，表结构
+-rw-r-----  1 _mysql  _mysql          0 May 26 10:57 t2.MYD，数据
+-rw-r-----  1 _mysql  _mysql       1024 May 26 10:57 t2.MYI，索引结构</code></pre>
+
+<p>上述 聚簇索引 和 非聚簇索引 底层均利用了B+Tree结构结构，只不过内部数据存储有些不同罢了。</p>
+<p>在企业开发中一般都会使用 innodb 引擎（内部支持事务、行级锁、外键等特点），在MySQL5.5版本之后默认引擎也是innodb。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">mysql&gt; show create table users \G;
+*************************** 1. row ***************************
+       Table: users
+Create Table: CREATE TABLE &#96;users&#96; (
+  &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT,
+  &#96;name&#96; varchar(32) DEFAULT NULL,
+  &#96;password&#96; varchar(64) DEFAULT NULL,
+  &#96;ctime&#96; datetime DEFAULT NULL,
+  &#96;age&#96; int(11) DEFAULT &#39;5&#39;,
+  PRIMARY KEY (&#96;id&#96;)
+) ENGINE&#x3D;InnoDB AUTO_INCREMENT&#x3D;11 DEFAULT CHARSET&#x3D;utf8
+1 row in set (0.00 sec)
+
+ERROR:
+No query specified
+
+mysql&gt; show index from users \G;
+*************************** 1. row ***************************
+        Table: users
+   Non_unique: 0
+     Key_name: PRIMARY
+ Seq_in_index: 1
+  Column_name: id
+    Collation: A
+  Cardinality: 3
+     Sub_part: NULL
+       Packed: NULL
+         Null:
+   Index_type: BTREE   -- 虽然显示BTree，但底层数据结构基于B+Tree。
+      Comment:
+Index_comment:
+1 row in set (0.00 sec)
+
+ERROR:
+No query specified
+
+mysql&gt;</code></pre>
+
+<p>innodb引擎，一般创建的索引：聚簇索引。</p>
+<h4 id="1-2-常见索引"><a href="#1-2-常见索引" class="headerlink" title="1.2 常见索引"></a>1.2 常见索引</h4><p>在innodb引擎下，索引底层都是基于B+Tree数据结构存储（聚簇索引）。</p>
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526170708409-16565736485937.png" class="" title="image-20210526170708409">
+
+<p>在开发过程中常见的索引类型有：</p>
+<ul>
+<li>主键索引：加速查找、不能为空、不能重复。 + 联合主键索引</li>
+<li>唯一索引：加速查找、不能重复。  + 联合唯一索引</li>
+<li>普通索引：加速查找。 + 联合索引</li>
+</ul>
+<h5 id="1-2-1-主键和联合主键索引"><a href="#1-2-1-主键和联合主键索引" class="headerlink" title="1.2.1 主键和联合主键索引"></a>1.2.1 主键和联合主键索引</h5><ul>
+<li>创建表时加入主键索引</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table 表名(
+    id int not null auto_increment primary key,   -- 主键
+    name varchar(32) not null
+);
+
+create table 表名(
+    id int not null auto_increment,
+    name varchar(32) not null,
+    primary key(id)
+);
+
+create table 表名(
+    id int not null auto_increment,
+    name varchar(32) not null,
+    primary key(列1,列2)          -- 如果有多列，称为联合主键（不常用且myisam引擎支持）
+);</code></pre>
+
+<ul>
+<li>表已经创建插入主键索引</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table 表名 add primary key(列名);</code></pre>
+
+<ul>
+<li>删除主键索引</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter table 表名 drop primary key;</code></pre>
+
+<p>注意：删除索引时可能会报错，自增列必须定义为键。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+
+alter table 表 change id id int not null; -- 修改表的列去掉自增属性</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table t7(
+    id int not null,
+    name varchar(32) not null,
+    primary key(id)
+);
+
+alter table t6 drop primary key;</code></pre>
+
+
+
+<h5 id="1-2-2-唯一和联合唯一索引"><a href="#1-2-2-唯一和联合唯一索引" class="headerlink" title="1.2.2 唯一和联合唯一索引"></a>1.2.2 唯一和联合唯一索引</h5><ul>
+<li>创建表时加入唯一索引</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table 表名(
+    id int not null auto_increment primary key,
+    name varchar(32) not null,
+    email varchar(64) not null,
+    unique ix_name (name),  -- 唯一索引
+    unique ix_email (email), -- 唯一索引
+);
+
+create table 表名(
+    id int not null auto_increment,
+    name varchar(32) not null,
+    unique (列1,列2)               -- 如果有多列，称为联合唯一索引（两列加起来不能重复）。
+);</code></pre>
+
+<ul>
+<li>表已创建增加唯一索引</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create unique index 索引名 on 表名(列名);</code></pre>
+
+<ul>
+<li>删除唯一索引</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">drop unique index 索引名 on 表名;</code></pre>
+
+
+
+<h5 id="1-2-3-索引和联合索引"><a href="#1-2-3-索引和联合索引" class="headerlink" title="1.2.3 索引和联合索引"></a>1.2.3 索引和联合索引</h5><ul>
+<li>创建表时加入普通索引</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create table 表名(
+    id int not null auto_increment primary key,
+    name varchar(32) not null,
+    email varchar(64) not null,
+    index ix_email (email),
+    index ix_name (name),
+);
+
+create table 表名(
+    id int not null auto_increment primary key,
+    name varchar(32) not null,
+    email varchar(64) not null,
+    index ix_email (name,email)     -- 如果有多列，称为联合索引。
+);</code></pre>
+
+<ul>
+<li>表已创建插入普通索引</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create index 索引名 on 表名(列名);</code></pre>
+
+<ul>
+<li>删除普通索引</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">drop index 索引名 on 表名;</code></pre>
+
+
+
+<p>在项目开发的设计表结构的环节，大家需要根据业务需求的特点来决定是否创建相应的索引。</p>
+<h5 id="案例：博客系统"><a href="#案例：博客系统" class="headerlink" title="案例：博客系统"></a>案例：博客系统</h5><p>![image-20210531164453161](E:&#x2F;python路飞学城&#x2F;模块4&#x2F;day28 索引和函数及存储过程&#x2F;assets&#x2F;image-20210531164453161.png)</p>
+<ul>
+<li>每张表id列都创建 自增 + 主键。</li>
+<li>用户表<ul>
+<li>用户名 + 密码 创建联合普通索引。</li>
+<li>手机号，创建唯一索引。</li>
+<li>邮箱，创建唯一索引。</li>
+</ul>
+</li>
+<li>推荐表<ul>
+<li>user_id和article_id创建联合唯一索引。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-3-操作表"><a href="#1-3-操作表" class="headerlink" title="1.3 操作表"></a>1.3 操作表</h4><p>在表中创建索引后，<font color="#dd0000"><strong>查询时一定要命中索引。</strong></font></p>
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526170700985-16565736485939.png" class="" title="image-20210526170700985">
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526155746811-16565736485933.png" class="" title="image-20210526155746811">
+
+<p>在数据库的表中创建索引之后优缺点如下：</p>
+<ul>
+<li>优点：查找速度快、约束（唯一、主键、联合唯一）</li>
+<li>缺点：插入、删除、更新速度比较慢，因为每次操作都需要调整整个B+Tree的数据结构关系。</li>
+</ul>
+<p>所以，在表中不要无节制的去创建索引啊。。。</p>
+<p>在开发中，我们会对表中经常被搜索的列创建索引，从而提高程序的响应速度。</p>
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526170718219-165657364859310.png" class="" title="image-20210526170718219">
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">CREATE TABLE &#96;big&#96; (
+    &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT,
+    &#96;name&#96; varchar(32) DEFAULT NULL,
+    &#96;email&#96; varchar(64) DEFAULT NULL,
+    &#96;password&#96; varchar(64) DEFAULT NULL,
+    &#96;age&#96; int(11) DEFAULT NULL,
+    PRIMARY KEY (&#96;id&#96;),                       -- 主键索引
+    UNIQUE KEY &#96;big_unique_email&#96; (&#96;email&#96;),  -- 唯一索引
+    KEY &#96;ix_name_pwd&#96; (&#96;name&#96;,&#96;password&#96;)     -- 联合索引
+) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8</code></pre>
+
+
+
+<p>一般情况下，我们针对只要通过索引列去搜搜都可以 <code>命中</code> 索引（通过索引结构加速查找）。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from big where id &#x3D; 5;
+select * from big where id &gt; 5;
+select * from big where email &#x3D; &quot;wupeiqi@live.com&quot;;
+select * from big where name &#x3D; &quot;武沛齐&quot;;
+select * from big where name &#x3D; &quot;kelly&quot; and password&#x3D;&quot;ffsijfs&quot;;
+...</code></pre>
+
+
+
+<p><font color="#dd0000"><strong>但是，还是会有一些特殊的情况，让我们无法命中索引（即使创建了索引），这也是需要大家在开发中要注意的。【翻看笔记】：未命中索引的情况</strong></font></p>
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210526170718219-165657364859310.png" class="" title="image-20210526170718219">
+
+<ul>
+<li><p>类型不一致（表中name为varchar查询时输入int，无法命中索引）</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from big where name &#x3D; 123;		-- 未命中
+select * from big where email &#x3D; 123;	-- 未命中
+
+特殊的主键：
+	select * from big where id &#x3D; &quot;123&quot;;	-- 命中</code></pre>
+</li>
+<li><p>使用不等于</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from big where name !&#x3D; &quot;武沛齐&quot;;				-- 未命中
+select * from big where email !&#x3D; &quot;wupeiqi@live.com&quot;;  -- 未命中
+
+特殊的主键：
+	select * from big where id !&#x3D; 123;	-- 命中</code></pre>
+</li>
+<li><p>or，当or条件中有未建立索引的列才失效。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from big where id &#x3D; 123 or password&#x3D;&quot;xx&quot;;			-- 未命中
+select * from big where name &#x3D; &quot;wupeiqi&quot; or password&#x3D;&quot;xx&quot;;	-- 未命中
+特别的：
+	select * from big where id &#x3D; 10 or password&#x3D;&quot;xx&quot; and name&#x3D;&quot;xx&quot;; -- 命中</code></pre>
+</li>
+<li><p>排序，当根据索引排序时候，选择的映射如果不是索引，则不走索引。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from big order by name asc;     -- 未命中
+select * from big order by name desc;    -- 未命中
+select name from big order by name desc;    -- 命中
+
+特别的主键：通配符在最后
+	select * from big order by id desc;  -- 命中</code></pre>
+</li>
+<li><p>like，模糊匹配时。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from big where name like &quot;%u-12-19999&quot;;	-- 未命中
+select * from big where name like &quot;_u-12-19999&quot;;	-- 未命中
+select * from big where name like &quot;wu-%-10&quot;;		-- 未命中
+
+特别的：
+	select * from big where name like &quot;wu-1111-%&quot;;	-- 命中
+	select * from big where name like &quot;wuw-%&quot;;		-- 命中</code></pre>
+</li>
+<li><p>使用函数</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from big where reverse(name) &#x3D; &quot;wupeiqi&quot;;  -- 未命中
+
+特别的：
+	select * from big where name &#x3D; reverse(&quot;wupeiqi&quot;);  -- 命中</code></pre>
+</li>
+<li><p>最左前缀，如果是联合索引，要遵循最左前缀原则。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">如果联合索引为：(name,password)
+    name and password       -- 命中
+    name                 	-- 命中
+    password                -- 未命中
+    name or password       	-- 未命中</code></pre></li>
+</ul>
+<p>常见的无法命中索引的情况就是上述的示例。</p>
+<p>对于大家来说会现在的最大的问题是，记不住，哪怎么办呢？接下来看执行计划。</p>
+<h4 id="1-4-执行计划"><a href="#1-4-执行计划" class="headerlink" title="1.4 执行计划"></a>1.4 执行计划</h4><p>MySQL中提供了执行计划，让你能够预判SQL的执行（只能给到一定的参考，不一定完全能预判准确）。</p>
+<pre class="language-none"><code class="language-none">explain + SQL语句;</code></pre>
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210527074105599-165657364859311.png" class="" title="image-20210527074105599">
+
+<p>其中比较重要的是 type，他他SQL性能比较重要的标志，性能从低到高依次：<code>all &lt; index &lt; range &lt; index_merge &lt; ref_or_null &lt; ref &lt; eq_ref &lt; system/const</code> </p>
+<ul>
+<li><p>ALL，全表扫描，数据表从头到尾找一遍。(一般未命中索引，都是会执行权标扫描)</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from big;
+
+特别的：如果有limit，则找到之后就不在继续向下扫描.
+	select * from big limit 1;</code></pre>
+</li>
+<li><p>INDEX，全索引扫描，对索引从头到尾找一遍</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">explain select id from big;
+explain select name from big;</code></pre>
+</li>
+<li><p>RANGE，对索引列进行范围查找</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">explain select * from big where id &gt; 10;
+explain select * from big where id in (11,22,33);
+explain select * from big where id between 10 and 20;
+explain select * from big where name &gt; &quot;wupeiqi&quot; ;</code></pre>
+</li>
+<li><p>INDEX_MERGE，合并索引，使用多个单列索引搜索</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">explain select * from big where id &#x3D; 10 or name&#x3D;&quot;武沛齐&quot;;</code></pre>
+</li>
+<li><p>REF，根据 索引 直接去查找（非键）。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select *  from big where name &#x3D; &#39;武沛齐&#39;;</code></pre>
+</li>
+<li><p>EQ_REF，连表操作时常见。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">explain select big.name,users.id from big left join users on big.age &#x3D; users.id;</code></pre>
+</li>
+<li><p>CONST，常量，表最多有一个匹配行,因为仅有一行,在这行的列值可被优化器剩余部分认为是常数,const表很快。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">explain select * from big where id&#x3D;11;					-- 主键
+explain select * from big where email&#x3D;&quot;w-11-0@qq.com&quot;;	-- 唯一索引</code></pre>
+</li>
+<li><p>SYSTEM，系统，表仅有一行(&#x3D;系统表)。这是const联接类型的一个特例。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">explain select * from (select * from big where id&#x3D;1 limit 1) as A;</code></pre></li>
+</ul>
+<p>其他列：</p>
+<pre class="language-none"><code class="language-none">id，查询顺序标识
+
+z，查询类型
+    SIMPLE          简单查询
+    PRIMARY         最外层查询
+    SUBQUERY        映射为子查询
+    DERIVED         子查询
+    UNION           联合
+    UNION RESULT    使用联合的结果
+    ...
+    
+table，正在访问的表名
+
+partitions，涉及的分区（MySQL支持将数据划分到不同的idb文件中，详单与数据的拆分）。 一个特别大的文件拆分成多个小文件（分区）。
+
+possible_keys，查询涉及到的字段上若存在索引，则该索引将被列出，即：可能使用的索引。
+key，显示MySQL在查询中实际使用的索引，若没有使用索引，显示为NULL。例如：有索引但未命中，则possible_keys显示、key则显示NULL。
+
+key_len，表示索引字段的最大可能长度。(类型字节长度 + 变长2 + 可空1)，例如：key_len&#x3D;195，类型varchar(64)，195&#x3D;64*3+2+1
+
+ref，连表时显示的关联信息。例如：A和B连表，显示连表的字段信息。
+
+rows，估计读取的数据行数（只是预估值）
+	explain select * from big where password &#x3D;&quot;025dfdeb-d803-425d-9834-445758885d1c&quot;;
+	explain select * from big where password &#x3D;&quot;025dfdeb-d803-425d-9834-445758885d1c&quot; limit 1;
+filtered，返回结果的行占需要读到的行的百分比。
+	explain select * from big where id&#x3D;1;  -- 100，只读了一个1行，返回结果也是1行。
+	explain select * from big where password&#x3D;&quot;27d8ba90-edd0-4a2f-9aaf-99c9d607c3b3&quot;;  -- 10，读取了10行，返回了1行。
+	注意：密码27d8ba90-edd0-4a2f-9aaf-99c9d607c3b3在第10行
+	
+extra，该列包含MySQL解决查询的详细信息。
+    “Using index”
+    此值表示mysql将使用覆盖索引，以避免访问表。不要把覆盖索引和index访问类型弄混了。
+    “Using where”
+    这意味着mysql服务器将在存储引擎检索行后再进行过滤，许多where条件里涉及索引中的列，当（并且如果）它读取索引时，就能被存储引擎检验，因此不是所有带where子句的查询都会显示“Using where”。有时“Using where”的出现就是一个暗示：查询可受益于不同的索引。
+    “Using temporary”
+    这意味着mysql在对查询结果排序时会使用一个临时表。
+    “Using filesort”
+    这意味着mysql会对结果使用一个外部索引排序，而不是按索引次序从表里读取行。mysql有两种文件排序算法，这两种排序方式都可以在内存或者磁盘上完成，explain不会告诉你mysql将使用哪一种文件排序，也不会告诉你排序会在内存里还是磁盘上完成。
+    “Range checked for each record(index map: N)”
+    这个意味着没有好用的索引，新的索引将在联接的每一行上重新估算，N是显示在possible_keys列中索引的位图，并且是冗余的。</code></pre>
+
+
+
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>上述索引相关的内容讲的比较多，大家在开发过程中重点应该掌握的是：</p>
+<ul>
+<li>根据情况创建合适的索引（加速查找）。</li>
+<li>有索引，则查询时要命中索引。</li>
+</ul>
+<h3 id="2-函数"><a href="#2-函数" class="headerlink" title="2. 函数"></a>2. 函数</h3><p>MySQL中提供了很多函数，为我们的SQL操作提供便利，例如：</p>
+<pre class="language-none"><code class="language-none">mysql&gt; select * from d1;
++----+-----------+
+| id | name      |
++----+-----------+
+|  1 | 武沛齐    |
+|  3 | xxx       |
+|  4 | pyyu      |
++----+-----------+
+3 rows in set (0.00 sec)
+
+mysql&gt; select count(id), max(id),min(id),avg(id) from d1;
++-----------+---------+---------+---------+
+| count(id) | max(id) | min(id) | avg(id) |
++-----------+---------+---------+---------+
+|         3 |       4 |       1 |  2.6667 |
++-----------+---------+---------+---------+
+1 row in set (0.00 sec)
+
+mysql&gt;
+mysql&gt;
+mysql&gt; select id,reverse(name) from d1;
++----+---------------+
+| id | reverse(name) |
++----+---------------+
+|  1 | 齐沛武        |
+|  3 | xxx           |
+|  4 | uyyp          |
++----+---------------+
+3 rows in set (0.00 sec)
+
+mysql&gt; select id, reverse(name),concat(name,name), NOW(), DATE_FORMAT( NOW(),&#39;%Y-%m-%d %H:%i:%s&#39;)  from d1;
++----+---------------+--------------------+---------------------+-----------------------------------------+
+| id | reverse(name) | concat(name,name)  | NOW()               | DATE_FORMAT( NOW(),&#39;%Y-%m-%d %H:%i:%s&#39;) |
++----+---------------+--------------------+---------------------+-----------------------------------------+
+|  1 | 齐沛武        | 武沛齐武沛齐       | 2021-05-27 09:18:07 | 2021-05-27 09:18:07                     |
+|  3 | xxx           | xxxxxx             | 2021-05-27 09:18:07 | 2021-05-27 09:18:07                     |
+|  4 | uyyp          | pyyupyyu           | 2021-05-27 09:18:07 | 2021-05-27 09:18:07                     |
++----+---------------+--------------------+---------------------+-----------------------------------------+
+3 rows in set (0.00 sec)
+
+mysql&gt; select concat(&quot;alex&quot;,&quot;sb&quot;);
++---------------------+
+| concat(&quot;alex&quot;,&quot;sb&quot;) |
++---------------------+
+| alexsb              |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql&gt; select sleep(1);
++----------+
+| sleep(1) |
++----------+
+|        0 |
++----------+
+1 row in set (1.00 sec)</code></pre>
+
+
+
+<p>部分函数列表：</p>
+<pre class="language-none"><code class="language-none">CHAR_LENGTH(str)
+    返回值为字符串str 的长度，长度的单位为字符。一个多字节字符算作一个单字符。
+    对于一个包含五个二字节字符集, LENGTH()返回值为 10, 而CHAR_LENGTH()的返回值为5。
+
+CONCAT(str1,str2,...)
+    字符串拼接
+    如有任何一个参数为NULL ，则返回值为 NULL。
+CONCAT_WS(separator,str1,str2,...)
+    字符串拼接（自定义连接符）
+    CONCAT_WS()不会忽略任何空字符串。 (然而会忽略所有的 NULL）。
+
+CONV(N,from_base,to_base)
+    进制转换
+    例如：
+        SELECT CONV(&#39;a&#39;,16,2); 表示将 a 由16进制转换为2进制字符串表示
+
+FORMAT(X,D)
+    将数字X 的格式写为&#39;#,###,###.##&#39;,以四舍五入的方式保留小数点后 D 位， 并将结果以字符串的形式返回。若  D 为 0, 则返回结果不带有小数点，或不含小数部分。
+    例如：
+        SELECT FORMAT(12332.1,4); 结果为： &#39;12,332.1000&#39;
+INSERT(str,pos,len,newstr)
+    在str的指定位置插入字符串
+        pos：要替换位置其实位置
+        len：替换的长度
+        newstr：新字符串
+    特别的：
+        如果pos超过原字符串长度，则返回原字符串
+        如果len超过原字符串长度，则由新字符串完全替换
+INSTR(str,substr)
+    返回字符串 str 中子字符串的第一个出现位置。
+
+LEFT(str,len)
+    返回字符串str 从开始的len位置的子序列字符。
+
+LOWER(str)
+    变小写
+
+UPPER(str)
+    变大写
+
+LTRIM(str)
+    返回字符串 str ，其引导空格字符被删除。
+RTRIM(str)
+    返回字符串 str ，结尾空格字符被删去。
+SUBSTRING(str,pos,len)
+    获取字符串子序列
+
+LOCATE(substr,str,pos)
+    获取子序列索引位置
+
+REPEAT(str,count)
+    返回一个由重复的字符串str 组成的字符串，字符串str的数目等于count 。
+    若 count &lt;&#x3D; 0,则返回一个空字符串。
+    若str 或 count 为 NULL，则返回 NULL 。
+REPLACE(str,from_str,to_str)
+    返回字符串str 以及所有被字符串to_str替代的字符串from_str 。
+REVERSE(str)
+    返回字符串 str ，顺序和字符顺序相反。
+RIGHT(str,len)
+    从字符串str 开始，返回从后边开始len个字符组成的子序列
+
+SPACE(N)
+    返回一个由N空格组成的字符串。
+
+SUBSTRING(str,pos) , SUBSTRING(str FROM pos) SUBSTRING(str,pos,len) , SUBSTRING(str FROM pos FOR len)
+    不带有len 参数的格式从字符串str返回一个子字符串，起始于位置 pos。带有len参数的格式从字符串str返回一个长度同len字符相同的子字符串，起始于位置 pos。 使用 FROM的格式为标准 SQL 语法。也可能对pos使用一个负值。假若这样，则子字符串的位置起始于字符串结尾的pos 字符，而不是字符串的开头位置。在以下格式的函数中可以对pos 使用一个负值。
+
+    mysql&gt; SELECT SUBSTRING(&#39;Quadratically&#39;,5);
+        -&gt; &#39;ratically&#39;
+
+    mysql&gt; SELECT SUBSTRING(&#39;foobarbar&#39; FROM 4);
+        -&gt; &#39;barbar&#39;
+
+    mysql&gt; SELECT SUBSTRING(&#39;Quadratically&#39;,5,6);
+        -&gt; &#39;ratica&#39;
+
+    mysql&gt; SELECT SUBSTRING(&#39;Sakila&#39;, -3);
+        -&gt; &#39;ila&#39;
+
+    mysql&gt; SELECT SUBSTRING(&#39;Sakila&#39;, -5, 3);
+        -&gt; &#39;aki&#39;
+
+    mysql&gt; SELECT SUBSTRING(&#39;Sakila&#39; FROM -4 FOR 2);
+        -&gt; &#39;ki&#39;
+
+TRIM([&#123;BOTH | LEADING | TRAILING&#125; [remstr] FROM] str) TRIM(remstr FROM] str)
+    返回字符串 str ， 其中所有remstr 前缀和&#x2F;或后缀都已被删除。若分类符BOTH、LEADIN或TRAILING中没有一个是给定的,则假设为BOTH 。 remstr 为可选项，在未指定情况下，可删除空格。
+
+    mysql&gt; SELECT TRIM(&#39;  bar   &#39;);
+            -&gt; &#39;bar&#39;
+
+    mysql&gt; SELECT TRIM(LEADING &#39;x&#39; FROM &#39;xxxbarxxx&#39;);
+            -&gt; &#39;barxxx&#39;
+
+    mysql&gt; SELECT TRIM(BOTH &#39;x&#39; FROM &#39;xxxbarxxx&#39;);
+            -&gt; &#39;bar&#39;
+
+    mysql&gt; SELECT TRIM(TRAILING &#39;xyz&#39; FROM &#39;barxxyz&#39;);
+            -&gt; &#39;barx&#39;   </code></pre>
+
+<p>更多函数：<a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/functions.html">https://dev.mysql.com/doc/refman/5.7/en/functions.html</a></p>
+<p>当然，MySQL中也支持让你去自定义函数。</p>
+<ul>
+<li><p>创建函数</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">delimiter $$
+create function f1(
+    i1 int,
+    i2 int)
+returns int
+BEGIN
+    declare num int;
+    declare maxId int;
+    select max(id) from big into maxId;
+    
+    set num &#x3D; i1 + i2 + maxId;
+    return(num);
+END $$
+delimiter ;</code></pre>
+</li>
+<li><p>执行函数</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select f1(11,22);
+
+select f1(11,id),name from d1;</code></pre>
+</li>
+<li><p>删除函数</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">drop function f1;</code></pre></li>
+</ul>
+<h3 id="3-存储过程"><a href="#3-存储过程" class="headerlink" title="3. 存储过程"></a>3. 存储过程</h3><p>存储过程，是一个存储在MySQL中的SQL语句集合，当主动去调用存储过程时，其中内部的SQL语句会按照逻辑执行。</p>
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210531174813902-165657364859312.png" class="">
+
+<ul>
+<li><p>创建存储过程</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">delimiter $$
+create procedure p1()
+BEGIN
+    select * from d1;
+END $$
+delimiter ;</code></pre>
+</li>
+<li><p>执行存储过程</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">call p1();</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">#!&#x2F;usr&#x2F;bin&#x2F;env python
+# -*- coding:utf-8 -*-
+import pymysql
+
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, db&#x3D;&#39;userdb&#39;)
+cursor &#x3D; conn.cursor(cursor&#x3D;pymysql.cursors.DictCursor)
+# 执行存储过程
+cursor.callproc(&#39;p1&#39;)
+result &#x3D; cursor.fetchall()
+
+cursor.close()
+conn.close()
+
+print(result)</code></pre>
+</li>
+<li><p>删除存储过程</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">drop procedure proc_name;</code></pre></li>
+</ul>
+<h4 id="3-1-参数类型"><a href="#3-1-参数类型" class="headerlink" title="3.1 参数类型"></a>3.1 参数类型</h4><p>存储过程的参数可以有如下三种：</p>
+<ul>
+<li>in，仅用于传入参数用</li>
+<li>out，仅用于返回值用</li>
+<li>inout，既可以传入又可以当作返回值</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">delimiter $$
+create procedure p2(
+    in i1 int,
+    in i2 int,
+    inout i3 int,
+    out r1 int
+)
+BEGIN
+    DECLARE temp1 int;
+    DECLARE temp2 int default 0;
+    
+    set temp1 &#x3D; 1;
+
+    set r1 &#x3D; i1 + i2 + temp1 + temp2;
+    
+    set i3 &#x3D; i3 + 100;
+
+end $$
+delimiter ;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">set @t1 &#x3D;4;
+set @t2 &#x3D; 0;
+CALL p2 (1, 2 ,@t1, @t2);
+SELECT @t1,@t2;</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">#!&#x2F;usr&#x2F;bin&#x2F;env python
+# -*- coding:utf-8 -*-
+import pymysql
+
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, db&#x3D;&#39;userdb&#39;)
+cursor &#x3D; conn.cursor(cursor&#x3D;pymysql.cursors.DictCursor)
+
+# 执行存储过程
+cursor.callproc(&#39;p2&#39;,args&#x3D;(1, 22, 3, 4))
+
+# 获取执行完存储的参数
+cursor.execute(&quot;select @_p2_0,@_p2_1,@_p2_2,@_p2_3&quot;)
+result &#x3D; cursor.fetchall()
+# &#123;&quot;@_p2_0&quot;:1, &quot;@_p2_1&quot;:22,&quot;@_p2_2&quot;:103,&quot;@_p2_3&quot;:23,&#125;
+
+cursor.close()
+conn.close()
+
+print(result)</code></pre>
+
+
+
+<h4 id="3-2-返回值-amp-结果集"><a href="#3-2-返回值-amp-结果集" class="headerlink" title="3.2 返回值 &amp; 结果集"></a>3.2 返回值 &amp; 结果集</h4><pre class="language-sql" data-language="sql"><code class="language-sql">delimiter $$
+create procedure p3(
+    in n1 int,
+    inout n2 int,
+    out n3 int
+)
+begin
+    set n2 &#x3D; n1 + 100;
+    set n3 &#x3D; n2 + n1 + 100;
+    select * from d1;
+end $$
+delimiter ;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">set @t1 &#x3D;4;
+set @t2 &#x3D; 0;
+CALL p3 (1,@t1, @t2);
+SELECT @t1,@t2;</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">#!&#x2F;usr&#x2F;bin&#x2F;env python
+# -*- coding:utf-8 -*-
+import pymysql
+
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, db&#x3D;&#39;userdb&#39;)
+cursor &#x3D; conn.cursor(cursor&#x3D;pymysql.cursors.DictCursor)
+# 执行存储过程
+cursor.callproc(&#39;p3&#39;,args&#x3D;(22, 3, 4))
+table &#x3D; cursor.fetchall() # 得到执行存储过中的结果集
+
+# 获取执行完存储的参数
+cursor.execute(&quot;select @_p3_0,@_p3_1,@_p3_2&quot;)
+rets &#x3D; cursor.fetchall()
+
+cursor.close()
+conn.close()
+
+print(table)
+print(rets)</code></pre>
+
+
+
+<h4 id="3-3-事务-amp-异常"><a href="#3-3-事务-amp-异常" class="headerlink" title="3.3 事务 &amp; 异常"></a>3.3 事务 &amp; 异常</h4><p>事务，成功都成功，失败都失败。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">delimiter $$
+create PROCEDURE p4(
+    OUT p_return_code tinyint
+)
+BEGIN 
+  DECLARE exit handler for sqlexception 
+  BEGIN 
+    -- ERROR 
+    set p_return_code &#x3D; 1; 
+    rollback; 
+  END; 
+ 
+  DECLARE exit handler for sqlwarning 
+  BEGIN 
+    -- WARNING 
+    set p_return_code &#x3D; 2; 
+    rollback; 
+  END; 
+ 
+  START TRANSACTION;  -- 开启事务
+    delete from d1;
+    insert into tb(name)values(&#39;seven&#39;);
+  COMMIT;  -- 提交事务
+ 
+  -- SUCCESS 
+  set p_return_code &#x3D; 0; 
+ 
+  END $$
+delimiter ; </code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">set @ret &#x3D;100;
+CALL p4(@ret);
+SELECT @ret;</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">#!&#x2F;usr&#x2F;bin&#x2F;env python
+# -*- coding:utf-8 -*-
+import pymysql
+
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, db&#x3D;&#39;userdb&#39;)
+cursor &#x3D; conn.cursor(cursor&#x3D;pymysql.cursors.DictCursor)
+# 执行存储过程
+cursor.callproc(&#39;p4&#39;,args&#x3D;(100))
+
+# 获取执行完存储的参数
+cursor.execute(&quot;select @_p4_0&quot;)
+rets &#x3D; cursor.fetchall()
+
+cursor.close()
+conn.close()
+
+print(table)
+print(rets)</code></pre>
+
+
+
+<h4 id="3-4-游标"><a href="#3-4-游标" class="headerlink" title="3.4 游标"></a>3.4 游标</h4><pre class="language-sql" data-language="sql"><code class="language-sql">delimiter $$
+create procedure p5()
+begin 
+    declare sid int;
+    declare sname varchar(50); 
+    declare done int default false;
+
+
+    declare my_cursor CURSOR FOR select id,name from d1;
+    
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done &#x3D; TRUE;
+    
+    open my_cursor;
+        xxoo: LOOP
+            fetch my_cursor into sid,sname;
+            IF done then 
+                leave xxoo;
+            END IF;
+            insert into t1(name) values(sname);
+        end loop xxoo;
+    close my_cursor;
+end $$
+delimiter ; </code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">call p5();</code></pre>
+
+
+
+<h3 id="4-视图"><a href="#4-视图" class="headerlink" title="4.视图"></a>4.视图</h3><p>视图其实是一个虚拟表（非真实存在），其本质是<font color="#dd0000"><strong>【根据SQL语句获取动态的数据集，并为其命名】</strong></font>，用户使用时只需使用【名称】即可获取结果集，并可以将其当作表来使用。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT
+    *
+FROM
+    (SELECT nid,name FROM tb1 WHERE nid &gt; 2) AS A
+WHERE
+    A.name &gt; &#39;alex&#39;;</code></pre>
+
+<ul>
+<li><p>创建视图</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">create view v1 as select id,name from d1 where id &gt; 1;</code></pre>
+</li>
+<li><p>使用视图</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">select * from v1;
+
+-- select * from (select id,name from d1 where id &gt; 1) as v1;</code></pre>
+</li>
+<li><p>删除视图</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">drop view v1;</code></pre>
+</li>
+<li><p>修改视图</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">alter view v1 as SQL语句</code></pre></li>
+</ul>
+<p>注意：基于视图只能查询，针对视图不能执行 增加、修改、删除。 如果源表发生变化，视图表也会发生变化。</p>
+<h3 id="5-触发器"><a href="#5-触发器" class="headerlink" title="5.触发器"></a>5.触发器</h3><p>![](E:&#x2F;python路飞学城&#x2F;模块4&#x2F;day28 索引和函数及存储过程&#x2F;assets&#x2F;image-20210531181738177.png)</p>
+<p>对某个表进行【增&#x2F;删&#x2F;改】操作的前后如果希望触发某个特定的行为时，可以使用触发器。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"># 插入前
+CREATE TRIGGER tri_before_insert_tb1 BEFORE INSERT ON tb1 FOR EACH ROW
+BEGIN
+    ...
+END
+
+# 插入后
+CREATE TRIGGER tri_after_insert_tb1 AFTER INSERT ON tb1 FOR EACH ROW
+BEGIN
+    ...
+END
+
+# 删除前
+CREATE TRIGGER tri_before_delete_tb1 BEFORE DELETE ON tb1 FOR EACH ROW
+BEGIN
+    ...
+END
+
+# 删除后
+CREATE TRIGGER tri_after_delete_tb1 AFTER DELETE ON tb1 FOR EACH ROW
+BEGIN
+    ...
+END
+
+# 更新前
+CREATE TRIGGER tri_before_update_tb1 BEFORE UPDATE ON tb1 FOR EACH ROW
+BEGIN
+    ...
+END
+
+# 更新后
+CREATE TRIGGER tri_after_update_tb1 AFTER UPDATE ON tb1 FOR EACH ROW
+BEGIN
+    ...
+END</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">DROP TRIGGER tri_after_insert_tb1;</code></pre>
+
+
+
+<p>示例：</p>
+<ul>
+<li><p>在 t1 表中插入数据之前，先在 t2 表中插入一行数据。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">delimiter $$
+CREATE TRIGGER tri_before_insert_t1 BEFORE INSERT ON t1 FOR EACH ROW
+BEGIN
+	-- NEW.id  NEW.name  NEW.email
+	-- INSERT INTO t2 (name) VALUES();
+	IF NEW.name &#x3D; &#39;alex&#39; THEN
+        INSERT INTO t2 (name) VALUES(NEW.id);
+    END IF;
+
+END $$
+delimiter ;</code></pre>
+
+<pre class="language-none"><code class="language-none">insert into t1(id,name,email)values(1,&quot;alex&quot;,&quot;xxx@qq.com&quot;)</code></pre>
+</li>
+<li><p>在t1表中删除数据之后，再在t2表中插入一行数据。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">delimiter $$
+CREATE TRIGGER tri_after_insert_t1 AFTER DELETE ON t1 FOR EACH ROW
+BEGIN
+
+IF OLD.name &#x3D; &#39;alex&#39; THEN
+    INSERT INTO t2 (name) VALUES(OLD.id);
+END IF;
+
+END $$
+delimiter ;</code></pre></li>
+</ul>
+<p>特别的：NEW表示新数据，OLD表示原来的数据。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>对于Python开发人员，其实在开发过程中触发器、视图、存储过程用的很少（以前搞C#经常写存储过程），最常用的其实就是正确的使用索引以及常见的函数。</p>
+<ul>
+<li>索引，加速查找 &amp; 约束。<ul>
+<li>innodb和myisam的区别，聚簇索引 和 非聚簇索引。</li>
+<li>常见的索引：主键、唯一、普通。</li>
+<li>命中索引</li>
+<li>执行计划</li>
+</ul>
+</li>
+<li>函数，提供了一些常见操作 &amp; 配合SQL语句，执行后返回结果。</li>
+<li>存储过程，一个SQL语句的集合，可以出发复杂的情况，最终可以返回结果 + 数据集。</li>
+<li>视图，一个虚拟的表。</li>
+<li>触发器，在表中数据行执行前后自定义一些操作。</li>
+</ul>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ol>
+<li><p>根据你掌握的索引知识重新设计 day27  博客系统的表结构，让查询数据库的速度可以变得更快。</p>
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210531164453161-165658068792114.png" class="" title="image-20210531164453161">
+
+<ul>
+<li><p>创建数据库day28</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">drop database IF EXISTS day28; -- 要是数据库day28已存在先删除
+create database day28 default charset utf8 collate utf8_general_ci;
+use day28;</code></pre>
+</li>
+<li><p>创建数据表</p>
+<ul>
+<li>为所有表的id列创建主索引</li>
+<li>为user表的用户名（username）和密码(password)创建联合普通索引</li>
+<li>为user表的电话号码(mobil)和邮箱(email)创建唯一索引</li>
+</ul>
+<pre class="language-sql" data-language="sql"><code class="language-sql">CREATE TABLE &#96;user&#96;(
+	&#96;id&#96; int NOT NULL AUTO_INCREMENT,
+    &#96;username&#96; varchar(16) NOT NULL,
+    &#96;nickname&#96; varchar(16) NOT NULL,
+	&#96;mobile&#96; char(11) NOT NULL,
+    &#96;password&#96; varchar(64) NOT NULL,
+    &#96;email&#96; varchar(64) NOT NULL,
+    &#96;ctime&#96; datetime NOT NULL,
+    PRIMARY KEY (&#96;id&#96;),                               -- 主键索引
+    UNIQUE KEY &#96;big_unique_email&#96; (&#96;email&#96;),          -- 唯一索引
+    UNIQUE KEY &#96;big_unique_mobile&#96; (&#96;mobile&#96;),        -- 唯一索引
+    KEY &#96;ix_username_pwd&#96; (&#96;username&#96;,&#96;password&#96;)     -- 联合索引
+)ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;
+
+CREATE TABLE &#96;article&#96;(
+	&#96;id&#96; int NOT NULL AUTO_INCREMENT,
+    &#96;title&#96; varchar(255) NOT NULL,
+    &#96;text&#96; text NOT NULL,
+	&#96;read_count&#96; int DEFAULT 0,
+	&#96;comment_count&#96; int DEFAULT 0,
+	&#96;up_count&#96; int DEFAULT 0,
+	&#96;down_count&#96; int DEFAULT 0,
+    &#96;user_id&#96; int NOT NULL,
+    &#96;ctime&#96; datetime NOT NULL,
+    PRIMARY KEY (&#96;id&#96;),                           -- 主键索引
+    UNIQUE KEY &#96;big_unique_user_id&#96; (&#96;user_id&#96;),  -- 唯一索引
+    constraint fk_article_user foreign key (user_id) references user(id)
+)default charset&#x3D;utf8;
+
+
+CREATE TABLE &#96;comment&#96;(
+    &#96;id&#96; int NOT NULL AUTO_INCREMENT,
+    &#96;content&#96; varchar(255) NOT NULL,
+    &#96;user_id&#96; int NOT NULL,
+	&#96;article_id&#96; int NOT NULL,
+    &#96;ctime&#96; datetime NOT NULL,
+    PRIMARY KEY (&#96;id&#96;),   -- 主键索引
+    constraint fk_comment_user foreign key (user_id) references user(id),
+    constraint fk_comment_article foreign key (article_id) references article(id)
+)default charset&#x3D;utf8;
+
+
+CREATE TABLE &#96;up_down&#96;(
+    &#96;id&#96; int NOT NULL AUTO_INCREMENT,
+    &#96;choice&#96; tinyint NOT NULL,
+    &#96;user_id&#96; int NOT NULL,
+	&#96;article_id&#96; int NOT NULL,
+    &#96;ctime&#96; datetime NOT NULL,
+    PRIMARY KEY (&#96;id&#96;),                           -- 主键索引
+    constraint fk_up_down_user foreign key (user_id) references user(id),
+    constraint fk_up_down_article foreign key (article_id) references article(id)
+)default charset&#x3D;utf8;</code></pre></li>
+</ul>
+</li>
+<li><p>了解 函数、存储过程、触发器、视图。</p>
+<ul>
+<li><p>函数，提供了一些常见操作 &amp; 配合SQL语句，执行后返回结果。</p>
+</li>
+<li><p>存储过程，一个SQL语句的集合，可以触发复杂的情况，最终可以返回结果 + 数据集。</p>
+</li>
+<li><p>视图，一个虚拟的表。</p>
+</li>
+<li><p>触发器，在表中数据行执行前后自定义一些操作。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="二十九、Python操作MySQL和实战"><a href="#二十九、Python操作MySQL和实战" class="headerlink" title="二十九、Python操作MySQL和实战"></a>二十九、Python操作MySQL和实战</h2><img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210531185255250.png" class="" title="image-20210531185255250">
+
+<p>课程目标：掌握事务和锁以及Python操作MySQL的各种开发必备知识。</p>
+<p>课程概要：</p>
+<ul>
+<li>事务</li>
+<li>锁</li>
+<li>数据库连接池</li>
+<li>SQL工具类</li>
+<li>其他</li>
+</ul>
+<h3 id="1-事务"><a href="#1-事务" class="headerlink" title="1. 事务"></a>1. 事务</h3><p><font color="#dd0000"><strong>innodb引擎中支持事务，myisam不支持。</strong></font></p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">CREATE TABLE &#96;users&#96; (
+  &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  &#96;name&#96; varchar(32) DEFAULT NULL,
+  &#96;amount&#96; int(11) DEFAULT NULL
+) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;</code></pre>
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210527145549634.png" class="" title="image-20210527145549634">
+
+<p>例如：李杰 给 武沛齐 转账 100，那就会涉及2个步骤。</p>
+<ul>
+<li>李杰账户 减100</li>
+<li>武沛齐账户 加 100</li>
+</ul>
+<p>这两个步骤必须同时完成才算完成，并且如果第一个完成、第二步失败，还是回滚到初始状态。</p>
+<p>事务，就是来解决这种情况的。  大白话：要成功都成功；要失败都失败。</p>
+<p>事务的具有四大特性（ACID）：</p>
+<ul>
+<li><p><font color="#dd0000"><strong>原子性（Atomicity）</strong></font></p>
+<pre class="language-none"><code class="language-none">原子性是指事务包含的所有操作不可分割，要么全部成功，要么全部失败回滚。</code></pre>
+</li>
+<li><p><font color="#dd0000"><strong>一致性（Consistency）</strong></font></p>
+<pre class="language-none"><code class="language-none">执行的前后数据的完整性保持一致。</code></pre>
+</li>
+<li><p><font color="#dd0000"><strong>隔离性（Isolation）</strong></font></p>
+<pre class="language-none"><code class="language-none">一个事务执行的过程中,不应该受到其他事务的干扰。</code></pre>
+</li>
+<li><p><font color="#dd0000"><strong>持久性（Durability）</strong></font></p>
+<pre class="language-none"><code class="language-none">事务一旦结束,数据就持久到数据库</code></pre></li>
+</ul>
+<h4 id="1-1-MySQL客户端"><a href="#1-1-MySQL客户端" class="headerlink" title="1.1 MySQL客户端"></a>1.1 MySQL客户端</h4><pre class="language-sql" data-language="sql"><code class="language-sql">mysql&gt; select * from users;
++----+---------+---------+
+| id | name    | amount  |
++----+---------+---------+
+|  1 | wupeiqi |    5    |
+|  2 |  alex   |    6    |
++----+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql&gt; begin;  -- 开启事务 start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; update users set amount&#x3D;amount-2 where id&#x3D;1;   -- 执行操作
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql&gt; update users set amount&#x3D;amount+2 where id&#x3D;2;   -- 执行操作
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql&gt; commit;  -- 提交事务  rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; select * from users;
++----+---------+---------+
+| id | name    | amount  |
++----+---------+---------+
+|  1 | wupeiqi |    3    |
+|  2 |  ale x  |    8    |
++----+---------+---------+
+3 rows in set (0.00 sec)</code></pre>
+
+
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">mysql&gt; select * from users;
++----+---------+---------+
+| id | name    | amount  |
++----+---------+---------+
+|  1 | wupeiqi |    3    |
+|  2 |  ale x  |    8    |
++----+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql&gt; begin; -- 开启事务
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; update users set amount&#x3D;amount-2 where id&#x3D;1; -- 执行操作（此时数据库中的值已修改）
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql&gt; rollback; -- 事务回滚（回到原来的状态）
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; select * from users;
++----+---------+---------+
+| id | name    | amount  |
++----+---------+---------+
+|  1 | wupeiqi |    3    |
+|  2 |  ale x  |    8    |
++----+---------+---------+
+3 rows in set (0.00 sec)</code></pre>
+
+
+
+<h4 id="1-2-Python代码"><a href="#1-2-Python代码" class="headerlink" title="1.2 Python代码"></a>1.2 Python代码</h4><pre class="language-sql" data-language="sql"><code class="language-sql">import pymysql
+
+conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, charset&#x3D;&quot;utf8&quot;, db&#x3D;&#39;userdb&#39;)
+cursor &#x3D; conn.cursor()
+
+# 开启事务
+conn.begin()
+
+try:
+    cursor.execute(&quot;update users set amount&#x3D;1 where id&#x3D;1&quot;)
+    int(&#39;asdf&#39;)
+    cursor.execute(&quot;update tran set amount&#x3D;2 where id&#x3D;2&quot;)
+except Exception as e:
+    # 回滚
+    print(&quot;回滚&quot;)
+    conn.rollback()
+else:
+    # 提交
+    print(&quot;提交&quot;)
+    conn.commit()
+
+cursor.close()
+conn.close()</code></pre>
+
+
+
+<h3 id="2-锁"><a href="#2-锁" class="headerlink" title="2. 锁"></a>2. 锁</h3><p>在用MySQL时，不知你是否会疑问：同时有很多做更新、插入、删除动作，MySQL如何保证数据不出错呢？</p>
+<p>MySQL中自带了锁的功能，可以帮助我们实现开发过程中遇到的同时处理数据的情况。对于数据库中的锁，从锁的范围来讲有：</p>
+<ul>
+<li>表级锁，即A操作表时，其他人对整个表都不能操作，等待A操作完之后，才能继续。</li>
+<li>行级锁，即A操作表时，其他人对指定的行数据不能操作，其他行可以操作，等待A操作完之后，才能继续。</li>
+</ul>
+<pre class="language-none"><code class="language-none">MYISAM支持表锁，不支持行锁；
+InnoDB引擎支持行锁和表锁。
+
+即：在MYISAM下如果要加锁，无论怎么加都会是表锁。
+    在InnoDB引擎支持下如果是基于索引查询的数据则是行级锁，否则就是表锁。</code></pre>
+
+<p>所以，一般情况下我们会选择使用innodb引擎，并且在 搜索 时也会使用索引（命中索引）。</p>
+<p>接下来的操作就基于innodb引擎来操作：</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">CREATE TABLE &#96;L1&#96; (
+  &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT,
+  &#96;name&#96; varchar(255) DEFAULT NULL,
+  &#96;count&#96; int(11) DEFAULT NULL,
+  PRIMARY KEY (&#96;id&#96;)
+) ENGINE&#x3D;InnoDB  DEFAULT CHARSET&#x3D;utf8;</code></pre>
+
+<img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210528134811202.png" class="" title="image-20210528134811202">
+
+
+
+<p>在innodb引擎中，update、insert、delete的行为内部都会先申请锁（排它锁），申请到之后才执行相关操作，最后再释放锁。</p>
+<pre class="language-none"><code class="language-none">所以，当多个人同时像数据库执行：insert、update、delete等操作时，内部加锁后会排队逐一执行。</code></pre>
+
+<p>而select则默认不会申请锁。</p>
+<pre class="language-none"><code class="language-none">select * from xxx;</code></pre>
+
+<p>如果，你想要让select去申请锁，则需要配合 事务 + 特殊语法来实现。</p>
+<ul>
+<li><p>​	</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">begin; 
+	select * from L1 where name&#x3D;&quot;武沛齐&quot; for update;    -- name列不是索引（表锁）
+commit;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">begin; -- 或者 start transaction;
+	select * from L1 where id&#x3D;1 for update;			  -- id列是索引（行锁）
+commit;</code></pre>
+</li>
+<li><p><code>lock in share mode</code> ，共享锁，加锁之后，其他可读但不可写。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">begin; 
+	select * from L1 where name&#x3D;&quot;武沛齐&quot; lock in share mode;    -- 假设name列不是索引（表锁）
+commit;</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">begin; -- 或者 start transaction;
+	select * from L1 where id&#x3D;1 lock in share mode;           -- id列是索引（行锁）
+commit;</code></pre></li>
+</ul>
+<h4 id="2-1-排它锁"><a href="#2-1-排它锁" class="headerlink" title="2.1 排它锁"></a>2.1 排它锁</h4><p>排它锁（ <code>for update</code>），加锁之后，其他事务不可以读写。</p>
+<p>应用场景：总共100件商品，每次购买一件需要让商品个数减1 。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">A: 访问页面查看商品剩余 100
+B: 访问页面查看商品剩余 100
+
+此时 A、B 同时下单，那么他们同时执行SQL：
+	update goods set count&#x3D;count-1 where id&#x3D;3
+由于Innodb引擎内部会加锁，所以他们两个即使同一时刻执行，内部也会排序逐步执行。
+
+
+但是，当商品剩余 1个时，就需要注意了。
+A: 访问页面查看商品剩余 1
+B: 访问页面查看商品剩余 1
+
+此时 A、B 同时下单，那么他们同时执行SQL：
+	update goods set count&#x3D;count-1 where id&#x3D;3
+这样剩余数量就会出现 -1，很显然这是不正确的，所以应该怎么办呢？
+
+
+这种情况下，可以利用 排它锁，在更新之前先查询剩余数量，只有数量 &gt;0 才可以购买，所以，下单时应该执行：
+	begin; -- start transaction;
+	select count from goods where id&#x3D;3 for update;
+	-- 获取个数进行判断
+	if 个数&gt;0:
+		update goods set count&#x3D;count-1 where id&#x3D;3;
+	else:
+		-- 已售罄
+	commit;</code></pre>
+
+
+
+<p>基于Python代码示例：</p>
+<pre class="language-python" data-language="python"><code class="language-python">import pymysql
+import threading
+
+
+def task():
+    conn &#x3D; pymysql.connect(host&#x3D;&#39;127.0.0.1&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;root123&#39;, charset&#x3D;&quot;utf8&quot;, db&#x3D;&#39;userdb&#39;)
+    cursor &#x3D; conn.cursor(pymysql.cursors.DictCursor)    
+    # cursor &#x3D; conn.cursor()  # fetchone:(1,10) 只返回查询结果id&#x3D;1，age&#x3D;10
+    						  # fetchall:((1,10),(2,12)) 只返回查询结果id&#x3D;1，age&#x3D;10;id&#x3D;2,age&#x3D;12
+	
+    # 开启事务
+    conn.begin()
+
+    cursor.execute(&quot;select id,age from tran where id&#x3D;2 for update&quot;)
+    # fetchall      ( &#123;&quot;id&quot;:1,&quot;age&quot;:10&#125;,&#123;&quot;id&quot;:2,&quot;age&quot;:10&#125;, ) 
+    # &#123;&quot;id&quot;:1,&quot;age&quot;:10&#125;   
+    result &#x3D; cursor.fetchone()
+    current_age &#x3D; result[&#39;age&#39;]
+    
+    if current_age &gt; 0:
+        cursor.execute(&quot;update tran set age&#x3D;age-1 where id&#x3D;2&quot;)
+    else:
+        print(&quot;已售罄&quot;)
+
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
+
+def run():
+    for i in range(5):
+        t &#x3D; threading.Thread(target&#x3D;task)
+        t.start()
+
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    run()
+</code></pre>
+
+
+
+<h4 id="2-2-共享锁"><a href="#2-2-共享锁" class="headerlink" title="2.2 共享锁"></a>2.2 共享锁</h4><p>共享锁（ <code>lock in share mode</code>），可以读，但不允许写。</p>
+<p>加锁之后，后续其他事物可以可以进行读，但不允许写（update、delete、insert），因为写的默认也会加锁。</p>
+<p><strong>Locking Read Examples</strong></p>
+<p>Suppose that you want to insert a new row into a table <code>child</code>, and make sure that the child row has a parent row in table <code>parent</code>. Your application code can ensure referential integrity throughout this sequence of operations.</p>
+<p>First, use a consistent read to query the table <code>PARENT</code> and verify that the parent row exists. Can you safely insert the child row to table <code>CHILD</code>? No, because some other session could delete the parent row in the moment between your <code>SELECT</code> and your <code>INSERT</code>, without you being aware of it.</p>
+<p>To avoid this potential issue, perform the <a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/select.html"><code>SELECT</code></a> using <code>LOCK IN SHARE MODE</code>:</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">SELECT * FROM parent WHERE NAME &#x3D; &#39;Jones&#39; LOCK IN SHARE MODE;</code></pre>
+
+<p>After the <code>LOCK IN SHARE MODE</code> query returns the parent <code>&#39;Jones&#39;</code>, you can safely add the child record to the <code>CHILD</code> table and commit the transaction. Any transaction that tries to acquire an exclusive lock in the applicable row in the <code>PARENT</code> table waits until you are finished, that is, until the data in all tables is in a consistent state.</p>
+<h3 id="3-数据库连接池"><a href="#3-数据库连接池" class="headerlink" title="3. 数据库连接池"></a>3. 数据库连接池</h3><img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210531211656410.png" class="" title="image-20210531211656410">
+
+<p>在操作数据库时需要使用数据库连接池。</p>
+<pre class="language-none"><code class="language-none">pip3.9 install pymysql
+pip3.9 install dbutils</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">import threading
+import pymysql
+from dbutils.pooled_db import PooledDB
+
+MYSQL_DB_POOL &#x3D; PooledDB(
+    creator&#x3D;pymysql,  # 使用链接数据库的模块
+    maxconnections&#x3D;5,  # 连接池允许的最大连接数，0和None表示不限制连接数
+    mincached&#x3D;2,  # 初始化时，链接池中至少创建的空闲的链接，0表示不创建
+    maxcached&#x3D;3,  # 链接池中最多闲置的链接，0和None不限制
+    blocking&#x3D;True,  # 连接池中如果没有可用连接后，是否阻塞等待。True，等待；False，不等待然后报错
+    setsession&#x3D;[],  # 开始会话前执行的命令列表。如：[&quot;set datestyle to ...&quot;, &quot;set time zone ...&quot;]
+    ping&#x3D;0,
+    # ping MySQL服务端，检查是否服务可用。
+    # 如：0 &#x3D; None &#x3D; never, 1 &#x3D; default &#x3D; whenever it is requested, 
+    # 2 &#x3D; when a cursor is created, 4 &#x3D; when a query is executed, 7 &#x3D; always
+    host&#x3D;&#39;127.0.0.1&#39;,
+    port&#x3D;3306,
+    user&#x3D;&#39;root&#39;,
+    password&#x3D;&#39;root123&#39;,
+    database&#x3D;&#39;userdb&#39;,
+    charset&#x3D;&#39;utf8&#39;
+)
+
+
+def task():
+    # 去连接池获取一个连接，如果不使用MYSQL_DB_POOL类则直接关闭连接
+    conn &#x3D; MYSQL_DB_POOL.connection()
+    cursor &#x3D; conn.cursor(pymysql.cursors.DictCursor)
+    
+    cursor.execute(&#39;select sleep(2)&#39;)
+    result &#x3D; cursor.fetchall()
+    print(result)
+
+    cursor.close()
+    # 将连接交还给给连接池，如果不使用MYSQL_DB_POOL类则直接关闭连接
+    conn.close()
+
+# 创建10个进程去对数据库进行操作
+def run():
+    for i in range(10):
+        t &#x3D; threading.Thread(target&#x3D;task)
+        t.start()
+
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    run()
+</code></pre>
+
+
+
+<h3 id="4-SQL工具类"><a href="#4-SQL工具类" class="headerlink" title="4. SQL工具类"></a>4. SQL工具类</h3><p>基于数据库连接池开发一个公共的SQL操作类，方便以后操作数据库。</p>
+<h4 id="4-1-单例和方法"><a href="#4-1-单例和方法" class="headerlink" title="4.1 单例和方法"></a>4.1 单例和方法</h4><pre class="language-sql" data-language="sql"><code class="language-sql"># db.py
+import pymysql
+from dbutils.pooled_db import PooledDB
+
+
+class DBHelper(object):
+
+    def __init__(self):
+        # TODO 此处配置，可以去配置文件中读取。
+        self.pool &#x3D; PooledDB(
+            creator&#x3D;pymysql,  # 使用链接数据库的模块
+            maxconnections&#x3D;5,  # 连接池允许的最大连接数，0和None表示不限制连接数
+            mincached&#x3D;2,  # 初始化时，链接池中至少创建的空闲的链接，0表示不创建
+            maxcached&#x3D;3,  # 链接池中最多闲置的链接，0和None不限制
+            blocking&#x3D;True,  # 连接池中如果没有可用连接后，是否阻塞等待。True，等待；False，不等待然后报错
+            setsession&#x3D;[],  # 开始会话前执行的命令列表。如：[&quot;set datestyle to ...&quot;, &quot;set time zone ...&quot;]
+            ping&#x3D;0,
+            # ping MySQL服务端，检查是否服务可用。# 如：0 &#x3D; None &#x3D; never, 1 &#x3D; default &#x3D; whenever it is requested, 2 &#x3D; when a cursor is created, 4 &#x3D; when a query is executed, 7 &#x3D; always
+            host&#x3D;&#39;127.0.0.1&#39;,
+            port&#x3D;3306,
+            user&#x3D;&#39;root&#39;,
+            password&#x3D;&#39;root123&#39;,
+            database&#x3D;&#39;userdb&#39;,
+            charset&#x3D;&#39;utf8&#39;
+        )
+
+    def get_conn_cursor(self):
+        conn &#x3D; self.pool.connection()
+        cursor &#x3D; conn.cursor(pymysql.cursors.DictCursor)
+        return conn, cursor
+
+    def close_conn_cursor(self, *args):
+        for item in args:
+            item.close()
+
+    def exec(self, sql, **kwargs):
+        conn, cursor &#x3D; self.get_conn_cursor()
+
+        cursor.execute(sql, kwargs)
+        conn.commit()
+
+        self.close_conn_cursor(conn, cursor)
+
+    def fetch_one(self, sql, **kwargs):
+        conn, cursor &#x3D; self.get_conn_cursor()
+
+        cursor.execute(sql, kwargs)
+        result &#x3D; cursor.fetchone()
+
+        self.close_conn_cursor(conn, cursor)
+        return result
+
+    def fetch_all(self, sql, **kwargs):
+        conn, cursor &#x3D; self.get_conn_cursor()
+
+        cursor.execute(sql, kwargs)
+        result &#x3D; cursor.fetchall()
+
+        self.close_conn_cursor(conn, cursor)
+
+        return result
+
+
+db &#x3D; DBHelper()
+</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">from db import db
+
+db.exec(&quot;insert into d1(name) values(%(name)s)&quot;, name&#x3D;&quot;武沛齐666&quot;)
+
+ret &#x3D; db.fetch_one(&quot;select * from d1&quot;)
+print(ret)
+
+ret &#x3D; db.fetch_one(&quot;select * from d1 where id&#x3D;%(nid)s&quot;, nid&#x3D;3)
+print(ret)
+
+ret &#x3D; db.fetch_all(&quot;select * from d1&quot;)
+print(ret)
+
+ret &#x3D; db.fetch_all(&quot;select * from d1 where id&gt;%(nid)s&quot;, nid&#x3D;2)
+print(ret)
+</code></pre>
+
+
+
+<h4 id="4-2-上下文管理"><a href="#4-2-上下文管理" class="headerlink" title="4.2 上下文管理"></a>4.2 上下文管理</h4><p>如果你想要让他也支持 with 上下文管理。</p>
+<pre class="language-none"><code class="language-none">with 获取连接：
+	执行SQL（执行完毕后，自动将连接交还给连接池）
+</code></pre>
+
+
+
+<pre class="language-python" data-language="python"><code class="language-python"># db_context.py
+import threading
+import pymysql
+from dbutils.pooled_db import PooledDB
+
+POOL &#x3D; PooledDB(
+    creator&#x3D;pymysql,  # 使用链接数据库的模块
+    maxconnections&#x3D;5,  # 连接池允许的最大连接数，0和None表示不限制连接数
+    mincached&#x3D;2,  # 初始化时，链接池中至少创建的空闲的链接，0表示不创建
+    maxcached&#x3D;3,  # 链接池中最多闲置的链接，0和None不限制
+    blocking&#x3D;True,  # 连接池中如果没有可用连接后，是否阻塞等待。True，等待；False，不等待然后报错
+    setsession&#x3D;[],  # 开始会话前执行的命令列表。如：[&quot;set datestyle to ...&quot;, &quot;set time zone ...&quot;]
+    ping&#x3D;0,
+    host&#x3D;&#39;127.0.0.1&#39;,
+    port&#x3D;3306,
+    user&#x3D;&#39;root&#39;,
+    password&#x3D;&#39;root123&#39;,
+    database&#x3D;&#39;userdb&#39;,
+    charset&#x3D;&#39;utf8&#39;
+)
+
+
+class Connect(object):
+    def __init__(self):
+        self.conn &#x3D; conn &#x3D; POOL.connection()
+        self.cursor &#x3D; conn.cursor(pymysql.cursors.DictCursor)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.cursor.close()
+        self.conn.close()
+
+    def exec(self, sql, **kwargs):
+        self.cursor.execute(sql, kwargs)
+        self.conn.commit()
+
+    def fetch_one(self, sql, **kwargs):
+        self.cursor.execute(sql, kwargs)
+        result &#x3D; self.cursor.fetchone()
+        return result
+
+    def fetch_all(self, sql, **kwargs):
+        self.cursor.execute(sql, kwargs)
+        result &#x3D; self.cursor.fetchall()
+        return result
+</code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">from db_context import Connect
+
+with Connect() as obj:
+    # print(obj.conn)
+    # print(obj.cursor)
+    ret &#x3D; obj.fetch_one(&quot;select * from d1&quot;)
+    print(ret)
+
+    ret &#x3D; obj.fetch_one(&quot;select * from d1 where id&#x3D;%(id)s&quot;, id&#x3D;3)
+    print(ret)
+</code></pre>
+
+
+
+<h3 id="5-其他"><a href="#5-其他" class="headerlink" title="5.其他"></a>5.其他</h3><p>navicat，是一个桌面应用，让我们可以更加方便的管理MySQL数据库。</p>
+<ul>
+<li>mac系统：<a target="_blank" rel="noopener" href="https://www.macdo.cn/17030.html">https://www.macdo.cn/17030.html</a></li>
+<li>win系统：<ul>
+<li>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/13cjbrBquz9vjVqKgWoCQ1w">https://pan.baidu.com/s/13cjbrBquz9vjVqKgWoCQ1w</a>  密码: qstp</li>
+<li>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1JULIIwQA5s0qN98KP8UXHA">https://pan.baidu.com/s/1JULIIwQA5s0qN98KP8UXHA</a>  密码: p18f</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>本节内容比较重要，也是开发中经常会使用到的技能。</p>
+<ul>
+<li>事务，解决批量操作同时成功或失败的问题。</li>
+<li>锁，解决并发处理的问题。</li>
+<li>数据库连接池，解决多个人请求连接数据库的问题。</li>
+<li>SQL工具类，解决连接数据库代码重复的问题。</li>
+<li>navicat工具</li>
+</ul>
+<h3 id="大作业：开发博客系统"><a href="#大作业：开发博客系统" class="headerlink" title="大作业：开发博客系统"></a>大作业：开发博客系统</h3><blockquote>
+<p>请基于你掌握的所有技能，实现 day27  博客系统的所有功能。</p>
+</blockquote>
+<p>根据如下的业务需求设计相应的表结构，内部需涵盖如下功能。</p>
+<ul>
+<li>注册</li>
+<li>登录</li>
+<li>发布博客</li>
+<li>查看博客列表，显示博客标题、创建时间、阅读数量、评论数量、赞数量等。（支持分页查看）</li>
+<li>博客详细，显示博文详细、评论 等。<ul>
+<li>发表评论</li>
+<li>赞 or 踩</li>
+<li>阅读数量 + 1</li>
+</ul>
+</li>
+</ul>
+<p>可参考如下图片来设计相应的表结构。</p>
+<h4 id="1-注册和登录"><a href="#1-注册和登录" class="headerlink" title="1. 注册和登录"></a>1. 注册和登录</h4><img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210520204812764.png" class="" title="image-20210520204812764">
+
+<h4 id="2-文章列表"><a href="#2-文章列表" class="headerlink" title="2. 文章列表"></a>2. 文章列表</h4><p>![image-20210520204735867](E:&#x2F;python路飞学城&#x2F;模块4&#x2F;day29 Python操作MySQL和实战&#x2F;assets&#x2F;image-20210520204735867.png)</p>
+<h4 id="3-文章详细"><a href="#3-文章详细" class="headerlink" title="3. 文章详细"></a>3. 文章详细</h4><img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210520205148509.png" class="" title="image-20210520205148509">
+
+
+
+<h4 id="4-评论-amp-阅读-amp-赞-amp-踩"><a href="#4-评论-amp-阅读-amp-赞-amp-踩" class="headerlink" title="4. 评论 &amp; 阅读 &amp; 赞 &amp; 踩"></a>4. 评论 &amp; 阅读 &amp; 赞 &amp; 踩</h4><img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210520205332907.png" class="" title="image-20210520205332907">
+
+<p>注意：假设都是一级评论（不能回复评论）。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Gengtianba</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gengtianba.github.io/2022/06/30/python-di-si-mo-kuai-day2/">https://gengtianba.github.io/2022/06/30/python-di-si-mo-kuai-day2/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Gengtianba</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5/">
+                                    <span class="chip bg-color">第四阶段</span>
+                                </a>
+                            
+                                <a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">MySQL数据库</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat,weibo,douban,qzone,linkedin,twitter,facebook,google" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '9YyPLPh0zyJlFMB2ciHdondz-gzGzoHsz',
+        appKey: 'naTQJa37tbxowE4Gm70MF9b6',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/07/07/di-si-jie-duan-chong-dian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第四阶段重点">
+                        
+                        <span class="card-title">第四阶段重点</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            路飞学院Python数据分析课程第四阶段重点总结
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/" class="post-category">
+                                    路飞学院
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5/">
+                        <span class="chip bg-color">第四阶段</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">总结</span>
+                    </a>
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/24/python-mo-kuai-si-day1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python模块四day1">
+                        
+                        <span class="card-title">Python模块四day1</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            路飞学院PYTHON课程模块四笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/" class="post-category">
+                                    路飞学院
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5/">
+                        <span class="chip bg-color">第四阶段</span>
+                    </a>
+                    
+                    <a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">MySQL数据库</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">Gengtianba</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/gengtianba" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1138798275@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1138798275" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1138798275" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
