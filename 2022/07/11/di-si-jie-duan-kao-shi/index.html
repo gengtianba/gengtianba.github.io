@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第四阶段重点, Gengtianba&#39;s Blog">
+    <meta name="keywords" content="第四阶段考试, Gengtianba&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第四阶段重点 | Gengtianba&#39;s Blog</title>
+    <title>第四阶段考试 | Gengtianba&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第四阶段重点</h1>
+                    <h1 class="description center-align post-title">第四阶段考试</h1>
                 </div>
             </div>
         </div>
@@ -396,12 +396,16 @@
                                 <span class="chip bg-color">第四阶段</span>
                             </a>
                         
-                            <a href="/tags/%E6%80%BB%E7%BB%93/">
-                                <span class="chip bg-color">总结</span>
+                            <a href="/tags/%E8%80%83%E8%AF%95/">
+                                <span class="chip bg-color">考试</span>
                             </a>
                         
                             <a href="/tags/MySQL/">
                                 <span class="chip bg-color">MySQL</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/">
+                                <span class="chip bg-color">博客系统开发</span>
                             </a>
                         
                     </div>
@@ -425,7 +429,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-07
+                    2022-07-11
                 </div>
                 
 
@@ -434,14 +438,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.2k
+                    4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    19 分
                 </div>
                 
 
@@ -464,542 +468,246 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、MySQL入门"><a href="#一、MySQL入门" class="headerlink" title="一、MySQL入门"></a>一、MySQL入门</h2><h3 id="（一）数据库管理"><a href="#（一）数据库管理" class="headerlink" title="（一）数据库管理"></a>（一）数据库管理</h3><ul>
-<li><p>查看所有数据库</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">show databases;</code></pre>
-
-
-</li>
-<li><p>创建数据库</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">drop database IF EXISTS 数据库名
-create database 数据库名 DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
--- CHARSET是字符集的意思，使用utf8编码
--- COLLATE是校验、核对的意思。指数据库的校验规则,若数据库中有德语、法语或者俄语需求，需使用utf8_unicode_ci，其他情况用utf8_general_ci即可。ci是case insensitive的缩写,意思是大小写不敏感；相对的是cs,即case sensitive,大小写敏感。</code></pre>
-
-
-</li>
-<li><p>删除数据库</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">drop database 数据库名;</code></pre>
-
-
-</li>
-<li><p>进入数据库</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">show databases;</code></pre></li>
-</ul>
-<h3 id="（二）数据表管理"><a href="#（二）数据表管理" class="headerlink" title="（二）数据表管理"></a>（二）数据表管理</h3><ul>
-<li><p>查看数据库下所有表</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">show  tables；</code></pre>
-
-
-</li>
-<li><p>创建表结构</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">CREATE TABLE &#96;big&#96; (
-    &#96;id&#96; int(11) NOT NULL AUTO_INCREMENT,
-    &#96;name&#96; varchar(32) DEFAULT NULL,
-    &#96;email&#96; varchar(64) DEFAULT NULL,
-    &#96;password&#96; varchar(64) DEFAULT NULL,
-    &#96;age&#96; int(11) DEFAULT NULL,
-    PRIMARY KEY (&#96;id&#96;),                       -- 主键索引
-    UNIQUE KEY &#96;big_unique_email&#96; (&#96;email&#96;),  -- 唯一索引
-    KEY &#96;ix_name_pwd&#96; (&#96;name&#96;,&#96;password&#96;)     -- 联合索引
-) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8</code></pre>
-
-
-</li>
-<li><p>删除表</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">drop table 表名;</code></pre>
-
-
-</li>
-<li><p>清空表</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">delete from 表名;
-truncate table 表名;</code></pre>
-
-
-
-</li>
-<li><p>导出数据库的所有表（在命令行运行）</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql"># 结构+数据
-mysqldump -u root -p 数据库名 &gt; 导出文件绝对路径&#x2F;xxx.sql
-
-# 结构
-mysqldump -u root -p -d 数据库名 &gt; &#x2F;导出文件绝对路径&#x2F;xxx.sql</code></pre>
-
-
-</li>
-<li><p>导入数据库的所有表（在命令行运行）</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">mysql -u root -p  数据库名 &lt; 导出文件绝对路径&#x2F;xxx.sql</code></pre>
-
-
-</li>
-<li><p>修改表</p>
+                <h2 id="大作业：开发博客系统"><a href="#大作业：开发博客系统" class="headerlink" title="大作业：开发博客系统"></a>大作业：开发博客系统</h2><blockquote>
+<p>请基于你掌握的所有技能，实现 day27  博客系统的所有功能。</p>
+</blockquote>
+<p>根据如下的业务需求设计相应的表结构，内部需涵盖如下功能。</p>
 <ul>
-<li><p>增加列</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">alter table 表名 add 列名 类型 not null primary key auto_increment;</code></pre>
-
-
-</li>
-<li><p>删除列</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">alter table 表名 drop column 列名;</code></pre>
-
-
-</li>
-<li><p>修改列</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">ALTER TABLE 表名 modify column 列名 类型; -- 修改列类型
-
-ALTER TABLE tb CHANGE id id int NOT NULL primary key auto_increment; -- 修改列类型+名称
-
-ALTER TABLE 表名 ALTER 列名 SET DEFAULT 1000; -- 修改列默认值
-
-ALTER TABLE 表名 add primary key(列名); -- 添加主键
-
-ALTER TABLE 表名 drop primary key; -- 删除主键</code></pre></li>
+<li>注册</li>
+<li>登录</li>
+<li>发布博客</li>
+<li>查看博客列表，显示博客标题、创建时间、阅读数量、评论数量、赞数量等。（支持分页查看）</li>
+<li>博客详细，显示博文详细、评论 等。<ul>
+<li>发表评论</li>
+<li>赞 or 踩</li>
+<li>阅读数量 + 1</li>
 </ul>
 </li>
-<li><p>查询表各列信息</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">desc 表名;</code></pre>
+</ul>
+<p>可参考如下图片来设计相应的表结构。</p>
+<h2 id="一、开发规范"><a href="#一、开发规范" class="headerlink" title="一、开发规范"></a>一、开发规范</h2><pre class="language-none"><code class="language-none">blog
+├── app.py        文件，程序的主文件（尽量精简）
+├── config.py     文件，配置文件（放相关配置信息，代码中读取配置信息，如果想要修改配置，即可以在此修改，不用再去代码中逐一修改了）
+├── src           包，业务处理的代码
+└── utils         包，公共功能</code></pre>
 
 
-</li>
-<li><p>常见列类型</p>
+
+<h2 id="二、编写主程序"><a href="#二、编写主程序" class="headerlink" title="二、编写主程序"></a>二、编写主程序</h2><p><code>src -&gt; handler.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">class Handler(object):
+    # 导航列表
+    NAV &#x3D; []
+
+    def login(self):
+        print(&#39;登录程序&#39;)
+
+    def register(self):
+        print(&#39;注册程序&#39;)
+
+    def publish_blog(self):
+        print(&#39;发布博客程序&#39;)
+
+    def blog_list(self):
+        print(&#39;查看博客列表程序&#39;)
+
+    # 主程序
+    def run(self):
+        # 导航列表加入首页
+        Handler.NAV.append(&#39;系统首页&#39;)
+
+        # 首页提示信息
+        mapping &#x3D; &#123;
+            &#39;1&#39;: &#123;&#39;text&#39;: &#39;登录&#39;, &#39;method&#39;: self.login&#125;,
+            &#39;2&#39;: &#123;&#39;text&#39;: &#39;注册&#39;, &#39;method&#39;: self.register&#125;,
+            &#39;3&#39;: &#123;&#39;text&#39;: &#39;发布博客&#39;, &#39;method&#39;: self.publish_blog&#125;,
+            &#39;4&#39;: &#123;&#39;text&#39;: &#39;查看博客列表&#39;, &#39;method&#39;: self.blog_list&#125;,
+        &#125;
+
+        message &#x3D; &#39;\n&#39;.join([&#39;&#123;&#125;.&#123;&#125;&#39;.format(k, mapping[k][&#39;text&#39;]) for k in mapping])
+
+        while True:
+            print(&#39;&gt;&#39;.join(Handler.NAV).center(50, &#39;*&#39;))  # 打印导航条
+            print(message)  # 打印首页提示信息
+
+            choice &#x3D; input(&#39;请选择序号(Q&#x2F;q退出)： &#39;).strip()
+            if not choice:  # 输入为空重新输入
+                print(&#39;输入内容不能为空，请重新输入&#39;)
+                continue
+
+            if choice.upper() &#x3D;&#x3D; &#39;Q&#39;:  # 输入Q&#x2F;q退出
+                break
+
+            text &#x3D; mapping.get(choice)[&#39;text&#39;]
+            method &#x3D; mapping.get(choice)[&#39;method&#39;]
+            if not method:  # 序号不存在重新输入
+                print(&#39;序号不存在，请重新输入&#39;)
+                continue
+
+            Handler.NAV.append(text)
+            method()
+
+
+handler &#x3D; Handler()
+handler.run()</code></pre>
+
+<p><font color="#dd0000"><strong>存在问题：</strong></font></p>
 <ul>
-<li><p>数字</p>
-<p><code>int[(m)][unsigned][zerofill]</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">int:表示有符号，取值范围：-2147483648 ～ 2147483647
-int unsigned	表示无符号，取值范围：0 ～ 4294967295
-int(5)zerofill	仅用于显示，当不满足5位时，按照左边补0，例如：00002；满足时，正常显示。</code></pre>
-
-<p><code>tinyint[(m)] [unsigned] [zerofill]</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">有符号，取值范围：-128 ～ 127.
-无符号，取值范围：0 ～ 255</code></pre>
-
-<p><code>bigint[(m)][unsigned][zerofill]</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">有符号，取值范围：-9223372036854775808 ～ 9223372036854775807
-无符号，取值范围：0  ～  18446744073709551615</code></pre>
-
-<p><code>decimal[(m[,d])] [unsigned] [zerofill]</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">准确的小数值，m是数字总个数（负号不算），d是小数点后个数。 m最大值为65，d最大值为30。</code></pre>
-
-<p><code>FLOAT[(M,D)] [UNSIGNED] [ZEROFILL]</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">单精度浮点数，非准确小数值，m是数字总个数，d是小数点后个数。</code></pre>
-
-<p><code>DOUBLE[(M,D)] [UNSIGNED] [ZEROFILL]</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">双精度浮点数（非准确小数值），m是数字总个数，d是小数点后个数。</code></pre>
-
-
+<li><p>在字典mapping中调用功能和功能名称较为复杂<code>text = mapping.get(choice)[&#39;text&#39;]</code>考虑使用面向对象进行封装<code>context.text</code>简化调用</p>
 </li>
-<li><p>字符</p>
-<p><code>char(m)</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">定长字符串：m代表字符串的长度，最多可容纳255个字符。
-定长的体现：即使内容长度小于m，也会占用m长度。</code></pre>
-
-<p><code>varchar(m)</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">变长字符串，m代表字符串的长度，最多可容纳65535个字节。
-变长的体现：内容小于m时，会按照真实数据长度存储；如果超出m长度限制（（默认MySQL是严格模式，所以会报错）。</code></pre>
-
-<p><code>text</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">text数据类型用于保存变长的大字符串，可以组多到65535 (2**16 − 1)个字符。长文本会用text类型。例如：文章、新闻等。</code></pre>
-
-<p><code>mediumtext</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">maximum length of 16,777,215 (2**24 − 1) characters</code></pre>
-
-<p><code>longtext</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">maximum length of 4,294,967,295 or 4GB (2**32 − 1)</code></pre>
-
-
-</li>
-<li><p>时间</p>
-<p><code>datetime</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">YYYY-MM-DD HH:MM:SS（1000-01-01 00:00:00&#x2F;9999-12-31 23:59:59）</code></pre>
-
-<p><code>timestamp</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">YYYY-MM-DD HH:MM:SS（1970-01-01 00:00:00&#x2F;2037年）
-对于TIMESTAMP，它把客户端插入的时间从当前时区转化为UTC（世界标准时间）进行存储，查询时，将其又转化为客户端当前时区进行返回。</code></pre>
-
-<p><code>date</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">YYYY-MM-DD（1000-01-01&#x2F;9999-12-31）</code></pre>
-
-<p><code>time</code></p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">HH:MM:SS（&#39;-838:59:59&#39;&#x2F;&#39;838:59:59&#39;）</code></pre></li>
-</ul>
+<li><p>每个maping中的每个功能在执行前都要打印导航条，在退出后要在导航条中删除最后的元素，可以考虑用装饰器实现</p>
 </li>
 </ul>
-<h3 id="（三）数据行管理"><a href="#（三）数据行管理" class="headerlink" title="（三）数据行管理"></a>（三）数据行管理</h3><ul>
-<li><p>新增数据行</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">insert into 表名 values(NULL,对应列的值,default); -- 对于自增列和有默认值的列传入NULL和default
-insert into tb1(name,password) values(&#39;武沛齐&#39;,&#39;123123&#39;),(&#39;alex&#39;,&#39;123&#39;); -- 同时新增多列</code></pre>
+<p><code>utils -&gt; context.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">class Context(object):
+    def __init__(self, text, method):
+        self.text &#x3D; text
+        self.method &#x3D; method</code></pre>
 
 
+
+<p><code>src -&gt; handler.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">from utils.context import Context
+
+
+class Handler(object):
+    # 导航列表
+    NAV &#x3D; []
+
+    def wrapper(self, method):
+        def inner(*args, **kwargs):
+            print(&#39;&gt;&#39;.join(Handler.NAV).center(50, &#39;*&#39;))
+            res &#x3D; method(*args, **kwargs)
+            Handler.NAV.pop(-1)
+            return res
+
+        return inner
+
+
+    def login(self):
+        print(&#39;登录程序&#39;)
+
+    def register(self):
+        print(&#39;注册程序&#39;)
+
+    def publish_blog(self):
+        print(&#39;发布博客程序&#39;)
+
+    def blog_list(self):
+        print(&#39;查看博客列表程序&#39;)
+
+    # 主程序
+    def run(self):
+        # 导航列表加入首页
+        Handler.NAV.append(&#39;系统首页&#39;)
+
+        # 首页提示信息
+        # mapping &#x3D; &#123;
+        #     &#39;1&#39;: &#123;&#39;text&#39;: &#39;登录&#39;, &#39;method&#39;: self.login&#125;,
+        #     &#39;2&#39;: &#123;&#39;text&#39;: &#39;注册&#39;, &#39;method&#39;: self.register&#125;,
+        #     &#39;3&#39;: &#123;&#39;text&#39;: &#39;发布博客&#39;, &#39;method&#39;: self.publish_blog&#125;,
+        #     &#39;4&#39;: &#123;&#39;text&#39;: &#39;查看博客列表&#39;, &#39;method&#39;: self.blog_list&#125;,
+        # &#125;
+
+        mapping &#x3D; &#123;
+            &#39;1&#39;: Context(&#39;登录&#39;, self.wrapper(self.login)),
+            &#39;2&#39;: Context(&#39;注册&#39;, self.wrapper(self.register)),
+            &#39;3&#39;: Context(&#39;发布博客&#39;, self.wrapper(self.publish_blog)),
+            &#39;4&#39;: Context(&#39;查看博客列表&#39;, self.wrapper(self.blog_list)),
+        &#125;
+
+        message &#x3D; &#39;\n&#39;.join([&#39;&#123;&#125;.&#123;&#125;&#39;.format(k, v.text) for k, v in mapping.items()])
+
+        while True:
+            print(&#39;&gt;&#39;.join(Handler.NAV).center(50, &#39;*&#39;))  # 打印导航条
+            print(message)  # 打印首页提示信息
+
+            choice &#x3D; input(&#39;请选择序号(Q&#x2F;q退出)： &#39;).strip()
+            if not choice:  # 输入为空重新输入
+                print(&#39;输入内容不能为空，请重新输入&#39;)
+                continue
+
+            if choice.upper() &#x3D;&#x3D; &#39;Q&#39;:  # 输入Q&#x2F;q退出
+                break
+
+            context &#x3D; mapping.get(choice)
+            if not context:  # 序号不存在重新输入
+                print(&#39;序号不存在，请重新输入&#39;)
+                continue
+
+            Handler.NAV.append(context.text)
+            context.method()
+
+
+handler &#x3D; Handler()
+handler.run()</code></pre>
+
+
+
+<h2 id="三、编写各个功能"><a href="#三、编写各个功能" class="headerlink" title="三、编写各个功能"></a>三、编写各个功能</h2><h3 id="（一）登录功能"><a href="#（一）登录功能" class="headerlink" title="（一）登录功能"></a>（一）登录功能</h3><ul>
+<li><p>在config包的settings模块下完成数据库链接的配置信息</p>
 </li>
-<li><p>删除数据行</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">delete from 表名 where 条件;</code></pre>
-
-
-</li>
-<li><p>修改数据行</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">update 表名 set 列名&#x3D;值 where 条件;</code></pre>
-
-
-</li>
-<li><p>查询数据行</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">select * from 表名;
-select 列名,列名 as 别名,别名 from 表名;</code></pre></li>
-</ul>
-<h2 id="二、SQL必备表关系各授权"><a href="#二、SQL必备表关系各授权" class="headerlink" title="二、SQL必备表关系各授权"></a>二、SQL必备表关系各授权</h2><h3 id="一-SQL必备"><a href="#一-SQL必备" class="headerlink" title="(一)SQL必备"></a>(一)SQL必备</h3><ul>
-<li><p>条件：根据条件搜索结果</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info where age &gt; 30;
-select * from info where id !&#x3D; 1;
-select * from info where (name &#x3D; &#39;李杰&#39; or email&#x3D;&quot;pyyu@live.com&quot;)  and age&#x3D;49;
-select * from info where id not in (1,4,6);
-select * from info where id in (select id from depart);
-select * from info where exists (select * from depart where id&#x3D;5);
-select * from (select * from info where id&gt;2) as T where age &gt; 10;</code></pre>
-
-
-</li>
-<li><p>通配符：一般用于模糊搜索</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info where name like &quot;%沛%&quot;; -- 匹配任意字符
-select * from info where email like &quot;__peiqi_live.co_&quot;;-- 匹配一个字符
-
--- 注意：数量少可以使用通配符，数据量大的搜索一般不使用，搜索效率很低</code></pre>
-
-
-</li>
-<li><p>映射：想要获取的列</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">select 
-        id,
-        name,
-        case depart_id when 1 then &quot;第1部门&quot; end v1,
-        case depart_id when 1 then &quot;第1部门&quot; else &quot;其他&quot; end v2,
-        case depart_id when 1 then &quot;第1部门&quot; when 2 then &quot;第2部门&quot; else &quot;其他&quot; end v3,
-        case when age&lt;18 then &quot;少年&quot; end v4,
-        case when age&lt;18 then &quot;少年&quot; else &quot;油腻男&quot; end v5,
-        case when age&lt;18 then &quot;少年&quot; when age&lt;30 then &quot;青年&quot; else &quot;油腻男&quot; end v6
-from info;</code></pre>
-
-
-</li>
-<li><p>排序</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info order by age desc; -- 倒序
-select * from info order by age asc;  -- 顺序
-select * from info order by age asc,id desc; -- 优先按照age从小到大；如果age相同则按照id从大到小。</code></pre>
-
-
-</li>
-<li><p>取部分</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">select * from info limit 5; -- 获取前5条数据
-select * from info limit 3 offset 2; -- 从位置2开始，向后获取前3数据</code></pre>
-
-
-</li>
-<li><p>分组</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">select depart_id,count(id) from info group by depart_id;
-select depart_id,count(id) from info group by depart_id having count(id) &gt; 2;select --聚合条件放在having后面</code></pre>
-
-
-</li>
-<li><p>左右连表</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">主表 left join 从表 on 主表.x &#x3D; 从表.id 
-
-select info.id,info.name,info.email,depart.title from info right outer join depart on info.depart_id &#x3D; depart.id;
-info主表，就以info数据为主，depart为辅。（推荐使用）</code></pre>
-
-
-</li>
-<li><p>联合</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">select id,title from depart 
-union
-select id,name from info; -- 列数需相同
--- 自动去重union all  -- 保留所有
-union all  -- 保留所有</code></pre>
-
-
-
-</li>
-<li><p>SQL执行顺序</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">join 
-on -- 先连表
-where -- 再筛选 
-group by -- 再分组
-having -- 再筛选聚合条件
-order by -- 再排序
-limit -- 最后取部分</code></pre></li>
-</ul>
-<h3 id="二-表关系"><a href="#二-表关系" class="headerlink" title="(二)表关系"></a>(二)表关系</h3><ul>
-<li><p>单表</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">单独一张表就可以将信息保存</code></pre>
-
-
-</li>
-<li><p>一对多</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">需要两张表来存储信息，且两张表存在 一对多 或 多对一关系</code></pre>
-
-
-</li>
-<li><p>多对多</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">需要三张表来存储信息，两张单表 + 关系表，创造出两个单表之间多对多关系。</code></pre>
-
-
-</li>
-<li><p>外键约束</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">开发中往往还会为他们添加一个 外键约束，保证某一个列的值必须是其他表中的特定列已存在的值
-
-constraint 外键名(fk_info_depart) foreign key (depart_id) references depart(id); -- 创建表时创建外键
-
-alter table 表名 add constraint 外键名(fk_info_depart) foreign key info(depart_id) references depart(id);  -- 表已创建添加外键
-
-alter table 表名 drop foreign key 外键名(fk_info_depart); -- 删除外键</code></pre></li>
-</ul>
-<h2 id="三、索引、函数和存储过程"><a href="#三、索引、函数和存储过程" class="headerlink" title="三、索引、函数和存储过程"></a>三、索引、函数和存储过程</h2><h3 id="（一）索引"><a href="#（一）索引" class="headerlink" title="（一）索引"></a>（一）索引</h3><p>如果有了索引结构的查询效率比表中逐行查询的速度要快很多且数据量越大越明显。但，数据增删改的速度会变慢。</p>
+<li><p>在utils包的db模块下编写MySQL工具类：</p>
 <ul>
-<li><p>索引原理（B+Tree）</p>
+<li><p>实例化PooledDB对象，链接数据库</p>
+</li>
+<li><p>支持上下文管理：<code>__enter__</code>,<code>__exit__</code></p>
+</li>
+<li><p><code>exec</code>执行</p>
+</li>
+<li><p><code>fetch_one</code>返回一行结果</p>
+</li>
+<li><p><code>fetch_all</code>返回所有行</p>
+</li>
+</ul>
+</li>
+<li><p>在src包中的account模块下编写账户相关代码：分层将MySQL操作单独编写，思路更清晰</p>
 <ul>
-<li>非聚簇索引（mysiam引擎）：数据 和 索引结构 分开存储</li>
-<li>聚簇索引（innodb引擎）：数据 和 主键索引结构存储在一起企业开发中一般都会使用 innodb 引擎（内部支持事务、行级锁、外键等特点），在MySQL5.5版本之后默认引擎也是innodb。</li>
+<li><code>login</code>在数据库中验证用户登录并返回结果</li>
 </ul>
 </li>
-<li><p>常见索引</p>
+<li><p>在utils包中的context模块下年编写UserDict类：封装实例变量用户ID和昵称，以及属性is_login</p>
 <ul>
-<li><p>主键索引：加速查找、不能为空、不能重复。 + 联合主键索引</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">create table 表名(
-    id int not null auto_increment,
-    name varchar(32) not null,
-    primary key (列1,列2)          
--- 如果有多列，称为联合主键（不常用且myisam引擎支持）
-);  -- 创建数据表时创建主键索引
-
-alter table 表名 add primary key (列名); -- 表已创建插入主键索引
-
-alter table 表名 add primary key (列名); -- 删除主键索引</code></pre>
-
-
+<li><p>self.id：实例变量</p>
 </li>
-<li><p>唯一索引：加速查找、不能重复。  + 联合唯一索引</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">create table 表名(
-    id int not null auto_increment,
-    name varchar(32) not null,
-    unique index (列1,列2)          
--- 如果有多列，称为联合唯一（不常用且myisam引擎支持）
-);  -- 创建数据表时创建唯一索引
-
-alter table 表名 add unique index (列名); -- 表已创建插入唯一索引
-
-alter table 表名 add unique index (列名); -- 删除唯一索引</code></pre>
-
-
+<li><p>self.nickname：实例变量</p>
 </li>
-<li><p>普通索引：加速查找。 + 联合索引</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">create table 表名(
-    id int not null auto_increment,
-    name varchar(32) not null,
-    index (列1,列2)          
--- 如果有多列，称为联合普通索引（不常用且myisam引擎支持）
-);  -- 创建数据表时创建普通索引
-
-alter table 表名 add unique index (列名); -- 表已创建插入普通索引
-
-alter table 表名 add unique index (列名); -- 删除普通索引</code></pre></li>
-</ul>
+<li><p>self.set_info：通过循环加反射设置实例变量<code>self.id</code>和<code>self.nickname</code></p>
 </li>
-<li><p>操作表：在表中创建索引后，查询时一定要命中索引。</p>
-<ul>
-<li><p>优点：查找速度快、约束（唯一、主键、联合唯一）</p>
-</li>
-<li><p>缺点：插入、删除、更新速度比较慢，因为每次操作都需要调整整个B+Tree的数据结构关系。</p>
-</li>
-<li><p>无法命中索引的情况</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">类型不一致（表中name为varchar查询时输入int，无法命中索引）
-select * from big where name &#x3D; 123;		-- 未命中
-select * from big where email &#x3D; 123;	-- 未命中 
-特殊的主键：
-select * from big where id &#x3D; &quot;123&quot;;	-- 命中
-
-使用不等于
-select * from big where name !&#x3D; &quot;武沛齐&quot;;				-- 未命中
-select * from big where email !&#x3D; &quot;wupeiqi@live.com&quot;;  -- 未命中
-特殊的主键：
-select * from big where id !&#x3D; 123;	-- 命中
-
-
-or，当or条件中有未建立索引的列才失效。
-select * from big where id &#x3D; 123 or password&#x3D;&quot;xx&quot;;			-- 未命中
-select * from big where name &#x3D; &quot;wupeiqi&quot; or password&#x3D;&quot;xx&quot;;	-- 未命中
-特别的：
-select * from big where id &#x3D; 10 or password&#x3D;&quot;xx&quot; and name&#x3D;&quot;xx&quot;; -- 命中
-
-排序，当根据索引排序时候，选择的映射如果不是索引，则不走索引。
-select * from big order by name asc;     -- 未命中
-select * from big order by name desc;    -- 未命中
-select name from big order by name desc;    -- 命中
-特别的主键：通配符在最后
-select * from big order by id desc;  -- 命中
-
-like，模糊匹配时。
-select * from big where name like &quot;%u-12-19999&quot;;	-- 未命中
-select * from big where name like &quot;_u-12-19999&quot;;	-- 未命中
-select * from big where name like &quot;wu-%-10&quot;;		-- 未命中
-特别的：
-select * from big where name like &quot;wu-1111-%&quot;;	-- 命中
-select * from big where name like &quot;wuw-%&quot;;		-- 命中
-
-使用函数
-select * from big where reverse(name) &#x3D; &quot;wupeiqi&quot;;  -- 未命中
-特别的：
-select * from big where name &#x3D; reverse(&quot;wupeiqi&quot;);  -- 命中
-
-最左前缀，如果是联合索引，要遵循最左前缀原则。
-如果联合索引为：(name,password)
-name and password       -- 命中
-name                 	-- 命中
-password                -- 未命中
-name or password       	-- 未命中</code></pre></li>
-</ul>
-</li>
-<li><p>执行计划:<code>explain + SQL语句</code>能够预判SQL的执行（只能给到一定的参考，不一定完全能预判准确）。</p>
-<pre class="language-sql" data-language="sql"><code class="language-sql">SQL性能指标type;性能从高到低
-
-SYSTEM，系统，表仅有一行(&#x3D;系统表)。这是const联接类型的一个特例。
-CONST，常量，表最多有一个匹配行,因为仅有一行,在这行的列值可被优化器剩余部分认为是常数,const表很快。
-EQ_REF，连表操作时常见。
-REF，根据 索引 直接去查找（非键）。
-INDEX_MERGE，合并索引，使用多个单列索引搜索
-RANGE，对索引列进行范围查找
-INDEX，全索引扫描，对索引从头到尾找一遍
-ALL，全表扫描，数据表从头到尾找一遍。(一般未命中索引，都是会执行权标扫描)</code></pre></li>
-</ul>
-<h2 id="四、Python操作"><a href="#四、Python操作" class="headerlink" title="四、Python操作"></a>四、Python操作</h2><h3 id="（一）事务：innodb引擎中支持事务，myisam不支持"><a href="#（一）事务：innodb引擎中支持事务，myisam不支持" class="headerlink" title="（一）事务：innodb引擎中支持事务，myisam不支持"></a>（一）事务：innodb引擎中支持事务，myisam不支持</h3><p>事务的四大特性（ACID）：</p>
-<ul>
-<li>原子性（Atomicity）：是指事务包含的所有操作不可分割，要么全部成功，要么全部失败回滚。</li>
-<li>一致性（Consistency）：执行的前后数据的完整性保持一致。</li>
-<li>独立性（Isolation）：一个事务执行的过程中,不应该受到其他事务的干扰。</li>
-<li>持久性（Durability）：事务一旦结束,数据就持久到数据库。</li>
-</ul>
-<h3 id="（二）锁"><a href="#（二）锁" class="headerlink" title="（二）锁"></a>（二）锁</h3><p>帮助我们实现开发过程中遇到的同时处理数据的情况。</p>
-<ul>
-<li>表级锁：即A操作表时，其他人对整个表都不能操作，等待A操作完之后，才能继续。</li>
-<li>行级锁：即A操作表时，其他人对指定的行数据不能操作，其他行可以操作，等待A操作完之后，才能继续。</li>
-<li>InnoDB引擎支持行锁和表锁；MYISAM支持表锁，不支持行锁。<ul>
-<li>在innodb引擎中，update、insert、delete的行为内部都会先申请锁（排它锁），申请到之后才执行相关操作，最后再释放锁。</li>
-<li>在innodb引擎中，select则默认不会申请锁。想要让select去申请锁，则需要配合 事务 + 特殊语法来实现。</li>
-<li>for update，排它锁，加锁之后，其他不可以读写。</li>
-<li>lock in share mode ，共享锁，加锁之后，其他可读但不可写。</li>
-</ul>
+<li><p>self.is_login：实例属性</p>
 </li>
 </ul>
-<h3 id="（三）MySQL工具类"><a href="#（三）MySQL工具类" class="headerlink" title="（三）MySQL工具类"></a>（三）MySQL工具类</h3><ul>
-<li><p>单例</p>
-<pre class="language-python" data-language="python"><code class="language-python"># db.py
-import pymysql
+</li>
+<li><p>在src包中添加handler模块下编写login函数完成登录操作</p>
+</li>
+</ul>
+<p><code>config -&gt; settings.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">DB_POOL_CONN &#x3D; &#123;
+    &quot;maxconnections&quot;: 5,
+    &quot;mincached&quot;: 2,
+    &quot;maxcached&quot;: 3,
+    &quot;blocking&quot;: True,
+    &quot;setsession&quot;: [],
+    &quot;ping&quot;: 0,
+    &quot;host&quot;: &#39;127.0.0.1&#39;,
+    &quot;port&quot;: 3306,
+    &quot;user&quot;: &#39;root&#39;,
+    &quot;password&quot;: &#39;root123&#39;,
+    &quot;database&quot;: &#39;blog&#39;,
+    &quot;charset&quot;: &#39;utf8&#39;
+&#125;</code></pre>
+
+<p><code>utils -&gt; bd.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">import pymysql
 from dbutils.pooled_db import PooledDB
+from config import settings
 
-
-class DBHelper(object):
-
-    def __init__(self):
-        # TODO 此处配置，可以去配置文件中读取。
-        self.pool &#x3D; PooledDB(
-            creator&#x3D;pymysql,  # 使用链接数据库的模块
-            maxconnections&#x3D;5,  # 连接池允许的最大连接数，0和None表示不限制连接数
-            mincached&#x3D;2,  # 初始化时，链接池中至少创建的空闲的链接，0表示不创建
-            maxcached&#x3D;3,  # 链接池中最多闲置的链接，0和None不限制
-            blocking&#x3D;True,  # 连接池中如果没有可用连接后，是否阻塞等待。True，等待；False，不等待然后报错
-            setsession&#x3D;[],  # 开始会话前执行的命令列表。如：[&quot;set datestyle to ...&quot;, &quot;set time zone ...&quot;]
-            ping&#x3D;0,
-            # ping MySQL服务端，检查是否服务可用。# 如：0 &#x3D; None &#x3D; never, 1 &#x3D; default &#x3D; whenever it is requested, 2 &#x3D; when a cursor is created, 4 &#x3D; when a query is executed, 7 &#x3D; always
-            host&#x3D;&#39;127.0.0.1&#39;,
-            port&#x3D;3306,
-            user&#x3D;&#39;root&#39;,
-            password&#x3D;&#39;root123&#39;,
-            database&#x3D;&#39;userdb&#39;,
-            charset&#x3D;&#39;utf8&#39;
-        )
-
-    def get_conn_cursor(self):
-        conn &#x3D; self.pool.connection()
-        cursor &#x3D; conn.cursor(pymysql.cursors.DictCursor)
-        return conn, cursor
-
-    def close_conn_cursor(self, *args):
-        for item in args:
-            item.close()
-
-    def exec(self, sql, **kwargs):
-        conn, cursor &#x3D; self.get_conn_cursor()
-
-        cursor.execute(sql, kwargs)
-        conn.commit()
-
-        self.close_conn_cursor(conn, cursor)
-
-    def fetch_one(self, sql, **kwargs):
-        conn, cursor &#x3D; self.get_conn_cursor()
-
-        cursor.execute(sql, kwargs)
-        result &#x3D; cursor.fetchone()
-
-        self.close_conn_cursor(conn, cursor)
-        return result
-
-    def fetch_all(self, sql, **kwargs):
-        conn, cursor &#x3D; self.get_conn_cursor()
-
-        cursor.execute(sql, kwargs)
-        result &#x3D; cursor.fetchall()
-
-        self.close_conn_cursor(conn, cursor)
-
-        return result
-
-
-db &#x3D; DBHelper()</code></pre>
-
-<pre class="language-python" data-language="python"><code class="language-python">from db import db
-
-db.exec(&quot;insert into d1(name) values(%(name)s)&quot;, name&#x3D;&quot;武沛齐666&quot;)
-
-ret &#x3D; db.fetch_one(&quot;select * from d1&quot;)
-print(ret)
-
-ret &#x3D; db.fetch_one(&quot;select * from d1 where id&#x3D;%(nid)s&quot;, nid&#x3D;3)
-print(ret)
-
-ret &#x3D; db.fetch_all(&quot;select * from d1&quot;)
-print(ret)
-
-ret &#x3D; db.fetch_all(&quot;select * from d1 where id&gt;%(nid)s&quot;, nid&#x3D;2)
-print(ret)</code></pre>
-
-
-</li>
-<li><p>上下文管理：如果你想要让他也支持 with 上下文管理。</p>
-<pre class="language-python" data-language="python"><code class="language-python">with 获取连接：
-	执行SQL（执行完毕后，自动将连接交还给连接池）</code></pre>
-
-<pre class="language-python" data-language="python"><code class="language-python"># db_context.py
-import threading
-import pymysql
-from dbutils.pooled_db import PooledDB
-
-POOL &#x3D; PooledDB(
-    creator&#x3D;pymysql,  # 使用链接数据库的模块
-    maxconnections&#x3D;5,  # 连接池允许的最大连接数，0和None表示不限制连接数
-    mincached&#x3D;2,  # 初始化时，链接池中至少创建的空闲的链接，0表示不创建
-    maxcached&#x3D;3,  # 链接池中最多闲置的链接，0和None不限制
-    blocking&#x3D;True,  # 连接池中如果没有可用连接后，是否阻塞等待。True，等待；False，不等待然后报错
-    setsession&#x3D;[],  # 开始会话前执行的命令列表。如：[&quot;set datestyle to ...&quot;, &quot;set time zone ...&quot;]
-    ping&#x3D;0,
-    host&#x3D;&#39;127.0.0.1&#39;,
-    port&#x3D;3306,
-    user&#x3D;&#39;root&#39;,
-    password&#x3D;&#39;root123&#39;,
-    database&#x3D;&#39;userdb&#39;,
-    charset&#x3D;&#39;utf8&#39;
-)
+POOL &#x3D; PooledDB(creator&#x3D;pymysql, **settings.DB_POOL_CONN)
 
 
 class Connect(object):
     def __init__(self):
-        self.conn &#x3D; conn &#x3D; POOL.connection()
+        conn &#x3D; POOL.connection()
+        self.conn &#x3D; conn
         self.cursor &#x3D; conn.cursor(pymysql.cursors.DictCursor)
 
     def __enter__(self):
@@ -1009,30 +717,421 @@ class Connect(object):
         self.cursor.close()
         self.conn.close()
 
-    def exec(self, sql, **kwargs):
-        self.cursor.execute(sql, kwargs)
+    def exec(self, sql, *args, **kwargs):
+        params &#x3D; args or kwargs
+        # 执行SQL受影响的行数,据此判断exec指令是否成果
+        row &#x3D; self.cursor.execute(sql, params)
         self.conn.commit()
+        return row
 
-    def fetch_one(self, sql, **kwargs):
-        self.cursor.execute(sql, kwargs)
+    def fetch_one(self, sql, *args, **kwargs):
+        params &#x3D; args or kwargs
+
+        # sql &#x3D; &quot;xxxxx %s %s&quot;
+        # self.cursor.execute(sql, [1,2])
+
+        # sql &#x3D; &quot;xxxxx %(k1)s %(k2)s&quot;
+        # self.cursor.execute(sql, &#123;&quot;k1&quot;:xxx,&quot;k2&quot;:xxxx&#125;)
+
+        self.cursor.execute(sql, params)
         result &#x3D; self.cursor.fetchone()
         return result
 
-    def fetch_all(self, sql, **kwargs):
-        self.cursor.execute(sql, kwargs)
+    def fetch_all(self, sql, *args, **kwargs):
+        params &#x3D; args or kwargs
+        self.cursor.execute(sql, params)
         result &#x3D; self.cursor.fetchall()
         return result</code></pre>
 
-<pre class="language-python" data-language="python"><code class="language-python">from db_context import Connect
+<p><code>src -&gt; account.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">from utils.db import Connect
 
-with Connect() as obj:
-    # print(obj.conn)
-    # print(obj.cursor)
-    ret &#x3D; obj.fetch_one(&quot;select * from d1&quot;)
-    print(ret)
+def login(username, password):
+    with Connect() as connect:
+        sql &#x3D; &quot;select id,nickname from user where username&#x3D;%(username)s and password&#x3D;%(password)s&quot;
+        result &#x3D; connect.fetch_one(sql, username&#x3D;username, password&#x3D;password)
 
-    ret &#x3D; obj.fetch_one(&quot;select * from d1 where id&#x3D;%(id)s&quot;, id&#x3D;3)
-    print(ret)</code></pre></li>
+    return result  # &#123;&#39;id&#39;: xxx, &#39;nickname&#39;: xxx&#125;</code></pre>
+
+<p><code>src -&gt; handler.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">class Handler(object):
+    NAV &#x3D; []  # 导航列表
+    LOGIN_User_DICT &#x3D; UserDict()  # 记录登录对象
+
+    def wrapper(self, method):
+        def inner(*args, **kwargs):
+            print(&#39;&gt;&#39;.join(Handler.NAV).center(50, &#39;*&#39;))
+            res &#x3D; method(*args, **kwargs)
+            Handler.NAV.pop(-1)
+            return res
+
+        return inner
+
+    def login(self):
+        &quot;&quot;&quot;登录程序&quot;&quot;&quot;
+        while True:
+            user &#x3D; input(&#39;请输入用户名(Q&#x2F;q退出)： &#39;).strip()
+            if user.upper() &#x3D;&#x3D; &#39;Q&#39;:
+                break
+            pwd &#x3D; input(&#39;请输入用户密码： &#39;).strip()
+
+            user_dict &#x3D; account.login(user, pwd)  # &#123;&#39;id&#39;: xxx, &#39;nickname&#39;: xxx&#125;
+
+            if not user_dict:  # 没有用户信息，重新输入
+                print(&#39;输入用户名或密码错误，请重新输入&#39;)
+                continue
+
+            print(&#39;登录成功&#39;)
+            Handler.LOGIN_User_DICT.set_info(user_dict)  # 更新登录对象
+            Handler.NAV.insert(0, Handler.LOGIN_User_DICT.nickname)
+            return</code></pre>
+
+
+
+<h3 id="（二）注册功能"><a href="#（二）注册功能" class="headerlink" title="（二）注册功能"></a>（二）注册功能</h3><ul>
+<li><p>编写utils包的validator模块，以实现注册时每个注册信息格式正确后注册下一个信息，而不是一个注册信息不正确全部重新注册。</p>
+<ul>
+<li><p><code>email函数</code>传入参数text，根据re.match判断email格式是否正确</p>
+</li>
+<li><p><code>mobile函数</code>传入参数text，根据re.match判断电话号码格式是否正确</p>
+</li>
+<li><p><code>while_input函数</code>一直输入直到输入合法</p>
+</li>
+</ul>
+</li>
+<li><p>在src包的account模块下编写<code>register函数</code>基于MySQL数据库实现用户注册</p>
+</li>
+<li><p>在src包的handler模块下编写登录程序</p>
+<p><code>utils -&gt; validator.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">import re
+
+
+def mobile(text):
+    return re.match(&quot;^1[3-9]\d&#123;9&#125;$&quot;, text)
+
+
+def email(text):
+    return re.match(&quot;^[a-zA-Z1-9_-]+@[a-zA-Z1-9_-]+\.[a-zA-Z1-9_-]+$&quot;, text)
+
+
+def while_input(text, validator&#x3D;None):
+    while True:
+        data &#x3D; input(text).strip()
+        if not data:  # 输入为空时，重新输入
+            print(&#39;输入为空，请重新输入&#39;)
+            continue
+        # 输入文本不需要校验时直接将输入返回
+        if not validator:  # while_input(text)
+            return data
+        # 输入文本为email或mobile，且输入不合法时
+        if not validator(data):  # while_input(text, email)
+            print(&#39;输入格式错误，请重新输入&#39;)
+            continue
+
+        return data</code></pre>
+
+<p><code>src-&gt; account.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">import datetime
+from utils.db import Connect
+
+
+def login(username, password):
+    with Connect() as conn:
+        # sql &#x3D; &quot;select id,nickname from user where username&#x3D;%s and password&#x3D;%s&quot;
+        # result &#x3D; conn.fetch_one(sql, username, password)
+
+        sql &#x3D; &quot;select id,nickname from user where username&#x3D;%(username)s and password&#x3D;%(password)s&quot;
+        result &#x3D; conn.fetch_one(sql, username&#x3D;username, password&#x3D;password)
+
+        return result
+
+
+def register(user, pwd, nickname, mobile, email):
+    with Connect() as conn:
+        sql &#x3D; &quot;insert into user(username,password,nickname,mobile,email,ctime) values(%s,%s,%s,%s,%s,%s)&quot;
+        result &#x3D; conn.exec(sql, user, pwd, nickname, mobile, email, datetime.datetime.now())
+        return result</code></pre>
+
+<p><code>src -&gt; handler.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">from utils.context import Context, UserDict
+import account
+from utils import validator
+
+
+class Handler(object):
+    NAV &#x3D; []  # 导航列表
+    LOGIN_User_DICT &#x3D; UserDict()  # 记录登录对象
+
+    def wrapper(self, method):
+        def inner(*args, **kwargs):
+            print(&#39;&gt;&#39;.join(Handler.NAV).center(50, &#39;*&#39;))
+            res &#x3D; method(*args, **kwargs)
+            Handler.NAV.pop(-1)
+            return res
+
+        return inner
+
+    def login(self):
+        &quot;&quot;&quot;登录程序&quot;&quot;&quot;
+        while True:
+            user &#x3D; input(&#39;请输入用户名(Q&#x2F;q退出)： &#39;).strip()
+            if user.upper() &#x3D;&#x3D; &#39;Q&#39;:
+                break
+            pwd &#x3D; input(&#39;请输入用户密码： &#39;).strip()
+
+            user_dict &#x3D; account.login(user, pwd)  # &#123;&#39;id&#39;: xxx, &#39;nickname&#39;: xxx&#125;
+
+            if not user_dict:  # 没有用户信息，重新输入
+                print(&#39;输入用户名或密码错误，请重新输入&#39;)
+                continue
+
+            print(&#39;登录成功&#39;)
+            Handler.LOGIN_User_DICT.set_info(user_dict)  # 更新登录对象
+            Handler.NAV.insert(0, Handler.LOGIN_User_DICT.nickname)
+            return
+
+    def register(self):
+        &quot;&quot;&quot;注册程序&quot;&quot;&quot;
+        while True:
+            nickname &#x3D; validator.while_input(&#39;请输入昵称(Q&#x2F;q退出)： &#39;).strip()
+            if nickname.upper() &#x3D;&#x3D; &quot;Q&quot;:
+                break
+            username &#x3D; validator.while_input(&#39;请输入用户名： &#39;).strip()
+            pwd &#x3D; validator.while_input(&#39;请输入密码： &#39;).strip()
+
+            email &#x3D; validator.while_input(&#39;请输入邮箱： &#39;, validator.email).strip()
+            mobile &#x3D; validator.while_input(&#39;请输入电话号码: &#39;, validator.mobile).strip()
+
+            if not account.register(username, nickname, mobile, pwd, email):  # 没有受到影响的行，重新注册
+                print(&#39;注册失败，请重新注册&#39;)
+                continue
+            print(&#39;注册成功&#39;)
+
+            return
+
+
+    def publish_blog(self):
+        print(&#39;发布博客程序&#39;)
+
+    def blog_list(self):
+        print(&#39;查看博客列表程序&#39;)
+
+    # 主程序
+    def run(self):
+        # 导航列表加入首页
+        Handler.NAV.append(&#39;系统首页&#39;)
+
+        # 首页提示信息
+        # mapping &#x3D; &#123;
+        #     &#39;1&#39;: &#123;&#39;text&#39;: &#39;登录&#39;, &#39;method&#39;: self.login&#125;,
+        #     &#39;2&#39;: &#123;&#39;text&#39;: &#39;注册&#39;, &#39;method&#39;: self.register&#125;,
+        #     &#39;3&#39;: &#123;&#39;text&#39;: &#39;发布博客&#39;, &#39;method&#39;: self.publish_blog&#125;,
+        #     &#39;4&#39;: &#123;&#39;text&#39;: &#39;查看博客列表&#39;, &#39;method&#39;: self.blog_list&#125;,
+        # &#125;
+
+        mapping &#x3D; &#123;
+            &#39;1&#39;: Context(&#39;登录&#39;, self.wrapper(self.login)),
+            &#39;2&#39;: Context(&#39;注册&#39;, self.wrapper(self.register)),
+            &#39;3&#39;: Context(&#39;发布博客&#39;, self.wrapper(self.publish_blog)),
+            &#39;4&#39;: Context(&#39;查看博客列表&#39;, self.wrapper(self.blog_list)),
+        &#125;
+
+        message &#x3D; &#39;\n&#39;.join([&#39;&#123;&#125;.&#123;&#125;&#39;.format(k, v.text) for k, v in mapping.items()])
+
+        while True:
+            print(&#39;&gt;&#39;.join(Handler.NAV).center(50, &#39;*&#39;))  # 打印导航条
+            print(message)  # 打印首页提示信息
+
+            choice &#x3D; input(&#39;请选择序号(Q&#x2F;q退出)： &#39;).strip()
+            if not choice:  # 输入为空重新输入
+                print(&#39;输入内容不能为空，请重新输入&#39;)
+                continue
+
+            if choice.upper() &#x3D;&#x3D; &#39;Q&#39;:  # 输入Q&#x2F;q退出
+                break
+
+            context &#x3D; mapping.get(choice)
+            if not context:  # 序号不存在重新输入
+                print(&#39;序号不存在，请重新输入&#39;)
+                continue
+
+            Handler.NAV.append(context.text)
+            context.method()
+
+
+handler &#x3D; Handler()
+handler.run()</code></pre></li>
+</ul>
+<h3 id="（三）发布博客"><a href="#（三）发布博客" class="headerlink" title="（三）发布博客"></a>（三）发布博客</h3><ul>
+<li><p>编写src包的article模块：传入title，text和user_id实现博客的发布，ctime根据datetime.now()获取</p>
+</li>
+<li><p>在src包下的handler模块中编写publish函数</p>
+<ul>
+<li>判断用户是否登录如果未登录，让用户登录后才能发布</li>
+</ul>
+</li>
+</ul>
+<p><code>src -&gt; article.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">from datetime import datetime
+from utils.db import Connect
+
+
+def publish(title, text, user_id):
+    try:
+        with Connect() as connect:
+            sql &#x3D; &quot;insert into article(title,text,user_id,ctime) values(%s,%s,%s,%s)&quot;
+            result &#x3D; connect.exec(sql, title, text, user_id, datetime.now())
+            return result
+    except Exception as e:  # 异常时没有return 默认返回None
+        pass</code></pre>
+
+<p><code>src -&gt; handler.py</code></p>
+<pre class="language-python" data-language="python"><code class="language-python">import time
+
+from utils.context import Context, UserDict
+import account,article
+from utils import validator
+
+
+class Handler(object):
+    NAV &#x3D; []  # 导航列表
+    LOGIN_User_DICT &#x3D; UserDict()  # 记录登录对象
+
+    def wrapper(self, method):
+        def inner(*args, **kwargs):
+            print(&#39;&gt;&#39;.join(Handler.NAV).center(50, &#39;*&#39;))
+            res &#x3D; method(*args, **kwargs)
+            Handler.NAV.pop(-1)
+            return res
+
+        return inner
+
+    def login(self):
+        &quot;&quot;&quot;登录程序&quot;&quot;&quot;
+        while True:
+            user &#x3D; input(&#39;请输入用户名(Q&#x2F;q退出)： &#39;).strip()
+            if user.upper() &#x3D;&#x3D; &#39;Q&#39;:
+                break
+            pwd &#x3D; input(&#39;请输入用户密码： &#39;).strip()
+
+            user_dict &#x3D; account.login(user, pwd)  # &#123;&#39;id&#39;: xxx, &#39;nickname&#39;: xxx&#125;
+
+            if not user_dict:  # 没有用户信息，重新输入
+                print(&#39;输入用户名或密码错误，请重新输入&#39;)
+                continue
+
+            print(&#39;登录成功&#39;)
+            Handler.LOGIN_User_DICT.set_info(user_dict)  # 更新登录对象
+            Handler.NAV.insert(0, Handler.LOGIN_User_DICT.nickname)
+            return
+
+    def register(self):
+        &quot;&quot;&quot;注册程序&quot;&quot;&quot;
+        while True:
+            nickname &#x3D; validator.while_input(&#39;请输入昵称(Q&#x2F;q退出)： &#39;).strip()
+            if nickname.upper() &#x3D;&#x3D; &quot;Q&quot;:
+                break
+            username &#x3D; validator.while_input(&#39;请输入用户名： &#39;).strip()
+            pwd &#x3D; validator.while_input(&#39;请输入密码： &#39;).strip()
+
+            email &#x3D; validator.while_input(&#39;请输入邮箱： &#39;, validator.email).strip()
+            mobile &#x3D; validator.while_input(&#39;请输入电话号码: &#39;, validator.mobile).strip()
+
+            if not account.register(username, nickname, mobile, pwd, email):  # 没有受到影响的行，重新注册
+                print(&#39;注册失败，请重新注册&#39;)
+                continue
+            print(&#39;注册成功&#39;)
+
+            return
+
+    def publish_blog(self):
+        &quot;&quot;&quot;发布博客程序&quot;&quot;&quot;
+        # 首先验证是否登录
+        if not Handler.LOGIN_User_DICT.is_login:
+            print(&#39;请先登录后在发博客&#39;)
+            time.sleep(2)  # 间隔两秒后重新发送
+            return  # 返回空值
+        # 登录成功后，对title和text合法性进行验证
+        while True:
+            title &#x3D; validator.while_input(&#39;请输入文章标题: &#39;).strip()
+            text &#x3D; validator.while_input(&#39;请输入文章内容： &#39;).strip()
+
+            if not article.publish(title, text, Handler.LOGIN_User_DICT.id): # 没有受到影响的行，重新注册
+                print(&#39;博客发布失败，请重新发布&#39;)
+                time.sleep(1)  # 间隔一秒后重新发送
+                continue
+            print(&#39;博客发布成功&#39;)
+
+            return
+
+    def blog_list(self):
+        print(&#39;查看博客列表程序&#39;)
+
+    # 主程序
+    def run(self):
+        # 导航列表加入首页
+        Handler.NAV.append(&#39;系统首页&#39;)
+
+        # 首页提示信息
+        # mapping &#x3D; &#123;
+        #     &#39;1&#39;: &#123;&#39;text&#39;: &#39;登录&#39;, &#39;method&#39;: self.login&#125;,
+        #     &#39;2&#39;: &#123;&#39;text&#39;: &#39;注册&#39;, &#39;method&#39;: self.register&#125;,
+        #     &#39;3&#39;: &#123;&#39;text&#39;: &#39;发布博客&#39;, &#39;method&#39;: self.publish_blog&#125;,
+        #     &#39;4&#39;: &#123;&#39;text&#39;: &#39;查看博客列表&#39;, &#39;method&#39;: self.blog_list&#125;,
+        # &#125;
+
+        mapping &#x3D; &#123;
+            &#39;1&#39;: Context(&#39;登录&#39;, self.wrapper(self.login)),
+            &#39;2&#39;: Context(&#39;注册&#39;, self.wrapper(self.register)),
+            &#39;3&#39;: Context(&#39;发布博客&#39;, self.wrapper(self.publish_blog)),
+            &#39;4&#39;: Context(&#39;查看博客列表&#39;, self.wrapper(self.blog_list)),
+        &#125;
+
+        message &#x3D; &#39;\n&#39;.join([&#39;&#123;&#125;.&#123;&#125;&#39;.format(k, v.text) for k, v in mapping.items()])
+
+        while True:
+            print(&#39;&gt;&#39;.join(Handler.NAV).center(50, &#39;*&#39;))  # 打印导航条
+            print(message)  # 打印首页提示信息
+
+            choice &#x3D; input(&#39;请选择序号(Q&#x2F;q退出)： &#39;).strip()
+            if not choice:  # 输入为空重新输入
+                print(&#39;输入内容不能为空，请重新输入&#39;)
+                continue
+
+            if choice.upper() &#x3D;&#x3D; &#39;Q&#39;:  # 输入Q&#x2F;q退出
+                break
+
+            context &#x3D; mapping.get(choice)
+            if not context:  # 序号不存在重新输入
+                print(&#39;序号不存在，请重新输入&#39;)
+                continue
+
+            Handler.NAV.append(context.text)
+            context.method()
+
+
+handler &#x3D; Handler()
+handler.run()</code></pre>
+
+
+
+<h3 id="（四）分页、详情、赞踩、评论"><a href="#（四）分页、详情、赞踩、评论" class="headerlink" title="（四）分页、详情、赞踩、评论"></a>（四）分页、详情、赞踩、评论</h3><ul>
+<li><p>首先完成博客列表和分页，在博客列表中支持翻页和查看博客详情</p>
+<ul>
+<li><p>获取博客总数，然后根据博客总数和每页博客数量，确定每页显示的id范围</p>
+<blockquote>
+<p>在src包下的article模块中编写total_count函数，确定limit和offset</p>
+</blockquote>
+</li>
+<li><p>根据limit和offset在MySQL数据库中获取对应id的数据</p>
+<blockquote>
+<p>在src包下的article模块中编写get_article函数，根据用户输入计算limit和offset函数显示博客列表</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>在博客详情中支持 评论 赞 踩和阅读数加一</p>
+</li>
 </ul>
 
                 
@@ -1060,7 +1159,7 @@ with Connect() as obj:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gengtianba.github.io/2022/07/07/di-si-jie-duan-chong-dian/">https://gengtianba.github.io/2022/07/07/di-si-jie-duan-chong-dian/</a>
+                    <a href="https://gengtianba.github.io/2022/07/11/di-si-jie-duan-kao-shi/">https://gengtianba.github.io/2022/07/11/di-si-jie-duan-kao-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1106,12 +1205,16 @@ with Connect() as obj:
                                     <span class="chip bg-color">第四阶段</span>
                                 </a>
                             
-                                <a href="/tags/%E6%80%BB%E7%BB%93/">
-                                    <span class="chip bg-color">总结</span>
+                                <a href="/tags/%E8%80%83%E8%AF%95/">
+                                    <span class="chip bg-color">考试</span>
                                 </a>
                             
                                 <a href="/tags/MySQL/">
                                     <span class="chip bg-color">MySQL</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/">
+                                    <span class="chip bg-color">博客系统开发</span>
                                 </a>
                             
                         </div>
@@ -1544,9 +1647,10 @@ with Connect() as obj:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/07/11/di-si-jie-duan-kao-shi/">
                     <div class="card-image">
@@ -1564,9 +1668,9 @@ with Connect() as obj:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1579,6 +1683,7 @@ with Connect() as obj:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1613,24 +1718,24 @@ with Connect() as obj:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/30/python-di-si-mo-kuai-day2/">
+                <a href="/2022/07/07/di-si-jie-duan-chong-dian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Python第四模块day2">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第四阶段重点">
                         
-                        <span class="card-title">Python第四模块day2</span>
+                        <span class="card-title">第四阶段重点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            路飞学院PYTHON课程模块四笔记
+                            路飞学院Python数据分析课程第四阶段重点总结
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
                             </span>
                         <span class="publish-author">
                             
@@ -1651,16 +1756,16 @@ with Connect() as obj:
                         <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
                     <a href="/tags/%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5/">
                         <span class="chip bg-color">第四阶段</span>
                     </a>
                     
-                    <a href="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">MySQL数据库</span>
+                    <a href="/tags/%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">总结</span>
+                    </a>
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>

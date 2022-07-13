@@ -1130,7 +1130,7 @@ print(result)</code></pre>
 <h4 id="3-1-参数类型"><a href="#3-1-参数类型" class="headerlink" title="3.1 参数类型"></a>3.1 参数类型</h4><p>存储过程的参数可以有如下三种：</p>
 <ul>
 <li>in，仅用于传入参数用</li>
-<li>out，仅用于返回值用</li>
+<li>x from db_context import Connect​with Connect() as obj:    # print(obj.conn)    # print(obj.cursor)    ret &#x3D; obj.fetch_one(“select * from d1”)    print(ret)​    ret &#x3D; obj.fetch_one(“select * from d1 where id&#x3D;%(id)s”, id&#x3D;3)    print(ret)python</li>
 <li>inout，既可以传入又可以当作返回值</li>
 </ul>
 <pre class="language-sql" data-language="sql"><code class="language-sql">delimiter $$
@@ -2010,7 +2010,10 @@ with Connect() as obj:
 <p>可参考如下图片来设计相应的表结构。</p>
 <h4 id="1-注册和登录"><a href="#1-注册和登录" class="headerlink" title="1. 注册和登录"></a>1. 注册和登录</h4><img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210520204812764.png" class="" title="image-20210520204812764">
 
-<h4 id="2-文章列表"><a href="#2-文章列表" class="headerlink" title="2. 文章列表"></a>2. 文章列表</h4><p>![image-20210520204735867](E:&#x2F;python路飞学城&#x2F;模块4&#x2F;day29 Python操作MySQL和实战&#x2F;assets&#x2F;image-20210520204735867.png)</p>
+<h4 id="2-文章列表"><a href="#2-文章列表" class="headerlink" title="2. 文章列表"></a>2. 文章列表</h4><img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210520204735867-16572013289091.png" class="" title="image-20210520204735867">
+
+
+
 <h4 id="3-文章详细"><a href="#3-文章详细" class="headerlink" title="3. 文章详细"></a>3. 文章详细</h4><img src="/2022/06/30/python-di-si-mo-kuai-day2/image-20210520205148509.png" class="" title="image-20210520205148509">
 
 

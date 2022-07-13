@@ -6,7 +6,7 @@
   <link href="https://gengtianba.github.io/atom.xml" rel="self"/>
   
   <link href="https://gengtianba.github.io/"/>
-  <updated>2022-07-07T13:29:29.426Z</updated>
+  <updated>2022-07-13T15:14:51.511Z</updated>
   <id>https://gengtianba.github.io/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第四阶段考试</title>
+    <link href="https://gengtianba.github.io/2022/07/11/di-si-jie-duan-kao-shi/"/>
+    <id>https://gengtianba.github.io/2022/07/11/di-si-jie-duan-kao-shi/</id>
+    <published>2022-07-11T01:56:55.000Z</published>
+    <updated>2022-07-13T15:14:51.511Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;大作业：开发博客系统&quot;&gt;&lt;a href=&quot;#大作业：开发博客系统&quot; class=&quot;headerlink&quot; title=&quot;大作业：开发博客系统&quot;&gt;&lt;/a&gt;大作业：开发博客系统&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;请基于你掌握的所有技能，实现 day27 </summary>
+        
+      
+    
+    
+    
+    <category term="路飞学院" scheme="https://gengtianba.github.io/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/"/>
+    
+    
+    <category term="python" scheme="https://gengtianba.github.io/tags/python/"/>
+    
+    <category term="第四阶段" scheme="https://gengtianba.github.io/tags/%E7%AC%AC%E5%9B%9B%E9%98%B6%E6%AE%B5/"/>
+    
+    <category term="考试" scheme="https://gengtianba.github.io/tags/%E8%80%83%E8%AF%95/"/>
+    
+    <category term="MySQL" scheme="https://gengtianba.github.io/tags/MySQL/"/>
+    
+    <category term="博客系统开发" scheme="https://gengtianba.github.io/tags/%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第四阶段重点</title>
     <link href="https://gengtianba.github.io/2022/07/07/di-si-jie-duan-chong-dian/"/>
     <id>https://gengtianba.github.io/2022/07/07/di-si-jie-duan-chong-dian/</id>
     <published>2022-07-07T07:50:05.000Z</published>
-    <updated>2022-07-07T13:29:29.426Z</updated>
+    <updated>2022-07-08T14:48:58.997Z</updated>
     
     
       
@@ -52,7 +86,7 @@
     <link href="https://gengtianba.github.io/2022/06/30/python-di-si-mo-kuai-day2/"/>
     <id>https://gengtianba.github.io/2022/06/30/python-di-si-mo-kuai-day2/</id>
     <published>2022-06-30T07:11:47.000Z</published>
-    <updated>2022-07-07T13:32:17.237Z</updated>
+    <updated>2022-07-08T12:47:21.714Z</updated>
     
     
       
@@ -115,7 +149,7 @@
     <link href="https://gengtianba.github.io/2022/06/24/di-san-jie-duan-chong-dian/"/>
     <id>https://gengtianba.github.io/2022/06/24/di-san-jie-duan-chong-dian/</id>
     <published>2022-06-24T02:18:28.000Z</published>
-    <updated>2022-06-24T13:40:34.226Z</updated>
+    <updated>2022-07-07T13:41:47.713Z</updated>
     
     
       
@@ -322,7 +356,7 @@
     <link href="https://gengtianba.github.io/2022/06/12/di-er-jie-duan-kao-shi/"/>
     <id>https://gengtianba.github.io/2022/06/12/di-er-jie-duan-kao-shi/</id>
     <published>2022-06-12T08:30:08.000Z</published>
-    <updated>2022-06-24T07:16:10.614Z</updated>
+    <updated>2022-07-11T01:57:06.817Z</updated>
     
     
       
@@ -573,37 +607,6 @@
     <category term="python基础" scheme="https://gengtianba.github.io/tags/python%E5%9F%BA%E7%A1%80/"/>
     
     <category term="考试" scheme="https://gengtianba.github.io/tags/%E8%80%83%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>模块1--day2</title>
-    <link href="https://gengtianba.github.io/2022/05/23/python-mo-kuai-yi-day2/"/>
-    <id>https://gengtianba.github.io/2022/05/23/python-mo-kuai-yi-day2/</id>
-    <published>2022-05-22T16:00:00.000Z</published>
-    <updated>2022-06-24T07:15:07.136Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;六、-数据类型（上）&quot;&gt;&lt;a href=&quot;#六、-数据类型（上）&quot; class=&quot;headerlink&quot; title=&quot;六、 数据类型（上）&quot;&gt;&lt;/a&gt;六、</summary>
-        
-      
-    
-    
-    
-    <category term="路飞学院" scheme="https://gengtianba.github.io/categories/%E8%B7%AF%E9%A3%9E%E5%AD%A6%E9%99%A2/"/>
-    
-    
-    <category term="python" scheme="https://gengtianba.github.io/tags/python/"/>
-    
-    <category term="笔记" scheme="https://gengtianba.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="第一阶段" scheme="https://gengtianba.github.io/tags/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/"/>
-    
-    <category term="python基础" scheme="https://gengtianba.github.io/tags/python%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
